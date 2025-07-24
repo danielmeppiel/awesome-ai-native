@@ -37,12 +37,12 @@ List 3 potential solutions with trade-offs before implementing any changes."
 - **Agent Memory Files**: Preserve knowledge across sessions through `.memory.md` files
 - **Context Helper Files**: Optimize information retrieval through `.context.md` files
 
-**The Transformation Effect:** Agent Primitives convert prompt techniques into systematic, self-improving outcomes.
+**The Transformation Effect:** Agent Primitives are the core configurable elements that AI Native Developers iteratively refine to ensure reliable outcomes through systematic prompt engineering.
 
 **Example Transformation:**
 - **Technique**: "Implement secure user authentication system" (Markdown Prompt Engineering)
 - **Primitives**: Developer selects `@backend-dev` mode → Auto-triggers `security.instructions.md` via `applyTo: "auth/**"` → Loads context from `[Previous auth patterns](.memory.md#security)` and `[API standards](.context.md#rest)` → Generates `user-auth.spec.md` using structured templates → Executes `implement-from-spec.prompt.md` workflow with validation gates (Agent Primitives)
-- **Outcome**: Self-evolving intelligence where implementation failures update `.memory.md`, successful patterns enhance `.instructions.md`, and refined workflows improve `.prompt.md` files—creating compound knowledge that gets better over time (Context Engineering)
+- **Outcome**: Developer-driven knowledge accumulation where you capture implementation failures in `.memory.md`, document successful patterns in `.instructions.md`, and refine workflows in `.prompt.md` files—creating compound intelligence that improves through your iterative refinement (Context Engineering)
 
 ### Layer 3: Context Engineering
 **The Strategic Framework:** Systematic management of LLM context windows to maximize cognitive performance within memory constraints.
@@ -114,7 +114,7 @@ flowchart TD
 
 ## 🌟 PRIMITIVES IN ACTION: Complete Workflow
 
-**Scenario:** Adding OAuth authentication to a Node.js API - from planning to self-improving intelligence
+**Scenario:** Adding OAuth authentication to a Node.js API - from planning to developer-refined intelligence
 
 ### Step 1: Mode Selection & Automatic Context Assembly
 ```markdown
@@ -206,35 +206,35 @@ Required approvals:
 - [ ] Testing strategy confirmation
 
 ## Post-Implementation Learning
-After completion, update primitives based on outcomes:
-- Add successful patterns to `.memory.md`
-- Enhance instructions based on discovered edge cases
-- Refine prompt workflow based on validation feedback
+After completion, you update your primitives based on outcomes:
+- You add successful patterns to `.memory.md`
+- You enhance instructions based on discovered edge cases
+- You refine prompt workflow based on validation feedback
 ```
 
-### Step 5: Self-Improving Intelligence Loop
+### Step 5: Developer-Driven Intelligence Refinement
 
 **When Implementation Succeeds:**
-- `.memory.md` updated: "OAuth flow with Google/GitHub providers - JWT refresh pattern worked well"
-- `security.instructions.md` enhanced: "Always implement refresh token rotation for OAuth"
-- `implement-from-spec.prompt.md` refined: "Add OAuth-specific validation checkpoints"
+- You update `.memory.md`: "OAuth flow with Google/GitHub providers - JWT refresh pattern worked well"
+- You enhance `security.instructions.md`: "Always implement refresh token rotation for OAuth"
+- You refine `implement-from-spec.prompt.md`: "Add OAuth-specific validation checkpoints"
 
 **When Implementation Fails:**
-- `.memory.md` records: "OAuth PKCE flow required for mobile clients - add to future specs"
-- `security.instructions.md` updated: "Validate OAuth provider configuration before implementation"
-- Specification template enhanced with mobile OAuth considerations
+- You record in `.memory.md`: "OAuth PKCE flow required for mobile clients - add to future specs"
+- You update `security.instructions.md`: "Validate OAuth provider configuration before implementation"
+- You enhance specification template with mobile OAuth considerations
 
 ### The Compound Intelligence Effect
 
 **Traditional Approach:** Each OAuth implementation starts from scratch, same mistakes repeated.
 
-**AI Native Approach:** Each OAuth implementation makes the system smarter:
-- **Memory**: Preserves successful patterns and failure lessons
-- **Instructions**: Auto-improve based on real project outcomes  
-- **Workflows**: Refine validation gates based on discovered edge cases
-- **Context**: Accumulate domain expertise across projects
+**AI Native Approach:** Each OAuth implementation allows you to refine the system:
+- **Memory**: You preserve successful patterns and failure lessons
+- **Instructions**: You enhance based on real project outcomes  
+- **Workflows**: You refine validation gates based on discovered edge cases
+- **Context**: You accumulate domain expertise across projects
 
-**Result:** The 10th OAuth implementation is dramatically better than the 1st, with the intelligence built into the primitives themselves, not just the developer's memory.
+**Result:** The 10th OAuth implementation is dramatically better than the 1st, with the intelligence you've built into the primitives, extending beyond just your memory.
 
 ---
 

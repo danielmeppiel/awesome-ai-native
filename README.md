@@ -41,13 +41,13 @@ List 3 potential solutions with trade-offs before implementing any changes."
 
 **Example Transformation:**
 - **Technique**: "Implement secure user authentication system" (Markdown Prompt Engineering)
-- **Primitives**: Developer selects `@backend-dev` mode → Auto-triggers `security.instructions.md` via `applyTo: "auth/**"` → Loads context from `[Previous auth patterns](.memory.md#security)` and `[API standards](.context.md#rest)` → Generates `user-auth.spec.md` using structured templates → Executes `implement-from-spec.prompt.md` workflow with validation gates (Agent Primitives)
+- **Primitives**: Developer selects `backend-dev` chat mode → Auto-triggers `security.instructions.md` via `applyTo: "auth/**"` → Loads context from `[Previous auth patterns](.memory.md#security)` and `[API Security Standards](api-security.context.md#rest)` → Generates `user-auth.spec.md` using structured templates → Executes `implement-from-spec.prompt.md` workflow with validation gates (Agent Primitives)
 - **Outcome**: Developer-driven knowledge accumulation where you capture implementation failures in `.memory.md`, document successful patterns in `.instructions.md`, and refine workflows in `.prompt.md` files—creating compound intelligence that improves through your iterative refinement (Context Engineering)
 
 ### Layer 3: Context Engineering
-**The Strategic Framework:** Systematic management of LLM context windows to maximize cognitive performance within memory constraints.
+**The Strategic Framework:** Systematic management of LLM context windows to maximize agent performance within memory constraints.
 
-**Why Context Matters:** LLMs have finite attention spans. Strategic context management ensures they focus on what's most relevant to your current task.
+**Why Context Matters:** LLMs have finite attention spans, limited memory (context windows) and forgetful. Strategic context management not only helps agents focus on relevant information, but enables them to get started quicker by reducing the need to search for and ingest irrelevant or confusing information—thus preserving valuable context window space and improving reliability and effectiveness.
 
 **Key Techniques:**
 - **Session Splitting**: Use distinct Agent sessions for different development phases (planning → implementation → testing). Fresh context = better focus
@@ -60,7 +60,8 @@ List 3 potential solutions with trade-offs before implementing any changes."
 - **Session Splitting**: Fresh context window for complex tasks
 - **Modular Rules**: Reduced irrelevant suggestions through targeted instructions
 - **Memory-Driven Development**: Preserved project knowledge and decision history across time
-- **Context Optimization**: Faster information retrieval and reduced cognitive overhead
+- **Context Optimization**: Faster startup time and reduced cognitive overhead through pre-curated information
+- **Reliability Boost**: Less context pollution leads to more consistent and accurate outputs
 
 **Implementation Through Primitives:** Each context engineering technique uses Agent Primitives strategically, creating compound benefits for cognitive performance.
 

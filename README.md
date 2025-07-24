@@ -533,10 +533,10 @@ Implement middleware-based authentication with token validation and refresh capa
 ### A. Execution Path Selection
 **✅ Quick Actions:**
 - **Local IDE Agent:** Maintain maximum control over implementation process
-- **Async Delegation:** Maximize productivity for well-specified, low-deviation-risk tasks with the Coding Agent
+- **Async Delegation:** Maximize productivity for well-specified, low-deviation-risk tasks with the [Coding Agent](https://docs.github.com/en/copilot/how-tos/agents/copilot-coding-agent)
 - **Local IDE Monitoring:** Delegate for speed while preserving oversight and learning
 
-> 💡 **Control vs. Productivity Framework**: Choose execution paths based on your desire for control, specification maturity, and tolerance for agent deviation. More control = local implementation. Higher productivity = async delegation to Coding Agent.
+> 💡 **Control vs. Productivity Framework**: Choose execution paths based on your desire for control, specification maturity, and tolerance for agent deviation. More control = local implementation. Higher productivity = async delegation to [Coding Agent](https://docs.github.com/en/copilot/how-tos/agents/copilot-coding-agent).
 
 **🔧 Control-Based Decision Matrix:**
 ```
@@ -546,54 +546,17 @@ Control Preference → Recommended Path:
 └── Balanced Approach → Hybrid (Delegate with active oversight)
 ```
 
-**Decision Factors for Path Selection:**
+**Quick Decision Matrix: Choose Your Path**
 
-**Choose LOCAL IDE AGENT when:**
-- **Specification maturity**: Spec feels incomplete or exploratory
-- **Learning mode**: You're discovering requirements as you build
-- **Agent Primitive maturity**: Your instructions/prompts need refinement
-- **Low deviation tolerance**: Agent deviation would be costly or risky
-- **Iterative refinement**: Expect multiple rounds of adjustment
-
-**Choose ASYNC DELEGATION TO CODING AGENT when:**
-- **Specification maturity**: Well-defined, comprehensive spec available
-- **Deviation tolerance**: Minor agent deviation is acceptable
-- **Strong Agent Primitives**: Your instructions/context files are proven
-- **Productivity focus**: Speed and parallel work more important than control
-- **Well-known patterns**: Task follows established, successful patterns
-
-**Choose HYBRID MONITORING when:**
-- **Learning while delegating**: Want to observe agent decision-making
-- **Risk management**: Need oversight for important implementations
-- **Primitive refinement**: Want to improve your agent setup based on delegation outcomes
-- **Knowledge capture**: Interested in documenting patterns for future use
-
-**Example: Control-Based Path Selection**
-```markdown
-## Feature: OAuth Integration 
-**Current State**: First time implementing OAuth in this codebase
-**Recommended Path**: Local IDE Agent
-- ❌ OAuth spec needs refinement (learning phase)
-- ❌ Security patterns not yet established in primitives
-- ❌ Low tolerance for auth-related deviation
-- ✅ Want to learn OAuth nuances for this specific stack
-
-## Feature: CRUD API Endpoints (5th similar implementation)
-**Current State**: Well-established pattern, proven spec template
-**Recommended Path**: Async Delegation  
-- ✅ Refined CRUD spec template with validation criteria
-- ✅ Strong .instructions.md files for API patterns
-- ✅ High tolerance for minor implementation variations
-- ✅ Proven successful pattern (4 previous implementations)
-
-## Feature: Payment Integration (Critical, Learning Required)
-**Current State**: Important feature, want to understand implementation
-**Recommended Path**: Hybrid Monitoring
-- ✅ Can delegate for speed (business priority)
-- ❌ Low tolerance for deviation (financial operations)
-- ✅ Want to learn payment patterns for future features
-- ✅ Need to capture knowledge in primitives
-```
+| Situation | Local IDE Agent | Async Delegation | Hybrid Monitoring |
+|-----------|:---------------:|:----------------:|:-----------------:|
+| **First time doing this task** | ✅ | ❌ | ✅ |
+| **Well-established pattern** | ❌ | ✅ | ❌ |
+| **High-risk/critical feature** | ✅ | ❌ | ✅ |
+| **Need speed/parallel work** | ❌ | ✅ | ❌ |
+| **Want to learn & understand** | ✅ | ❌ | ✅ |
+| **Proven instructions/specs** | ❌ | ✅ | ✅ |
+| **Low tolerance for mistakes** | ✅ | ❌ | ✅ |
 
 **⚠️ Checkpoint:** Path selection aligns with control preferences and specification maturity
 **📊 Success Metric:** Optimal balance between productivity and quality control

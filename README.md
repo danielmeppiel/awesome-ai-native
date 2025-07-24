@@ -30,8 +30,8 @@ List 3 potential solutions with trade-offs before implementing any changes."
 **The Implementation:** The configurable tools that systematically deploy your prompt engineering techniques.
 
 **Core Primitives:**
-- **Instructions Files**: Deploy structured guidance through `.instructions.md` files with targeted scope
-- **Chat Modes**: Deploy role-based expertise through `.chatmode.md` files for domain-specific interactions
+- **Instructions Files**: Deploy structured guidance through modular `.instructions.md` files with targeted scope
+- **Chat Modes**: Deploy role-based expertise through `.chatmode.md` files with MCP tool boundaries that prevent security breaches and cross-domain interference - like professional licenses that keep architects from building and engineers from planning
 - **Prompt Workflows**: Deploy reusable task templates through `.prompt.md` files with built-in validation
 - **Specification Files**: Create implementation-ready blueprints through `.spec.md` files that ensure deterministic outcomes across human and AI executors
 - **Agent Memory Files**: Preserve knowledge across sessions through `.memory.md` files
@@ -286,19 +286,42 @@ Generate code with:
 
 ### B. Chat Modes Configuration
 **✅ Quick Actions:**
-- Define domain-specific [custom chat modes](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-chat-modes) with tool boundaries
+- Define domain-specific [custom chat modes](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-chat-modes) with MCP tool boundaries
 - Encapsulate tech stack knowledge and guidelines per mode
-- Configure [MCP tools](https://docs.github.com/en/copilot/how-tos/agents/coding-agent/extending-copilot-coding-agent-with-the-model-context-protocol-mcp) availability by domain
+- Configure secure [MCP tool access](https://docs.github.com/en/copilot/how-tos/agents/coding-agent/extending-copilot-coding-agent-with-the-model-context-protocol-mcp) to prevent cross-domain security breaches
+
+> 💡 **Security Through MCP Tool Boundaries**: Each chat mode receives only the specific MCP tools needed for their domain - preventing dangerous access escalation and cross-contamination. Like professional licensing, a planning mode can't execute destructive commands, and a frontend mode can't access backend databases.
 
 **🔧 Tools & Files:**
 ```
 .github/
 └── chatmodes/
-    ├── spec-writer.chatmode.md           # Planning only, no file edits, documentation tools
-    ├── frontend-dev.chatmode.md          # React/Vue tools, styling utilities, component libraries
-    ├── backend-dev.chatmode.md           # Database tools, API testing, deployment utilities
-    └── docs-writer.chatmode.md           # Markdown tools, diagram generation, documentation sync
+    ├── architect.chatmode.md             # Planning specialist - designs, cannot execute
+    ├── frontend-engineer.chatmode.md     # UI specialist - builds interfaces, no backend access
+    ├── backend-engineer.chatmode.md      # API specialist - builds services, no UI modification
+    └── technical-writer.chatmode.md      # Documentation specialist - writes docs, cannot run code
 ```
+
+**Example: MCP Tool Boundary Implementation**
+```yaml
+---
+description: 'AI Native Development Researcher Mode'
+tools: ['changes', 'codebase', 'editFiles', 'extensions', 'fetch', 
+        'findTestFiles', 'githubRepo', 'new', 'openSimpleBrowser', 
+        'problems', 'runCommands', 'runNotebooks', 'runTaskGetOutput', 
+        'runTasks', 'search', 'searchResults', 'terminalLastCommand', 
+        'terminalSelection', 'testFailure', 'usages', 'vscodeAPI']
+model: Claude Sonnet 4
+---
+```
+
+**Security & Professional Boundaries:**
+- **Architect mode**: Research tools only - **cannot execute destructive commands or modify production code**
+- **Frontend Engineer mode**: UI development tools only - **cannot access databases or backend services** 
+- **Backend Engineer mode**: API and database tools only - **cannot modify user interfaces or frontend assets**
+- **Technical Writer mode**: Documentation tools only - **cannot run code, deploy, or access sensitive systems**
+
+*Like real-world professional licenses, each mode operates within its area of competence and cannot overstep into dangerous territory.*
 
 **⚠️ Checkpoint:** Each mode has clear boundaries and tool restrictions
 

@@ -47,13 +47,13 @@ List 3 potential solutions with trade-offs before implementing any changes."
 ### Layer 3: Context Engineering
 **The Strategic Framework:** Systematic management of LLM context windows to maximize agent performance within memory constraints.
 
-**Why Context Matters:** LLMs have finite attention spans, limited memory (context windows) and forgetful. Strategic context management not only helps agents focus on relevant information, but enables them to get started quicker by reducing the need to search for and ingest irrelevant or confusing information—thus preserving valuable context window space and improving reliability and effectiveness.
+**Why Context Matters:** LLMs have finite attention spans, limited memory (context windows) and are forgetful. Strategic context management not only helps agents focus on relevant information, but enables them to get started quicker by reducing the need to search for and ingest irrelevant or confusing information—thus preserving valuable context window space and improving reliability and effectiveness.
 
 **Key Techniques:**
 - **Session Splitting**: Use distinct Agent sessions for different development phases (planning → implementation → testing). Fresh context = better focus
 - **Modular Rule Loading**: Apply only relevant instructions through targeted `.instructions.md` files using `applyTo` yaml frontmatter syntax, preserving context space for actual work
-- **Memory-Driven Development**: Leverage Agent Memory Files to maintain project knowledge and decisions across sessions and time
-- **Context Optimization**: Use Context Helper Files strategically to accelerate information retrieval and reduce cognitive load
+- **Memory-Driven Development**: Leverage Agent Memory through `.memory.md` files to maintain project knowledge and decisions across sessions and time
+- **Context Optimization**: Use `.context.md` Context Helper Files strategically to accelerate information retrieval and reduce cognitive load
 - **Cognitive Focus Optimization**: Use chat modes in `.chatmode.md` files to constrain AI attention to relevant domains, preventing cross-domain interference
 
 **Practical Benefits:**

@@ -37,6 +37,8 @@ List 3 potential solutions with trade-offs before implementing any changes."
 - **Agent Memory Files**: Preserve knowledge across sessions through `.memory.md` files
 - **Context Helper Files**: Optimize information retrieval through `.context.md` files
 
+> 💡 **Native VSCode Support**: While VSCode natively supports `.instructions.md`, `.prompt.md`, and `.chatmode.md` files, this framework extends the paradigm with `.spec.md`, `.memory.md`, and `.context.md` patterns that represent frontier concepts in AI Native Development.
+
 **The Transformation Effect:** Agent Primitives are the core configurable elements that AI Native Developers iteratively refine to ensure reliable outcomes through systematic prompt engineering.
 
 **Example Transformation:**
@@ -122,6 +124,8 @@ flowchart TD
 Developer: "@backend-dev I need to add OAuth authentication"
 ```
 
+> **Note:** Currently, VSCode chat mode switching requires using the Command Palette (`Cmd/Ctrl+Shift+P` → "Chat: Switch Chat Mode"), keyboard shortcuts, or the chat view dropdown. The `@backend-dev` syntax represents ideal UX that we would like to find in future versions.
+
 **What Happens Behind the Scenes:**
 - `backend-dev.chatmode.md` activates with security-focused tool boundaries
 - Automatically triggers `security.instructions.md` via `applyTo: "auth/**"` pattern
@@ -182,15 +186,16 @@ Implement OAuth 2.0 authorization code flow with JWT token management.
 **Executed:** `.github/prompts/implement-from-spec.prompt.md`
 ```markdown
 ---
+mode: agent
 tools: ["file-search", "semantic-search", "test-runner"]
-validation: required
+description: "Spec-to-implementation workflow with validation gates"
 ---
 # Spec-to-Implementation Workflow
 
 ## Context Loading Phase
-1. Load specification: [${specFile}]
+1. Load specification: [${input:specFile}]
 2. Review security patterns: [Security context](./.context.md#security)
-3. Check similar implementations: <use-tool name="semantic-search" query="oauth authentication">
+3. Check similar implementations using semantic search for "oauth authentication"
 
 ## Implementation Phase  
 Generate implementation following specification requirements:
@@ -207,10 +212,10 @@ Required approvals:
 - [ ] Testing strategy confirmation
 
 ## Post-Implementation Learning
-After completion, you update your primitives based on outcomes:
-- You add successful patterns to `.memory.md`
-- You enhance instructions based on discovered edge cases
-- You refine prompt workflow based on validation feedback
+After completion, update your primitives based on outcomes:
+- Add successful patterns to `.memory.md`
+- Enhance instructions based on discovered edge cases
+- Refine prompt workflow based on validation feedback
 ```
 
 ### Step 5: Developer-Driven Intelligence Refinement
@@ -264,6 +269,7 @@ After completion, you update your primitives based on outcomes:
 ```markdown
 ---
 applyTo: "**/*.{ts,tsx}"
+description: "TypeScript development guidelines with context engineering"
 ---
 # TypeScript Development Guidelines
 
@@ -274,7 +280,7 @@ Review [project conventions](../docs/conventions.md) and
 ## Deterministic Requirements
 - Use strict TypeScript configuration
 - Implement error boundaries for React components
-- <use-linter tool="eslint-typescript">
+- Apply ESLint TypeScript rules consistently
 
 ## Structured Output
 Generate code with:
@@ -306,14 +312,23 @@ Generate code with:
 **Example: MCP Tool Boundary Implementation**
 ```yaml
 ---
-description: 'AI Native Development Researcher Mode'
-tools: ['changes', 'codebase', 'editFiles', 'extensions', 'fetch', 
-        'findTestFiles', 'githubRepo', 'new', 'openSimpleBrowser', 
-        'problems', 'runCommands', 'runNotebooks', 'runTaskGetOutput', 
-        'runTasks', 'search', 'searchResults', 'terminalLastCommand', 
-        'terminalSelection', 'testFailure', 'usages', 'vscodeAPI']
+description: 'Backend development specialist with security focus'
+tools: ['changes', 'codebase', 'editFiles', 'runCommands', 'runTasks', 
+        'search', 'problems', 'testFailure', 'terminalLastCommand']
 model: Claude Sonnet 4
 ---
+
+You are a backend development specialist focused on secure API development, database design, and server-side architecture. You prioritize security-first design patterns and comprehensive testing strategies.
+
+## Domain Expertise
+- RESTful API design and implementation
+- Database schema design and optimization  
+- Authentication and authorization systems
+- Server security and performance optimization
+
+## Tool Boundaries
+- **CAN**: Modify backend code, run server commands, execute tests
+- **CANNOT**: Modify client-side assets
 ```
 
 **Security & Professional Boundaries:**
@@ -348,6 +363,7 @@ model: Claude Sonnet 4
 mode: agent
 model: gpt-4
 tools: ["file-search", "semantic-search", "github"]
+description: "Feature implementation workflow with validation gates"
 ---
 # Feature Implementation from Specification
 
@@ -357,8 +373,8 @@ tools: ["file-search", "semantic-search", "github"]
 3. Check [API documentation](./docs/api.md)
 
 ## Deterministic Execution
-<use-tool name="semantic-search" query="similar implementations">
-<use-tool name="file-search" pattern="**/*.test.{js,ts}">
+Use semantic search to find similar implementations
+Use file search to locate test patterns: `**/*.test.{js,ts}`
 
 ## Structured Output Requirements
 Create implementation with:

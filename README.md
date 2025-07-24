@@ -237,14 +237,14 @@ After completion, update your primitives based on outcomes:
 ### Step 5: Developer-Driven Intelligence Refinement
 
 **When Implementation Succeeds:**
-- You update `.memory.md`: "OAuth flow with Google/GitHub providers - JWT refresh pattern worked well"
+- You update `auth.memory.md`: "OAuth flow with Google/GitHub providers - JWT refresh pattern worked well"
 - You enhance `security.instructions.md`: "Always implement refresh token rotation for OAuth"
-- You refine `implement-from-spec.prompt.md`: "Add OAuth-specific validation checkpoints"
+- You refine `implement-from-spec.prompt.md`: "Implement learnings after user validates proposals"
 
 **When Implementation Fails:**
-- You record in `.memory.md`: "OAuth PKCE flow required for mobile clients - add to future specs"
+- You record in `auth.memory.md`: "OAuth PKCE flow required for mobile clients - add to future specs"
 - You update `security.instructions.md`: "Validate OAuth provider configuration before implementation"
-- You enhance specification template with mobile OAuth considerations
+- You enhance `implement-from-spec.prompt.md`: "You must include unit tests to check security of the implementation, with at least 80%+ coverage, and ensure they pass"
 
 ### The Compound Intelligence Effect
 

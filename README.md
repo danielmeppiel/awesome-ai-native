@@ -463,174 +463,75 @@ Implement middleware-based authentication with token validation and refresh capa
 
 ## II. WORKFLOW ORCHESTRATION (Planning to Execution Bridge)
 
-### A. Spec-First Planning Foundation
+### A. Execution Path Selection
 **✅ Quick Actions:**
-1. **Lock Down Approach:** "Show me your approach and spec - do not edit any files yet"
-2. **Iterate on Alignment:** Multiple rounds of spec refinement before implementation
-3. **Scope Delimitation:** Precise boundaries to avoid cognitive load and context overflow
-4. **Outcome Oriented:** Define outcomes to ensure the agent knows the definition of done
+- **Local IDE Agent:** Maintain maximum control over implementation process
+- **Async Delegation:** Maximize productivity for well-specified, low-deviation-risk tasks with the Coding Agent
+- **Local IDE Monitoring:** Delegate for speed while preserving oversight and learning
 
-> 💡 **Bridge Strategy**: Specifications serve as the deterministic handoff artifact between planning and execution phases, enabling reliable delegation to both synchronous (local) and asynchronous (cloud) agents.
+> 💡 **Control vs. Productivity Framework**: Choose execution paths based on your desire for control, specification maturity, and tolerance for agent deviation. More control = local implementation. Higher productivity = async delegation to Coding Agent.
 
-**🔧 Tools & Files:**
-- Generate `.spec.md` files first to specify implementation approach
-- Template: Problem → Approach → Implementation Plan → Validation Criteria
-- Include delegation readiness checklist for async handoff
-
-**⚠️ Checkpoint:** Spec is approved before any execution path selection
-**📊 Success Metric:** Spec outcomes achieved, Zero scope creep during implementation
-
-### B. Execution Path Selection
-**✅ Quick Actions:**
-- **Synchronous Path:** Continue with local IDE agent for immediate implementation
-- **Asynchronous Path:** Delegate to GitHub Coding Agent via multiple entry points
-- **Hybrid Path:** Combine local planning with cloud execution and monitoring
-
-> 💡 **Decision Framework**: Choose execution paths based on task complexity, urgency, and cognitive load requirements. Simple tasks stay local, complex features delegate async, critical fixes use hybrid monitoring.
-
-**🔧 Execution Path Matrix:**
+**🔧 Control-Based Decision Matrix:**
 ```
-Task Characteristics → Recommended Path:
-├── Simple, Immediate → Local IDE Agent (Synchronous)
-├── Complex, Parallel → GitHub Coding Agent (Asynchronous)  
-└── Critical, Monitored → Hybrid (Async + Local Monitoring)
+Control Preference → Recommended Path:
+├── High Control Needed → Local IDE Agent (Learn, iterate, guide)
+├── Productivity Focus → Async Delegation (Delegate & monitor)  
+└── Balanced Approach → Hybrid (Delegate with active oversight)
 ```
 
-**Example: Path Selection Logic**
+**Decision Factors for Path Selection:**
+
+**Choose LOCAL IDE AGENT when:**
+- **Specification maturity**: Spec feels incomplete or exploratory
+- **Learning mode**: You're discovering requirements as you build
+- **Agent Primitive maturity**: Your instructions/prompts need refinement
+- **Low deviation tolerance**: Agent deviation would be costly or risky
+- **Iterative refinement**: Expect multiple rounds of adjustment
+
+**Choose ASYNC DELEGATION TO CODING AGENT when:**
+- **Specification maturity**: Well-defined, comprehensive spec available
+- **Deviation tolerance**: Minor agent deviation is acceptable
+- **Strong Agent Primitives**: Your instructions/context files are proven
+- **Productivity focus**: Speed and parallel work more important than control
+- **Well-known patterns**: Task follows established, successful patterns
+
+**Choose HYBRID MONITORING when:**
+- **Learning while delegating**: Want to observe agent decision-making
+- **Risk management**: Need oversight for important implementations
+- **Primitive refinement**: Want to improve your agent setup based on delegation outcomes
+- **Knowledge capture**: Interested in documenting patterns for future use
+
+**Example: Control-Based Path Selection**
 ```markdown
-## Feature: OAuth Integration (Complex, Non-urgent)
-**Recommended Path:** Asynchronous Delegation
-- ✅ Well-defined specification available
-- ✅ Non-blocking (can work on other tasks)
-- ✅ Parallel component implementation possible
-- ✅ Clear validation criteria defined
+## Feature: OAuth Integration 
+**Current State**: First time implementing OAuth in this codebase
+**Recommended Path**: Local IDE Agent
+- ❌ OAuth spec needs refinement (learning phase)
+- ❌ Security patterns not yet established in primitives
+- ❌ Low tolerance for auth-related deviation
+- ✅ Want to learn OAuth nuances for this specific stack
 
-## Bug Fix: Security Vulnerability (Critical, Urgent)  
-**Recommended Path:** Hybrid (Async + Monitoring)
-- ✅ Immediate delegation for speed
-- ✅ Local monitoring for critical oversight
-- ✅ Manual validation gates for security review
+## Feature: CRUD API Endpoints (5th similar implementation)
+**Current State**: Well-established pattern, proven spec template
+**Recommended Path**: Async Delegation  
+- ✅ Refined CRUD spec template with validation criteria
+- ✅ Strong .instructions.md files for API patterns
+- ✅ High tolerance for minor implementation variations
+- ✅ Proven successful pattern (4 previous implementations)
+
+## Feature: Payment Integration (Critical, Learning Required)
+**Current State**: Important feature, want to understand implementation
+**Recommended Path**: Hybrid Monitoring
+- ✅ Can delegate for speed (business priority)
+- ❌ Low tolerance for deviation (financial operations)
+- ✅ Want to learn payment patterns for future features
+- ✅ Need to capture knowledge in primitives
 ```
 
-**⚠️ Checkpoint:** Execution path aligns with task characteristics and project constraints
-**📊 Success Metric:** Optimal resource allocation across sync/async execution contexts
+**⚠️ Checkpoint:** Path selection aligns with control preferences and specification maturity
+**📊 Success Metric:** Optimal balance between productivity and quality control
 
-### C. Async Delegation Workflows
-
-#### C.1. Single Agent Delegation
-**✅ Quick Actions:**
-- **VSCode Native**: Use `#copilotCodingAgent` in Ask chat mode for direct delegation
-- **GitHub MCP Server**: Leverage `assign_copilot_to_issue` tool from any MCP host application
-- **GitHub Web/Mobile**: Direct task assignment via Agents control plane
-
-**🔧 Implementation Pattern:**
-```markdown
-## Workflow: Single Feature Delegation
-
-1. **Spec Approval** → Validate `.spec.md` with human reviewer
-2. **Entry Point Selection**:
-   - VSCode: "#copilotCodingAgent implement the OAuth feature per specification"
-   - MCP: Use `assign_copilot_to_issue` tool with spec reference
-   - GitHub: Create task via Agents page with spec attachment
-3. **Handoff Confirmation** → Agent confirms scope understanding
-4. **Background Execution** → Agent works in cloud environment
-5. **Progress Monitoring** → Track via VSCode GitHub PR extension or GitHub Agents page
-```
-
-#### C.2. Parallel Multi-Agent Delegation (Spec-to-Issues Pattern)
-**✅ Quick Actions:**
-- **Spec Decomposition:** Break complex specifications into non-overlapping component issues
-- **Issue Generation:** Use GitHub MCP Server `create_issue` tool for systematic issue creation
-- **Parallel Assignment:** Delegate multiple issues to separate GitHub Coding Agents simultaneously
-- **Dependency Management:** Define clear integration points and sequencing
-
-> 💡 **Parallel Orchestration**: Large specifications can be decomposed into independent, parallel workstreams while maintaining architectural coherence through shared context references.
-
-**🔧 Implementation Pattern:**
-```markdown
-## Workflow: Spec-to-Multiple-Issues Delegation
-
-### Phase 1: Specification Decomposition
-1. **Component Analysis** → Identify independent, non-overlapping components
-2. **Dependency Mapping** → Define integration points and sequence constraints
-3. **Context Distribution** → Ensure each component references shared architecture decisions
-
-### Phase 2: Parallel Issue Generation
-Use GitHub MCP Server tools:
-- `create_issue(title: "OAuth Middleware Component", body: spec_section_1)`
-- `create_issue(title: "Token Service Component", body: spec_section_2)`  
-- `create_issue(title: "User Sync Service Component", body: spec_section_3)`
-
-### Phase 3: Parallel Agent Assignment
-- `assign_copilot_to_issue(issue_1)` → Agent A works on middleware
-- `assign_copilot_to_issue(issue_2)` → Agent B works on token service
-- `assign_copilot_to_issue(issue_3)` → Agent C works on user sync
-
-### Phase 4: Coordinated Integration
-- **Progress Monitoring** → Track all agents via GitHub Agents control plane
-- **Integration Testing** → Validate component interactions
-- **Conflict Resolution** → Address any overlapping changes
-```
-
-**Example: OAuth System Decomposition**
-```markdown
-# Parent Spec: OAuth 2.0 Authentication System
-
-## Component Breakdown for Parallel Delegation:
-
-### Issue 1: OAuth Middleware (`oauth-middleware`)
-**Scope:** Request interception, provider routing, error handling
-**Dependencies:** None (independent component)
-**Agent Focus:** Middleware patterns, HTTP handling
-**Estimated Effort:** 2-3 hours
-
-### Issue 2: Token Service (`token-service`)  
-**Scope:** JWT generation, validation, refresh logic
-**Dependencies:** None (independent component)
-**Agent Focus:** Cryptographic operations, token lifecycle
-**Estimated Effort:** 3-4 hours
-
-### Issue 3: User Profile Sync (`user-sync-service`)
-**Scope:** OAuth callback handling, user data synchronization
-**Dependencies:** Token Service (for user identification)
-**Agent Focus:** Data transformation, persistence patterns
-**Estimated Effort:** 2-3 hours
-
-### Integration Context References:
-- Architecture patterns: [Auth system design](./auth.memory.md#oauth-architecture)
-- API conventions: [REST standards](./api-sec.context.md#api-design)
-- Security requirements: [OAuth security checklist](./security.instructions.md#oauth)
-```
-
-**⚠️ Checkpoint:** Each component is independently implementable with clear integration contracts
-**📊 Success Metric:** Parallel agents complete without scope conflicts or integration failures
-
-### D. Progress Monitoring & Context Management
-
-#### D.1. Multi-Channel Progress Tracking
-**✅ Quick Actions:**
-- **VSCode Integration:** Monitor async tasks via GitHub Pull Request extension "Copilot on My Behalf" section
-- **GitHub Control Plane:** Centralized agent status tracking via Agents page
-- **Local Context Preservation:** Maintain project knowledge through session splitting and context handoff
-
-**🔧 Monitoring Capabilities:**
-```
-Progress Visibility Across Channels:
-├── VSCode GitHub PR Extension:
-│   ├── Real-time agent status indicators
-│   ├── Draft PR previews and progress logs
-│   └── Direct session viewing capabilities
-├── GitHub Agents Page:
-│   ├── Multi-agent orchestration dashboard  
-│   ├── Task status across all repositories
-│   └── Agent performance metrics
-└── Local Context Management:
-    ├── Session splitting for cognitive focus
-    ├── Context handoff between sync/async work
-    └── Knowledge preservation via .memory.md files
-```
-
-#### D.2. Context Engineering for Hybrid Workflows
+### A.2. Context Optimization for Hybrid Workflows
 **✅ Quick Actions:**
 - **Session Boundaries:** Separate planning, delegation, and integration phases
 - **Context Handoff:** Preserve knowledge across sync/async execution contexts
@@ -672,55 +573,112 @@ Progress Visibility Across Channels:
 **⚠️ Checkpoint:** Context preservation enables seamless hybrid sync/async workflows
 **📊 Success Metric:** No cognitive overhead when switching between local and async work contexts
 
-## III. EXECUTION STRATEGY (Local Implementation & Quality Control)
+### B. Async Delegation Workflows
 
-### A. Determinism Control for Local Development
+#### B.1. Single Agent Delegation
 **✅ Quick Actions:**
-- **High Determinism:** Detailed step-by-step instructions, smaller scope
-- **Medium Determinism:** Clear guidelines with some flexibility  
-- **Low Determinism:** High-level objectives, larger scope
+- **VSCode Native**: Use `#copilotCodingAgent` in Ask chat mode for direct delegation. You need the GitHub Pull Requests VSCode extension installed.
+- **GitHub MCP Server**: Leverage `create_issue` and `assign_copilot_to_issue` tools from any MCP host application
+- **GitHub Web/Mobile**: Direct task assignment via Agents control plane
 
-> 💡 **Semantic Precision Principle**: The more specific and unambiguous your Markdown prompts, the higher the statistical likelihood of reproducible outcomes across multiple agent interactions.
-
-**🔧 Tools & Files:**
-```
-Determinism Scale:
-├── Critical Systems: Detailed prompts, single-file scope
-├── Standard Features: Structured prompts, module scope  
-└── Exploratory Tasks: High-level prompts, component scope
-```
-
-**Example: High-Determinism Markdown Pattern**
+**🔧 Implementation Pattern:**
 ```markdown
-## Task: Implement JWT Authentication Middleware
+## Workflow: Single Feature Delegation
 
-### Exact Requirements
-1. Create file: `src/middleware/auth.ts`
-2. Export function: `authenticateJWT(req, res, next)`
-3. Use library: `jsonwebtoken@9.0.0`
-4. Secret from: `process.env.JWT_SECRET`
-
-### Deterministic Implementation Steps
-```typescript
-// Step 1: Import dependencies (exact syntax)
-import jwt from 'jsonwebtoken';
-import { Request, Response, NextFunction } from 'express';
-
-// Step 2: Interface definition (mandatory)
-interface AuthenticatedRequest extends Request {
-  user?: { id: string; email: string };
-}
+1. **Spec Approval** → Validate `.spec.md` with human reviewer
+2. **Entry Point Selection**:
+   - VSCode: "#copilotCodingAgent implement the OAuth feature per specification"
+   - MCP: Use `create_issue` and `assign_copilot_to_issue` tool with spec reference
+   - GitHub: the human needs to create task via Agents page with spec attachment
+3. **Handoff Confirmation** → Confirm with user and proceed
 ```
 
-### Validation Criteria
-- [ ] Handles malformed tokens with 401 status
-- [ ] Sets req.user on successful verification
-- [ ] Includes comprehensive error logging
+#### B.2. Parallel Multi-Agent Delegation (Spec-to-Issues Pattern)
+**✅ Quick Actions:**
+- **Spec Decomposition:** Break complex specifications into non-overlapping component issues
+- **Issue Generation:** Use GitHub MCP Server `create_issue` tool for systematic issue creation
+- **Parallel Assignment:** Delegate multiple issues to separate GitHub Coding Agents simultaneously with `assign_copilot_to_issue` GitHub MCP tool
 
-**⚠️ Checkpoint:** Determinism level matches task criticality
-**📊 Success Metric:** Predictable outcomes aligned with requirements
+> 💡 **Parallel Orchestration**: Large specifications can be decomposed into independent, parallel workstreams while maintaining architectural coherence through shared context references.
 
-### B. Async Agent Integration & Quality Gates
+**🔧 Implementation Pattern:**
+```markdown
+## Workflow: Spec-to-Multiple-Issues Delegation
+
+### Phase 1: Specification Decomposition
+1. **Component Analysis** → Identify independent, non-overlapping components
+2. **Dependency Mapping** → Define integration points and sequence constraints
+3. **Context Distribution** → Ensure each component references shared architecture decisions
+4. **Implementation dependencies** → Ensure issues have an implementation order based on mutual dependencies by creating sub-issue hierarchies
+
+### Phase 2: Parallel Issue Generation
+Use GitHub MCP Server tools:
+- `create_issue(title: "OAuth Middleware Component", body: spec_section_1)`
+- `create_issue(title: "Token Service Component", body: spec_section_2)`  
+- `create_issue(title: "User Sync Service Component", body: spec_section_3)`
+
+### Phase 3: Parallel Agent Assignment
+- `assign_copilot_to_issue(issue_1)` → Agent A works on middleware
+- `assign_copilot_to_issue(issue_2)` → Agent B works on token service
+- `assign_copilot_to_issue(issue_3)` → Agent C works on user sync
+
+### Phase 4: Coordinated Integration
+- **Progress Monitoring** → Track all agents via GitHub Agents control plane
+- **Integration Testing** → Validate component interactions
+- **Conflict Resolution** → Address any overlapping changes
+```
+
+**Example: OAuth System Decomposition**
+```markdown
+# Parent Spec: OAuth 2.0 Authentication System
+
+## Component Breakdown for Parallel Delegation:
+
+### Issue 1: OAuth Middleware (`oauth-middleware`)
+**Scope:** Request interception, provider routing, error handling
+**Dependencies:** None (independent component)
+**Agent Focus:** Middleware patterns, HTTP handling
+
+### Issue 2: Token Service (`token-service`)  
+**Scope:** JWT generation, validation, refresh logic
+**Dependencies:** None (independent component)
+**Agent Focus:** Cryptographic operations, token lifecycle
+
+### Issue 3: User Profile Sync (`user-sync-service`)
+**Scope:** OAuth callback handling, user data synchronization
+**Dependencies:** Token Service (for user identification)
+**Agent Focus:** Data transformation, persistence patterns
+
+### Integration Context References:
+- Architecture patterns: [Auth system design](./auth.memory.md#oauth-architecture)
+- API conventions: [REST standards](./api-sec.context.md#api-design)
+- Security requirements: [OAuth security checklist](./security.instructions.md#oauth)
+```
+
+**⚠️ Checkpoint:** Each component is independently implementable with clear integration contracts
+**📊 Success Metric:** Parallel agents complete without scope conflicts or integration failures
+
+### C. Progress Monitoring & Async Integration
+
+#### C.1. Multi-Channel Progress Tracking
+**✅ Quick Actions:**
+- **VSCode Integration:** Monitor async tasks via GitHub Pull Request extension "Copilot on My Behalf" section
+- **GitHub Control Plane:** Centralized agent status tracking via Agents page
+
+**🔧 Monitoring Capabilities:**
+```
+Progress Visibility Across Channels:
+├── VSCode GitHub PR Extension:
+│   ├── Real-time agent status indicators
+│   ├── Draft PR previews and progress logs
+│   └── Direct session viewing capabilities
+└── GitHub Agents Page:
+    ├── Multi-agent orchestration dashboard  
+    ├── Task status across all repositories
+    └── Agent performance metrics
+```
+
+#### C.2. Async Agent Quality Gates
 **✅ Quick Actions:**
 1. **Draft PR Review:** Systematic review of async agent outputs before merging
 2. **Integration Testing:** Validate component interactions from parallel async work
@@ -783,40 +741,160 @@ interface AuthenticatedRequest extends Request {
 **⚠️ Checkpoint:** All async outputs meet quality standards before integration
 **📊 Success Metric:** Zero production issues from async agent implementations
 
-## IV. SCALE & GOVERNANCE (Team Adoption)
+## III. TEAM ADOPTION & GOVERNANCE
 
-### A. Human Validation Gates
+## III. TEAM ADOPTION & GOVERNANCE
+
+### A. Human Validation Gates & Review Processes
 **✅ Quick Actions:**
 - **Architecture Decisions:** Manual approval before major changes
 - **Security Reviews:** Human validation for security-critical code
 - **Deployment Gates:** Manual verification before production releases
 
-**🔧 Tools & Files:**
-- Validation prompts: "Summarize changes and wait for approval"
-- Review checklists embedded in prompt files
-- Automated pause points in workflows
+> 💡 **Strategic Validation**: Implement validation gates at critical decision points to maintain quality while leveraging agent productivity gains.
 
-### B. Multi-task Orchestration
+**🔧 Validation Framework:**
+```markdown
+## Validation Gate Types
+
+### 1. Architecture Gates
+- **Trigger**: New system designs, major refactoring
+- **Process**: Technical lead review + team discussion
+- **Criteria**: Alignment with system architecture, scalability implications
+- **Example**: "Review OAuth system design before implementation delegation"
+
+### 2. Security Gates  
+- **Trigger**: Authentication, authorization, data handling changes
+- **Process**: Security specialist review + automated scanning
+- **Criteria**: OWASP compliance, zero critical vulnerabilities
+- **Example**: "Security review required before merging auth components"
+
+### 3. Quality Gates
+- **Trigger**: Core business logic, API contracts, database schemas
+- **Process**: Code review + integration testing + performance validation
+- **Criteria**: >90% test coverage, performance benchmarks met
+- **Example**: "Quality gate for payment processing implementation"
+```
+
+**Implementation in Agent Primitives:**
+- **Prompt Files**: Include explicit "STOP and get approval" checkpoints
+- **Instructions**: Embed validation requirements in domain-specific guidance
+- **Specifications**: Define approval criteria in implementation requirements
+
+### B. Multi-Agent Orchestration & Dependency Management
 **✅ Quick Actions:**
 - **Parallel Delegation:** Multiple [GitHub Coding Agents](https://docs.github.com/en/copilot/how-tos/agents/coding-agent/enabling-copilot-coding-agent) on different components
 - **Dependency Management:** Clear task sequencing and handoff points
 - **Progress Tracking:** Centralized view of distributed agent work
 
-**🔧 Tools & Files:**
-- Master task breakdown with dependency graphs
-- Standardized progress reporting from agents
-- Integration testing between agent-delivered components
+> 💡 **Orchestration Strategy**: Manage complex projects through systematic agent coordination while maintaining architectural coherence.
 
-### C. Knowledge Sharing Patterns
+**🔧 Orchestration Patterns:**
+```markdown
+## Multi-Agent Project Management
+
+### 1. Component-Based Parallelization
+**Pattern**: Divide system into independent, loosely-coupled components
+**Example**: Frontend/Backend/Database agents working simultaneously
+**Coordination**: Shared context files + integration testing phases
+
+### 2. Sequential Pipeline Delegation  
+**Pattern**: Chain dependent tasks across multiple agents
+**Example**: Design → Implementation → Testing → Documentation agents
+**Coordination**: Handoff specifications + validation checkpoints
+
+### 3. Hybrid Orchestration
+**Pattern**: Combine parallel and sequential patterns based on dependencies
+**Example**: Parallel component development → Sequential integration → Parallel testing
+**Coordination**: Master project specification + phase-based coordination
+```
+
+**🔧 Dependency Management Tools:**
+- **Master Task Breakdown**: Dependency graphs with clear sequencing
+- **Standardized Progress Reporting**: Consistent status updates from agents
+- **Integration Testing Protocols**: Automated validation between agent-delivered components
+- **Conflict Resolution Processes**: Systematic handling of overlapping changes
+
+### C. Knowledge Sharing & Team Intelligence Patterns
 **✅ Quick Actions:**
 - **Team Instructions:** Shared `.instructions.md` files in repositories
 - **Prompt Libraries:** Reusable prompts across team members
 - **Best Practices:** Documented patterns and anti-patterns
+- **Knowledge Accumulation:** Systematic capture of successful patterns
 
-**🔧 Tools & Files:**
-- Team-wide instruction files in shared repositories
-- Prompt file versioning and change management
-- Regular retrospectives on agent effectiveness
+> 💡 **Compound Team Intelligence**: Transform individual agent experiences into shared team knowledge through systematic documentation and refinement of Agent Primitives.
+
+**🔧 Knowledge Management Framework:**
+```markdown
+## Team Intelligence Accumulation
+
+### 1. Shared Primitive Libraries
+**Location**: `.github/` directories in team repositories
+**Contents**: 
+- Standardized `.instructions.md` files for common domains
+- Proven `.prompt.md` templates for recurring tasks
+- Validated `.spec.md` templates for feature types
+- Team `.memory.md` files documenting successful patterns
+
+### 2. Cross-Project Learning
+**Process**: Regular primitive review and enhancement sessions
+**Frequency**: Monthly team retrospectives on agent effectiveness
+**Outcomes**: 
+- Updated instruction files based on project outcomes
+- Enhanced prompt templates with discovered edge cases
+- Refined specification templates with validation improvements
+
+### 3. Knowledge Transfer Protocols
+**New Team Members**: Onboarding with primitive library overview
+**Project Handoffs**: Documentation of project-specific primitives
+**Best Practice Sharing**: Internal documentation of successful patterns
+```
+
+**Implementation Examples:**
+```
+Team Knowledge Structure:
+├── .github/team-instructions/
+│   ├── security.instructions.md      # Cross-project security patterns
+│   ├── testing.instructions.md       # Standardized testing approaches
+│   └── api-design.instructions.md    # Team API conventions
+├── .github/team-prompts/
+│   ├── code-review.prompt.md         # Standardized review process
+│   ├── bug-investigation.prompt.md   # Debugging methodology
+│   └── feature-implementation.prompt.md # Implementation workflow
+└── .github/team-memory/
+    ├── successful-patterns.memory.md # What works well
+    ├── anti-patterns.memory.md       # What to avoid
+    └── tool-configurations.memory.md # Effective tool setups
+```
+
+### D. Governance & Compliance Framework
+**✅ Quick Actions:**
+- **Policy Enforcement:** Embed compliance requirements in Agent Primitives
+- **Audit Trails:** Maintain records of agent decisions and human approvals
+- **Risk Management:** Define risk tolerance levels for different agent tasks
+
+**🔧 Governance Implementation:**
+```markdown
+## Compliance Integration
+
+### 1. Policy as Code
+- **Instructions Files**: Embed regulatory requirements in domain instructions
+- **Validation Gates**: Automatic compliance checking in prompt workflows
+- **Audit Integration**: Connect agent outputs to compliance tracking systems
+
+### 2. Risk-Based Agent Boundaries
+- **Low Risk**: Full agent autonomy with post-implementation review
+- **Medium Risk**: Agent implementation with mandatory human validation
+- **High Risk**: Human-guided agent assistance only, no autonomous implementation
+
+### 3. Accountability Framework
+- **Agent Decision Tracking**: Log all agent choices and reasoning
+- **Human Override Records**: Document when and why humans intervene
+- **Outcome Analysis**: Regular review of agent vs. human decision quality
+```
+
+**⚠️ Checkpoint:** Team governance scales agent benefits while maintaining quality and compliance standards
+**📊 Success Metric:** Consistent high-quality outcomes across team members and projects
 
 ---
 

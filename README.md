@@ -20,10 +20,23 @@
 - **Validation Gates**: "Stop and get user approval" - Human oversight at critical decision points
 
 **Quick Win Example:**
+
+Instead of: `Find and fix the bug`, use:
+
 ```markdown
-Instead of: "Fix the bug"
-Use: "Review the error logs in `./logs/error.log` and identify the root cause. 
-List 3 potential solutions with trade-offs before implementing any changes."
+You are an expert debugger, specialized in debugging complex programming issues. 
+
+You are particularly great at debugging this project, which architecture and quirks can be consulted in the [architecture document](./docs/architecture.md). 
+
+Follow these steps:
+
+1. Review the [error logs](./logs/error.log) and identify the root cause. 
+
+2. Use the `azmcp-monitor-log-query` MCP tool to retrieve infrastructure logs from Azure.  
+
+3. Once you find the root cause, think about 3 potential solutions with trade-offs
+
+4. Present your root cause analysis and suggested solutions with trade-offs to the user and seek validation before proceeding with fixes - do not change any files.
 ```
 
 ### Layer 2: Agent Primitives  
@@ -37,14 +50,14 @@ List 3 potential solutions with trade-offs before implementing any changes."
 - **Agent Memory Files**: Preserve knowledge across sessions through `.memory.md` files
 - **Context Helper Files**: Optimize information retrieval through `.context.md` files
 
-> 💡 **Native VSCode Support**: While VSCode natively supports `.instructions.md`, `.prompt.md`, and `.chatmode.md` files, this framework extends the paradigm with `.spec.md`, `.memory.md`, and `.context.md` patterns that represent frontier concepts in AI Native Development.
-
 **The Transformation Effect:** Agent Primitives are the core configurable elements that AI Native Developers iteratively refine to ensure reliable outcomes through systematic prompt engineering.
 
 **Example Transformation:**
 - **Technique**: "Implement secure user authentication system" (Markdown Prompt Engineering)
 - **Primitives**: Developer selects `backend-dev` chat mode → Auto-triggers `security.instructions.md` via `applyTo: "auth/**"` → Loads context from `[Previous auth patterns](.memory.md#security)` and `[API Security Standards](api-security.context.md#rest)` → Generates `user-auth.spec.md` using structured templates → Executes `implement-from-spec.prompt.md` workflow with validation gates (Agent Primitives)
 - **Outcome**: Developer-driven knowledge accumulation where you capture implementation failures in `.memory.md`, document successful patterns in `.instructions.md`, and refine workflows in `.prompt.md` files—creating compound intelligence that improves through your iterative refinement (Context Engineering)
+
+> 💡 **Native VSCode Support**: While VSCode natively supports `.instructions.md`, `.prompt.md`, and `.chatmode.md` files, this framework extends the paradigm with `.spec.md`, `.memory.md`, and `.context.md` patterns that represent frontier concepts in AI Native Development.
 
 ### Layer 3: Context Engineering
 **The Strategic Framework:** Systematic management of LLM context windows to maximize agent performance within memory constraints.
@@ -68,7 +81,7 @@ List 3 potential solutions with trade-offs before implementing any changes."
 **Implementation Through Primitives:** Each context engineering technique uses Agent Primitives strategically, creating compound benefits for cognitive performance.
 
 
-### The Synergy Effect
+### The AI Native Development Framework
 
 ```mermaid
 flowchart TD

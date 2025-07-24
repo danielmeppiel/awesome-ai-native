@@ -1,0 +1,1 @@
+Always validate approach with the user before changing any files. You MUST get explicit consent before modifying or creating files in the repository. The user will likely iterate with you and your approach until validating the final implementation.

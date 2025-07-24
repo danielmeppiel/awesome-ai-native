@@ -1,6 +1,6 @@
 # 🎯 GitHub Copilot Mastery: AI Native Development Guide
 
-*Maximize results with [GitHub Copilot](https://docs.github.com/en/copilot) and Coding Agents through systematic [VSCode customization primitives](https://code.visualstudio.com/docs/copilot/copilot-customization) and Prompt Engineering in Markdown*
+*Maximize results with [GitHub Copilot](https://docs.github.com/en/copilot) and Coding Agents through systematic [Agent Primitives](https://code.visualstudio.com/docs/copilot/copilot-customization) and Prompt Engineering in Markdown*
 
 > 🌟 **Community Resources:** Explore the [Awesome GitHub Copilot](https://github.com/github/awesome-copilot) repository for hundreds of community-contributed instructions, prompts, and chat modes across all major languages and frameworks. This catalog provides ready-to-use primitives that demonstrate advanced customization patterns and best practices.
 
@@ -69,13 +69,13 @@ List 3 potential solutions with trade-offs before implementing any changes."
 
 ```mermaid
 flowchart TD
-    A["🎯 Markdown Prompt<br/>Engineering"] 
+    A["🔧 Markdown Prompt<br/>Engineering"] 
     
     subgraph B ["⚙️ Agent Primitives"]
         subgraph B_ROW1 [" "]
-            B1["📋 Instructions"]
+            B1["� Instructions"]
             B2["💬 Chat Modes"] 
-            B3["📝 Workflows"]
+            B3["⚡ Workflows"]
         end
         subgraph B_ROW2 [" "]
             B4["📋 Specifications"]
@@ -84,7 +84,7 @@ flowchart TD
         end
     end
     
-    C["🧠 Context Engineering"]
+    C["🎯 Context Engineering"]
     D["🚀 Reliable AI Results"]
     
     A -->|"creates effective"| B

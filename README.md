@@ -24,7 +24,7 @@ Think of AI Native Development like **professional software development practice
 - **Agent Primitives** = Reusable libraries and configurations  
 - **Context Engineering** = Memory and performance optimization
 
-*If this resonates, continue reading. If you prefer hands-on learning, jump to the [Quick Start Checklist](#-quick-start-checklist).*
+*If this resonates, continue reading. If you prefer hands-on learning, jump to the [Quick Start Checklist](#-quick-start-checklist-1).*
 
 ## 📖 Table of Contents
 
@@ -64,10 +64,10 @@ Think of AI Native Development like **professional software development practice
 - [C. Knowledge Sharing & Team Intelligence Patterns](#c-knowledge-sharing--team-intelligence-patterns)
 - [D. Governance & Compliance Framework](#d-governance--compliance-framework)
 
-### 🚀 [Quick Start Checklist](#-quick-start-checklist)
-### 📈 [Mastery Progression](#-mastery-progression)
-### 🎯 [The Paradigm Shift](#-the-paradigm-shift)
-### 📚 [Documentation References](#-documentation-references)
+### 🚀 [Quick Start Checklist](#-quick-start-checklist-1)
+### 📈 [Mastery Progression](#-mastery-progression-1)
+### 🎯 [The Paradigm Shift](#-the-paradigm-shift-1)
+### 📚 [Documentation References](#-documentation-references-1)
 
 ---
 

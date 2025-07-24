@@ -140,26 +140,30 @@ Developer: "@backend-dev I need to add OAuth authentication"
 > **Note:** Currently, VSCode chat mode switching requires using the Command Palette (`Cmd/Ctrl+Shift+P` → "Chat: Switch Chat Mode"), keyboard shortcuts, or the chat view dropdown. The `@backend-dev` syntax represents ideal UX that we would like to find in future versions.
 
 **What Happens Behind the Scenes:**
-- `backend-dev.chatmode.md` activates with security-focused tool boundaries
+- `backend-dev.chatmode.md` activates with security-focused MCP tool boundaries
 - Automatically triggers `security.instructions.md` via `applyTo: "auth/**"` pattern
 - VSCode loads domain-specific guidance without polluting global context
 
 ### Step 2: Intelligent Context Loading via Markdown Links
 **From `security.instructions.md`:**
 ```markdown
+---
+applyTo: "./auth/**"
+---
+
 ## Context Loading
 Before implementing authentication, review:
-- [Previous security decisions](./.memory.md#auth-patterns)
-- [API security standards](./.context.md#security-requirements)
-- [Team authentication patterns](./.context.md#oauth-implementations)
+- [Previous security decisions](./auth.memory.md#auth-patterns)
+- [API security standards](./api-sec.context.md#security-requirements)
+- [Team authentication patterns](./team-auth.context.md#oauth-implementations)
 
 ## Security Requirements
 - Use industry-standard OAuth 2.0 flow
 - Implement proper token validation
-- <use-mcp-tool name="security-scanner">
+- Use the MCP tool `security-scanner` to ensure your implementation is secure
 ```
 
-**Intelligence Layer:** Links automatically pull in relevant project history and standards, creating contextually-aware responses.
+**Intelligence Layer:** Markdown hyperlinks automatically pull in relevant project history and standards, creating contextually-aware responses.
 
 ### Step 3: Spec-First Planning with Template Structure
 **Generated:** `features/auth/oauth-integration.spec.md`
@@ -184,8 +188,8 @@ Implement OAuth 2.0 authorization code flow with JWT token management.
 - `POST /auth/refresh` - Refreshes JWT tokens
 
 ### Context References
-- Security patterns: [View previous implementations](./.memory.md#oauth-v2)
-- API standards: [REST conventions](./.context.md#api-design)
+- Security patterns: [View previous implementations](./auth.memory.md#oauth-v2)
+- API standards: [REST conventions](./api-sec.context.md#api-design)
 
 ### Validation Criteria
 - [ ] Handles OAuth errors with proper redirects
@@ -200,15 +204,15 @@ Implement OAuth 2.0 authorization code flow with JWT token management.
 ```markdown
 ---
 mode: agent
-tools: ["file-search", "semantic-search", "test-runner"]
-description: "Spec-to-implementation workflow with validation gates"
+tools: ['file-search', 'semantic-search', 'test-runner']
+description: 'Spec-to-implementation workflow with validation gates'
 ---
 # Spec-to-Implementation Workflow
 
 ## Context Loading Phase
 1. Load specification: [${input:specFile}]
-2. Review security patterns: [Security context](./.context.md#security)
-3. Check similar implementations using semantic search for "oauth authentication"
+2. Review API security patterns: [Security context](./api-sec.context.md#security)
+3. Check similar implementations using [the authentication pattern memory](./auth.memory.md#oauth-v2)
 
 ## Implementation Phase  
 Generate implementation following specification requirements:
@@ -218,17 +222,16 @@ Generate implementation following specification requirements:
 - [ ] Complete test coverage including edge cases
 
 ## Human Validation Gate
-🚨 **STOP**: Present implementation plan before code generation.
-Required approvals:
+🚨 **STOP**: Present specific implementation plan with short code snippets before code generation.
+Required approvals you must get from the user:
 - [ ] Security architecture review
 - [ ] API contract validation  
 - [ ] Testing strategy confirmation
 
 ## Post-Implementation Learning
 After completion, update your primitives based on outcomes:
-- Add successful patterns to `.memory.md`
-- Enhance instructions based on discovered edge cases
-- Refine prompt workflow based on validation feedback
+- Propose to add successful patterns to [auth.memory.md](./auth.memory.md#oauth-v2)
+- Suggest security instruction enhancements to the user for [security.instructions.md](./.github/instructions/security.instructions.md) based on discovered edge cases 
 ```
 
 ### Step 5: Developer-Driven Intelligence Refinement

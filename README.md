@@ -60,7 +60,7 @@ Think of AI Native Development like **professional software development practice
 
 ### 👥 [III. Team Adoption & Governance](#iii-team-adoption--governance)
 - [A. Human Validation Gates & Review Processes](#a-human-validation-gates--review-processes)
-- [B. Multi-Agent Orchestration & Dependency Management](#b-multi-agent-orchestration--dependency-management)
+- [B. Team-Scale Multi-Agent Coordination](#b-team-scale-multi-agent-coordination)
 - [C. Knowledge Sharing & Team Intelligence Patterns](#c-knowledge-sharing--team-intelligence-patterns)
 - [D. Governance & Compliance Framework](#d-governance--compliance-framework)
 
@@ -565,9 +565,9 @@ Control Preference → Recommended Path:
 
 #### B.1. Single Agent Delegation
 **✅ Quick Actions:**
-- **VSCode Native**: Use `#copilotCodingAgent` in Ask chat mode for direct delegation. You need the GitHub Pull Requests VSCode extension installed.
-- **GitHub MCP Server**: Leverage `create_issue` and `assign_copilot_to_issue` tools from any MCP host application
-- **GitHub Web/Mobile**: Direct task assignment via Agents control plane
+- **VSCode Native**: Use [`#copilotCodingAgent`](https://github.blog/changelog/2025-07-14-start-and-track-github-copilot-coding-agent-sessions-from-visual-studio-code/) in Ask chat mode for direct delegation. You need the [GitHub Pull Requests VSCode extension](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github) installed.
+- **GitHub MCP Server**: Leverage `create_issue` and `assign_copilot_to_issue` [GitHub MCP Server tools](https://github.com/github/github-mcp-server?tab=readme-ov-file#tools) from any MCP host application
+- **GitHub Web/Mobile**: Direct task assignment via [Agents control plane](https://github.com/copilot/agents)
 
 **🔧 Implementation Pattern:**
 ```markdown
@@ -816,39 +816,74 @@ While individual mastery of Agent Primitives creates immediate productivity gain
 - **Instructions**: Embed validation requirements in domain-specific guidance
 - **Specifications**: Define approval criteria in implementation requirements
 
-### B. Multi-Agent Orchestration & Dependency Management
+### B. Team-Scale Multi-Agent Coordination
 **✅ Quick Actions:**
-- **Parallel Delegation:** Multiple [GitHub Coding Agents](https://docs.github.com/en/copilot/how-tos/agents/coding-agent/enabling-copilot-coding-agent) on different components
-- **Dependency Management:** Clear task sequencing and handoff points
-- **Progress Tracking:** Centralized view of distributed agent work
+- **Team Orchestration Standards:** Establish shared patterns for multi-agent project management
+- **Cross-Developer Coordination:** Manage dependencies when multiple team members use async delegation
+- **Repository-Level Governance:** Scale the [individual orchestration patterns from Section II](#ii-workflow-orchestration-planning-to-execution-bridge) across teams and shared codebases
 
-> 💡 **Orchestration Strategy**: Manage complex projects through systematic agent coordination while maintaining architectural coherence.
+> 💡 **Team Scaling Strategy**: Build on individual orchestration mastery (covered in [Section II](#ii-workflow-orchestration-planning-to-execution-bridge)) to coordinate multiple developers leveraging async agents simultaneously across shared codebases and complex projects.
 
-**🔧 Orchestration Patterns:**
+This section assumes mastery of individual orchestration patterns from [Section II](#ii-workflow-orchestration-planning-to-execution-bridge) and focuses on **team-scale** coordination challenges that emerge when multiple developers apply these techniques simultaneously.
+
+**🔧 Team-Specific Orchestration Concerns:**
+
+#### 1. Shared Repository Coordination
+**Challenge:** Multiple developers delegating to GitHub Coding Agents on the same repository simultaneously
+**Individual Pattern:** [Single Agent Delegation (Section II.B.1)](#b1-single-agent-delegation) works well for solo developers
+**Team Extension:**
+- **Repository-Level Agent Scheduling:** Prevent overlapping agent work through shared task assignment protocols
+- **Branch Coordination:** Establish naming conventions and merge strategies for parallel agent-generated PRs
+- **Conflict Prevention:** Define component ownership boundaries before [Parallel Multi-Agent Delegation (Section II.B.2)](#b2-parallel-multi-agent-delegation-spec-to-issues-pattern)
+
+**Implementation Pattern:**
 ```markdown
-## Multi-Agent Project Management
+## Team Repository Coordination Protocol
 
-### 1. Component-Based Parallelization
-**Pattern**: Divide system into independent, loosely-coupled components
-**Example**: Frontend/Backend/Database agents working simultaneously
-**Coordination**: Shared context files + integration testing phases
+### 1. Standard Git Workflow Integration
+- **Branch Strategy:** Use feature branches for agent-generated work following team's existing Git workflow
+- **Component Ownership:** Leverage existing team responsibility areas and code ownership (CODEOWNERS file)
+- **Conflict Resolution:** Standard Git/GitHub conflict resolution through Pull Request reviews
 
-### 2. Sequential Pipeline Delegation  
-**Pattern**: Chain dependent tasks across multiple agents
-**Example**: Design → Implementation → Testing → Documentation agents
-**Coordination**: Handoff specifications + validation checkpoints
-
-### 3. Hybrid Orchestration
-**Pattern**: Combine parallel and sequential patterns based on dependencies
-**Example**: Parallel component development → Sequential integration → Parallel testing
-**Coordination**: Master project specification + phase-based coordination
+### 2. Agent Work Transparency
+- **PR Labels:** Use consistent labels like `agent-generated`, `async-delegation` for tracking
+- **Commit Messages:** Clear commit message patterns indicating agent vs. human work
+- **Documentation:** Reference [Section II.B.2 decomposition patterns](#b2-parallel-multi-agent-delegation-spec-to-issues-pattern) for systematic component breakdown
 ```
 
-**🔧 Dependency Management Tools:**
-- **Master Task Breakdown**: Dependency graphs with clear sequencing
-- **Standardized Progress Reporting**: Consistent status updates from agents
-- **Integration Testing Protocols**: Automated validation between agent-delivered components
-- **Conflict Resolution Processes**: Systematic handling of overlapping changes
+#### 2. Cross-Developer Dependencies
+**Challenge:** Developer A's async agent work blocks Developer B's implementation timeline  
+**Individual Pattern:** [Progress Monitoring (Section II.C.1)](#c1-multi-channel-progress-tracking) provides visibility for individual workflows
+**Team Extension:**
+- **GitHub Issues & Epics:** Use standard GitHub project management with linked issues for dependency tracking
+- **Sub-Issue Hierarchies:** Break down complex features into dependent sub-issues with clear completion criteria
+- **GitHub Projects:** Leverage GitHub Projects boards for visual dependency tracking and progress monitoring
+
+**Implementation Pattern:**
+```markdown
+## Standard GitHub Dependency Management
+
+### 1. Epic-to-Issue Breakdown
+- **Epic Creation:** Create GitHub Issue for major feature (e.g., "OAuth Authentication System")
+- **Sub-Issue Creation:** Break epic into dependent sub-issues using GitHub's task lists or linked issues
+- **Agent Assignment:** Assign GitHub Coding Agents to individual sub-issues using [Section II.B.2 delegation patterns](#b2-parallel-multi-agent-delegation-spec-to-issues-pattern)
+
+### 2. Dependency Visibility
+- **GitHub Projects:** Use GitHub Projects to visualize dependencies and progress across team members
+- **Issue Labels:** Standard labels like `blocked-by`, `depends-on` for clear dependency marking
+- **Automated Notifications:** GitHub's built-in notifications when blocking issues are resolved
+```
+
+#### 3. Team Knowledge Synchronization  
+**Challenge:** Individual agent learnings and [Context Engineering improvements](#layer-3-context-engineering) not shared across team members
+**Individual Pattern:** [Developer-Driven Intelligence Refinement (Primitives in Action, Step 5)](#step-5-developer-driven-intelligence-refinement) builds personal agent effectiveness
+**Team Extension:**
+- **Centralized Primitive Libraries:** Shared `.instructions.md`, `.prompt.md`, and `.memory.md` files across team repositories
+- **Cross-Project Learning:** Regular knowledge sharing sessions to propagate successful agent patterns
+- **Team Intelligence Reviews:** Systematic capture and distribution of agent effectiveness discoveries
+
+**For detailed implementation of team knowledge patterns, see [Section III.C: Knowledge Sharing & Team Intelligence Patterns](#c-knowledge-sharing--team-intelligence-patterns).**
+
 
 ### C. Knowledge Sharing & Team Intelligence Patterns
 **✅ Quick Actions:**
@@ -883,23 +918,6 @@ While individual mastery of Agent Primitives creates immediate productivity gain
 **New Team Members**: Onboarding with primitive library overview
 **Project Handoffs**: Documentation of project-specific primitives
 **Best Practice Sharing**: Internal documentation of successful patterns
-```
-
-**Implementation Examples:**
-```
-Team Knowledge Structure:
-├── .github/team-instructions/
-│   ├── security.instructions.md      # Cross-project security patterns
-│   ├── testing.instructions.md       # Standardized testing approaches
-│   └── api-design.instructions.md    # Team API conventions
-├── .github/team-prompts/
-│   ├── code-review.prompt.md         # Standardized review process
-│   ├── bug-investigation.prompt.md   # Debugging methodology
-│   └── feature-implementation.prompt.md # Implementation workflow
-└── .github/team-memory/
-    ├── successful-patterns.memory.md # What works well
-    ├── anti-patterns.memory.md       # What to avoid
-    └── tool-configurations.memory.md # Effective tool setups
 ```
 
 ### D. Governance & Compliance Framework

@@ -264,17 +264,16 @@ After completion, update your primitives based on outcomes:
 
 ### A. Instructions Architecture
 **✅ Quick Actions:**
-- Create the general [`copilot-instructions.md`](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilot-instructionsmd-file) file for the repository with common rules
-- Create modular [`.instructions.md` files](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-instructionsmd-files) by domain (frontend, backend, testing, docs, specs...)
+- Create the general [`copilot-instructions.md`](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilotinstructionsmd-file) file in the `.github` folder for the repository with common rules
+- Create modular [`.instructions.md` files](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-instructionsmd-files) in the `.github/instructions/` folder by domain (frontend, backend, testing, docs, specs...)
 - Use [`applyTo: "**/*.{js,ts...}"`](https://code.visualstudio.com/docs/copilot/copilot-customization#_instructions-file-structure) patterns for selective application
-- Store workspace instructions in `.github/instructions/`
 
 > 💡 **Context Engineering in Action**: Modular instructions preserve context space by loading only relevant guidelines when working on specific file types, leaving maximum buffer for code understanding.
 
 **🔧 Tools & Files:**
 ```
 .github/
-├── copilot-instructions.md          # Global workspace rules
+├── copilot-instructions.md          # Global repository rules
 └── instructions/
     ├── frontend.instructions.md     # applyTo: "**/*.{jsx,tsx,css}"
     ├── backend.instructions.md      # applyTo: "**/*.{py,go,java}"
@@ -309,9 +308,10 @@ Generate code with:
 
 ### B. Chat Modes Configuration
 **✅ Quick Actions:**
-- Define domain-specific [custom chat modes](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-chat-modes) with MCP tool boundaries
+- Define domain-specific [custom chat modes](https://code.visualstudio.com/docs/copilot/chat/chat-modes) with MCP tool boundaries
 - Encapsulate tech stack knowledge and guidelines per mode
-- Configure secure [MCP tool access](https://docs.github.com/en/copilot/how-tos/agents/coding-agent/extending-copilot-coding-agent-with-the-model-context-protocol-mcp) to prevent cross-domain security breaches
+- Define the most appropriate [LLM model](https://code.visualstudio.com/docs/copilot/chat/chat-modes#_chat-mode-file-example) for your chat mode like `Claude Sonnet 4`
+- Configure secure [MCP tool access](https://code.visualstudio.com/docs/copilot/chat/chat-modes#_chat-mode-file-example) to prevent cross-domain security breaches
 
 > 💡 **Security Through MCP Tool Boundaries**: Each chat mode receives only the specific MCP tools needed for their domain - preventing dangerous access escalation and cross-contamination. Like professional licensing, a planning mode can't execute destructive commands, and a frontend mode can't access backend databases.
 
@@ -341,6 +341,8 @@ You are a backend development specialist focused on secure API development, data
 - Database schema design and optimization  
 - Authentication and authorization systems
 - Server security and performance optimization
+
+You master the backend of this project thanks to you having read all [the backend docs](../../docs/backend).
 
 ## Tool Boundaries
 - **CAN**: Modify backend code, run server commands, execute tests

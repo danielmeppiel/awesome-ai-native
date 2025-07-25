@@ -100,6 +100,8 @@ LLMs have finite attention spans, limited memory (context windows) and are forge
 
 ## The AI Native Development Framework
 
+<div class="diagram-container" markdown="1">
+
 ```mermaid
 flowchart TD
     A["🔧 Markdown Prompt<br/>Engineering"] 
@@ -142,6 +144,8 @@ flowchart TD
     %% High contrast container styling for Agent Primitives with spacing
     style B fill:#f3f4f6,stroke:#6b7280,stroke-width:2px,color:#1f2937,font-size:13px,font-weight:bold,margin-top:10px,padding-top:15px
 ```
+
+</div>
 
 **The Formula: Markdown Prompt Engineering + Agent Primitives = Context Engineering**
 

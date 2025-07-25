@@ -1,8 +1,6 @@
 ---
 ---
 
-@import "minima";
-
 /* GitHub Primer-Inspired Color Palette & Variables */
 :root {
   --primary-color: #0969da;
@@ -20,6 +18,500 @@
   --border-color: #d0d7de;
   --border-light: #d8dee4;
   --border-muted: #e1e4e8;
+}
+
+/* Base Reset & Typography */
+* {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  color: var(--text-primary);
+  line-height: 1.6;
+  background-color: var(--bg-secondary);
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* Layout */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Content spacing improvements */
+.page-content {
+  background: var(--bg-primary);
+  margin-top: 0;
+  padding: 30px 0;
+  flex: 1;
+  
+  .wrapper {
+    padding-top: 24px;
+    padding-bottom: 40px;
+  }
+  
+  p {
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+  
+  blockquote {
+    margin: 20px 0;
+  }
+  
+  section, .section {
+    margin-bottom: 32px;
+  }
+}
+
+/* Header Styling */
+.site-header {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+  position: relative;
+  min-height: 56px;
+}
+
+.site-title {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 24px;
+  float: left;
+  text-decoration: none;
+  line-height: 56px;
+}
+
+.site-title:visited {
+  color: var(--text-primary);
+}
+
+.site-nav {
+  float: right;
+  line-height: 56px;
+  
+  .nav-trigger {
+    display: none;
+  }
+  
+  .menu-icon {
+    display: none;
+  }
+  
+  .trigger {
+    clear: none;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.site-nav .page-link {
+  color: var(--text-secondary);
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: inline-block;
+  margin-left: 4px;
+  text-decoration: none;
+}
+
+.site-nav .page-link:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.page-content h1:first-child,
+.page-content h2:first-child,
+.page-content h3:first-child {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 8px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+/* Blockquotes & Code Styling */
+blockquote {
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--primary-color);
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  margin: 16px 0;
+  font-style: normal;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+blockquote p {
+  margin-bottom: 0;
+}
+
+blockquote strong {
+  color: var(--primary-color);
+}
+
+/* CLEAN CODE BLOCKS - No minima interference */
+/* Inline code - no borders, just background */
+code {
+  background: var(--bg-tertiary);
+  border-radius: 3px;
+  padding: 2px 6px;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  font-family: 'SFMono-Regular', 'Monaco', 'Inconsolata', 'Liberation Mono', 'Courier New', monospace;
+}
+
+/* Code blocks - with borders and proper spacing */
+pre {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 16px;
+  overflow-x: auto;
+  line-height: 1.45;
+  font-size: 14px;
+  margin: 16px 0;
+  font-family: 'SFMono-Regular', 'Monaco', 'Inconsolata', 'Liberation Mono', 'Courier New', monospace;
+}
+
+/* Code inside pre blocks should not have borders */
+pre code {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+}
+
+/* Enhanced styling for raw markdown syntax - Jekyll's rouge highlighter classes */
+.language-plaintext.highlighter-rouge {
+  /* Subtle styling for raw markdown/code syntax - more neutral */
+  background: var(--bg-tertiary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 4px !important;
+  padding: 3px 8px !important;
+  color: var(--text-secondary) !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  
+  /* Very subtle shadow for distinction without color overload */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Special styling for inline markdown syntax patterns */
+code.language-markdown,
+code[class*="markdown"] {
+  background: var(--bg-tertiary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 4px !important;
+  padding: 3px 8px !important;
+  color: var(--text-secondary) !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+}
+
+/* Links containing code elements - clean styling */
+.page-content a:not(.path-link) code {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.page-content a:not(.path-link):hover code {
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+/* General link styling - only for content links, not navigation or buttons */
+.page-content a:not(.path-link) {
+  color: var(--primary-color);
+  text-decoration: underline;
+  text-decoration-color: var(--primary-color);
+}
+
+.page-content a:not(.path-link):hover {
+  color: var(--primary-dark);
+  text-decoration-color: var(--primary-dark);
+}
+
+.page-content a:not(.path-link):visited {
+  color: var(--primary-color);
+}
+
+/* CLEAN SYNTAX HIGHLIGHTING - No minima conflicts */
+.highlight {
+  background: var(--bg-tertiary);
+  border-radius: 6px;
+  margin: 16px 0;
+}
+
+.highlight pre {
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 16px;
+}
+
+/* Simple, clean syntax colors */
+.highlight .c,
+.highlight .cm,
+.highlight .c1,
+.highlight .cs { 
+  color: var(--text-muted); 
+  font-style: italic; 
+}
+
+.highlight .k,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt { 
+  color: #cf222e; 
+  font-weight: 600; 
+}
+
+.highlight .s,
+.highlight .sb,
+.highlight .sc,
+.highlight .s2,
+.highlight .sh,
+.highlight .s1 { 
+  color: #0a3069; 
+}
+
+.highlight .sx { 
+  color: #cf222e; 
+  font-weight: 500; 
+}
+
+.highlight .p { 
+  color: var(--text-primary); 
+}
+
+.highlight .nv { 
+  color: #953800; 
+  font-weight: 500; 
+}
+
+/* List Styling */
+ul, ol {
+  margin: 16px 0;
+  padding-left: 24px;
+}
+
+ul li, ol li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+  padding-left: 4px;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+/* Footer Styling */
+.site-footer {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-color);
+  padding: 24px 0;
+}
+
+.site-footer .footer-heading {
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.site-footer .footer-col-wrapper {
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.site-footer .footer-col-1 {
+  flex: 1 1 300px;
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+
+.site-footer .footer-col-2 {
+  flex: 2 1 400px;
+  margin-bottom: 20px;
+}
+
+.site-footer a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--text-primary);
+}
+
+/* License Information Styling */
+.license-info {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+.license-info p {
+  margin-bottom: 8px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.license-info .license-details {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+}
+
+.license-info .copyright {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.license-info a {
+  color: var(--primary-color);
+  text-decoration: underline;
+  text-decoration-color: var(--primary-color);
+}
+
+.license-info a:hover {
+  color: var(--primary-dark);
+  text-decoration-color: var(--primary-dark);
+}
+
+/* Mermaid Diagram Styling */
+.mermaid {
+  text-align: center;
+  margin: 32px 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.diagram-container {
+  max-width: 800px;
+  margin: 32px auto;
+  text-align: center;
+  
+  .mermaid {
+    margin: 24px 0;
+  }
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 1024px) {
+  .diagram-container {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    padding: 0 16px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .diagram-container {
+    max-width: 100%;
+    margin: 24px auto;
+  }
+  
+  .diagram-container .mermaid {
+    margin: 16px 0;
+  }
+  
+  .site-header {
+    min-height: 56px;
+    position: relative;
+  }
+  
+  .site-title {
+    font-size: 18px;
+    line-height: 56px;
+    max-width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .site-nav {
+    position: static;
+    float: right;
+    line-height: 56px;
+    background: transparent;
+    border: none;
+    
+    .trigger {
+      display: inline-block;
+      padding: 0;
+    }
+  }
+  
+  .site-nav .page-link {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-left: 2px;
+  }
+  
+  .site-footer .footer-col-wrapper {
+    flex-direction: column;
+  }
+  
+  .site-footer .footer-col-1 {
+    margin-right: 0;
+  }
 }
 
 /* Base Reset & Typography */
@@ -253,23 +745,239 @@ blockquote strong {
   color: var(--primary-color) !important;
 }
 
-pre, code {
-  background: var(--bg-tertiary) !important;
-  border: 1px solid var(--border-light) !important;
-  border-radius: 6px !important;
-}
-
-pre {
-  padding: 16px !important;
-  overflow-x: auto !important;
-  box-shadow: none !important;
-}
-
+/* Inline code styling - no borders, just subtle background */
 code {
+  background: var(--bg-tertiary) !important;
+  border: none !important;
+  border-radius: 3px !important;
   padding: 2px 6px !important;
   font-size: 0.875rem !important;
   color: var(--text-primary) !important;
   font-weight: 500 !important;
+  font-family: 'SFMono-Regular', 'Monaco', 'Inconsolata', 'Liberation Mono', 'Courier New', monospace !important;
+}
+
+/* Code blocks styling - with borders for clear delineation */
+pre {
+  background: var(--bg-tertiary) !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: 6px !important;
+  padding: 16px !important;
+  overflow-x: auto !important;
+  box-shadow: none !important;
+  line-height: 1.45 !important;
+  font-size: 14px !important;
+  font-family: 'SFMono-Regular', 'Monaco', 'Inconsolata', 'Liberation Mono', 'Courier New', monospace !important;
+  margin: 16px 0 !important;
+}
+
+/* Code inside pre blocks should be clean */
+pre code {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  font-size: inherit !important;
+  color: inherit !important;
+  font-weight: inherit !important;
+}
+
+/* Enhanced styling for raw markdown syntax - Rouge highlighter targeting */
+.language-plaintext.highlighter-rouge {
+  /* More neutral styling - uses existing gray tones for cleaner look */
+  background: var(--bg-tertiary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 4px !important;
+  padding: 3px 8px !important;
+  color: var(--text-secondary) !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Special styling for inline markdown syntax patterns */
+code.language-markdown,
+code[class*="markdown"] {
+  background: var(--bg-tertiary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 4px !important;
+  padding: 3px 8px !important;
+  color: var(--text-secondary) !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+}
+
+/* Links containing code elements - clean styling with proper color inheritance */
+.page-content a:not(.path-link) code {
+  color: var(--primary-color) !important;
+  text-decoration: none !important;
+}
+
+.page-content a:not(.path-link):hover code {
+  color: var(--primary-dark) !important;
+  text-decoration: none !important;
+}
+
+/* General link styling that works with GitHub Primer design - only for content, excluding buttons */
+.page-content a:not(.path-link) {
+  color: var(--primary-color) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--primary-color) !important;
+}
+
+.page-content a:not(.path-link):hover {
+  color: var(--primary-dark) !important;
+  text-decoration-color: var(--primary-dark) !important;
+}
+
+.page-content a:not(.path-link):visited {
+  color: var(--primary-color) !important;
+}
+
+/* Clean up syntax highlighting - GitHub Primer style */
+.highlight {
+  background: var(--bg-tertiary) !important;
+  border-radius: 6px !important;
+  margin: 16px 0 !important;
+}
+
+.highlight pre {
+  background: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 16px !important;
+}
+
+/* COMPLETE OVERRIDE: Disable all default minima syntax highlighting */
+.highlight .c,
+.highlight .err,
+.highlight .k,
+.highlight .o,
+.highlight .cm,
+.highlight .cp,
+.highlight .c1,
+.highlight .cs,
+.highlight .gd,
+.highlight .gd .x,
+.highlight .ge,
+.highlight .gr,
+.highlight .gh,
+.highlight .gi,
+.highlight .gi .x,
+.highlight .go,
+.highlight .gp,
+.highlight .gs,
+.highlight .gu,
+.highlight .gt,
+.highlight .kc,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt,
+.highlight .m,
+.highlight .s,
+.highlight .na,
+.highlight .nb,
+.highlight .nc,
+.highlight .no,
+.highlight .ni,
+.highlight .ne,
+.highlight .nf,
+.highlight .nn,
+.highlight .nt,
+.highlight .nv,
+.highlight .ow,
+.highlight .w,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .s2,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .sr,
+.highlight .s1,
+.highlight .ss,
+.highlight .bp,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi,
+.highlight .il,
+.highlight .p {
+  /* Reset ALL possible visual artifacts */
+  display: inline !important;
+  border: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  outline: none !important;
+  text-shadow: none !important;
+  vertical-align: baseline !important;
+  line-height: inherit !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+}
+
+/* Now apply clean GitHub Primer syntax highlighting */
+.highlight .c,
+.highlight .cm,
+.highlight .c1,
+.highlight .cs { 
+  color: var(--text-muted) !important; 
+  font-style: italic !important; 
+} /* Comments */
+
+.highlight .k,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt { 
+  color: #cf222e !important; 
+  font-weight: 600 !important; 
+} /* Keywords */
+
+.highlight .s,
+.highlight .sb,
+.highlight .sc,
+.highlight .s2,
+.highlight .sh,
+.highlight .s1 { 
+  color: #0a3069 !important; 
+} /* Strings */
+
+.highlight .sx { 
+  color: #cf222e !important; 
+  font-weight: 500 !important; 
+} /* Paths */
+
+.highlight .sb { 
+  color: #cf222e !important; 
+  font-weight: 500 !important; 
+} /* Code blocks */
+
+.highlight .p { 
+  color: var(--text-primary) !important; 
+} /* Punctuation */
+
+.highlight .nv { 
+  color: #953800 !important; 
+  font-weight: 500 !important; 
+} /* Variables */
+
+.highlight .lineno {
+  color: var(--text-muted) !important;
+  user-select: none !important;
+  margin-right: 8px !important;
 }
 
 /* List Styling - Fixed bullet points and spacing */
@@ -447,6 +1155,35 @@ ul ul, ol ol, ul ol, ol ul {
 .mermaid svg {
   max-width: 100% !important;
   height: auto !important;
+}
+
+/* Diagram container for controlled sizing */
+.diagram-container {
+  max-width: 500px !important;
+  margin: 32px auto !important;
+  text-align: center !important;
+  
+  .mermaid {
+    margin: 24px 0 !important;
+  }
+}
+
+/* Responsive diagram sizing */
+@media screen and (max-width: 1024px) {
+  .diagram-container {
+    max-width: 90% !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .diagram-container {
+    max-width: 100% !important;
+    margin: 24px auto !important;
+  }
+  
+  .diagram-container .mermaid {
+    margin: 16px 0 !important;
+  }
 }
 
 /* Mobile Responsiveness */

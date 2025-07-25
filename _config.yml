@@ -7,7 +7,7 @@ url: "https://danielmeppiel.github.io"
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
+# theme: minima  # REMOVED - using custom styling
 
 # Kramdown settings for better HTML/Markdown mixing
 kramdown:

@@ -15,3 +15,5 @@ Always validate approach with the user before changing any files. You MUST get e
 - When sharing implementation examples, they should conform as much as possible to the VSCode native, supported Agent Primitives structure and default paths, using `.chatmode.md`, `.instructions.md`, and `.prompt.md` files as appropriate. 
     - IMPORTANT: However please note that in our framework we may extend to include more primitives or patterns that are not yet supported by VSCode natively. 
     - This is because we seek to build on top of what exists and yet push the boundaries of Agent Primitives to create a more powerful and flexible AI Native Development framework. This is frontier work.
+
+- The site renders locally with jekyll at `http://localhost:4000/awesome-ai-native/`.

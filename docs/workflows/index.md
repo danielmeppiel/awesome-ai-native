@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: docs
 title: "Workflows"
 display_title: "⚙️ Workflow Orchestration: From Planning to Execution"
 permalink: /docs/workflows/

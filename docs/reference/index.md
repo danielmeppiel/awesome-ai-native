@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: docs
 title: "Reference"
 display_title: "📚 Reference Guide: Quick Lookups & Resources"
 permalink: /docs/reference/

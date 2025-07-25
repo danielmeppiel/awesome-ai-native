@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: docs
 title: "Concepts"
 display_title: "🧠 Core Concepts: The Engineering Behind Agent Mastery"
 permalink: /docs/concepts/

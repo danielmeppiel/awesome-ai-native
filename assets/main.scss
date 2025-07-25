@@ -248,29 +248,29 @@ code[class*="markdown"] {
 }
 
 /* Links containing code elements - clean styling */
-.page-content a:not(.path-link) code {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link) code {
   color: var(--primary-color);
   text-decoration: none;
 }
 
-.page-content a:not(.path-link):hover code {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):hover code {
   color: var(--primary-dark);
   text-decoration: none;
 }
 
 /* General link styling - only for content links, not navigation or buttons */
-.page-content a:not(.path-link) {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link) {
   color: var(--primary-color);
   text-decoration: underline;
   text-decoration-color: var(--primary-color);
 }
 
-.page-content a:not(.path-link):hover {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):hover {
   color: var(--primary-dark);
   text-decoration-color: var(--primary-dark);
 }
 
-.page-content a:not(.path-link):visited {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):visited {
   color: var(--primary-color);
 }
 
@@ -563,45 +563,353 @@ body {
   border-top: none !important;
   color: var(--text-primary) !important;
   box-shadow: none !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 100 !important;
+}
+
+.site-header .wrapper {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
 }
 
 .site-title {
   color: var(--text-primary) !important;
   font-weight: 600 !important;
   font-size: 24px !important;
-  float: left !important;
+  text-decoration: none !important;
+  line-height: 56px !important;
 }
 
 .site-title:visited {
   color: var(--text-primary) !important;
 }
 
-.site-nav {
-  float: right !important;
-  line-height: 56px !important;
-  
-  /* Fix navigation alignment */
-  .trigger {
-    clear: none !important;
-    display: inline-block !important;
-    vertical-align: top !important;
-  }
+.header-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
 }
 
-.site-nav .page-link {
-  color: var(--text-secondary) !important;
-  font-weight: 500 !important;
-  padding: 8px 16px !important;
+/* Primary CTA Button - GitHub Primer style */
+.btn-primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 8px 12px !important;
+  background: var(--primary-color) !important;
+  color: white !important;
+  text-decoration: none !important;
   border-radius: 6px !important;
-  transition: all 0.2s ease !important;
-  display: inline-block !important;
-  margin-left: 4px !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 1 !important;
+  transition: background-color 0.2s ease !important;
+  border: 1px solid transparent !important;
+  cursor: pointer !important;
 }
 
-.site-nav .page-link:hover {
+.btn-primary:hover {
+  background: var(--primary-dark) !important;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.btn-primary:visited {
+  color: white !important;
+}
+
+.btn-primary:focus {
+  outline: 2px solid var(--primary-color) !important;
+  outline-offset: 2px !important;
+}
+
+/* GitHub Contribute Button */
+.github-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 8px 12px !important;
   background: var(--bg-secondary) !important;
   color: var(--text-primary) !important;
   text-decoration: none !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  transition: background-color 0.2s ease !important;
+  line-height: 1 !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.github-btn:hover {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  text-decoration: none !important;
+  border-color: var(--border-light) !important;
+}
+
+.github-btn:visited {
+  color: var(--text-primary) !important;
+}
+
+.github-btn .octicon {
+  width: 16px !important;
+  height: 16px !important;
+  fill: currentColor !important;
+}
+
+.github-btn .github-text {
+  font-weight: 500 !important;
+}
+
+/* Documentation Layout */
+.docs-layout {
+  display: grid !important;
+  grid-template-columns: 280px 1fr !important;
+  gap: 0 !important;
+  min-height: calc(100vh - 56px) !important;
+  background: var(--bg-primary) !important;
+}
+
+.docs-sidebar {
+  background: var(--bg-primary) !important;
+  border-right: 1px solid var(--border-color) !important;
+  padding: 16px 0 !important;
+  position: sticky !important;
+  top: 0 !important;
+  height: calc(100vh - 56px) !important;
+  overflow-y: auto !important;
+  z-index: 10 !important;
+}
+
+.docs-nav {
+  padding: 0 !important;
+}
+
+/* Navigation Sections */
+.nav-section {
+  margin-bottom: 0 !important;
+  border-bottom: 1px solid var(--border-light) !important;
+}
+
+.nav-section:last-child {
+  border-bottom: none !important;
+}
+
+.nav-section-title {
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+}
+
+/* Toggle Button */
+.nav-toggle {
+  background: none !important;
+  border: none !important;
+  padding: 12px !important;
+  cursor: pointer !important;
+  color: var(--text-muted) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: color 0.2s ease !important;
+  flex-shrink: 0 !important;
+}
+
+.nav-toggle:hover {
+  color: var(--text-secondary) !important;
+}
+
+.nav-toggle.expanded {
+  color: var(--text-secondary) !important;
+}
+
+.chevron-icon {
+  width: 12px !important;
+  height: 12px !important;
+  transition: transform 0.2s ease !important;
+}
+
+.nav-toggle.expanded .chevron-icon {
+  transform: rotate(90deg) !important;
+}
+
+/* Main Navigation Links */
+.nav-main-link {
+  color: var(--text-primary) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 12px 16px 12px 8px !important;
+  border-radius: 0 !important;
+  transition: all 0.2s ease !important;
+  flex: 1 !important;
+  position: relative !important;
+}
+
+.nav-main-link:hover {
+  color: var(--text-primary) !important;
+  background: var(--bg-secondary) !important;
+  text-decoration: none !important;
+}
+
+.nav-main-link:visited {
+  color: var(--text-primary) !important;
+}
+
+.nav-main-link.current {
+  color: var(--text-primary) !important;
+  background: var(--bg-secondary) !important;
+  font-weight: 600 !important;
+}
+
+.nav-main-link.current::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 3px !important;
+  background: var(--primary-color) !important;
+}
+
+.nav-icon {
+  margin-right: 8px !important;
+  font-size: 16px !important;
+  flex-shrink: 0 !important;
+}
+
+.nav-text {
+  flex: 1 !important;
+}
+
+/* Subsections */
+.nav-subsection {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: var(--bg-tertiary) !important;
+  border-top: 1px solid var(--border-light) !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  transition: max-height 0.2s ease !important;
+}
+
+.nav-subsection.expanded {
+  max-height: 300px !important;
+  padding: 8px 0 !important;
+}
+
+.nav-subsection li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.nav-sub-link {
+  color: var(--text-secondary) !important;
+  text-decoration: none !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  display: block !important;
+  padding: 6px 16px 6px 48px !important;
+  transition: all 0.2s ease !important;
+  border-left: 3px solid transparent !important;
+}
+
+.nav-sub-link:hover {
+  color: var(--text-primary) !important;
+  background: var(--bg-secondary) !important;
+  text-decoration: none !important;
+  border-left-color: var(--border-muted) !important;
+}
+
+.nav-sub-link:visited {
+  color: var(--text-secondary) !important;
+}
+
+.nav-sub-link:active,
+.nav-sub-link.current {
+  color: var(--text-primary) !important;
+  background: var(--bg-secondary) !important;
+  border-left-color: var(--primary-color) !important;
+  font-weight: 500 !important;
+}
+
+/* Scrollbar Styling for Sidebar */
+.docs-sidebar::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+.docs-sidebar::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.docs-sidebar::-webkit-scrollbar-thumb {
+  background: var(--border-muted) !important;
+  border-radius: 3px !important;
+}
+
+.docs-sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--border-color) !important;
+}
+
+.docs-content {
+  background: var(--bg-primary) !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+}
+
+.docs-page-header {
+  padding: 32px 40px 16px 40px !important;
+  background: var(--bg-primary) !important;
+  border-bottom: 1px solid var(--border-light) !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.docs-page-header h1 {
+  margin: 0 !important;
+  font-size: 2rem !important;
+  color: var(--text-primary) !important;
+}
+
+.edit-page {
+  flex-shrink: 0 !important;
+}
+
+.edit-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 8px 12px !important;
+  color: var(--text-secondary) !important;
+  text-decoration: none !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 6px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+.edit-link:hover {
+  color: var(--text-primary) !important;
+  border-color: var(--border-muted) !important;
+  background: var(--bg-secondary) !important;
+}
+
+.edit-link .octicon {
+  width: 14px !important;
+  height: 14px !important;
+  fill: currentColor !important;
+}
+
+.docs-content-inner {
+  padding: 32px 40px 40px 40px !important;
+  max-width: none !important;
 }
 
 /* Content Cards - Only for specific use cases */
@@ -808,29 +1116,29 @@ code[class*="markdown"] {
 }
 
 /* Links containing code elements - clean styling with proper color inheritance */
-.page-content a:not(.path-link) code {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link) code {
   color: var(--primary-color) !important;
   text-decoration: none !important;
 }
 
-.page-content a:not(.path-link):hover code {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):hover code {
   color: var(--primary-dark) !important;
   text-decoration: none !important;
 }
 
-/* General link styling that works with GitHub Primer design - only for content, excluding buttons */
-.page-content a:not(.path-link) {
+/* General link styling that works with GitHub Primer design - only for content, excluding navigation and buttons */
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link) {
   color: var(--primary-color) !important;
   text-decoration: underline !important;
   text-decoration-color: var(--primary-color) !important;
 }
 
-.page-content a:not(.path-link):hover {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):hover {
   color: var(--primary-dark) !important;
   text-decoration-color: var(--primary-dark) !important;
 }
 
-.page-content a:not(.path-link):visited {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):visited {
   color: var(--primary-color) !important;
 }
 
@@ -1249,21 +1557,28 @@ ul ul, ol ol, ul ol, ol ul {
   }
   
   .site-header .wrapper {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
     position: relative !important;
   }
   
   .site-title {
     font-size: 18px !important;
     line-height: 56px !important;
-    max-width: 60% !important;
+    max-width: 50% !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
   }
   
+  .header-right {
+    flex-shrink: 0 !important;
+    gap: 8px !important;
+  }
+  
   .site-nav {
     position: static !important;
-    float: right !important;
     line-height: 56px !important;
     background: transparent !important;
     border: none !important;
@@ -1275,10 +1590,78 @@ ul ul, ol ol, ul ol, ol ul {
   }
   
   .site-nav .page-link {
-    padding: 4px 8px !important;
-    font-size: 0.8rem !important;
+    padding: 4px 6px !important;
+    font-size: 0.75rem !important;
     display: inline-block !important;
     margin-left: 2px !important;
+  }
+  
+  .github-btn {
+    padding: 6px 8px !important;
+    font-size: 12px !important;
+  }
+  
+  .github-btn .github-text {
+    display: none !important;
+  }
+  
+  .github-btn .octicon {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  
+  /* Mobile Documentation Layout */
+  .docs-layout {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+  
+  .docs-sidebar {
+    position: static !important;
+    height: auto !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    padding: 8px 0 !important;
+    max-height: 60vh !important;
+    overflow-y: auto !important;
+  }
+  
+  .nav-section {
+    border-bottom: 1px solid var(--border-light) !important;
+  }
+  
+  .nav-main-link {
+    padding: 10px 16px 10px 8px !important;
+    font-size: 13px !important;
+  }
+  
+  .nav-toggle {
+    padding: 10px !important;
+  }
+  
+  .nav-subsection.expanded {
+    max-height: 200px !important;
+    padding: 4px 0 !important;
+  }
+  
+  .nav-sub-link {
+    padding: 4px 16px 4px 40px !important;
+    font-size: 12px !important;
+  }
+  
+  .docs-page-header {
+    padding: 20px 16px 12px 16px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  
+  .docs-page-header h1 {
+    font-size: 1.5rem !important;
+  }
+  
+  .docs-content-inner {
+    padding: 20px 16px 32px 16px !important;
   }
   
   /* Mobile footer layout */

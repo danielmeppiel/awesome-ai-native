@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: docs
 title: "Team Adoption"
 display_title: "👥 Team Adoption: Scaling AI Native Development"
 permalink: /docs/team-adoption/

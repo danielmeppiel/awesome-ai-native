@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: docs
 title: "Getting Started"
 display_title: "🏗️ Getting Started: Foundation Setup"
 permalink: /docs/getting-started/

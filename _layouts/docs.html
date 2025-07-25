@@ -1,0 +1,236 @@
+---
+layout: default
+---
+
+<div class="docs-layout">
+  <aside class="docs-sidebar">
+    <nav class="docs-nav" aria-label="Documentation navigation">
+      
+      <!-- Main Guide Section -->
+      <div class="nav-section">
+        <div class="nav-section-title">
+          <a href="{{ '/docs/' | relative_url }}" class="nav-main-link {% if page.url == '/docs/' %}current{% endif %}">
+            <span class="nav-icon">📚</span>
+            <span class="nav-text">Guide</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Core Concepts -->
+      <div class="nav-section">
+        <div class="nav-section-title">
+          <button class="nav-toggle {% if page.url contains '/concepts/' %}expanded{% endif %}" 
+                  data-target="concepts-section" 
+                  aria-expanded="{% if page.url contains '/concepts/' %}true{% else %}false{% endif %}">
+            <svg class="chevron-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+              <path d="M4.5 3L7.5 6L4.5 9"></path>
+            </svg>
+          </button>
+          <a href="{{ '/docs/concepts/' | relative_url }}" class="nav-main-link {% if page.url contains '/concepts/' %}current{% endif %}">
+            <span class="nav-icon">🧠</span>
+            <span class="nav-text">Core Concepts</span>
+          </a>
+        </div>
+        <ul class="nav-subsection {% if page.url contains '/concepts/' %}expanded{% endif %}" id="concepts-section">
+          <li><a href="{{ '/docs/concepts/' | relative_url }}#layer-1-markdown-prompt-engineering" class="nav-sub-link">Markdown Prompt Engineering</a></li>
+          <li><a href="{{ '/docs/concepts/' | relative_url }}#layer-2-agent-primitives" class="nav-sub-link">Agent Primitives</a></li>
+          <li><a href="{{ '/docs/concepts/' | relative_url }}#layer-3-context-engineering" class="nav-sub-link">Context Engineering</a></li>
+          <li><a href="{{ '/docs/concepts/' | relative_url }}#the-ai-native-development-framework" class="nav-sub-link">AI Native Framework</a></li>
+          <li><a href="{{ '/docs/concepts/' | relative_url }}#-key-takeaways" class="nav-sub-link">Key Takeaways</a></li>
+        </ul>
+      </div>
+
+      <!-- Getting Started -->
+      <div class="nav-section">
+        <div class="nav-section-title">
+          <button class="nav-toggle {% if page.url contains '/getting-started/' %}expanded{% endif %}" 
+                  data-target="getting-started-section" 
+                  aria-expanded="{% if page.url contains '/getting-started/' %}true{% else %}false{% endif %}">
+            <svg class="chevron-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+              <path d="M4.5 3L7.5 6L4.5 9"></path>
+            </svg>
+          </button>
+          <a href="{{ '/docs/getting-started/' | relative_url }}" class="nav-main-link {% if page.url contains '/getting-started/' %}current{% endif %}">
+            <span class="nav-icon">🏗️</span>
+            <span class="nav-text">Getting Started</span>
+          </a>
+        </div>
+        <ul class="nav-subsection {% if page.url contains '/getting-started/' %}expanded{% endif %}" id="getting-started-section">
+          <li><a href="{{ '/docs/getting-started/' | relative_url }}#a-instructions-architecture" class="nav-sub-link">Instructions Architecture</a></li>
+          <li><a href="{{ '/docs/getting-started/' | relative_url }}#b-chat-modes-configuration" class="nav-sub-link">Chat Modes Configuration</a></li>
+          <li><a href="{{ '/docs/getting-started/' | relative_url }}#c-reusable-prompt-library" class="nav-sub-link">Reusable Prompt Library</a></li>
+          <li><a href="{{ '/docs/getting-started/' | relative_url }}#d-specification-templates" class="nav-sub-link">Specification Templates</a></li>
+          <li><a href="{{ '/docs/getting-started/' | relative_url }}#-quick-start-checklist" class="nav-sub-link">Quick Start Checklist</a></li>
+          <li><a href="{{ '/docs/getting-started/' | relative_url }}#-whats-next" class="nav-sub-link">What's Next</a></li>
+        </ul>
+      </div>
+
+      <!-- Workflows -->
+      <div class="nav-section">
+        <div class="nav-section-title">
+          <button class="nav-toggle {% if page.url contains '/workflows/' %}expanded{% endif %}" 
+                  data-target="workflows-section" 
+                  aria-expanded="{% if page.url contains '/workflows/' %}true{% else %}false{% endif %}">
+            <svg class="chevron-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+              <path d="M4.5 3L7.5 6L4.5 9"></path>
+            </svg>
+          </button>
+          <a href="{{ '/docs/workflows/' | relative_url }}" class="nav-main-link {% if page.url contains '/workflows/' %}current{% endif %}">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-text">Workflows</span>
+          </a>
+        </div>
+        <ul class="nav-subsection {% if page.url contains '/workflows/' %}expanded{% endif %}" id="workflows-section">
+          <li><a href="{{ '/docs/workflows/' | relative_url }}#-primitives-in-action-complete-workflow" class="nav-sub-link">Primitives in Action</a></li>
+          <li><a href="{{ '/docs/workflows/' | relative_url }}#a-execution-path-selection" class="nav-sub-link">Execution Path Selection</a></li>
+          <li><a href="{{ '/docs/workflows/' | relative_url }}#b-async-delegation-workflows" class="nav-sub-link">Async Delegation Workflows</a></li>
+          <li><a href="{{ '/docs/workflows/' | relative_url }}#c-progress-monitoring--async-integration" class="nav-sub-link">Progress Monitoring & Integration</a></li>
+          <li><a href="{{ '/docs/workflows/' | relative_url }}#d-advanced-hybrid-context-strategies" class="nav-sub-link">Hybrid Context Strategies</a></li>
+          <li><a href="{{ '/docs/workflows/' | relative_url }}#-key-takeaways" class="nav-sub-link">Key Takeaways</a></li>
+        </ul>
+      </div>
+
+      <!-- Team Adoption -->
+      <div class="nav-section">
+        <div class="nav-section-title">
+          <button class="nav-toggle {% if page.url contains '/team-adoption/' %}expanded{% endif %}" 
+                  data-target="team-adoption-section" 
+                  aria-expanded="{% if page.url contains '/team-adoption/' %}true{% else %}false{% endif %}">
+            <svg class="chevron-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+              <path d="M4.5 3L7.5 6L4.5 9"></path>
+            </svg>
+          </button>
+          <a href="{{ '/docs/team-adoption/' | relative_url }}" class="nav-main-link {% if page.url contains '/team-adoption/' %}current{% endif %}">
+            <span class="nav-icon">👥</span>
+            <span class="nav-text">Team Adoption</span>
+          </a>
+        </div>
+        <ul class="nav-subsection {% if page.url contains '/team-adoption/' %}expanded{% endif %}" id="team-adoption-section">
+          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#a-human-validation-gates--review-processes" class="nav-sub-link">Human Validation Gates</a></li>
+          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#b-team-scale-multi-agent-coordination" class="nav-sub-link">Team-Scale Coordination</a></li>
+          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#c-knowledge-sharing--team-intelligence-patterns" class="nav-sub-link">Knowledge Sharing</a></li>
+          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#d-governance--compliance-framework" class="nav-sub-link">Governance & Compliance</a></li>
+          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#-implementation-roadmap" class="nav-sub-link">Implementation Roadmap</a></li>
+          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#-success-metrics" class="nav-sub-link">Success Metrics</a></li>
+          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#-key-takeaways" class="nav-sub-link">Key Takeaways</a></li>
+        </ul>
+      </div>
+
+      <!-- Reference -->
+      <div class="nav-section">
+        <div class="nav-section-title">
+          <button class="nav-toggle {% if page.url contains '/reference/' %}expanded{% endif %}" 
+                  data-target="reference-section" 
+                  aria-expanded="{% if page.url contains '/reference/' %}true{% else %}false{% endif %}">
+            <svg class="chevron-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+              <path d="M4.5 3L7.5 6L4.5 9"></path>
+            </svg>
+          </button>
+          <a href="{{ '/docs/reference/' | relative_url }}" class="nav-main-link {% if page.url contains '/reference/' %}current{% endif %}">
+            <span class="nav-icon">📚</span>
+            <span class="nav-text">Reference</span>
+          </a>
+        </div>
+        <ul class="nav-subsection {% if page.url contains '/reference/' %}expanded{% endif %}" id="reference-section">
+          <li><a href="{{ '/docs/reference/' | relative_url }}#-quick-start-checklist" class="nav-sub-link">Quick Start Checklist</a></li>
+          <li><a href="{{ '/docs/reference/' | relative_url }}#-mastery-progression" class="nav-sub-link">Mastery Progression</a></li>
+          <li><a href="{{ '/docs/reference/' | relative_url }}#-the-paradigm-shift" class="nav-sub-link">The Paradigm Shift</a></li>
+          <li><a href="{{ '/docs/reference/' | relative_url }}#-documentation-references" class="nav-sub-link">Documentation References</a></li>
+          <li><a href="{{ '/docs/reference/' | relative_url }}#-quick-troubleshooting" class="nav-sub-link">Quick Troubleshooting</a></li>
+          <li><a href="{{ '/docs/reference/' | relative_url }}#-success-metrics-tracking" class="nav-sub-link">Success Metrics Tracking</a></li>
+          <li><a href="{{ '/docs/reference/' | relative_url }}#-next-steps" class="nav-sub-link">Next Steps</a></li>
+        </ul>
+      </div>
+
+      <!-- Examples Section -->
+      <div class="nav-section">
+        <div class="nav-section-title">
+          <button class="nav-toggle {% if page.url contains '/examples/' %}expanded{% endif %}" 
+                  data-target="examples-section" 
+                  aria-expanded="{% if page.url contains '/examples/' %}true{% else %}false{% endif %}">
+            <svg class="chevron-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+              <path d="M4.5 3L7.5 6L4.5 9"></path>
+            </svg>
+          </button>
+          <a href="{{ '/examples/' | relative_url }}" class="nav-main-link {% if page.url contains '/examples/' %}current{% endif %}">
+            <span class="nav-icon">💡</span>
+            <span class="nav-text">Examples</span>
+          </a>
+        </div>
+        <ul class="nav-subsection {% if page.url contains '/examples/' %}expanded{% endif %}" id="examples-section">
+          <li><a href="{{ '/examples/security/' | relative_url }}" class="nav-sub-link">Security Chat Mode</a></li>
+          <li><a href="{{ '/examples/frontend/' | relative_url }}" class="nav-sub-link">Frontend Instructions</a></li>
+          <li><a href="{{ '/examples/code-review/' | relative_url }}" class="nav-sub-link">Code Review Prompt</a></li>
+          <li><a href="{{ '/examples/api-endpoint/' | relative_url }}" class="nav-sub-link">API Endpoint Spec</a></li>
+        </ul>
+      </div>
+
+    </nav>
+  </aside>
+
+  <main class="docs-content">
+    <div class="docs-page-header">
+      <h1>{{ page.display_title | default: page.title }}</h1>
+      {% if page.url != '/docs/' %}
+      <div class="edit-page">
+        <a href="https://github.com/danielmeppiel/awesome-ai-native/edit/main{{ page.path }}" 
+           class="edit-link" 
+           target="_blank" 
+           rel="noopener noreferrer">
+          <svg class="octicon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"></path>
+          </svg>
+          Edit this page
+        </a>
+      </div>
+      {% endif %}
+    </div>
+    
+    <div class="docs-content-inner">
+      {{ content }}
+    </div>
+  </main>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize collapsible navigation
+  const toggleButtons = document.querySelectorAll('.nav-toggle');
+  
+  toggleButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const targetId = this.getAttribute('data-target');
+      const targetSection = document.getElementById(targetId);
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      
+      // Toggle the current section
+      this.setAttribute('aria-expanded', !isExpanded);
+      this.classList.toggle('expanded');
+      targetSection.classList.toggle('expanded');
+      
+      // Store the state in localStorage
+      const sectionKey = `nav-section-${targetId}`;
+      localStorage.setItem(sectionKey, !isExpanded);
+    });
+  });
+  
+  // Restore expanded state from localStorage on page load
+  toggleButtons.forEach(button => {
+    const targetId = button.getAttribute('data-target');
+    const sectionKey = `nav-section-${targetId}`;
+    const storedState = localStorage.getItem(sectionKey);
+    
+    // Only restore state if it's not the current page section (current page sections should always be expanded)
+    if (storedState !== null && !button.classList.contains('expanded')) {
+      const shouldExpand = storedState === 'true';
+      const targetSection = document.getElementById(targetId);
+      
+      button.setAttribute('aria-expanded', shouldExpand);
+      if (shouldExpand) {
+        button.classList.add('expanded');
+        targetSection.classList.add('expanded');
+      }
+    }
+  });
+});
+</script>

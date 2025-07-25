@@ -57,4 +57,19 @@ Keep content clean, structured, and professional. Avoid visual clutter.
 - Inconsistent heading structures
 - Walls of text without breaks
 
+## Sidebar Maintenance
+When adding or modifying content structure in documentation:
+
+**For existing pages** - adding/modifying top-level sections (`## ` headers):
+- **MUST** update the corresponding sidebar navigation in `_layouts/docs.html`
+- Add new sections to the appropriate `nav-subsection` list
+- Ensure anchor links match the auto-generated heading IDs
+
+**For new pages** - creating new `index.md` files:
+- **MUST** add a new navigation section to `_layouts/docs.html`
+- Create complete `nav-subsection` with all major headings from the new page
+- Follow the established pattern with proper icons, URLs, and expand/collapse functionality
+
+Follow the comprehensive guidelines in `sidebar.instructions.md` for both scenarios.
+
 Keep it simple, functional, and user-focused.

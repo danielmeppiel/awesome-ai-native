@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: docs
 title: "Guide"
 display_title: "AI Native Development Guide"
 permalink: /docs/

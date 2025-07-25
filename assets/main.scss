@@ -997,6 +997,68 @@ h3 {
   margin-bottom: 10px !important;
 }
 
+/* Guide Sections Grid - Primer Inspired Clean Cards */
+.guide-sections {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 20px !important;
+  margin: 32px 0 !important;
+}
+
+.guide-card {
+  background: var(--bg-card) !important;
+  border-radius: 8px !important;
+  padding: 24px !important;
+  border: 1px solid var(--border-light) !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+  position: relative !important;
+}
+
+.guide-card:hover {
+  border-color: var(--border-color) !important;
+  box-shadow: 0 1px 3px rgba(27, 31, 35, 0.12), 0 8px 24px rgba(66, 74, 83, 0.12) !important;
+}
+
+.guide-title {
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+  margin-bottom: 8px !important;
+  line-height: 1.25 !important;
+}
+
+.guide-description {
+  color: var(--text-secondary) !important;
+  margin-bottom: 20px !important;
+  line-height: 1.5 !important;
+  font-size: 0.875rem !important;
+}
+
+.guide-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  color: var(--primary-color) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+  transition: color 0.2s ease !important;
+}
+
+.guide-link:hover {
+  color: var(--primary-dark) !important;
+  text-decoration: none !important;
+}
+
+.guide-link::after {
+  content: "→" !important;
+  margin-left: 6px !important;
+  transition: transform 0.2s ease !important;
+}
+
+.guide-card:hover .guide-link::after {
+  transform: translateX(2px) !important;
+}
+
 /* Learning Paths Grid */
 .learning-paths {
   display: grid !important;
@@ -1583,6 +1645,16 @@ ul ul, ol ol, ul ol, ol ul {
   
   .learning-paths {
     grid-template-columns: 1fr !important;
+  }
+  
+  /* Guide sections mobile responsive */
+  .guide-sections {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  
+  .guide-card {
+    padding: 20px !important;
   }
   
   /* Fix mobile header layout - prevent overlap */

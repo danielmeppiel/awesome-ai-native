@@ -170,7 +170,9 @@ Control Preference → Recommended Path:
 | **Proven instructions/specs** | ❌ | ✅ | ✅ |
 | **Low tolerance for mistakes** | ✅ | ❌ | ✅ |
 
+
 **⚠️ Checkpoint:** Path selection aligns with control preferences and specification maturity
+
 **📊 Success Metric:** Optimal balance between productivity and quality control
 
 ---

@@ -986,6 +986,48 @@ ul, ol {
   padding-left: 24px !important;
 }
 
+/* Table styling and spacing */
+table {
+  margin: 16px 0 32px 0 !important;
+  border-collapse: collapse !important;
+  width: 100% !important;
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+}
+
+table th,
+table td {
+  padding: 12px 16px !important;
+  border: 1px solid var(--border-light) !important;
+  text-align: left !important;
+  vertical-align: top !important;
+}
+
+table th {
+  background: var(--bg-secondary) !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+}
+
+table tr:nth-child(even) {
+  background: var(--bg-secondary) !important;
+}
+
+/* Add extra spacing after tables to prevent content from being too close */
+table + p,
+table + blockquote,
+table + div,
+table + h1,
+table + h2,
+table + h3,
+table + h4,
+table + h5,
+table + h6 {
+  margin-top: 32px !important;
+}
+
 ul li, ol li {
   margin-bottom: 8px !important;
   line-height: 1.6 !important;

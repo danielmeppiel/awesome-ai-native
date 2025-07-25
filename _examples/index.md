@@ -15,25 +15,25 @@ This community-driven resource contains hundreds of real-world examples across a
   <div class="guide-card">
     <div class="guide-title">Instructions Examples</div>
     <div class="guide-description">Language-specific development guidelines and coding standards</div>
-    <a href="https://github.com/github/awesome-copilot" class="guide-link" target="_blank" rel="noopener noreferrer">View examples</a>
+    <a href="https://github.com/github/awesome-copilot" class="path-link" target="_blank" rel="noopener noreferrer">View examples</a>
   </div>
 
   <div class="guide-card">
     <div class="guide-title">Chat Mode Templates</div>
     <div class="guide-description">Specialized AI assistants for different development workflows</div>
-    <a href="https://github.com/github/awesome-copilot" class="guide-link" target="_blank" rel="noopener noreferrer">View examples</a>
+    <a href="https://github.com/github/awesome-copilot" class="path-link" target="_blank" rel="noopener noreferrer">View examples</a>
   </div>
 
   <div class="guide-card">
     <div class="guide-title">Prompt Libraries</div>
     <div class="guide-description">Reusable prompt templates for common development tasks</div>
-    <a href="https://github.com/github/awesome-copilot" class="guide-link" target="_blank" rel="noopener noreferrer">View examples</a>
+    <a href="https://github.com/github/awesome-copilot" class="path-link" target="_blank" rel="noopener noreferrer">View examples</a>
   </div>
 
   <div class="guide-card">
     <div class="guide-title">Framework-Specific Patterns</div>
     <div class="guide-description">React, Node.js, Python, and many other technology stacks</div>
-    <a href="https://github.com/github/awesome-copilot" class="guide-link" target="_blank" rel="noopener noreferrer">View examples</a>
+    <a href="https://github.com/github/awesome-copilot" class="path-link" target="_blank" rel="noopener noreferrer">View examples</a>
   </div>
 </div>
 

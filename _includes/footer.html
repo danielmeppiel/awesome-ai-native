@@ -1,0 +1,58 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <div class="author-info">
+          <h3 class="author-name">{{ site.author }}</h3>
+          <div class="credentials">
+            <p class="current-role">
+              <strong>Microsoft Solution Engineer</strong><br>
+              Global Black Belt - Software Engineering
+            </p>
+            <p class="experience">
+              Former GitHub Customer Success Architect<br>
+              Strategic Accounts
+            </p>
+          </div>
+          <div class="social-links">
+            {%- if site.social.links -%}
+              <ul class="social-media-list">
+                {%- for social_link in site.social.links -%}
+                  {%- if social_link contains "github" -%}
+                    <li>
+                      <a href="{{ social_link }}" target="_blank" rel="noopener noreferrer">
+                        <svg class="svg-icon">
+                          <use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use>
+                        </svg>
+                        <span class="username">GitHub</span>
+                      </a>
+                    </li>
+                  {%- elsif social_link contains "linkedin" -%}
+                    <li>
+                      <a href="{{ social_link }}" target="_blank" rel="noopener noreferrer">
+                        <svg class="svg-icon">
+                          <use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use>
+                        </svg>
+                        <span class="username">LinkedIn</span>
+                      </a>
+                    </li>
+                  {%- endif -%}
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <p class="site-description">
+          Master AI Native Development through systematic <strong>Agent Primitives</strong>, <strong>Context Engineering</strong>, and <strong>Markdown Prompt Engineering</strong> with GitHub Copilot and advanced coding agents.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>

@@ -1,0 +1,96 @@
+# Site settings
+title: "AI Native Development Guide"
+description: "Master GitHub Copilot and Coding Agents through systematic Agent Primitives and Markdown Prompt Engineering"
+baseurl: "/awesome-ai-native"
+url: "https://danielmeppiel.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Kramdown settings for better HTML/Markdown mixing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Navigation structure - simplified titles
+navigation:
+  - title: "Guide"
+    url: "docs/index.md"
+  - title: "Concepts"
+    url: "docs/concepts/index.md"
+  - title: "Getting Started"
+    url: "docs/getting-started/index.md"
+  - title: "Workflows"
+    url: "docs/workflows/index.md"
+  - title: "Team Adoption"
+    url: "docs/team-adoption/index.md"
+  - title: "Reference"
+    url: "docs/reference/index.md"
+
+header_pages:
+  - docs/index.md
+  - docs/concepts/index.md
+  - docs/getting-started/index.md
+  - docs/workflows/index.md
+  - docs/team-adoption/index.md
+  - docs/reference/index.md
+
+# Sass configuration
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Collections
+collections:
+  examples:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "docs"
+      type: "pages"
+    values:
+      layout: "page"
+      nav_order: 1
+  - scope:
+      path: "_examples"
+      type: "examples"
+    values:
+      layout: "page"
+
+# SEO and social
+author: "Daniel Meppiel"
+twitter:
+  username: danielmeppiel
+social:
+  name: Daniel Meppiel
+  links:
+    - https://github.com/danielmeppiel
+    - https://www.linkedin.com/in/danielmeppiel/
+
+# Analytics (add your tracking ID if needed)
+# google_analytics: UA-XXXXXXXX-X

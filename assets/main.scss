@@ -1,0 +1,513 @@
+---
+---
+
+@import "minima";
+
+/* GitHub Primer-Inspired Color Palette & Variables */
+:root {
+  --primary-color: #0969da;
+  --primary-dark: #0550ae;
+  --secondary-color: #656d76;
+  --accent-color: #8250df;
+  --warning-color: #bf8700;
+  --text-primary: #24292f;
+  --text-secondary: #656d76;
+  --text-muted: #8c959f;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f6f8fa;
+  --bg-tertiary: #f1f3f4;
+  --bg-card: #ffffff;
+  --border-color: #d0d7de;
+  --border-light: #d8dee4;
+  --border-muted: #e1e4e8;
+}
+
+/* Base Reset & Typography */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif !important;
+  color: var(--text-primary) !important;
+  line-height: 1.6 !important;
+  background-color: var(--bg-secondary) !important;
+}
+
+/* Layout Overrides */
+.wrapper {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+}
+
+/* Content spacing improvements */
+.page-content {
+  background: var(--bg-primary) !important;
+  margin-top: 0 !important;
+  
+  .wrapper {
+    padding-top: 24px !important;
+    padding-bottom: 40px !important;
+  }
+  
+  /* Better paragraph spacing */
+  p {
+    margin-bottom: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Fix blockquote spacing */
+  blockquote {
+    margin: 20px 0 !important;
+  }
+  
+  /* Section spacing */
+  section, .section {
+    margin-bottom: 32px !important;
+  }
+}
+
+/* Header Styling */
+.site-header {
+  background: var(--bg-primary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  border-top: none !important;
+  color: var(--text-primary) !important;
+  box-shadow: none !important;
+}
+
+.site-title {
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
+  font-size: 24px !important;
+  float: left !important;
+}
+
+.site-title:visited {
+  color: var(--text-primary) !important;
+}
+
+.site-nav {
+  float: right !important;
+  line-height: 56px !important;
+  
+  /* Fix navigation alignment */
+  .trigger {
+    clear: none !important;
+    display: inline-block !important;
+    vertical-align: top !important;
+  }
+}
+
+.site-nav .page-link {
+  color: var(--text-secondary) !important;
+  font-weight: 500 !important;
+  padding: 8px 16px !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease !important;
+  display: inline-block !important;
+  margin-left: 4px !important;
+}
+
+.site-nav .page-link:hover {
+  background: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  text-decoration: none !important;
+}
+
+/* Content Cards - Only for specific use cases */
+.content-card {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 1px 3px rgba(27, 31, 35, 0.04);
+  border: 1px solid var(--border-color);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  
+  &:hover {
+    border-color: var(--border-muted);
+    box-shadow: 0 3px 8px rgba(27, 31, 35, 0.08);
+  }
+
+  /* Fix spacing inside content cards */
+  > *:first-child {
+    margin-top: 0 !important;
+  }
+  
+  > *:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary) !important;
+  font-weight: 700 !important;
+  margin-top: 32px !important;
+  margin-bottom: 16px !important;
+}
+
+/* Fix first heading spacing */
+.page-content h1:first-child,
+.page-content h2:first-child,
+.page-content h3:first-child {
+  margin-top: 0 !important;
+}
+
+h1 {
+  font-size: 2.2rem !important;
+  line-height: 1.2 !important;
+  color: var(--text-primary) !important;
+  margin-bottom: 20px !important;
+}
+
+h2 {
+  font-size: 2rem !important;
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-light) !important;
+  padding-bottom: 8px !important;
+}
+
+h3 {
+  font-size: 1.5rem !important;
+  color: var(--text-primary) !important;
+}
+
+/* Learning Paths Grid */
+.learning-paths {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 20px !important;
+  margin: 32px 0 !important;
+}
+
+.path-card {
+  background: var(--bg-card) !important;
+  border-radius: 8px !important;
+  padding: 24px !important;
+  border: 1px solid var(--border-color) !important;
+  transition: border-color 0.2s ease, box-shadow 0.1s ease !important;
+}
+
+.path-card:hover {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 3px 8px rgba(27, 31, 35, 0.08) !important;
+}
+
+.path-icon {
+  font-size: 2rem !important;
+  margin-bottom: 12px !important;
+}
+
+.path-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: var(--primary-color) !important;
+  margin-bottom: 8px !important;
+}
+
+.path-description {
+  color: var(--text-secondary) !important;
+  margin-bottom: 16px !important;
+  line-height: 1.5 !important;
+}
+
+.path-meta {
+  font-size: 0.875rem !important;
+  color: var(--text-muted) !important;
+  margin-bottom: 16px !important;
+}
+
+.path-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 10px 20px !important;
+  background: var(--primary-color) !important;
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  transition: background 0.2s ease !important;
+}
+
+.path-link:hover {
+  background: var(--primary-dark) !important;
+  color: white !important;
+}
+
+/* Blockquotes & Code Styling */
+blockquote {
+  background: var(--bg-secondary) !important;
+  border-left: 3px solid var(--primary-color) !important;
+  border-radius: 0 6px 6px 0 !important;
+  padding: 12px 16px !important;
+  margin: 16px 0 !important;
+  font-style: normal !important;
+  color: var(--text-primary) !important;
+  font-size: 0.95rem !important;
+}
+
+blockquote p {
+  margin-bottom: 0 !important;
+}
+
+blockquote strong {
+  color: var(--primary-color) !important;
+}
+
+pre, code {
+  background: var(--bg-tertiary) !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: 6px !important;
+}
+
+pre {
+  padding: 16px !important;
+  overflow-x: auto !important;
+  box-shadow: none !important;
+}
+
+code {
+  padding: 2px 6px !important;
+  font-size: 0.875rem !important;
+  color: var(--text-primary) !important;
+  font-weight: 500 !important;
+}
+
+/* List Styling - Fixed bullet points and spacing */
+ul, ol {
+  margin: 16px 0 !important;
+  padding-left: 24px !important;
+}
+
+ul li, ol li {
+  margin-bottom: 8px !important;
+  line-height: 1.6 !important;
+  padding-left: 4px !important;
+}
+
+/* Nested lists */
+ul ul, ol ol, ul ol, ol ul {
+  margin: 8px 0 !important;
+  padding-left: 20px !important;
+}
+
+/* Fix list spacing in content cards */
+.content-card ul,
+.content-card ol {
+  margin: 12px 0 !important;
+}
+
+.content-card li {
+  margin-bottom: 6px !important;
+}
+
+/* Footer Styling */
+.site-footer {
+  background: var(--bg-secondary) !important;
+  color: var(--text-secondary) !important;
+  border-top: 1px solid var(--border-color) !important;
+  border-bottom: none !important;
+  padding: 24px 0 !important;
+}
+
+.site-footer .footer-heading {
+  color: var(--text-primary) !important;
+  margin-bottom: 24px !important;
+}
+
+.site-footer .footer-col-wrapper {
+  margin-bottom: 0 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+.site-footer .footer-col-1 {
+  flex: 1 1 300px !important;
+  margin-right: 40px !important;
+  margin-bottom: 20px !important;
+}
+
+.site-footer .footer-col-2 {
+  flex: 2 1 400px !important;
+  margin-bottom: 20px !important;
+}
+
+.site-footer a {
+  color: var(--text-secondary) !important;
+  text-decoration: none !important;
+}
+
+.site-footer a:hover {
+  color: var(--text-primary) !important;
+}
+
+/* Author Information Styling */
+.author-info {
+  margin-bottom: 0 !important;
+}
+
+.author-info .author-name {
+  color: var(--text-primary) !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 12px !important;
+  margin-top: 0 !important;
+}
+
+.credentials {
+  font-size: 0.9rem !important;
+  line-height: 1.4 !important;
+  margin-bottom: 16px !important;
+}
+
+.credentials .current-role {
+  margin-bottom: 8px !important;
+  color: var(--text-primary) !important;
+}
+
+.credentials .current-role strong {
+  color: var(--primary-color) !important;
+  font-weight: 600 !important;
+}
+
+.credentials .experience {
+  margin-bottom: 0 !important;
+  color: var(--text-secondary) !important;
+  font-style: italic !important;
+}
+
+/* Social Links Styling */
+.author-info .social-links {
+  margin-top: 0 !important;
+}
+
+.social-media-list {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.social-media-list li {
+  display: inline-block !important;
+  margin-right: 16px !important;
+  margin-bottom: 8px !important;
+}
+
+.social-media-list a {
+  display: flex !important;
+  align-items: center !important;
+  color: var(--text-secondary) !important;
+  transition: color 0.2s ease !important;
+}
+
+.social-media-list a:hover {
+  color: var(--primary-color) !important;
+}
+
+.social-media-list .svg-icon {
+  width: 16px !important;
+  height: 16px !important;
+  margin-right: 6px !important;
+  fill: currentColor !important;
+}
+
+.social-media-list .username {
+  font-size: 0.9rem !important;
+}
+
+/* Site Description Enhancement */
+.site-description {
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 12px !important;
+  margin-top: 0 !important;
+}
+
+.site-description strong {
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
+}
+
+.expertise-note {
+  font-size: 0.85rem !important;
+  color: var(--text-muted) !important;
+  font-style: italic !important;
+  margin-bottom: 0 !important;
+}
+
+/* Mermaid Diagram Styling */
+.mermaid {
+  text-align: center !important;
+  margin: 32px 0 !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* Ensure mermaid diagrams are responsive */
+.mermaid svg {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .wrapper {
+    padding: 0 16px !important;
+  }
+  
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  .learning-paths {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Fix mobile header layout - prevent overlap */
+  .site-header {
+    min-height: 56px !important;
+    position: relative !important;
+  }
+  
+  .site-header .wrapper {
+    position: relative !important;
+  }
+  
+  .site-title {
+    font-size: 18px !important;
+    line-height: 56px !important;
+    max-width: 60% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  
+  .site-nav {
+    position: static !important;
+    float: right !important;
+    line-height: 56px !important;
+    background: transparent !important;
+    border: none !important;
+    
+    .trigger {
+      display: inline-block !important;
+      padding: 0 !important;
+    }
+  }
+  
+  .site-nav .page-link {
+    padding: 4px 8px !important;
+    font-size: 0.8rem !important;
+    display: inline-block !important;
+    margin-left: 2px !important;
+  }
+  
+  /* Mobile footer layout */
+  .site-footer .footer-col-wrapper {
+    flex-direction: column !important;
+  }
+  
+  .site-footer .footer-col-1 {
+    margin-right: 0 !important;
+  }
+}

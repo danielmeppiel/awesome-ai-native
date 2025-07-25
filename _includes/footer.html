@@ -23,18 +23,14 @@
                   {%- if social_link contains "github" -%}
                     <li>
                       <a href="{{ social_link }}" target="_blank" rel="noopener noreferrer">
-                        <svg class="svg-icon">
-                          <use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use>
-                        </svg>
+                        <span class="fa-brands fa-github" style="margin-right: 6px; width: 16px; height: 16px; display: inline-block;"></span>
                         <span class="username">GitHub</span>
                       </a>
                     </li>
                   {%- elsif social_link contains "linkedin" -%}
                     <li>
                       <a href="{{ social_link }}" target="_blank" rel="noopener noreferrer">
-                        <svg class="svg-icon">
-                          <use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use>
-                        </svg>
+                        <span class="fa-brands fa-linkedin" style="margin-right: 6px; width: 16px; height: 16px; display: inline-block;"></span>
                         <span class="username">LinkedIn</span>
                       </a>
                     </li>

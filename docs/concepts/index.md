@@ -1,14 +1,12 @@
 ---
 layout: docs
 title: "Concepts"
-display_title: "🧠 Core Concepts: The Engineering Behind Agent Mastery"
+display_title: "Core Concepts: The Engineering Behind Agent Mastery"
 permalink: /docs/concepts/
 nav_order: 2
 ---
 
 Transform natural language chaos into systematic, repeatable AI workflows through three foundational engineering layers.
-
----
 
 ## Layer 1: Markdown Prompt Engineering
 **The Foundation:** Transform natural language into structured, repeatable instructions using Markdown's semantic power.
@@ -44,8 +42,6 @@ Follow these steps:
 4. Present your root cause analysis and suggested solutions with trade-offs to the user and seek validation before proceeding with fixes - do not change any files.
 ```
 
----
-
 ## Layer 2: Agent Primitives  
 **The Implementation:** The configurable tools that systematically deploy your prompt engineering techniques.
 
@@ -68,8 +64,6 @@ Agent Primitives are the core configurable elements that AI Native Developers it
 - **Outcome**: Developer-driven knowledge accumulation where you capture implementation failures in `.memory.md`, document successful patterns in `.instructions.md`, and refine workflows in `.prompt.md` files—creating compound intelligence that improves through your iterative refinement (Context Engineering)
 
 > 💡 **Native VSCode Support**: While VSCode natively supports `.instructions.md`, `.prompt.md`, and `.chatmode.md` files, this framework extends the paradigm with `.spec.md`, `.memory.md`, and `.context.md` patterns that represent frontier concepts in AI Native Development.
-
----
 
 ## Layer 3: Context Engineering
 **The Strategic Framework:** Systematic management of LLM context windows to maximize agent performance within memory constraints.
@@ -95,8 +89,6 @@ LLMs have finite attention spans, limited memory (context windows) and are forge
 - **Reliability Boost**: Less context pollution leads to more consistent and accurate outputs
 
 **Implementation Through Primitives:** Each context engineering technique uses Agent Primitives strategically, creating compound benefits for cognitive performance.
-
----
 
 ## The AI Native Development Framework
 
@@ -149,9 +141,7 @@ flowchart TD
 
 **The Formula: Markdown Prompt Engineering + Agent Primitives = Context Engineering**
 
----
-
-## 🎯 Key Takeaways
+## Key Takeaways
 
 1. **Markdown Prompt Engineering** provides the structural foundation for predictable AI interactions
 2. **Agent Primitives** are your configurable tools that scale and systematize these techniques

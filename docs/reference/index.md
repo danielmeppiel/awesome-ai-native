@@ -1,16 +1,14 @@
 ---
 layout: docs
 title: "Reference"
-display_title: "📚 Reference Guide: Quick Lookups & Resources"
+display_title: "Reference Guide: Quick Lookups & Resources"
 permalink: /docs/reference/
 nav_order: 6
 ---
 
 Essential checklists, progression frameworks, and documentation links for ongoing AI Native Development implementation and mastery.
 
----
-
-## 🚀 Quick Start Checklist
+## Quick Start Checklist
 
 ### Conceptual Foundation
 1. **[ ]** Understand **Markdown Prompt Engineering** principles (semantic structure + precision + tools)
@@ -26,9 +24,7 @@ Essential checklists, progression frameworks, and documentation links for ongoin
 9. **[ ]** Test async delegation with [GitHub Coding Agent](https://docs.github.com/en/copilot/about-github-copilot/about-copilot-coding-agent) (Advanced orchestration)
 10. **[ ]** Establish team governance and validation gates (Human-AI collaboration patterns)
 
----
-
-## 📈 Mastery Progression
+## Mastery Progression
 
 ### Foundation Level
 **Goal:** Understand core concepts and build first primitives  
@@ -85,9 +81,7 @@ Essential checklists, progression frameworks, and documentation links for ongoin
 
 **Next Step:** Contribute to community knowledge and frontier research
 
----
-
-## 🎯 The Paradigm Shift
+## The Paradigm Shift
 
 *Traditional approach: "Tell the AI what to do"*  
 **Agent Mastery approach: "Engineer the context and structure for optimal cognitive performance"**
@@ -106,9 +100,7 @@ Essential checklists, progression frameworks, and documentation links for ongoin
 
 **Remember:** Start simple, iterate fast, scale systematically through systematic application of these frontier concepts.
 
----
-
-## 📚 Documentation References
+## Documentation References
 
 ### Community Resources
 - **[Awesome GitHub Copilot](https://github.com/github/awesome-copilot)** - Comprehensive catalog of community-contributed instructions, prompts, and chat modes across all major languages and frameworks
@@ -128,9 +120,7 @@ Essential checklists, progression frameworks, and documentation links for ongoin
 - **[Copilot Chat Best Practices](https://docs.github.com/en/copilot/copilot-chat/copilot-chat-cookbook)** - Effective prompting examples
 - **[Responsible Use Guidelines](https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-copilot-coding-agent-on-githubcom)** - Best practices for coding agent usage
 
----
-
-## 🔧 Quick Troubleshooting
+## Quick Troubleshooting
 
 ### Common Issues & Solutions
 
@@ -149,9 +139,7 @@ Essential checklists, progression frameworks, and documentation links for ongoin
 **Issue:** Compliance and security concerns  
 **Solution:** Use risk-based agent boundaries and embed policy requirements in instructions
 
----
-
-## 🎯 Success Metrics Tracking
+## Success Metrics Tracking
 
 ### Individual Metrics
 - **Productivity:** Time saved per feature implementation
@@ -171,9 +159,7 @@ Essential checklists, progression frameworks, and documentation links for ongoin
 - **ROI:** Overall productivity and quality improvements
 - **Innovation:** Contribution to frontier AI development practices
 
----
-
-## 🚀 Next Steps
+## Next Steps
 
 ### Immediate Actions (This Week)
 1. Complete the [Quick Start Checklist](#-quick-start-checklist)
@@ -194,7 +180,5 @@ Essential checklists, progression frameworks, and documentation links for ongoin
 1. Achieve expert-level mastery
 2. Contribute to community knowledge
 3. Drive organizational AI Native transformation
-
----
 
 *This reference guide provides the essential resources for your AI Native Development journey. Return here whenever you need quick lookups, progress tracking, or implementation guidance.*

@@ -1,16 +1,14 @@
 ---
 layout: docs
 title: "Workflows"
-display_title: "⚙️ Workflow Orchestration: From Planning to Execution"
+display_title: "Workflow Orchestration: From Planning to Execution"
 permalink: /docs/workflows/
 nav_order: 4
 ---
 
 Master complete workflows from planning to implementation through Agent Primitives orchestration, async delegation, and multi-agent coordination patterns.
 
----
-
-## 🌟 Primitives in Action: Complete Workflow
+## Primitives in Action: Complete Workflow
 
 **Scenario:** Adding OAuth authentication to a Node.js API - from planning to developer-refined intelligence
 
@@ -140,7 +138,6 @@ After completion, update your primitives based on outcomes:
 
 **Result:** The 10th OAuth implementation is dramatically better than the 1st, with the intelligence you've built into the primitives, extending beyond just your memory.
 
----
 
 ## A. Execution Path Selection
 **✅ Quick Actions:**
@@ -174,8 +171,6 @@ Control Preference → Recommended Path:
 **⚠️ Checkpoint:** Path selection aligns with control preferences and specification maturity
 
 **📊 Success Metric:** Optimal balance between productivity and quality control
-
----
 
 ## B. Async Delegation Workflows
 
@@ -262,7 +257,6 @@ Use GitHub MCP Server tools:
 **⚠️ Checkpoint:** Each component is independently implementable with clear integration contracts
 **📊 Success Metric:** Parallel agents complete without scope conflicts or integration failures
 
----
 
 ## C. Progress Monitoring & Async Integration
 
@@ -347,8 +341,6 @@ Progress Visibility Across Channels:
 **⚠️ Checkpoint:** All async outputs meet quality standards before integration
 **📊 Success Metric:** Zero production issues from async agent implementations
 
----
-
 ## D. Advanced: Hybrid Context Strategies
 
 *Building on Basic Delegation for Complex Multi-Component Workflows*
@@ -394,9 +386,7 @@ Progress Visibility Across Channels:
 **⚠️ Checkpoint:** Context preservation enables seamless hybrid sync/async workflows
 **📊 Success Metric:** No cognitive overhead when switching between local and async work contexts
 
----
-
-## 🎯 Key Takeaways
+## Key Takeaways
 
 1. **Complete Workflows** combine Agent Primitives into systematic, repeatable processes
 2. **Execution Path Selection** balances control vs. productivity based on your specific needs

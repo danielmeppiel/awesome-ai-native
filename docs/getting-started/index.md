@@ -1,14 +1,12 @@
 ---
 layout: docs
 title: "Getting Started"
-display_title: "🏗️ Getting Started: Foundation Setup"
+display_title: "Getting Started: Foundation Setup"
 permalink: /docs/getting-started/
 nav_order: 3
 ---
 
 Build your first Agent Primitives and experience immediate productivity improvements through systematic implementation of instructions, chat modes, prompts, and specifications.
-
----
 
 ## A. Instructions Architecture
 **✅ Quick Actions:**
@@ -53,8 +51,6 @@ Generate code with:
 ```
 
 **⚠️ Checkpoint:** Instructions are context-efficient and non-conflicting
-
----
 
 ## B. Chat Modes Configuration
 **✅ Quick Actions:**
@@ -109,8 +105,6 @@ You master the backend of this project thanks to you having read all [the backen
 
 **⚠️ Checkpoint:** Each mode has clear boundaries and tool restrictions
 
----
-
 ## C. Reusable Prompt Library
 **✅ Quick Actions:**
 - Create [`.prompt.md` files](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental) for recurring tasks
@@ -159,8 +153,6 @@ Confirm: Architecture alignment, test strategy, and breaking change impact.
 ```
 
 **⚠️ Checkpoint:** Prompts include explicit validation gates
-
----
 
 ## D. Specification Templates
 **✅ Quick Actions:**
@@ -215,9 +207,7 @@ Implement middleware-based authentication with token validation and refresh capa
 
 **⚠️ Checkpoint:** Specifications are implementation-ready before delegation
 
----
-
-## 🚀 Quick Start Checklist
+## Quick Start Checklist
 
 ### Conceptual Foundation
 1. **[ ]** Understand **Markdown Prompt Engineering** principles (semantic structure + precision + tools)
@@ -231,9 +221,7 @@ Implement middleware-based authentication with token validation and refresh capa
 7. **[ ]** Build your first `.spec.md` template for feature specifications (Agent Primitive: deterministic planning-to-implementation bridge)
 8. **[ ]** Practice spec-first workflow: plan first, implement second (Context Engineering: session splitting)
 
----
-
-## 🎯 What's Next?
+## What's Next?
 
 **Foundation Complete?** Advance to [Workflow Orchestration](../workflows/) to see these primitives in action with complete OAuth implementation example.
 

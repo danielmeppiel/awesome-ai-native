@@ -248,29 +248,29 @@ code[class*="markdown"] {
 }
 
 /* Links containing code elements - clean styling */
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link) code {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn) code {
   color: var(--primary-color);
   text-decoration: none;
 }
 
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):hover code {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):hover code {
   color: var(--primary-dark);
   text-decoration: none;
 }
 
 /* General link styling - only for content links, not navigation or buttons */
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link) {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn) {
   color: var(--primary-color);
   text-decoration: underline;
   text-decoration-color: var(--primary-color);
 }
 
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):hover {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):hover {
   color: var(--primary-dark);
   text-decoration-color: var(--primary-dark);
 }
 
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):visited {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):visited {
   color: var(--primary-color);
 }
 
@@ -539,20 +539,19 @@ body {
     padding-bottom: 40px !important;
   }
   
-  /* Better paragraph spacing */
   p {
-    margin-bottom: 16px !important;
+    margin-bottom: 12px !important;
     line-height: 1.6 !important;
   }
   
   /* Fix blockquote spacing */
   blockquote {
-    margin: 20px 0 !important;
+    margin: 16px 0 !important;
   }
   
   /* Section spacing */
   section, .section {
-    margin-bottom: 32px !important;
+    margin-bottom: 24px !important;
   }
 }
 
@@ -594,75 +593,78 @@ body {
 
 /* Primary CTA Button - GitHub Primer style */
 .btn-primary {
-  display: inline-flex !important;
-  align-items: center !important;
-  padding: 8px 12px !important;
-  background: var(--primary-color) !important;
-  color: white !important;
-  text-decoration: none !important;
-  border-radius: 6px !important;
-  font-weight: 500 !important;
-  font-size: 14px !important;
-  line-height: 1 !important;
-  transition: background-color 0.2s ease !important;
-  border: 1px solid transparent !important;
-  cursor: pointer !important;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  transition: background-color 0.2s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .btn-primary:hover {
-  background: var(--primary-dark) !important;
-  color: white !important;
-  text-decoration: none !important;
+  background: var(--primary-dark);
+  color: white;
+  text-decoration: none;
 }
 
 .btn-primary:visited {
-  color: white !important;
+  color: white;
 }
 
 .btn-primary:focus {
-  outline: 2px solid var(--primary-color) !important;
-  outline-offset: 2px !important;
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
 }
 
 /* GitHub Contribute Button */
 .github-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  padding: 8px 12px !important;
-  background: var(--bg-secondary) !important;
-  color: var(--text-primary) !important;
-  text-decoration: none !important;
-  border-radius: 6px !important;
-  font-weight: 500 !important;
-  font-size: 14px !important;
-  transition: background-color 0.2s ease !important;
-  line-height: 1 !important;
-  border: 1px solid var(--border-color) !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .github-btn:hover {
-  background: var(--bg-tertiary) !important;
-  color: var(--text-primary) !important;
-  text-decoration: none !important;
-  border-color: var(--border-light) !important;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  text-decoration: none;
+  border-color: var(--border-light);
 }
 
 .github-btn:visited {
-  color: var(--text-primary) !important;
+  color: var(--text-primary);
 }
 
 .github-btn .octicon {
-  width: 16px !important;
-  height: 16px !important;
-  fill: currentColor !important;
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
 }
 
 .github-btn .github-text {
-  font-weight: 500 !important;
+  font-weight: 500;
 }
 
-/* Documentation Layout */
+/* Documentation Layout - Primer inspired */
 .docs-layout {
   display: grid !important;
   grid-template-columns: 280px 1fr !important;
@@ -674,7 +676,7 @@ body {
 .docs-sidebar {
   background: var(--bg-primary) !important;
   border-right: 1px solid var(--border-color) !important;
-  padding: 16px 0 !important;
+  padding: 24px 16px !important;
   position: sticky !important;
   top: 0 !important;
   height: calc(100vh - 56px) !important;
@@ -686,14 +688,15 @@ body {
   padding: 0 !important;
 }
 
-/* Navigation Sections */
+/* Navigation Sections - Primer-inspired elegant grouping */
 .nav-section {
-  margin-bottom: 0 !important;
-  border-bottom: 1px solid var(--border-light) !important;
+  margin-bottom: 12px !important;
+  position: relative !important;
 }
 
-.nav-section:last-child {
-  border-bottom: none !important;
+/* Consistent compact spacing between all section groups - Primer style */
+.nav-section + .nav-section {
+  margin-top: 0 !important;
 }
 
 .nav-section-title {
@@ -701,24 +704,32 @@ body {
   display: flex !important;
   align-items: center !important;
   position: relative !important;
+  border-radius: 6px !important;
+  transition: background-color 0.1s ease !important;
 }
 
-/* Toggle Button */
+.nav-section-title:hover {
+  background: var(--bg-secondary) !important;
+}
+
+/* Toggle Button - Refined Primer style */
 .nav-toggle {
   background: none !important;
   border: none !important;
-  padding: 12px !important;
+  padding: 8px !important;
   cursor: pointer !important;
   color: var(--text-muted) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  transition: color 0.2s ease !important;
+  transition: color 0.1s ease !important;
   flex-shrink: 0 !important;
+  border-radius: 4px !important;
 }
 
 .nav-toggle:hover {
   color: var(--text-secondary) !important;
+  background: rgba(175, 184, 193, 0.1) !important;
 }
 
 .nav-toggle.expanded {
@@ -735,7 +746,7 @@ body {
   transform: rotate(90deg) !important;
 }
 
-/* Main Navigation Links */
+/* Main Navigation Links - Primer design patterns */
 .nav-main-link {
   color: var(--text-primary) !important;
   text-decoration: none !important;
@@ -743,11 +754,12 @@ body {
   font-size: 14px !important;
   display: flex !important;
   align-items: center !important;
-  padding: 12px 16px 12px 8px !important;
-  border-radius: 0 !important;
-  transition: all 0.2s ease !important;
+  padding: 8px 12px !important;
+  border-radius: 6px !important;
+  transition: all 0.1s ease !important;
   flex: 1 !important;
   position: relative !important;
+  margin: 2px 4px !important;
 }
 
 .nav-main-link:hover {
@@ -769,38 +781,41 @@ body {
 .nav-main-link.current::before {
   content: '' !important;
   position: absolute !important;
-  left: 0 !important;
-  top: 0 !important;
-  bottom: 0 !important;
+  left: -4px !important;
+  top: 2px !important;
+  bottom: 2px !important;
   width: 3px !important;
   background: var(--primary-color) !important;
+  border-radius: 0 2px 2px 0 !important;
 }
 
 .nav-icon {
   margin-right: 8px !important;
   font-size: 16px !important;
   flex-shrink: 0 !important;
+  display: none !important; /* Hide emoji icons for professional look */
 }
 
 .nav-text {
   flex: 1 !important;
 }
 
-/* Subsections */
+/* Subsections - Clean, subtle grouping */
 .nav-subsection {
   list-style: none !important;
   margin: 0 !important;
   padding: 0 !important;
-  background: var(--bg-tertiary) !important;
-  border-top: 1px solid var(--border-light) !important;
+  background: rgba(246, 248, 250, 0.5) !important;
+  border-radius: 0 0 6px 6px !important;
   max-height: 0 !important;
   overflow: hidden !important;
   transition: max-height 0.2s ease !important;
+  margin: 0 4px !important;
 }
 
 .nav-subsection.expanded {
   max-height: 300px !important;
-  padding: 8px 0 !important;
+  padding: 4px 0 8px 0 !important;
 }
 
 .nav-subsection li {
@@ -814,14 +829,17 @@ body {
   font-size: 13px !important;
   font-weight: 400 !important;
   display: block !important;
-  padding: 6px 16px 6px 48px !important;
-  transition: all 0.2s ease !important;
-  border-left: 3px solid transparent !important;
+  padding: 4px 12px 4px 36px !important;
+  transition: all 0.1s ease !important;
+  border-radius: 4px !important;
+  margin: 1px 8px !important;
+  position: relative !important;
+  border-left: 2px solid transparent !important;
 }
 
 .nav-sub-link:hover {
   color: var(--text-primary) !important;
-  background: var(--bg-secondary) !important;
+  background: rgba(246, 248, 250, 0.8) !important;
   text-decoration: none !important;
   border-left-color: var(--border-muted) !important;
 }
@@ -833,7 +851,7 @@ body {
 .nav-sub-link:active,
 .nav-sub-link.current {
   color: var(--text-primary) !important;
-  background: var(--bg-secondary) !important;
+  background: rgba(246, 248, 250, 0.8) !important;
   border-left-color: var(--primary-color) !important;
   font-weight: 500 !important;
 }
@@ -863,7 +881,7 @@ body {
 }
 
 .docs-page-header {
-  padding: 32px 40px 16px 40px !important;
+  padding: 32px 40px 20px 40px !important;
   background: var(--bg-primary) !important;
   border-bottom: 1px solid var(--border-light) !important;
   display: flex !important;
@@ -873,8 +891,10 @@ body {
 
 .docs-page-header h1 {
   margin: 0 !important;
-  font-size: 2rem !important;
+  font-size: 2.25rem !important;
+  font-weight: 600 !important;
   color: var(--text-primary) !important;
+  line-height: 1.2 !important;
 }
 
 .edit-page {
@@ -890,7 +910,7 @@ body {
   text-decoration: none !important;
   border: 1px solid var(--border-color) !important;
   border-radius: 6px !important;
-  font-size: 13px !important;
+  font-size: 14px !important;
   font-weight: 500 !important;
   transition: all 0.2s ease !important;
 }
@@ -908,23 +928,24 @@ body {
 }
 
 .docs-content-inner {
-  padding: 32px 40px 40px 40px !important;
+  padding: 32px 40px !important;
   max-width: none !important;
+  line-height: 1.6 !important;
 }
 
 /* Content Cards - Only for specific use cases */
 .content-card {
   background: var(--bg-card);
-  border-radius: 8px;
-  padding: 24px;
+  border-radius: 12px;
+  padding: 32px 24px;
   margin: 24px 0;
-  box-shadow: 0 1px 3px rgba(27, 31, 35, 0.04);
-  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px rgba(27, 31, 35, 0.12);
+  border: 1px solid var(--border-light);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   
   &:hover {
-    border-color: var(--border-muted);
-    box-shadow: 0 3px 8px rgba(27, 31, 35, 0.08);
+    border-color: var(--border-color);
+    box-shadow: 0 1px 3px rgba(27, 31, 35, 0.12), 0 8px 24px rgba(66, 74, 83, 0.12);
   }
 
   /* Fix spacing inside content cards */
@@ -937,12 +958,12 @@ body {
   }
 }
 
-/* Typography Overrides */
+/* Typography Overrides - Tighter spacing */
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-primary) !important;
   font-weight: 700 !important;
-  margin-top: 32px !important;
-  margin-bottom: 16px !important;
+  margin-top: 24px !important;
+  margin-bottom: 12px !important;
 }
 
 /* Fix first heading spacing */
@@ -953,84 +974,98 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2.2rem !important;
-  line-height: 1.2 !important;
+  font-size: 2.25rem !important;
+  font-weight: 600 !important;
   color: var(--text-primary) !important;
-  margin-bottom: 20px !important;
+  line-height: 1.2 !important;
+  margin-bottom: 16px !important;
 }
 
 h2 {
-  font-size: 2rem !important;
+  font-size: 1.875rem !important;
   color: var(--text-primary) !important;
   border-bottom: 1px solid var(--border-light) !important;
-  padding-bottom: 8px !important;
+  padding-bottom: 6px !important;
+  margin-top: 32px !important;
+  margin-bottom: 16px !important;
 }
 
 h3 {
-  font-size: 1.5rem !important;
+  font-size: 1.25rem !important;
   color: var(--text-primary) !important;
+  margin-top: 20px !important;
+  margin-bottom: 10px !important;
 }
 
 /* Learning Paths Grid */
 .learning-paths {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-  gap: 20px !important;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: 24px !important;
   margin: 32px 0 !important;
 }
 
 .path-card {
   background: var(--bg-card) !important;
-  border-radius: 8px !important;
-  padding: 24px !important;
-  border: 1px solid var(--border-color) !important;
-  transition: border-color 0.2s ease, box-shadow 0.1s ease !important;
+  border-radius: 12px !important;
+  padding: 32px 24px !important;
+  border: 1px solid var(--border-light) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+  position: relative !important;
 }
 
 .path-card:hover {
-  border-color: var(--primary-color) !important;
-  box-shadow: 0 3px 8px rgba(27, 31, 35, 0.08) !important;
-}
-
-.path-icon {
-  font-size: 2rem !important;
-  margin-bottom: 12px !important;
+  border-color: var(--border-color) !important;
+  box-shadow: 0 1px 3px rgba(27, 31, 35, 0.12), 0 8px 24px rgba(66, 74, 83, 0.12) !important;
 }
 
 .path-title {
-  font-size: 1.25rem !important;
-  font-weight: 700 !important;
-  color: var(--primary-color) !important;
-  margin-bottom: 8px !important;
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+  margin-bottom: 12px !important;
+  line-height: 1.25 !important;
 }
 
 .path-description {
   color: var(--text-secondary) !important;
-  margin-bottom: 16px !important;
+  margin-bottom: 20px !important;
   line-height: 1.5 !important;
+  font-size: 0.875rem !important;
 }
 
 .path-meta {
-  font-size: 0.875rem !important;
+  font-size: 0.75rem !important;
   color: var(--text-muted) !important;
-  margin-bottom: 16px !important;
+  margin-bottom: 24px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  font-weight: 500 !important;
 }
 
 .path-link {
   display: inline-flex !important;
   align-items: center !important;
-  padding: 10px 20px !important;
-  background: var(--primary-color) !important;
-  color: white !important;
+  color: var(--primary-color) !important;
   text-decoration: none !important;
-  border-radius: 6px !important;
-  font-weight: 600 !important;
-  transition: background 0.2s ease !important;
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+  transition: color 0.2s ease !important;
 }
 
 .path-link:hover {
-  background: var(--primary-dark) !important;
-  color: white !important;
+  color: var(--primary-dark) !important;
+  text-decoration: none !important;
+}
+
+.path-link::after {
+  content: "→" !important;
+  margin-left: 6px !important;
+  transition: transform 0.2s ease !important;
+}
+
+.path-card:hover .path-link::after {
+  transform: translateX(2px) !important;
 }
 
 /* Blockquotes & Code Styling */
@@ -1116,29 +1151,29 @@ code[class*="markdown"] {
 }
 
 /* Links containing code elements - clean styling with proper color inheritance */
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link) code {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn) code {
   color: var(--primary-color) !important;
   text-decoration: none !important;
 }
 
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):hover code {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):hover code {
   color: var(--primary-dark) !important;
   text-decoration: none !important;
 }
 
 /* General link styling that works with GitHub Primer design - only for content, excluding navigation and buttons */
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link) {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn) {
   color: var(--primary-color) !important;
   text-decoration: underline !important;
   text-decoration-color: var(--primary-color) !important;
 }
 
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):hover {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):hover {
   color: var(--primary-dark) !important;
   text-decoration-color: var(--primary-dark) !important;
 }
 
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):visited {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):visited {
   color: var(--primary-color) !important;
 }
 
@@ -1597,17 +1632,17 @@ ul ul, ol ol, ul ol, ol ul {
   }
   
   .github-btn {
-    padding: 6px 8px !important;
-    font-size: 12px !important;
+    padding: 6px 8px;
+    font-size: 12px;
   }
   
   .github-btn .github-text {
-    display: none !important;
+    display: none;
   }
   
   .github-btn .octicon {
-    width: 14px !important;
-    height: 14px !important;
+    width: 14px;
+    height: 14px;
   }
   
   /* Mobile Documentation Layout */
@@ -1671,5 +1706,393 @@ ul ul, ol ol, ul ol, ol ul {
   
   .site-footer .footer-col-1 {
     margin-right: 0 !important;
+  }
+}
+
+/* AI Native Development Maturity Timeline - Following Primer Card Design */
+.maturity-timeline {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 24px;
+  margin: 48px 0;
+  align-items: stretch;
+}
+
+.maturity-stage {
+  position: relative;
+}
+
+.stage-content {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 24px;
+  border: 1px solid var(--border-light);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.stage-content:hover {
+  border-color: var(--border-color);
+  box-shadow: 0 1px 3px rgba(27, 31, 35, 0.12), 0 8px 24px rgba(66, 74, 83, 0.12);
+}
+
+.stage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.stage-number {
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 0.6875rem;
+  flex-shrink: 0;
+  border: 1px solid var(--border-muted);
+}
+
+.stage-label {
+  background: var(--accent-color);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.maturity-from .stage-label {
+  background: var(--secondary-color);
+}
+
+.maturity-to .stage-label {
+  background: var(--primary-color);
+}
+
+.stage-content h3 {
+  margin: 0 0 4px 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.stage-subtitle {
+  margin: 0 0 16px 0;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.stage-points {
+  margin: 0 0 16px 0 !important;
+  padding-left: 0 !important;
+  list-style: none !important;
+  flex: 1;
+}
+
+.stage-points li {
+  margin-bottom: 6px !important;
+  padding-left: 0 !important;
+  position: relative;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  list-style: none !important;
+}
+
+.stage-outcome {
+  background: var(--bg-tertiary);
+  border-radius: 6px;
+  padding: 12px;
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--text-primary);
+  border-left: 3px solid var(--border-muted);
+  line-height: 1.4;
+}
+
+.maturity-from .stage-outcome {
+  border-left-color: var(--secondary-color);
+  background: var(--bg-tertiary);
+}
+
+.maturity-to .stage-outcome {
+  border-left-color: var(--primary-color);
+  background: var(--bg-tertiary);
+}
+
+.timeline-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-top: 40px;
+}
+
+.connector-arrow {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  box-shadow: 0 1px 3px rgba(27, 31, 35, 0.08);
+  transition: all 0.15s ease;
+}
+
+.connector-arrow:hover {
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+/* Enhanced Code Styling - Primer Brand inspired */
+code {
+  background: #f6f8fa !important;
+  color: #24292f !important;
+  border-radius: 6px !important;
+  padding: 2px 6px !important;
+  font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', monospace !important;
+  font-size: 0.85em !important;
+  border: 1px solid #d8dee4 !important;
+}
+
+pre {
+  background: #f6f8fa !important;
+  border: 1px solid #d8dee4 !important;
+  border-radius: 8px !important;
+  padding: 16px !important;
+  overflow-x: auto !important;
+  margin: 16px 0 !important;
+}
+
+pre code {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  font-size: 0.875rem !important;
+  color: #24292f !important;
+}
+
+/* CTA Buttons Section - GitHub Primer Style */
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  margin: 24px 0;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Ensure buttons inherit clean styling from parent container */
+.cta-buttons .btn-primary,
+.cta-buttons .github-btn {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+/* Primary CTA Button with higher specificity to override conflicts */
+.page-content .cta-buttons .btn-primary,
+.cta-buttons .btn-primary {
+  padding: 8px 16px;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  transition: background-color 0.2s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.page-content .cta-buttons .btn-primary:hover,
+.cta-buttons .btn-primary:hover {
+  background: var(--primary-dark);
+  color: white;
+  text-decoration: none;
+}
+
+.page-content .cta-buttons .btn-primary:visited,
+.cta-buttons .btn-primary:visited {
+  color: white;
+}
+
+/* GitHub Button with higher specificity */
+.page-content .cta-buttons .github-btn,
+.cta-buttons .github-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.page-content .cta-buttons .github-btn:hover,
+.cta-buttons .github-btn:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  text-decoration: none;
+  border-color: var(--border-light);
+}
+
+.page-content .cta-buttons .github-btn:visited,
+.cta-buttons .github-btn:visited {
+  color: var(--text-primary);
+}
+
+.github-btn .octicon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.github-btn .github-text {
+  font-weight: 500;
+}
+
+/* Force button styles to override any conflicting link styles */
+a.btn-primary,
+a.btn-primary:hover,
+a.btn-primary:visited,
+a.btn-primary:focus {
+  color: white !important;
+  text-decoration: none !important;
+  background: var(--primary-color) !important;
+}
+
+a.btn-primary:hover {
+  background: var(--primary-dark) !important;
+}
+
+a.github-btn,
+a.github-btn:hover,
+a.github-btn:visited,
+a.github-btn:focus {
+  color: var(--text-primary) !important;
+  text-decoration: none !important;
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+a.github-btn:hover {
+  background: var(--bg-tertiary) !important;
+  border-color: var(--border-light) !important;
+}
+
+@media (max-width: 768px) {
+  .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  
+  .cta-buttons .btn-primary,
+  .cta-buttons .github-btn {
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .github-btn {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  
+  .github-btn .github-text {
+    display: none;
+  }
+  
+  .github-btn .octicon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Mobile responsive timeline */
+@media (max-width: 768px) {
+  .maturity-timeline {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .timeline-connector {
+    margin-top: 0;
+    flex-direction: row;
+    height: auto;
+    justify-content: center;
+    padding: 8px 0;
+  }
+  
+  .connector-arrow {
+    transform: rotate(90deg);
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+  }
+  
+  .stage-header {
+    margin-bottom: 12px;
+  }
+  
+  .stage-number {
+    width: 18px;
+    height: 18px;
+    font-size: 0.625rem;
+  }
+  
+  .stage-label {
+    font-size: 0.625rem;
+    padding: 3px 6px;
+  }
+  
+  .stage-content h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+  
+  .stage-content {
+    padding: 20px;
+  }
+  
+  .stage-points li {
+    font-size: 0.8125rem;
+  }
+  
+  .stage-outcome {
+    font-size: 0.75rem;
+    padding: 10px;
   }
 }

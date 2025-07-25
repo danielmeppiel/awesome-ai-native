@@ -884,9 +884,6 @@ body {
   padding: 32px 40px 20px 40px !important;
   background: var(--bg-primary) !important;
   border-bottom: 1px solid var(--border-light) !important;
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
 }
 
 .docs-page-header h1 {
@@ -895,36 +892,6 @@ body {
   font-weight: 600 !important;
   color: var(--text-primary) !important;
   line-height: 1.2 !important;
-}
-
-.edit-page {
-  flex-shrink: 0 !important;
-}
-
-.edit-link {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  padding: 8px 12px !important;
-  color: var(--text-secondary) !important;
-  text-decoration: none !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: 6px !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  transition: all 0.2s ease !important;
-}
-
-.edit-link:hover {
-  color: var(--text-primary) !important;
-  border-color: var(--border-muted) !important;
-  background: var(--bg-secondary) !important;
-}
-
-.edit-link .octicon {
-  width: 14px !important;
-  height: 14px !important;
-  fill: currentColor !important;
 }
 
 .docs-content-inner {
@@ -1758,9 +1725,6 @@ ul ul, ol ol, ul ol, ol ul {
   
   .docs-page-header {
     padding: 20px 16px 12px 16px !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 12px !important;
   }
   
   .docs-page-header h1 {

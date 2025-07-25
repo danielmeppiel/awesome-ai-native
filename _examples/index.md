@@ -1,52 +1,52 @@
 ---
-layout: page
+layout: docs
 title: "Examples & Templates"
-display_title: "🔧 Examples & Templates"
+display_title: "Examples & Templates"
 permalink: /examples/
 ---
 
-Ready-to-use Agent Primitives and templates that demonstrate AI Native Development patterns in practice.
+**For comprehensive examples and templates, visit the official [Awesome GitHub Copilot](https://github.com/github/awesome-copilot) repository.**
 
-## 📁 Directory Structure
+This community-driven resource contains hundreds of real-world examples across all major languages and frameworks, including:
 
-### Instructions Examples
-- **[Frontend Instructions](instructions/frontend)** - React, TypeScript, and UI development guidelines
-- **[Backend Instructions](instructions/backend)** - API, database, and security patterns
-- **[Testing Instructions](instructions/testing)** - Test-driven development with AI assistance
+## What You'll Find There
 
-### Chat Mode Examples  
-- **[Architect Mode](chatmodes/architect)** - System design and planning specialist
-- **[Security Mode](chatmodes/security)** - Security-focused development patterns
-- **[DevOps Mode](chatmodes/devops)** - Infrastructure and deployment workflows
+<div class="guide-sections">
+  <div class="guide-card">
+    <div class="guide-title">Instructions Examples</div>
+    <div class="guide-description">Language-specific development guidelines and coding standards</div>
+    <a href="https://github.com/github/awesome-copilot" class="guide-link" target="_blank" rel="noopener noreferrer">View examples</a>
+  </div>
 
-### Prompt Templates
-- **[Code Review](prompts/code-review)** - Systematic code review workflows
-- **[Feature Specification](prompts/feature-spec)** - Spec-first development templates
-- **[Bug Investigation](prompts/bug-investigation)** - Debugging and root cause analysis
+  <div class="guide-card">
+    <div class="guide-title">Chat Mode Templates</div>
+    <div class="guide-description">Specialized AI assistants for different development workflows</div>
+    <a href="https://github.com/github/awesome-copilot" class="guide-link" target="_blank" rel="noopener noreferrer">View examples</a>
+  </div>
 
-### Specification Templates
-- **[Feature Template](specifications/feature-template)** - Standard feature specification
-- **[API Endpoint](specifications/api-endpoint)** - RESTful API specification
-- **[Database Schema](specifications/database-schema)** - Database design template
+  <div class="guide-card">
+    <div class="guide-title">Prompt Libraries</div>
+    <div class="guide-description">Reusable prompt templates for common development tasks</div>
+    <a href="https://github.com/github/awesome-copilot" class="guide-link" target="_blank" rel="noopener noreferrer">View examples</a>
+  </div>
 
----
+  <div class="guide-card">
+    <div class="guide-title">Framework-Specific Patterns</div>
+    <div class="guide-description">React, Node.js, Python, and many other technology stacks</div>
+    <a href="https://github.com/github/awesome-copilot" class="guide-link" target="_blank" rel="noopener noreferrer">View examples</a>
+  </div>
+</div>
 
-## 🚀 Getting Started with Examples
+## Why Use the Awesome GitHub Copilot Repository?
 
-1. **Browse the categories** above to find examples relevant to your use case
-2. **Copy the templates** into your `.github/` directory structure
-3. **Customize** the patterns for your specific project needs
-4. **Iterate and refine** based on your experience
+- **Community-Driven**: Maintained by GitHub and the community with hundreds of contributors
+- **Battle-Tested**: Real-world examples used in production environments
+- **Comprehensive Coverage**: Examples for all major programming languages and frameworks
+- **Always Updated**: New patterns and improvements added regularly
+- **Official Support**: Direct integration with GitHub Copilot's latest features
 
-## 💡 Contributing Examples
+## Contributing to the Community
 
-Have a successful Agent Primitive pattern? Consider contributing:
+Found a successful Agent Primitive pattern? Consider contributing it to the [Awesome GitHub Copilot](https://github.com/github/awesome-copilot) repository to help the entire developer community.
 
-1. Fork this repository
-2. Add your example to the appropriate category
-3. Include clear documentation and use cases
-4. Submit a pull request
-
----
-
-*These examples provide concrete starting points for implementing AI Native Development in your projects. Each template includes detailed documentation and customization guidance.*
+*This guide focuses on the methodology and frameworks for AI Native Development, while the Awesome GitHub Copilot repository provides the concrete implementation examples.*

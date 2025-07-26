@@ -38,10 +38,10 @@ permalink: /
   </div>
 
   <div class="path-card">
-    <div class="path-title">Advanced Workflows</div>
+    <div class="path-title">Agent Delegation</div>
     <div class="path-description">Master async delegation and multi-agent coordination</div>
     <div class="path-meta">20-25 minutes • Advanced Patterns</div>
-    <a href="docs/workflows/" class="path-link">Learn more</a>
+    <a href="docs/agent-delegation/" class="path-link">Learn more</a>
   </div>
 
   <div class="path-card">

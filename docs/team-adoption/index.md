@@ -50,11 +50,11 @@ While individual mastery of Agent Primitives creates immediate productivity gain
 **✅ Quick Actions:**
 - **Team Orchestration Standards:** Establish shared patterns for multi-agent project management
 - **Cross-Developer Coordination:** Manage dependencies when multiple team members use async delegation
-- **Repository-Level Governance:** Scale the [individual orchestration patterns from Workflow Orchestration](../workflows/) across teams and shared codebases
+- **Repository-Level Governance:** Scale the [individual orchestration patterns from Agent Delegation](../agent-delegation/) across teams and shared codebases
 
-> 💡 **Team Scaling Strategy**: Build on individual orchestration mastery (covered in [Workflow Orchestration](../workflows/)) to coordinate multiple developers leveraging async agents simultaneously across shared codebases and complex projects.
+> 💡 **Team Scaling Strategy**: Build on individual orchestration mastery (covered in [Agent Delegation](../agent-delegation/)) to coordinate multiple developers leveraging async agents simultaneously across shared codebases and complex projects.
 
-This section assumes mastery of individual orchestration patterns from [Workflow Orchestration](../workflows/) and focuses on **team-scale** coordination challenges that emerge when multiple developers apply these techniques simultaneously.
+This section assumes mastery of individual orchestration patterns from [Agent Delegation](../agent-delegation/) and focuses on **team-scale** coordination challenges that emerge when multiple developers apply these techniques simultaneously.
 
 ### 🔧 Team-Specific Orchestration Concerns:
 

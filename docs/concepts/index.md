@@ -51,7 +51,7 @@ Once you've mastered structured prompting, you'll quickly realize that manually 
 
 - **Instructions Files**: Deploy structured guidance through modular `.instructions.md` files with targeted scope
 - **Chat Modes**: Deploy role-based expertise through `.chatmode.md` files with MCP tool boundaries that prevent security breaches and cross-domain interference - like professional licenses that keep architects from building and engineers from planning
-- **Prompt Workflows**: Deploy reusable task templates through `.prompt.md` files with built-in validation
+- **Agentic Workflows**: Deploy reusable prompts through `.prompt.md` files with built-in validation
 - **Specification Files**: Create implementation-ready blueprints through `.spec.md` files that ensure deterministic outcomes across human and AI executors
 - **Agent Memory Files**: Preserve knowledge across sessions through `.memory.md` files
 - **Context Helper Files**: Optimize information retrieval through `.context.md` files
@@ -64,6 +64,8 @@ Agent Primitives are the core configurable elements that AI Native Developers it
 - **Technique**: "Implement secure user authentication system" (Markdown Prompt Engineering)
 - **Primitives**: Developer selects `backend-dev` chat mode → Auto-triggers `security.instructions.md` via `applyTo: "auth/**"` → Loads context from `[Previous auth patterns](.memory.md#security)` and `[API Security Standards](api-security.context.md#rest)` → Generates `user-auth.spec.md` using structured templates → Executes `implement-from-spec.prompt.md` workflow with validation gates (Agent Primitives)
 - **Outcome**: Developer-driven knowledge accumulation where you capture implementation failures in `.memory.md`, document successful patterns in `.instructions.md`, and refine workflows in `.prompt.md` files—creating compound intelligence that improves through your iterative refinement (Context Engineering)
+
+This transformation might seem complex, but notice the pattern: what started as an ad-hoc request became a systematic workflow with clear handoff points, automatic context loading, and built-in validation. Each primitive file becomes a knowledge asset that improves with use, creating compound intelligence that serves your entire team.
 
 This transformation might seem complex, but notice the pattern: what started as an ad-hoc request became a systematic workflow with clear handoff points, automatic context loading, and built-in validation. Each primitive file becomes a knowledge asset that improves with use, creating compound intelligence that serves your entire team.
 
@@ -95,6 +97,20 @@ LLMs have finite attention spans, limited memory (context windows) and are forge
 - **Reliability Boost**: Less context pollution leads to more consistent and accurate outputs
 
 **Implementation Through Primitives:** Each context engineering technique uses Agent Primitives strategically, creating compound benefits for cognitive performance.
+
+## Agentic Workflows: The Complete System in Action
+
+Now that you understand all three layers, you can see how they combine into **Agentic Workflows** - complete, systematic processes that orchestrate all your primitives into end-to-end solutions. These workflows represent the practical application of the entire framework working together.
+
+**Agentic Workflows** are implemented as `.prompt.md` files that coordinate multiple primitives into unified processes, designed to work whether executed locally in your IDE or delegated to async agents.
+
+### Key Characteristics:
+- **Full Orchestration**: Combine all three layers (Markdown Prompt Engineering + Agent Primitives + Context Engineering) into unified processes
+- **Complete Automation**: Handle entire development tasks from context loading through implementation to learning integration
+- **Execution Flexibility**: Designed to work whether executed locally or delegated to async GitHub Coding Agents
+- **Self-Improving Intelligence**: Include learning mechanisms that update primitives based on execution outcomes
+
+**The Power of Integration:** What started as individual techniques and separate primitive files becomes a systematic process that handles complete development tasks while continuously improving through use. Each Agentic Workflow is a `.prompt.md` file that coordinates your entire AI Native Development toolkit into repeatable, reliable processes.
 
 ## The AI Native Development Framework
 
@@ -145,15 +161,16 @@ flowchart TD
 
 </div>
 
-**The Formula: Markdown Prompt Engineering + Agent Primitives = Context Engineering**
+**Markdown Prompt Engineering + Agent Primitives + Context Engineering = Reliability**
 
 ## Key Takeaways
 
 1. **Markdown Prompt Engineering** provides the structural foundation for predictable AI interactions
-2. **Agent Primitives** are your configurable tools that scale and systematize these techniques
-3. **Context Engineering** optimizes AI cognitive performance within memory constraints
-4. **The Framework** creates compound intelligence that improves through iterative refinement
+2. **Agent Primitives** are your configurable tools that scale and systematize these techniques  
+4. **Context Engineering** optimizes AI cognitive performance within memory constraints
+3. **Agentic Workflows** in Markdown apply prompt and context engineering leveraging Agent Primitives to implement complete, reliable agentic processes
+5. **The Framework** creates compound intelligence that improves through iterative refinement
 
-**Ready for hands-on implementation?** Continue to [Getting Started](../getting-started/) to build your first Agent Primitives.
+**Ready for hands-on implementation?** Continue to [Getting Started](../getting-started/) to build your first Agent Primitives and culminate with your first Agentic Workflow.
 
-**Want to see the complete workflow in action?** Jump to [Workflow Orchestration](../workflows/) for end-to-end examples.
+**Want to see complete workflow execution strategies?** Jump to [Agent Delegation](../agent-delegation/) for local and async orchestration patterns.

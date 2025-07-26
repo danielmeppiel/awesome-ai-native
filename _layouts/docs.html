@@ -33,8 +33,9 @@ layout: default
           <li><a href="{{ '/docs/concepts/' | relative_url }}#layer-1-markdown-prompt-engineering" class="nav-sub-link">Markdown Prompt Engineering</a></li>
           <li><a href="{{ '/docs/concepts/' | relative_url }}#layer-2-agent-primitives" class="nav-sub-link">Agent Primitives</a></li>
           <li><a href="{{ '/docs/concepts/' | relative_url }}#layer-3-context-engineering" class="nav-sub-link">Context Engineering</a></li>
+          <li><a href="{{ '/docs/concepts/' | relative_url }}#agentic-workflows-the-complete-system-in-action" class="nav-sub-link">Agentic Workflows</a></li>
           <li><a href="{{ '/docs/concepts/' | relative_url }}#the-ai-native-development-framework" class="nav-sub-link">AI Native Framework</a></li>
-          <li><a href="{{ '/docs/concepts/' | relative_url }}#-key-takeaways" class="nav-sub-link">Key Takeaways</a></li>
+          <li><a href="{{ '/docs/concepts/' | relative_url }}#key-takeaways" class="nav-sub-link">Key Takeaways</a></li>
         </ul>
       </div>
 
@@ -55,34 +56,35 @@ layout: default
         <ul class="nav-subsection {% if page.url contains '/getting-started/' %}expanded{% endif %}" id="getting-started-section">
           <li><a href="{{ '/docs/getting-started/' | relative_url }}#a-instructions-architecture" class="nav-sub-link">Instructions Architecture</a></li>
           <li><a href="{{ '/docs/getting-started/' | relative_url }}#b-chat-modes-configuration" class="nav-sub-link">Chat Modes Configuration</a></li>
-          <li><a href="{{ '/docs/getting-started/' | relative_url }}#c-reusable-prompt-library" class="nav-sub-link">Reusable Prompt Library</a></li>
+          <li><a href="{{ '/docs/getting-started/' | relative_url }}#c-agentic-workflows" class="nav-sub-link">Agentic Workflows</a></li>
           <li><a href="{{ '/docs/getting-started/' | relative_url }}#d-specification-templates" class="nav-sub-link">Specification Templates</a></li>
           <li><a href="{{ '/docs/getting-started/' | relative_url }}#-quick-start-checklist" class="nav-sub-link">Quick Start Checklist</a></li>
           <li><a href="{{ '/docs/getting-started/' | relative_url }}#-whats-next" class="nav-sub-link">What's Next</a></li>
         </ul>
       </div>
 
-      <!-- Workflows -->
+      <!-- Agent Delegation -->
       <div class="nav-section">
         <div class="nav-section-title">
-          <button class="nav-toggle {% if page.url contains '/workflows/' %}expanded{% endif %}" 
-                  data-target="workflows-section" 
-                  aria-expanded="{% if page.url contains '/workflows/' %}true{% else %}false{% endif %}">
+          <button class="nav-toggle {% if page.url contains '/agent-delegation/' %}expanded{% endif %}" 
+                  data-target="agent-delegation-section" 
+                  aria-expanded="{% if page.url contains '/agent-delegation/' %}true{% else %}false{% endif %}">
             <svg class="chevron-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
               <path d="M4.5 3L7.5 6L4.5 9"></path>
             </svg>
           </button>
-          <a href="{{ '/docs/workflows/' | relative_url }}" class="nav-main-link {% if page.url contains '/workflows/' %}current{% endif %}">
-            <span class="nav-text">Workflows</span>
+          <a href="{{ '/docs/agent-delegation/' | relative_url }}" class="nav-main-link {% if page.url contains '/agent-delegation/' %}current{% endif %}">
+            <span class="nav-text">Agent Delegation</span>
           </a>
         </div>
-        <ul class="nav-subsection {% if page.url contains '/workflows/' %}expanded{% endif %}" id="workflows-section">
-          <li><a href="{{ '/docs/workflows/' | relative_url }}#-primitives-in-action-complete-workflow" class="nav-sub-link">Primitives in Action</a></li>
-          <li><a href="{{ '/docs/workflows/' | relative_url }}#a-execution-path-selection" class="nav-sub-link">Execution Path Selection</a></li>
-          <li><a href="{{ '/docs/workflows/' | relative_url }}#b-async-delegation-workflows" class="nav-sub-link">Async Delegation Workflows</a></li>
-          <li><a href="{{ '/docs/workflows/' | relative_url }}#c-progress-monitoring--async-integration" class="nav-sub-link">Progress Monitoring & Integration</a></li>
-          <li><a href="{{ '/docs/workflows/' | relative_url }}#d-advanced-hybrid-context-strategies" class="nav-sub-link">Hybrid Context Strategies</a></li>
-          <li><a href="{{ '/docs/workflows/' | relative_url }}#-key-takeaways" class="nav-sub-link">Key Takeaways</a></li>
+        <ul class="nav-subsection {% if page.url contains '/agent-delegation/' %}expanded{% endif %}" id="agent-delegation-section">
+          <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#agentic-workflow-execution-example" class="nav-sub-link">Agentic Workflow Execution Example</a></li>
+          <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#a-execution-strategy-selection" class="nav-sub-link">Execution Strategy Selection</a></li>
+          <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#b-local-ide-execution" class="nav-sub-link">Local IDE Execution</a></li>
+          <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#c-async-agent-delegation" class="nav-sub-link">Async Agent Delegation</a></li>
+          <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#d-progress-monitoring--async-integration" class="nav-sub-link">Progress Monitoring & Async Integration</a></li>
+          <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#e-hybrid-orchestration-strategies" class="nav-sub-link">Hybrid Orchestration Strategies</a></li>
+          <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#key-takeaways" class="nav-sub-link">Key Takeaways</a></li>
         </ul>
       </div>
 
@@ -105,9 +107,9 @@ layout: default
           <li><a href="{{ '/docs/team-adoption/' | relative_url }}#b-team-scale-multi-agent-coordination" class="nav-sub-link">Team-Scale Coordination</a></li>
           <li><a href="{{ '/docs/team-adoption/' | relative_url }}#c-knowledge-sharing--team-intelligence-patterns" class="nav-sub-link">Knowledge Sharing</a></li>
           <li><a href="{{ '/docs/team-adoption/' | relative_url }}#d-governance--compliance-framework" class="nav-sub-link">Governance & Compliance</a></li>
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#-implementation-roadmap" class="nav-sub-link">Implementation Roadmap</a></li>
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#-success-metrics" class="nav-sub-link">Success Metrics</a></li>
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#-key-takeaways" class="nav-sub-link">Key Takeaways</a></li>
+          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#implementation-roadmap" class="nav-sub-link">Implementation Roadmap</a></li>
+          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#success-metrics" class="nav-sub-link">Success Metrics</a></li>
+          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#key-takeaways" class="nav-sub-link">Key Takeaways</a></li>
         </ul>
       </div>
 

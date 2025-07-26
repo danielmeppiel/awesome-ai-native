@@ -26,9 +26,9 @@ Start with Core Concepts below to master the foundational principles.
   </div>
 
   <div class="guide-card">
-    <div class="guide-title">Workflow Orchestration</div>
-    <div class="guide-description">Master advanced patterns for maximum productivity</div>
-    <a href="workflows/" class="path-link">Learn more</a>
+    <div class="guide-title">Agent Delegation</div>
+    <div class="guide-description">Master advanced delegation patterns for maximum productivity</div>
+    <a href="agent-delegation/" class="path-link">Learn more</a>
   </div>
 
   <div class="guide-card">

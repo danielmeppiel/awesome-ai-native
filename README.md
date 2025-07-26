@@ -15,7 +15,7 @@ Understand the engineering principles behind reliable AI interactions
 ### �️ **[Getting Started →](https://danielmeppiel.github.io/awesome-ai-native/docs/getting-started/)**
 Build your first Agent Primitives and see immediate results
 
-### ⚙️ **[Workflow Orchestration →](https://danielmeppiel.github.io/awesome-ai-native/docs/workflows/)**
+### ⚙️ **[Agent Delegation →](https://danielmeppiel.github.io/awesome-ai-native/docs/agent-delegation/)**
 Master advanced patterns and async delegation workflows
 
 ### 👥 **[Team Adoption →](https://danielmeppiel.github.io/awesome-ai-native/docs/team-adoption/)**

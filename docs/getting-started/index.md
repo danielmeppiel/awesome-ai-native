@@ -5,10 +5,16 @@ display_title: "Getting Started: Foundation Setup"
 permalink: /docs/getting-started/
 nav_order: 3
 ---
+Now that you understand the [three-layer framework](../concepts/), it's time to build your first Agent Primitives. This hands-on implementation will give you immediate productivity improvements while establishing the foundation for more advanced workflows.
 
-Build your first Agent Primitives and experience immediate productivity improvements through systematic implementation of instructions, chat modes, prompts, and specifications.
+The setup follows a logical progression: start with instructions that guide AI behavior, add chat modes that create safe boundaries, build reusable prompts for common tasks, and create specification templates that bridge planning to implementation.
 
 ## A. Instructions Architecture
+
+Instructions form the bedrock of reliable AI behavior: they're the persistent rules that guide the Agent without cluttering your immediate context. Rather than repeating the same guidance in every conversation, instructions embed your team's knowledge directly into the AI's reasoning process.
+
+The key insight is modularity: instead of one massive instruction file that applies everywhere, you create targeted files that activate only when working with specific technologies or file types. This context engineering approach keeps your AI focused and your guidance relevant.
+
 **✅ Quick Actions:**
 - Create the general [`copilot-instructions.md`](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilot-instructionsmd-file) file in the `.github` folder for the repository with common rules
 - Create modular [`.instructions.md` files](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-instructionsmd-files) in the `.github/instructions/` folder by domain (frontend, backend, testing, docs, specs...)
@@ -53,6 +59,9 @@ Generate code with:
 **⚠️ Checkpoint:** Instructions are context-efficient and non-conflicting
 
 ## B. Chat Modes Configuration
+
+With your instruction architecture in place, you need a way to enforce domain boundaries and prevent AI agents from overstepping their expertise. Chat modes solve this by creating professional boundaries similar to real-world licensing—architects plan but don't build, engineers execute but don't set strategy.
+
 **✅ Quick Actions:**
 - Define domain-specific [custom chat modes](https://code.visualstudio.com/docs/copilot/chat/chat-modes) with MCP tool boundaries
 - Encapsulate tech stack knowledge and guidelines per mode
@@ -105,13 +114,16 @@ You master the backend of this project thanks to you having read all [the backen
 
 **⚠️ Checkpoint:** Each mode has clear boundaries and tool restrictions
 
-## C. Reusable Prompt Library
-**✅ Quick Actions:**
-- Create [`.prompt.md` files](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental) for recurring tasks
-- Build in mandatory human validation points
-- Design for multi-task delegation patterns
+## C. Agentic Workflows
 
-> 💡 **Markdown Prompt Engineering**: Prompt files are context-efficient templates that combine semantic structure, tool delegation, and validation checkpoints for statistical repeatability.
+Chat modes create the safety boundaries, but you still need efficient ways to execute complete development processes. **Agentic Workflows** are implemented as reusable `.prompt.md` files that orchestrate all your primitives into systematic, end-to-end processes.
+
+**✅ Quick Actions:**
+- Create [`.prompt.md` files](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental) for complete development processes
+- Build in mandatory human validation points
+- Design workflows for both local execution and async delegation
+
+> 💡 **Agentic Workflows**: These `.prompt.md` files are your complete systematic processes that combine all primitives (instructions, modes, specs, context) into repeatable workflows that can be executed locally or delegated to async agents.
 
 ### 🔧 Tools & Files:
 ```
@@ -121,7 +133,7 @@ You master the backend of this project thanks to you having read all [the backen
 └── async-implementation.prompt.md  # GitHub Coding Agent delegation
 ```
 
-### Example: Advanced Prompt Engineering Pattern
+### Example: Complete Agentic Workflow
 ```markdown
 ---
 mode: agent
@@ -155,6 +167,9 @@ Confirm: Architecture alignment, test strategy, and breaking change impact.
 **⚠️ Checkpoint:** Prompts include explicit validation gates
 
 ## D. Specification Templates
+
+The final piece of your foundation addresses the gap between planning and implementation. Specification templates transform high-level ideas into implementation-ready blueprints that work consistently whether executed by humans or AI agents.
+
 **✅ Quick Actions:**
 - Create standardized [`.spec.md` templates](https://docs.github.com/en/copilot/copilot-chat/copilot-chat-cookbook) for feature specifications
 - Build implementation-ready blueprints with validation criteria
@@ -209,24 +224,26 @@ Implement middleware-based authentication with token validation and refresh capa
 
 ## Quick Start Checklist
 
+With all primitives in place, you now have a complete foundation for systematic AI development. The checklist below walks through the implementation sequence, building toward creating complete Agentic Workflows.
+
 ### Conceptual Foundation
 1. **[ ]** Understand **Markdown Prompt Engineering** principles (semantic structure + precision + tools)
-2. **[ ]** Grasp **Context Engineering** fundamentals (buffer optimization + session strategy)
+2. **[ ]** Grasp **Context Engineering** fundamentals (context window optimization + session strategy)
 
-### Implementation Steps
-3. **[ ]** Create [`.github/copilot-instructions.md`](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilot-instructionsmd-file) with basic project guidelines (Context Engineering: global rules)
-4. **[ ]** Set up domain-specific [`.instructions.md` files](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-instructionsmd-files) with `applyTo` patterns (Context Engineering: selective loading)
-5. **[ ]** Configure [chat modes](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-chat-modes) for your tech stack domains (Context Engineering: domain boundaries)
-6. **[ ]** Create first [`.prompt.md` file](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental) with validation checkpoints (Markdown Prompt Engineering: deterministic templates)
-7. **[ ]** Build your first `.spec.md` template for feature specifications (Agent Primitive: deterministic planning-to-implementation bridge)
-8. **[ ]** Practice spec-first workflow: plan first, implement second (Context Engineering: session splitting)
+### Implementation Steps  
+4. **[ ]** Create [`.github/copilot-instructions.md`](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilot-instructionsmd-file) with basic project guidelines (Context Engineering: global rules)
+5. **[ ]** Set up domain-specific [`.instructions.md` files](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-instructionsmd-files) with `applyTo` patterns (Context Engineering: selective loading)
+6. **[ ]** Configure [chat modes](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-chat-modes) for your tech stack domains (Context Engineering: domain boundaries)
+7. **[ ]** Create your first [`.prompt.md` Agentic Workflow](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental)
+8. **[ ]** Build your first `.spec.md` template for feature specifications (Agent Primitive: deterministic planning-to-implementation bridge)
+9. **[ ]** Practice a spec-first approach with two Agentic Workflowws (session splitting): plan first, implement second
 
 ## What's Next?
 
-**Foundation Complete?** Advance to [Workflow Orchestration](../workflows/) to see these primitives in action with complete OAuth implementation example.
+**Foundation Complete?** Advance to [Agent Delegation](../agent-delegation/) to master execution strategies for your Agentic Workflows - from local control to sophisticated async orchestration.
 
 **Want to understand the theory better?** Return to [Core Concepts](../concepts/) for deeper theoretical understanding.
 
 **Ready for team implementation?** Jump to [Team Adoption](../team-adoption/) for scaling strategies.
 
-*You now have the foundation tools for consistent, reliable AI interactions. The next step is learning to orchestrate them into complete workflows.*
+*You now have complete Agent Primitives and your first Agentic Workflow. The next step is mastering the execution strategies that let you run these workflows locally or delegate them to async agents.*

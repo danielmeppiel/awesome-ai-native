@@ -38,7 +38,7 @@ navigation:
   - title: "Getting Started"
     url: "docs/getting-started/index.md"
   - title: "Workflows"
-    url: "docs/workflows/index.md"
+    url: "docs/agent-delegation/index.md"
   - title: "Team Adoption"
     url: "docs/team-adoption/index.md"
   - title: "Reference"
@@ -48,7 +48,7 @@ header_pages:
   - docs/index.md
   - docs/concepts/index.md
   - docs/getting-started/index.md
-  - docs/workflows/index.md
+  - docs/agent-delegation/index.md
   - docs/team-adoption/index.md
   - docs/reference/index.md
 

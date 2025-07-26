@@ -256,29 +256,29 @@ code[class*="markdown"] {
 }
 
 /* Links containing code elements - clean styling */
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link) code {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link) code {
   color: var(--primary-color);
   text-decoration: none;
 }
 
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):hover code {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):hover code {
   color: var(--primary-dark);
   text-decoration: none;
 }
 
 /* General link styling - only for content links, not navigation or buttons */
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link) {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link) {
   color: var(--primary-color);
   text-decoration: underline;
   text-decoration-color: var(--primary-color);
 }
 
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):hover {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):hover {
   color: var(--primary-dark);
   text-decoration-color: var(--primary-dark);
 }
 
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):visited {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):visited {
   color: var(--primary-color);
 }
 
@@ -1138,13 +1138,31 @@ h3 {
   border-radius: 12px !important;
   padding: 32px 24px !important;
   border: 1px solid var(--border-light) !important;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease !important;
   position: relative !important;
+  display: block !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  cursor: pointer !important;
 }
 
 .path-card:hover {
   border-color: var(--border-color) !important;
   box-shadow: 0 1px 3px rgba(27, 31, 35, 0.12), 0 8px 24px rgba(66, 74, 83, 0.12) !important;
+  transform: translateY(-2px) !important;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.path-card:visited {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.path-card:focus {
+  outline: 2px solid var(--primary-color) !important;
+  outline-offset: 2px !important;
+  text-decoration: none !important;
 }
 
 .path-title {
@@ -1181,15 +1199,14 @@ h3 {
   transition: color 0.2s ease !important;
 }
 
-.path-link:hover {
-  color: var(--primary-dark) !important;
-  text-decoration: none !important;
-}
-
 .path-link::after {
   content: "→" !important;
   margin-left: 6px !important;
   transition: transform 0.2s ease !important;
+}
+
+.path-card:hover .path-link {
+  color: var(--primary-dark) !important;
 }
 
 .path-card:hover .path-link::after {
@@ -1279,29 +1296,29 @@ code[class*="markdown"] {
 }
 
 /* Links containing code elements - clean styling with proper color inheritance */
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link) code {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link) code {
   color: var(--primary-color) !important;
   text-decoration: none !important;
 }
 
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):hover code {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):hover code {
   color: var(--primary-dark) !important;
   text-decoration: none !important;
 }
 
 /* General link styling that works with GitHub Primer design - only for content, excluding navigation and buttons */
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link) {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link) {
   color: var(--primary-color) !important;
   text-decoration: underline !important;
   text-decoration-color: var(--primary-color) !important;
 }
 
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):hover {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):hover {
   color: var(--primary-dark) !important;
   text-decoration-color: var(--primary-dark) !important;
 }
 
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):visited {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):visited {
   color: var(--primary-color) !important;
 }
 

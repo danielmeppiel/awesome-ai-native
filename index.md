@@ -23,40 +23,40 @@ permalink: /
 ## Choose Your Learning Path
 
 <div class="learning-paths">
-  <div class="path-card">
+  <a href="docs/concepts/" class="path-card">
     <div class="path-title">Core Concepts</div>
     <div class="path-description">Understand the engineering principles behind Agent Primitives</div>
     <div class="path-meta">15-20 minutes • Theory & Foundation</div>
-    <a href="docs/concepts/" class="path-link">Learn more</a>
-  </div>
+    <div class="path-link">Learn more</div>
+  </a>
 
-  <div class="path-card">
+  <a href="docs/getting-started/" class="path-card">
     <div class="path-title">Getting Started</div>
     <div class="path-description">Build your first Agent Primitives and see immediate results</div>
     <div class="path-meta">10-15 minutes • Hands-on Implementation</div>
-    <a href="docs/getting-started/" class="path-link">Learn more</a>
-  </div>
+    <div class="path-link">Learn more</div>
+  </a>
 
-  <div class="path-card">
+  <a href="docs/agent-delegation/" class="path-card">
     <div class="path-title">Agent Delegation</div>
     <div class="path-description">Master async delegation and multi-agent coordination</div>
     <div class="path-meta">20-25 minutes • Advanced Patterns</div>
-    <a href="docs/agent-delegation/" class="path-link">Learn more</a>
-  </div>
+    <div class="path-link">Learn more</div>
+  </a>
 
-  <div class="path-card">
+  <a href="docs/team-adoption/" class="path-card">
     <div class="path-title">Team Implementation</div>
     <div class="path-description">Scale AI Native Development across your organization</div>
     <div class="path-meta">15-20 minutes • Team & Leadership</div>
-    <a href="docs/team-adoption/" class="path-link">Learn more</a>
-  </div>
+    <div class="path-link">Learn more</div>
+  </a>
 
-  <div class="path-card">
+  <a href="docs/reference/" class="path-card">
     <div class="path-title">Quick Reference</div>
     <div class="path-description">Checklists, guides, and documentation for ongoing reference</div>
     <div class="path-meta">5-10 minutes • Quick Lookups</div>
-    <a href="docs/reference/" class="path-link">Learn more</a>
-  </div>
+    <div class="path-link">Learn more</div>
+  </a>
 </div>
 
 ## Core Mental Model

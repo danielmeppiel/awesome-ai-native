@@ -204,12 +204,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Add GitHub-style anchor links to headings - with delay to ensure DOM is ready
   setTimeout(function() {
-    console.log('Looking for headings...');
     const headings = document.querySelectorAll('.docs-content-inner h1[id], .docs-content-inner h2[id], .docs-content-inner h3[id], .docs-content-inner h4[id], .docs-content-inner h5[id], .docs-content-inner h6[id]');
-    console.log('Found headings:', headings.length);
   
   headings.forEach(heading => {
-    console.log('Processing heading:', heading.textContent, 'ID:', heading.id);
     
     try {
       // Store original heading content
@@ -249,18 +246,14 @@ document.addEventListener('DOMContentLoaded', function() {
       heading.appendChild(headingWrapper);
       heading.style.display = 'block'; // Let the inner wrapper handle flex
       
-      console.log('Added anchor link to:', textSpan.textContent);
-      
       // Add hover behavior
       headingWrapper.addEventListener('mouseenter', function() {
-        console.log('Mouse entered heading:', textSpan.textContent);
         anchorIcon.style.setProperty('opacity', '1', 'important');
         anchorIcon.style.setProperty('visibility', 'visible', 'important');
         textSpan.style.setProperty('text-decoration', 'underline', 'important');
       });
       
       headingWrapper.addEventListener('mouseleave', function() {
-        console.log('Mouse left heading:', textSpan.textContent);
         anchorIcon.style.setProperty('opacity', '0', 'important');
         textSpan.style.setProperty('text-decoration', 'none', 'important');
       });

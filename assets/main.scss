@@ -25,6 +25,12 @@
   box-sizing: border-box;
 }
 
+/* Fix for sticky header covering anchor links */
+html {
+  scroll-padding-top: 0px; /* Header height + some buffer */
+  scroll-behavior: smooth;
+}
+
 body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure {
   margin: 0;
   padding: 0;
@@ -137,6 +143,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   margin-top: 32px;
   margin-bottom: 16px;
+  /* Additional scroll margin for anchor links */
+  scroll-margin-top: 80px;
 }
 
 .page-content h1:first-child,
@@ -931,6 +939,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700 !important;
   margin-top: 24px !important;
   margin-bottom: 12px !important;
+  /* Additional scroll margin for anchor links */
+  scroll-margin-top: 80px !important;
 }
 
 /* Fix first heading spacing */

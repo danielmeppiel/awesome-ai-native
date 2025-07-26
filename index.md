@@ -6,15 +6,15 @@ permalink: /
 
 <div style="margin: 32px 0;" markdown="1">
 
-**Turn Unreliable AI into Professional Workflows**
+**Learn How to Build Reliable AI Systems That Code Autonomously**
 
-*For Busy Developers* (2-minute read):
+*What's in this guide for Developers* (2-minute read):
 
-- **Immediate Win**: Turn unreliable AI chats into consistent, professional workflows
-- **Core Technique**: Use structured Markdown to guide AI reasoning (like coding standards for prompts)
-- **Scale Up**: Delegate multiple tasks to a swarm of Asynchronous Coding Agents
-- **AI Feedback Loop**: Build reusable AI configurations that improve over time
-- **Team Benefit**: Share successful AI patterns across your organization
+- **Maximum Reliability**: Learn systematic approaches that eliminate AI inconsistency and deliver professional-quality results every time
+- **Multi-Agent Delegation**: Progress from single prompts to delegating complete coding tasks to GitHub Coding Agents with confidence
+- **Proven Engineering**: Apply structured methodologies (Markdown Prompt Engineering, Agent Primitives, Context Engineering) for predictable outcomes
+- **Compound Productivity**: Build reusable AI configurations that improve over time and multiply your development capacity
+- **Team Transformation**: Scale these battle-tested patterns across your organization for exponential productivity gains
 
 > **Community Resources:** Explore the [Awesome GitHub Copilot](https://github.com/github/awesome-copilot) repository for hundreds of community-contributed instructions, prompts, and chat modes across all major languages and frameworks.
 

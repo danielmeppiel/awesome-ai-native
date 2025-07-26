@@ -6,7 +6,9 @@ permalink: /docs/
 nav_order: 1
 ---
 
-This comprehensive guide transforms chaotic AI interactions into systematic, professional workflows through **Agent Primitives** and **Markdown Prompt Engineering**.
+This guide teaches you to build reliable AI systems that code autonomously through **Markdown Prompt Engineering**, **Agent Primitives**, **Context Engineering**, and **Async Agent Delegation**. It then gives you the key to move from individual productivity to team-scale governance. 
+
+Start with Core Concepts below to master the foundational principles.
 
 ## Guide Structure
 

@@ -6,7 +6,7 @@ permalink: /docs/concepts/
 nav_order: 2
 ---
 
-Transform natural language chaos into systematic, repeatable AI workflows through three foundational engineering layers.
+Most developers start with AI by throwing simple prompts at GitHub Copilot and hoping for the best. This approach works for simple tasks but breaks down when you need reliable, repeatable results for complex development work. The three-layer framework below transforms this ad-hoc experimentation into systematic engineering practices.
 
 ## Layer 1: Markdown Prompt Engineering
 **The Foundation:** Transform natural language into structured, repeatable instructions using Markdown's semantic power.
@@ -42,6 +42,8 @@ Follow these steps:
 4. Present your root cause analysis and suggested solutions with trade-offs to the user and seek validation before proceeding with fixes - do not change any files.
 ```
 
+Once you've mastered structured prompting, you'll quickly realize that manually crafting perfect prompts for every task is unsustainable. This is where the second layer comes in: turning your prompt engineering insights into reusable, configurable systems.
+
 ## Layer 2: Agent Primitives  
 **The Implementation:** The configurable tools that systematically deploy your prompt engineering techniques.
 
@@ -63,7 +65,11 @@ Agent Primitives are the core configurable elements that AI Native Developers it
 - **Primitives**: Developer selects `backend-dev` chat mode → Auto-triggers `security.instructions.md` via `applyTo: "auth/**"` → Loads context from `[Previous auth patterns](.memory.md#security)` and `[API Security Standards](api-security.context.md#rest)` → Generates `user-auth.spec.md` using structured templates → Executes `implement-from-spec.prompt.md` workflow with validation gates (Agent Primitives)
 - **Outcome**: Developer-driven knowledge accumulation where you capture implementation failures in `.memory.md`, document successful patterns in `.instructions.md`, and refine workflows in `.prompt.md` files—creating compound intelligence that improves through your iterative refinement (Context Engineering)
 
+This transformation might seem complex, but notice the pattern: what started as an ad-hoc request became a systematic workflow with clear handoff points, automatic context loading, and built-in validation. Each primitive file becomes a knowledge asset that improves with use, creating compound intelligence that serves your entire team.
+
 > 💡 **Native VSCode Support**: While VSCode natively supports `.instructions.md`, `.prompt.md`, and `.chatmode.md` files, this framework extends the paradigm with `.spec.md`, `.memory.md`, and `.context.md` patterns that represent frontier concepts in AI Native Development.
+
+With your prompts structured and your primitives set up, you'll encounter a new challenge: even the best prompts and primitives can fail when they're drowning in irrelevant context or competing for limited AI attention. The third layer addresses this through strategic context management.
 
 ## Layer 3: Context Engineering
 **The Strategic Framework:** Systematic management of LLM context windows to maximize agent performance within memory constraints.

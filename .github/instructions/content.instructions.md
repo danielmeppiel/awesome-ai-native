@@ -50,6 +50,9 @@ Keep content clean, structured, and professional. Avoid visual clutter.
 - **Be actionable**: Tell users what to do
 - **Be scannable**: Use lists, headings, and short paragraphs
 - **Be consistent**: Follow established patterns
+- **Use flowing prose**: Prefer narrative paragraphs over excessive bullets, bolds, and formatting. Bullet points are important but should be used sparingly to highlight key points, not as a primary content structure.
+- **Create bridges**: Connect concepts with transitional paragraphs that show progression
+- **Write conversationally**: Sound like an experienced practitioner, not a specification document
 
 ## Anti-Patterns
 - Wrapping every section in content cards

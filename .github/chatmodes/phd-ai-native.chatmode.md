@@ -21,3 +21,7 @@ You prime:
 - Actionable insights that can be applied immediately
 - Rigorous research and validation of ideas
 - Innovative thinking to push the boundaries of AI-assisted development
+
+
+## Project Context
+You MUST review the [AI Native Development Guide project context](../context/project.context.md) before contributing to this guide. You are expected to help develop it, challenge it, and improve it with your research and insights.

@@ -256,29 +256,29 @@ code[class*="markdown"] {
 }
 
 /* Links containing code elements - clean styling */
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn) code {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link) code {
   color: var(--primary-color);
   text-decoration: none;
 }
 
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):hover code {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):hover code {
   color: var(--primary-dark);
   text-decoration: none;
 }
 
 /* General link styling - only for content links, not navigation or buttons */
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn) {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link) {
   color: var(--primary-color);
   text-decoration: underline;
   text-decoration-color: var(--primary-color);
 }
 
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):hover {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):hover {
   color: var(--primary-dark);
   text-decoration-color: var(--primary-dark);
 }
 
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):visited {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):visited {
   color: var(--primary-color);
 }
 
@@ -941,6 +941,95 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 12px !important;
   /* Additional scroll margin for anchor links */
   scroll-margin-top: 80px !important;
+  position: relative !important;
+}
+
+/* GitHub-style anchor links for headings - High specificity to override conflicts */
+.docs-content-inner .heading-link {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  
+  /* Ensure it looks like a normal heading, not a link */
+  &:hover {
+    text-decoration: none !important;
+    color: inherit !important;
+    
+    .heading-text {
+      text-decoration: underline !important;
+      color: inherit !important;
+    }
+    
+    .heading-anchor {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+  }
+  
+  &:visited {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+  
+  &:active {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+}
+
+.docs-content-inner .heading-text {
+  flex: 1 !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  font-weight: inherit !important;
+  font-size: inherit !important;
+}
+
+.docs-content-inner .heading-anchor {
+  margin-left: 8px !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.2s ease !important;
+  color: #656d76 !important; /* Light grey like GitHub */
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 4px !important;
+  border-radius: 4px !important;
+  position: relative !important;
+  z-index: 10 !important;
+  
+  svg {
+    width: 16px !important;
+    height: 16px !important;
+    fill: #656d76 !important; /* Light grey like GitHub */
+    display: block !important;
+  }
+  
+  /* Remove hover effects - keep same appearance */
+  &:hover {
+    color: #656d76 !important; /* Stay same grey */
+    background: transparent !important; /* No background change */
+    
+    svg {
+      fill: #656d76 !important; /* Stay same grey */
+    }
+  }
+}
+
+/* Ensure headings with anchor links have proper spacing and hover behavior */
+.docs-content-inner h1, 
+.docs-content-inner h2, 
+.docs-content-inner h3, 
+.docs-content-inner h4, 
+.docs-content-inner h5, 
+.docs-content-inner h6 {
+  display: block !important; /* Let the inner wrapper handle flex */
+  
+  &:hover {
+    cursor: pointer !important;
+  }
 }
 
 /* Fix first heading spacing */
@@ -1190,29 +1279,29 @@ code[class*="markdown"] {
 }
 
 /* Links containing code elements - clean styling with proper color inheritance */
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn) code {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link) code {
   color: var(--primary-color) !important;
   text-decoration: none !important;
 }
 
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):hover code {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):hover code {
   color: var(--primary-dark) !important;
   text-decoration: none !important;
 }
 
 /* General link styling that works with GitHub Primer design - only for content, excluding navigation and buttons */
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn) {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link) {
   color: var(--primary-color) !important;
   text-decoration: underline !important;
   text-decoration-color: var(--primary-color) !important;
 }
 
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):hover {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):hover {
   color: var(--primary-dark) !important;
   text-decoration-color: var(--primary-dark) !important;
 }
 
-.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):visited {
+.page-content a:not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):visited {
   color: var(--primary-color) !important;
 }
 

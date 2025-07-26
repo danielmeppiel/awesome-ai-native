@@ -58,8 +58,8 @@ layout: default
           <li><a href="{{ '/docs/getting-started/' | relative_url }}#b-chat-modes-configuration" class="nav-sub-link">Chat Modes Configuration</a></li>
           <li><a href="{{ '/docs/getting-started/' | relative_url }}#c-agentic-workflows" class="nav-sub-link">Agentic Workflows</a></li>
           <li><a href="{{ '/docs/getting-started/' | relative_url }}#d-specification-templates" class="nav-sub-link">Specification Templates</a></li>
-          <li><a href="{{ '/docs/getting-started/' | relative_url }}#-quick-start-checklist" class="nav-sub-link">Quick Start Checklist</a></li>
-          <li><a href="{{ '/docs/getting-started/' | relative_url }}#-whats-next" class="nav-sub-link">What's Next</a></li>
+          <li><a href="{{ '/docs/getting-started/' | relative_url }}#quick-start-checklist" class="nav-sub-link">Quick Start Checklist</a></li>
+          <li><a href="{{ '/docs/getting-started/' | relative_url }}#whats-next" class="nav-sub-link">What's Next</a></li>
         </ul>
       </div>
 
@@ -201,5 +201,73 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
+
+  // Add GitHub-style anchor links to headings - with delay to ensure DOM is ready
+  setTimeout(function() {
+    console.log('Looking for headings...');
+    const headings = document.querySelectorAll('.docs-content-inner h1[id], .docs-content-inner h2[id], .docs-content-inner h3[id], .docs-content-inner h4[id], .docs-content-inner h5[id], .docs-content-inner h6[id]');
+    console.log('Found headings:', headings.length);
+  
+  headings.forEach(heading => {
+    console.log('Processing heading:', heading.textContent, 'ID:', heading.id);
+    
+    try {
+      // Store original heading content
+      const originalContent = heading.innerHTML;
+      
+      // Create wrapper anchor for the entire heading
+      const headingWrapper = document.createElement('a');
+      headingWrapper.href = '#' + heading.id;
+      headingWrapper.className = 'heading-link';
+      headingWrapper.setAttribute('aria-label', 'Permalink to this heading');
+      headingWrapper.style.textDecoration = 'none';
+      headingWrapper.style.color = 'inherit';
+      headingWrapper.style.display = 'flex';
+      headingWrapper.style.alignItems = 'center';
+      headingWrapper.style.width = '100%';
+      
+      // Create the chain icon
+      const anchorIcon = document.createElement('span');
+      anchorIcon.className = 'heading-anchor';
+      anchorIcon.innerHTML = `
+        <svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+          <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+      `;
+      
+      // Create text span for the heading content
+      const textSpan = document.createElement('span');
+      textSpan.className = 'heading-text';
+      textSpan.innerHTML = originalContent;
+      
+      // Build the structure: wrapper > [text, icon]
+      headingWrapper.appendChild(textSpan);
+      headingWrapper.appendChild(anchorIcon);
+      
+      // Replace heading content with the wrapper
+      heading.innerHTML = '';
+      heading.appendChild(headingWrapper);
+      heading.style.display = 'block'; // Let the inner wrapper handle flex
+      
+      console.log('Added anchor link to:', textSpan.textContent);
+      
+      // Add hover behavior
+      headingWrapper.addEventListener('mouseenter', function() {
+        console.log('Mouse entered heading:', textSpan.textContent);
+        anchorIcon.style.setProperty('opacity', '1', 'important');
+        anchorIcon.style.setProperty('visibility', 'visible', 'important');
+        textSpan.style.setProperty('text-decoration', 'underline', 'important');
+      });
+      
+      headingWrapper.addEventListener('mouseleave', function() {
+        console.log('Mouse left heading:', textSpan.textContent);
+        anchorIcon.style.setProperty('opacity', '0', 'important');
+        textSpan.style.setProperty('text-decoration', 'none', 'important');
+      });
+    } catch (error) {
+      console.error('Error adding anchor link to heading:', heading.textContent, error);
+    }
+  });
+  }, 1000); // Wait 1 second for other scripts to finish
 });
 </script>

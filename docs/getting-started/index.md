@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: "Getting Started"
-display_title: "Getting Started: Foundation Setup"
+display_title: "Getting Started"
 permalink: /docs/getting-started/
 nav_order: 3
 ---

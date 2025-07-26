@@ -16,7 +16,7 @@ Teach developers to **build reliable AI systems that code autonomously** through
 
 ## Guide Structure
 - **[Main Landing Page](../../index.md)**: Value proposition, learning paths, and maturity framework
-- **[Guide Overview](../../docs/index.md)**: Complete methodology introduction
+- **[Core Concepts](../../docs/concepts/index.md)**: Foundation methodology introduction
 - **[Core Concepts](../../docs/concepts/index.md)**: Engineering principles behind Agent Primitives (Markdown Prompt Engineering, Agent Primitives, Context Engineering)
 - **[Getting Started](../../docs/getting-started/index.md)**: Hands-on implementation of first Agent Primitives (instructions, chat modes, prompts, specs)
 - **[Agent Delegation](../../docs/agent-delegation/index.md)**: Advanced delegation orchestration, async coordination, and multi-agent management patterns

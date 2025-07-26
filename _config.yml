@@ -31,8 +31,6 @@ plugins:
 
 # Navigation structure - simplified titles
 navigation:
-  - title: "Guide"
-    url: "docs/index.md"
   - title: "Concepts"
     url: "docs/concepts/index.md"
   - title: "Getting Started"
@@ -45,7 +43,6 @@ navigation:
     url: "docs/reference/index.md"
 
 header_pages:
-  - docs/index.md
   - docs/concepts/index.md
   - docs/getting-started/index.md
   - docs/agent-delegation/index.md

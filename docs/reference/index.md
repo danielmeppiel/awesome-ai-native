@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: "Reference"
-display_title: "Reference Guide: Quick Lookups & Resources"
+display_title: "Reference"
 permalink: /docs/reference/
 nav_order: 6
 ---

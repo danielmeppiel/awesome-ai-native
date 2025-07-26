@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: "Concepts"
-display_title: "Core Concepts: The Engineering Behind Agent Mastery"
+display_title: "Core Concepts"
 permalink: /docs/concepts/
 nav_order: 2
 ---

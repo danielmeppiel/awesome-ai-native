@@ -132,7 +132,7 @@ This maturity journey represents the core mindset shift from reactive AI usage t
 **Ready to lead the transformation?** 
 
 <div class="cta-buttons">
-  <a href="docs/concepts/" class="btn-primary">Start with the Core Concepts →</a>
+  <a href="docs/concepts/" class="btn-primary">Read the Guide →</a>
   <a href="https://github.com/danielmeppiel/awesome-ai-native/blob/main/CONTRIBUTING.md" class="github-btn"><span class="github-text">Contribute Your Insights →</span></a>
 </div>
 

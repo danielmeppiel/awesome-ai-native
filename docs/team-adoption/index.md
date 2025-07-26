@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: "Team Adoption"
-display_title: "Team Adoption: Scaling AI Native Development"
+display_title: "Team Adoption"
 permalink: /docs/team-adoption/
 nav_order: 5
 ---

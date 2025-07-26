@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: "Agent Delegation"
-display_title: "Agent Delegation: From Local Control to Async Orchestration"
+display_title: "Agent Delegation"
 permalink: /docs/agent-delegation/
 nav_order: 4
 ---
@@ -240,6 +240,8 @@ Use GitHub MCP Server tools:
 Async delegation creates new challenges around quality control and learning integration. While agents work independently, you need systematic approaches to validate their outputs and incorporate their discoveries back into your evolving Agent Primitives.
 
 ## D. Progress Monitoring & Async Integration
+
+Once your agents are working asynchronously, maintaining visibility and control becomes crucial. This section covers the essential practices for maintaining oversight and learning from async agent execution. 
 
 ### D.1. Multi-Channel Progress Tracking
 **✅ Quick Actions:**

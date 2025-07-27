@@ -3,7 +3,7 @@ layout: docs
 title: "Team Adoption"
 display_title: "Team Adoption"
 permalink: /docs/team-adoption/
-nav_order: 5
+nav_order: 6
 ---
 
 Scale AI Native Development beyond individual practice through systematic approaches to knowledge sharing, quality control, and risk management across teams and organizations.

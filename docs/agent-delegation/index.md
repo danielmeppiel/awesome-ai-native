@@ -3,7 +3,7 @@ layout: docs
 title: "Agent Delegation"
 display_title: "Agent Delegation"
 permalink: /docs/agent-delegation/
-nav_order: 4
+nav_order: 5
 ---
 
 With your **Agentic Workflows** built and ready, you now face a critical decision: how to execute them. The strategies you choose—from local control to sophisticated async orchestration—fundamentally shape both your development speed and learning outcomes.

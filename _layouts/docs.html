@@ -39,6 +39,31 @@ layout: default
         </ul>
       </div>
 
+      <!-- Tooling -->
+      <div class="nav-section">
+        <div class="nav-section-title">
+          <button class="nav-toggle {% if page.url contains '/tooling/' %}expanded{% endif %}" 
+                  data-target="tooling-section" 
+                  aria-expanded="{% if page.url contains '/tooling/' %}true{% else %}false{% endif %}">
+            <svg class="chevron-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+              <path d="M4.5 3L7.5 6L4.5 9"></path>
+            </svg>
+          </button>
+          <a href="{{ '/docs/tooling/' | relative_url }}" class="nav-main-link {% if page.url contains '/tooling/' %}current{% endif %}">
+            <span class="nav-text">Tooling</span>
+          </a>
+        </div>
+        <ul class="nav-subsection {% if page.url contains '/tooling/' %}expanded{% endif %}" id="tooling-section">
+          <li><a href="{{ '/docs/tooling/' | relative_url }}#natural-language-as-code" class="nav-sub-link">Natural Language as Code</a></li>
+          <li><a href="{{ '/docs/tooling/' | relative_url }}#agent-cli-runtimes" class="nav-sub-link">Agent CLI Runtimes</a></li>
+          <li><a href="{{ '/docs/tooling/' | relative_url }}#runtime-management" class="nav-sub-link">Runtime Management</a></li>
+          <li><a href="{{ '/docs/tooling/' | relative_url }}#distribution-and-packaging" class="nav-sub-link">Distribution and Packaging</a></li>
+          <li><a href="{{ '/docs/tooling/' | relative_url }}#production-deployment" class="nav-sub-link">Production Deployment</a></li>
+          <li><a href="{{ '/docs/tooling/' | relative_url }}#ecosystem-evolution" class="nav-sub-link">Ecosystem Evolution</a></li>
+          <li><a href="{{ '/docs/tooling/' | relative_url }}#key-takeaways" class="nav-sub-link">Key Takeaways</a></li>
+        </ul>
+      </div>
+
       <!-- Getting Started -->
       <div class="nav-section">
         <div class="nav-section-title">
@@ -84,6 +109,7 @@ layout: default
           <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#c-async-agent-delegation" class="nav-sub-link">Async Agent Delegation</a></li>
           <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#d-progress-monitoring--async-integration" class="nav-sub-link">Progress Monitoring & Async Integration</a></li>
           <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#e-hybrid-orchestration-strategies" class="nav-sub-link">Hybrid Orchestration Strategies</a></li>
+          <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#f-tooling-enhanced-execution" class="nav-sub-link">Tooling-Enhanced Execution</a></li>
           <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#key-takeaways" class="nav-sub-link">Key Takeaways</a></li>
         </ul>
       </div>
@@ -106,7 +132,8 @@ layout: default
           <li><a href="{{ '/docs/team-adoption/' | relative_url }}#a-human-validation-gates--review-processes" class="nav-sub-link">Human Validation Gates</a></li>
           <li><a href="{{ '/docs/team-adoption/' | relative_url }}#b-team-scale-multi-agent-coordination" class="nav-sub-link">Team-Scale Coordination</a></li>
           <li><a href="{{ '/docs/team-adoption/' | relative_url }}#c-knowledge-sharing--team-intelligence-patterns" class="nav-sub-link">Knowledge Sharing</a></li>
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#d-governance--compliance-framework" class="nav-sub-link">Governance & Compliance</a></li>
+          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#d-tooling-enabled-team-practices" class="nav-sub-link">Tooling-Enabled Team Practices</a></li>
+          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#e-governance--compliance-framework" class="nav-sub-link">Governance & Compliance</a></li>
           <li><a href="{{ '/docs/team-adoption/' | relative_url }}#implementation-roadmap" class="nav-sub-link">Implementation Roadmap</a></li>
           <li><a href="{{ '/docs/team-adoption/' | relative_url }}#success-metrics" class="nav-sub-link">Success Metrics</a></li>
           <li><a href="{{ '/docs/team-adoption/' | relative_url }}#key-takeaways" class="nav-sub-link">Key Takeaways</a></li>

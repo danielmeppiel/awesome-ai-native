@@ -3,7 +3,7 @@ layout: docs
 title: "Getting Started"
 display_title: "Getting Started"
 permalink: /docs/getting-started/
-nav_order: 3
+nav_order: 4
 ---
 Now that you understand the [three-layer framework](../concepts/), it's time to build your first Agent Primitives. This hands-on implementation will give you immediate productivity improvements while establishing the foundation for more advanced workflows.
 

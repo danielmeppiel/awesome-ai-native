@@ -3,7 +3,7 @@ layout: docs
 title: "Reference"
 display_title: "Reference"
 permalink: /docs/reference/
-nav_order: 6
+nav_order: 7
 ---
 
 Essential checklists, progression frameworks, and documentation links for ongoing AI Native Development implementation and mastery.

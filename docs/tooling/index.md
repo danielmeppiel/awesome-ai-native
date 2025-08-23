@@ -100,7 +100,7 @@ The benefits compound quickly: distribute tested workflows as versioned packages
 
 ### Project Configuration
 
-The `awd.yml` configuration file serves as the package.json equivalent for Agent Primitives, defining scripts, dependencies, and input parameters:
+Create your `awd.yml` configuration file that serves as the package.json equivalent for Agent Primitives, defining scripts, dependencies, and input parameters:
 
 ```yaml
 # awd.yml - Project configuration (like package.json)
@@ -130,7 +130,7 @@ input:
 
 The final piece of the tooling ecosystem enables **Continuous AI** - automated execution of packaged Agent Primitives in production environments. Your carefully developed workflows can now run automatically in CI/CD pipelines with the same reliability as traditional software deployments.
 
-Building on the `security-review-workflow` package example above, here's how the same AWD project deploys to production with multi-runtime flexibility:
+Building on the `security-review-workflow` package example above, here's how the same AWD project deploys to production with multi-runtime flexibility.
 
 ```yaml
 # .github/workflows/security-review.yml

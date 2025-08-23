@@ -7,6 +7,8 @@ layout: page
 # Security-Focused Development Mode
 
 ## File Configuration
+**File:** `.github/chatmodes/security.chatmode.md`
+
 ```yaml
 ---
 description: 'Security specialist focused on secure coding practices and threat mitigation'

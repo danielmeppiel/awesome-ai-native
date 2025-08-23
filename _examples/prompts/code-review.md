@@ -7,6 +7,8 @@ layout: page
 # Systematic Code Review Workflow
 
 ## File Configuration
+Create your `.github/prompts/code-review.prompt.md` file:
+
 ```yaml
 ---
 mode: agent

@@ -7,6 +7,8 @@ layout: page
 # Frontend Development Instructions
 
 ## File Configuration
+Create your `.github/instructions/frontend.instructions.md` file:
+
 ```yaml
 ---
 applyTo: "**/*.{jsx,tsx,css,scss,html}"

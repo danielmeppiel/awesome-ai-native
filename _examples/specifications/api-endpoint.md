@@ -8,6 +8,8 @@ layout: page
 
 Use this template for creating implementation-ready API endpoint specifications.
 
+File `.github/specs/api-endpoint.spec.md`:
+
 ```markdown
 # API Endpoint: [Endpoint Name]
 

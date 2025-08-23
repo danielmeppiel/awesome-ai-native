@@ -33,6 +33,8 @@ The key insight is modularity: instead of one massive instruction file that appl
 ```
 
 ### Example: Markdown Prompt Engineering in Instructions
+Create your `.github/instructions/frontend.instructions.md` file:
+
 ```markdown
 ---
 applyTo: "**/*.{ts,tsx}"
@@ -81,6 +83,8 @@ With your instruction architecture in place, you need a way to enforce domain bo
 ```
 
 ### Example: MCP Tool Boundary Implementation
+Create your `.github/chatmodes/backend-engineer.chatmode.md` file:
+
 ```yaml
 ---
 description: 'Backend development specialist with security focus'
@@ -134,6 +138,8 @@ Chat modes create the safety boundaries, but you still need efficient ways to ex
 ```
 
 ### Example: Complete Agentic Workflow
+Create your `.github/prompts/feature-spec.prompt.md` file:
+
 ```markdown
 ---
 mode: agent
@@ -186,6 +192,9 @@ The final piece of your foundation addresses the gap between planning and implem
 ```
 
 ### Example: Implementation-Ready Specification
+
+Create a `.github/specs/jwt-auth.spec.md` file:
+
 ```markdown
 # Feature: User Authentication System
 

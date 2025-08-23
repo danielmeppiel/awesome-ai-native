@@ -88,14 +88,16 @@ For maximum control and learning, execute your Agentic Workflows directly in you
 ```markdown
 ## Local IDE Agentic Workflow Execution
 
-1. **Workflow Selection** → Choose appropriate `.prompt.md` for the task
+1. **Workflow Selection** → Choose the `<workflow-name>.prompt.md` workflow file to execute
 2. **Context Preparation** → Ensure relevant files and specifications are ready
-3. **Execution Control** → Use `/prompt implement-oauth-feature` in VSCode chat
+3. **Execution Control** → Use `/workflow-name` in VSCode chat to trigger the workflow
 4. **Interactive Guidance** → Provide input at validation gates and decision points
 5. **Learning Capture** → Document insights and refine workflow based on outcomes
 ```
 
 ### Example: Local OAuth Implementation
+Using `implement-oauth-feature.prompt.md` workflow:
+
 ```markdown
 Developer in VSCode Chat:
 > /implement-oauth-feature ./specs/oauth-integration.spec.md

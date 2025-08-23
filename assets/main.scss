@@ -461,6 +461,118 @@ ul ul, ol ol, ul ol, ol ul {
   }
 }
 
+/* Mobile Sidebar Toggle Button - Primer Design */
+.sidebar-toggle-btn {
+  display: none; /* Hidden by default on desktop */
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(27, 31, 35, 0.12);
+}
+
+.sidebar-toggle-btn:hover {
+  background: var(--bg-secondary);
+  border-color: var(--border-light);
+}
+
+.sidebar-toggle-btn:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Hamburger Icon */
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 16px;
+  height: 12px;
+}
+
+.hamburger-line {
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Hamburger animation when active */
+.sidebar-toggle-btn.active .hamburger-line:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.sidebar-toggle-btn.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.sidebar-toggle-btn.active .hamburger-line:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+/* Sidebar Header with Close Button */
+.sidebar-header {
+  display: none; /* Only show on mobile */
+  justify-content: flex-end;
+  align-items: center;
+  padding: 16px 16px 16px 16px;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 16px;
+  background: var(--bg-primary);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.sidebar-close-btn {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--text-muted);
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.sidebar-close-btn:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.sidebar-close-btn:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.sidebar-close-btn svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* Sidebar Backdrop */
+.sidebar-backdrop {
+  display: none;
+}
+
+/* Remove the grayed backdrop - Primer style is clean */
+body.sidebar-open .sidebar-backdrop {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .wrapper {
     padding: 0 16px;
@@ -479,38 +591,187 @@ ul ul, ol ol, ul ol, ol ul {
     margin: 16px 0;
   }
   
+  /* Show mobile toggle button in header */
+  .sidebar-toggle-btn {
+    display: inline-flex !important;
+  }
+  
+  /* Adjust header layout for mobile */
   .site-header {
     min-height: 56px;
     position: relative;
   }
   
+  .site-header .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
   .site-title {
     font-size: 18px;
     line-height: 56px;
-    max-width: 60%;
+    max-width: 50%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
   
-  .site-nav {
-    position: static;
-    float: right;
-    line-height: 56px;
-    background: transparent;
-    border: none;
-    
-    .trigger {
-      display: inline-block;
-      padding: 0;
-    }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
   
-  .site-nav .page-link {
-    padding: 4px 8px;
-    font-size: 0.8rem;
-    display: inline-block;
-    margin-left: 2px;
+  .github-btn {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  
+  .github-btn .github-text {
+    display: none;
+  }
+  
+  .github-btn .octicon {
+    width: 14px;
+    height: 14px;
+  }
+  
+  /* MOBILE: Single column layout, sidebar as overlay only */
+  .docs-layout {
+    display: grid !important;
+    grid-template-columns: 1fr !important; /* Single column - no space for sidebar */
+    gap: 0 !important;
+    min-height: auto !important;
+    width: 100% !important;
+  }
+  
+  .docs-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    grid-column: 1 !important; /* Take the single column */
+  }
+  
+  .docs-sidebar {
+    /* COMPLETELY HIDDEN BY DEFAULT - not part of layout */
+    display: none !important;
+  }
+  
+  /* ONLY when hamburger is clicked - show as overlay */
+  body.sidebar-open .docs-sidebar {
+    display: block !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 320px !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    background: #ffffff !important;
+    border-left: 1px solid #d1d9e0 !important;
+    padding: 0 !important;
+    z-index: 1100 !important;
+    overflow-y: auto !important;
+    box-shadow: -8px 0 32px rgba(27, 31, 35, 0.12) !important;
+    /* Slide in animation */
+    animation: slideInFromRight 0.25s cubic-bezier(0.22, 0.61, 0.36, 1) !important;
+    /* Ensure it covers the full viewport */
+    min-height: 100vh !important;
+  }
+  
+  /* Show close button header on mobile */
+  body.sidebar-open .sidebar-header {
+    display: flex !important;
+  }
+  
+  /* Adjust nav padding when close button is visible */
+  body.sidebar-open .docs-nav {
+    padding: 0 24px 24px 24px !important;
+  }
+  
+  /* Add backdrop */
+  body.sidebar-open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(27, 31, 35, 0.5);
+    z-index: 1099;
+    animation: fadeIn 0.25s ease-out;
+  }
+  
+  /* Prevent body scroll when sidebar is open - less intrusive method */
+  body.sidebar-open {
+    overflow: hidden;
+  }
+  
+  /* Style the mobile sidebar navigation with better typography */
+  body.sidebar-open .docs-sidebar nav {
+    padding-top: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  }
+  
+  /* Better spacing and typography for nav sections */
+  body.sidebar-open .nav-section {
+    margin-bottom: 16px;
+  }
+  
+  body.sidebar-open .nav-main-link {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 12px;
+    color: #24292f;
+    border-radius: 6px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+  
+  body.sidebar-open .nav-main-link:hover {
+    background-color: #f6f8fa;
+    color: #24292f;
+  }
+  
+  body.sidebar-open .nav-main-link.current {
+    background-color: #0969da;
+    color: #ffffff;
+    font-weight: 600;
+  }
+  
+  body.sidebar-open .nav-sub-link {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 6px 12px 6px 28px;
+    color: #656d76;
+    border-radius: 4px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+  
+  body.sidebar-open .nav-sub-link:hover {
+    background-color: #f6f8fa;
+    color: #24292f;
+  }
+  
+  body.sidebar-open .nav-sub-link.current {
+    background-color: #dbeafe;
+    color: #0969da;
+    font-weight: 500;
+  }
+  
+  .docs-page-header {
+    padding: 20px 16px 12px 16px !important;
+  }
+  
+  .docs-page-header h1 {
+    font-size: 1.75rem !important;
+  }
+  
+  .docs-content-inner {
+    padding: 20px 16px 32px 16px !important;
   }
   
   .site-footer .footer-col-wrapper {
@@ -519,6 +780,54 @@ ul ul, ol ol, ul ol, ol ul {
   
   .site-footer .footer-col-1 {
     margin-right: 0;
+  }
+  
+  .docs-page-header {
+    padding: 20px 16px 12px 16px !important;
+  }
+  
+  .docs-page-header h1 {
+    font-size: 1.75rem !important;
+  }
+  
+  .docs-content-inner {
+    padding: 20px 16px 32px 16px !important;
+  }
+  
+  .site-footer .footer-col-wrapper {
+    flex-direction: column;
+  }
+  
+  .site-footer .footer-col-1 {
+    margin-right: 0;
+  }
+}
+
+/* Slide-in animation for mobile sidebar */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

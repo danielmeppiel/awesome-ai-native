@@ -5,6 +5,17 @@
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
 
     <div class="header-right">
+      <!-- Mobile hamburger menu button (only visible on mobile docs pages) -->
+      {% if page.layout == 'docs' %}
+        <button id="sidebar-toggle" class="sidebar-toggle-btn" aria-expanded="false" aria-controls="docs-sidebar" aria-label="Toggle navigation menu">
+          <span class="hamburger-icon">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </span>
+        </button>
+      {% endif %}
+            
       <!-- GitHub Contribute Button -->
       <a href="https://github.com/danielmeppiel/awesome-ai-native" 
          class="github-btn" 
@@ -17,8 +28,10 @@
         <span class="github-text">Contribute</span>
       </a>
       
-      <!-- Primary CTA -->
-      <a href="{{ '/docs/' | relative_url }}" class="btn-primary">Read the Guide</a>
+      <!-- Primary CTA (only show on non-docs pages) -->
+      {% unless page.layout == 'docs' %}
+        <a href="{{ '/docs/' | relative_url }}" class="btn-primary">Read the Guide</a>
+      {% endunless %}
     </div>
   </div>
 </header>

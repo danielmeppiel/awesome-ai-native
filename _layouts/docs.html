@@ -3,7 +3,16 @@ layout: default
 ---
 
 <div class="docs-layout">
-  <aside class="docs-sidebar">
+  <aside id="docs-sidebar" class="docs-sidebar">
+    <!-- Close button for mobile (Primer style) -->
+    <div class="sidebar-header">
+      <button id="sidebar-close" class="sidebar-close-btn" aria-label="Close navigation menu">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+          <path d="M6.697 6l3.651-3.651a.494.494 0 0 0-.697-.697L6 5.303 2.349 1.651a.494.494 0 0 0-.697.697L5.303 6 1.651 9.651a.494.494 0 0 0 .697.697L6 6.697l3.651 3.652a.494.494 0 0 0 .697-.697L6.697 6z"/>
+        </svg>
+      </button>
+    </div>
+    
     <nav class="docs-nav" aria-label="Documentation navigation">
       
       <!-- Main Guide Section -->
@@ -190,6 +199,132 @@ layout: default
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  // Mobile sidebar toggle functionality
+  const toggleBtn = document.getElementById('sidebar-toggle');
+  const closeBtn = document.getElementById('sidebar-close');
+  const sidebar = document.getElementById('docs-sidebar');
+  
+  if (toggleBtn && sidebar) {
+    console.log('Mobile toggle elements found'); // Debug
+    
+    let isNavigatingToAnchor = false;
+    
+    // Toggle sidebar
+    const toggleSidebar = () => {
+      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      const newState = !isExpanded;
+      
+      console.log('Toggling sidebar, new state:', newState); // Debug
+      
+      if (newState) {
+        // Opening sidebar
+        isNavigatingToAnchor = false; // Reset flag
+      }
+      
+      toggleBtn.setAttribute('aria-expanded', newState);
+      document.body.classList.toggle('sidebar-open', newState);
+      
+      // Update hamburger animation
+      toggleBtn.classList.toggle('active', newState);
+    };
+    
+    // Close sidebar
+    const closeSidebar = (skipScrollRestore = false) => {
+      console.log('Closing sidebar', { skipScrollRestore, isNavigatingToAnchor }); // Debug
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('sidebar-open');
+      toggleBtn.classList.remove('active');
+    };
+    
+    // Toggle button click
+    toggleBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      console.log('Hamburger clicked'); // Debug
+      toggleSidebar();
+    });
+    
+    // Close button click
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('Close button clicked'); // Debug
+        closeSidebar();
+      });
+    }
+    
+    // ESC key to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeSidebar();
+    });
+    
+    // Close on backdrop click
+    document.addEventListener('click', (e) => {
+      const sidebarOpen = document.body.classList.contains('sidebar-open');
+      if (sidebarOpen && !sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
+        closeSidebar();
+      }
+    });
+    
+    // Close sidebar when clicking on navigation links
+    sidebar.addEventListener('click', (e) => {
+      const link = e.target.closest('a');
+      if (link && (link.classList.contains('nav-main-link') || link.classList.contains('nav-sub-link'))) {
+        const href = link.getAttribute('href');
+        
+        // Check if it's an anchor link (either #anchor or ends with #anchor)
+        if (href && href.includes('#')) {
+          const hashIndex = href.indexOf('#');
+          const anchor = href.substring(hashIndex);
+          const currentPath = window.location.pathname;
+          const linkPath = href.substring(0, hashIndex);
+          
+          // Check if it's an anchor on the current page
+          if (anchor && (href.startsWith('#') || currentPath.includes(linkPath) || linkPath === '')) {
+            e.preventDefault(); // Prevent default anchor behavior
+            
+            // Set flag to indicate we're navigating to an anchor
+            isNavigatingToAnchor = true;
+            
+            // Close sidebar first without restoring scroll
+            closeSidebar(true);
+            
+            // Then scroll to the target after sidebar is closed
+            setTimeout(() => {
+              const target = document.querySelector(anchor);
+              if (target) {
+                target.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+                // Update URL hash
+                if (window.history && window.history.pushState) {
+                  window.history.pushState(null, null, anchor);
+                }
+              }
+              // Reset flag after navigation
+              isNavigatingToAnchor = false;
+            }, 300); // Wait for sidebar close animation
+            return; // Exit early for anchor links
+          }
+        }
+        
+        // For regular links (different pages), just close sidebar with small delay
+        setTimeout(() => {
+          closeSidebar();
+        }, 100);
+      }
+    });
+    
+    // Close on window resize to desktop size
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        closeSidebar();
+      }
+    });
+  } else {
+    console.log('Mobile toggle elements not found:', { toggleBtn, sidebar }); // Debug
+  }
+
   // Initialize collapsible navigation
   const toggleButtons = document.querySelectorAll('.nav-toggle');
   

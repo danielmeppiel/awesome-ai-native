@@ -43,27 +43,27 @@ Agent CLI Runtimes transform your Agent Primitives from IDE-bound files into **a
 
 While VS Code + GitHub Copilot handles individual development perfectly, teams need additional infrastructure for **sharing, versioning, and productizing** their Agent Primitives. Managing multiple CLI environments becomes complex quickly - different installation procedures, configuration requirements, and compatibility matrices.
 
-[AWD CLI](https://github.com/danielmeppiel/awd-cli) solves this by providing unified runtime management and package distribution. Instead of manually installing and configuring each vendor CLI, AWD handles the complexity while preserving your existing VS Code workflow.
+[APM CLI](https://github.com/danielmeppiel/apm-cli) solves this by providing unified runtime management and package distribution. Instead of manually installing and configuring each vendor CLI, APM handles the complexity while preserving your existing VS Code workflow.
 
 Here's how runtime management works in practice:
 
 ```bash
-# Install AWD CLI once
-curl -sSL https://raw.githubusercontent.com/danielmeppiel/awd-cli/main/install.sh | sh
+# Install APM CLI once
+curl -sSL https://raw.githubusercontent.com/danielmeppiel/apm-cli/main/install.sh | sh
 
-# AWD manages runtime installation for you
-awd runtime setup codex          # Installs OpenAI Codex CLI
-awd runtime setup llm            # Installs Simon Willison's LLM
+# APM manages runtime installation for you
+apm runtime setup codex          # Installs OpenAI Codex CLI
+apm runtime setup llm            # Installs Simon Willison's LLM
 
 # Check what's available
-awd runtime list                 # Shows installed runtimes
-awd runtime status               # Shows which runtime will be used
+apm runtime list                 # Shows installed runtimes
+apm runtime status               # Shows which runtime will be used
 
 # Run workflows
-awd run security-review --param pr=123 
+apm run security-review --param pr=123 
 ```
 
-The key benefits become immediately apparent: your daily development stays exactly the same in VS Code, AWD installs and configures runtimes automatically, your workflows run regardless of which runtime is installed, and the same `awd run` command works consistently across all runtimes.
+The key benefits become immediately apparent: your daily development stays exactly the same in VS Code, APM installs and configures runtimes automatically, your workflows run regardless of which runtime is installed, and the same `apm run` command works consistently across all runtimes.
 
 **✅ Checkpoint:** Runtime complexity is abstracted away while preserving development workflow flexibility
 
@@ -73,37 +73,37 @@ Once your Agent Primitives prove valuable, you'll naturally want to **share them
 
 The challenge emerges quickly: you've built powerful Agent Primitives in VS Code, your team wants to use them, but distributing markdown files and ensuring consistent MCP dependencies across different environments becomes unwieldy. You need the equivalent of npm for natural language programs.
 
-[AWD CLI](https://github.com/danielmeppiel/awd-cli) provides this missing layer. It doesn't replace your VS Code workflow - it **extends** it by creating distributable packages of Agent Primitives complete with dependencies, configuration, and runtime compatibility that teams can share like npm packages.
+[APM CLI](https://github.com/danielmeppiel/apm-cli) provides this missing layer. It doesn't replace your VS Code workflow - it **extends** it by creating distributable packages of Agent Primitives complete with dependencies, configuration, and runtime compatibility that teams can share like npm packages.
 
 ### Package Management in Practice
 
 ```bash
-# Initialize new AWD project (like npm init)
-awd init security-review-workflow
+# Initialize new APM project (like npm init)
+apm init security-review-workflow
 
 # Install MCP dependencies (like npm install)
-cd security-review-workflow && awd install
+cd security-review-workflow && apm install
 
 # Develop and test your workflow locally
-awd run start --param pr=123
+apm run start --param pr=123
 
-# Package for distribution (future: awd publish)
-# Share awd.yml and .prompt.md files with team
+# Package for distribution (future: apm publish)
+# Share apm.yml and .prompt.md files with team
 
 # Team members can install and use
 git clone your-workflow-repo
-cd your-workflow-repo && awd install
-awd run start --param pr=456  # Works with their installed runtime
+cd your-workflow-repo && apm install
+apm run start --param pr=456  # Works with their installed runtime
 ```
 
 The benefits compound quickly: distribute tested workflows as versioned packages with dependencies, automatically resolve and install required MCP servers, track workflow evolution and maintain compatibility across updates, build on shared primitive libraries from the community, and ensure consistent execution across different team members' setups.
 
 ### Project Configuration
 
-Create your `awd.yml` configuration file that serves as the package.json equivalent for Agent Primitives, defining scripts, dependencies, and input parameters:
+Create your `apm.yml` configuration file that serves as the package.json equivalent for Agent Primitives, defining scripts, dependencies, and input parameters:
 
 ```yaml
-# awd.yml - Project configuration (like package.json)
+# apm.yml - Project configuration (like package.json)
 name: security-review-workflow
 version: 1.2.0
 description: Comprehensive security review process with GitHub integration
@@ -130,7 +130,7 @@ input:
 
 The final piece of the tooling ecosystem enables **Continuous AI** - automated execution of packaged Agent Primitives in production environments. Your carefully developed workflows can now run automatically in CI/CD pipelines with the same reliability as traditional software deployments.
 
-Building on the `security-review-workflow` package example above, here's how the same AWD project deploys to production with multi-runtime flexibility.
+Building on the `security-review-workflow` package example above, here's how the same APM project deploys to production with multi-runtime flexibility.
 
 ```yaml
 # .github/workflows/security-review.yml
@@ -144,7 +144,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        script: [start, claude, debug]  # Maps to awd.yml scripts
+        script: [start, claude, debug]  # Maps to apm.yml scripts
     permissions:
       models: read
       pull-requests: write
@@ -154,7 +154,7 @@ jobs:
     - uses: actions/checkout@v4
     
     - name: Run Security Review (${{ matrix.script }})
-      uses: danielmeppiel/action-awd-cli@v1
+      uses: danielmeppiel/action-apm-cli@v1
       with:
         script: ${{ matrix.script }}
         parameters: |
@@ -167,7 +167,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-**Key Connection**: The `matrix.script` values (`start`, `claude`, `debug`) correspond exactly to the scripts defined in the `awd.yml` configuration above. [AWD CLI](https://github.com/danielmeppiel/awd-cli) automatically installs the MCP dependencies (`ghcr.io/github/github-mcp-server`, `security-scanner-mcp`) and passes the input parameters (`pr_number`, `severity_level`, `review_depth`) to your security-review.prompt.md workflow.
+**Key Connection**: The `matrix.script` values (`start`, `claude`, `debug`) correspond exactly to the scripts defined in the `apm.yml` configuration above. [APM CLI](https://github.com/danielmeppiel/apm-cli) automatically installs the MCP dependencies (`ghcr.io/github/github-mcp-server`, `security-scanner-mcp`) and passes the input parameters (`pr_number`, `severity_level`, `review_depth`) to your security-review.prompt.md workflow.
 
 This creates production-ready AI workflows with runtime flexibility, parallel execution capabilities, consistent deployment across environments, and automated quality processes integrated into standard CI/CD pipelines.
 
@@ -181,16 +181,16 @@ The evolution happens in four stages:
 
 1. **Raw Code** → Agent Primitives (.prompt.md, .instructions.md files)
 2. **Runtime Environments** → Agent CLI Runtimes (Codex CLI, Claude Code, etc.)
-3. **Package Management** → [AWD CLI](https://github.com/danielmeppiel/awd-cli) (distribution and orchestration layer)
+3. **Package Management** → [APM CLI](https://github.com/danielmeppiel/apm-cli) (distribution and orchestration layer)
 4. **Thriving Ecosystem** → Shared libraries, tools, and community packages
 
-Just as npm enabled JavaScript's explosive growth by solving the package distribution problem, [AWD CLI](https://github.com/danielmeppiel/awd-cli) enables the Agent Primitive ecosystem to flourish by providing the missing infrastructure layer that makes sharing and scaling natural language programs practical.
+Just as npm enabled JavaScript's explosive growth by solving the package distribution problem, [APM CLI](https://github.com/danielmeppiel/apm-cli) enables the Agent Primitive ecosystem to flourish by providing the missing infrastructure layer that makes sharing and scaling natural language programs practical.
 
 ## Key Takeaways
 
 1. **Agent Primitives are Software**: Your `.prompt.md` and `.instructions.md` files represent executable natural language programs that deserve professional tooling infrastructure
 2. **Runtime Diversity Enables Scale**: Agent CLI Runtimes (Codex CLI, Claude Code, Gemini CLI) provide the execution environments that bridge development to production
-3. **Package Management is Critical**: [AWD CLI](https://github.com/danielmeppiel/awd-cli) provides the npm-equivalent layer that makes Agent Primitives truly portable and shareable
+3. **Package Management is Critical**: [APM CLI](https://github.com/danielmeppiel/apm-cli) provides the npm-equivalent layer that makes Agent Primitives truly portable and shareable
 4. **Production Ready Today**: This tooling stack enables automated AI workflows in CI/CD pipelines with enterprise-grade reliability
 5. **Ecosystem Growth Pattern**: Package management infrastructure creates the foundation for thriving ecosystems of shared workflows, tools, and community libraries
 

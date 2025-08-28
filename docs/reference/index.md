@@ -117,7 +117,7 @@ Essential checklists, progression frameworks, and documentation links for ongoin
 - **[GitHub Coding Agent](https://docs.github.com/en/copilot/about-github-copilot/about-copilot-coding-agent)** - Async agent for issue assignment and PR creation
 - **[Enabling Coding Agent](https://docs.github.com/en/copilot/how-tos/agents/coding-agent/enabling-copilot-coding-agent)** - Setup and configuration
 - **[MCP Integration](https://docs.github.com/en/copilot/how-tos/agents/coding-agent/extending-copilot-coding-agent-with-the-model-context-protocol-mcp)** - Extend agent capabilities
-- **[Copilot Chat Best Practices](https://docs.github.com/en/copilot/copilot-chat/copilot-chat-cookbook)** - Effective prompting examples
+- **[Copilot Chat Best Practices](https://docs.github.com/en/copilot/tutorials/copilot-chat-cookbook)** - Effective prompting examples
 - **[Responsible Use Guidelines](https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-copilot-coding-agent-on-githubcom)** - Best practices for coding agent usage
 
 ## Quick Troubleshooting

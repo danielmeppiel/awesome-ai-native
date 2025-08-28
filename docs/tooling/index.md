@@ -51,6 +51,9 @@ Here's how runtime management works in practice:
 # Install APM CLI once
 curl -sSL https://raw.githubusercontent.com/danielmeppiel/apm-cli/main/install.sh | sh
 
+# Optional: setup your GitHub PAT with read-only Models permissions for free inferencing with GitHub Models https://github.com/settings/personal-access-tokens/new
+export GITHUB_TOKEN=your_token_here
+
 # APM manages runtime installation for you
 apm runtime setup codex          # Installs OpenAI Codex CLI
 apm runtime setup llm            # Installs Simon Willison's LLM
@@ -59,8 +62,17 @@ apm runtime setup llm            # Installs Simon Willison's LLM
 apm runtime list                 # Shows installed runtimes
 apm runtime status               # Shows which runtime will be used
 
-# Run workflows
-apm run security-review --param pr=123 
+# Install MCP dependencies (like npm install)
+# Note: this feature is under development
+apm install
+
+# Compile Agent Primitive files to Agents.md files
+apm compile
+
+# Run workflows against your chosen runtime
+# This will trigger 'codex security-review.prompt.md' command 
+# Check the example apm.yml file a bit below in this guide
+apm run codex-sec-review --param pr_id=123 
 ```
 
 The key benefits become immediately apparent: your daily development stays exactly the same in VS Code, APM installs and configures runtimes automatically, your workflows run regardless of which runtime is installed, and the same `apm run` command works consistently across all runtimes.
@@ -81,19 +93,17 @@ The challenge emerges quickly: you've built powerful Agent Primitives in VS Code
 # Initialize new APM project (like npm init)
 apm init security-review-workflow
 
-# Install MCP dependencies (like npm install)
-cd security-review-workflow && apm install
-
 # Develop and test your workflow locally
-apm run start --param pr=123
+cd security-review-workflow 
+apm compile && apm install
+apm run codex-sec-review --param pr_id=123
 
 # Package for distribution (future: apm publish)
-# Share apm.yml and .prompt.md files with team
-
-# Team members can install and use
+# Share apm.yml and Agent Primitive files with team
+# Team members can install and use your primitives
 git clone your-workflow-repo
-cd your-workflow-repo && apm install
-apm run start --param pr=456  # Works with their installed runtime
+cd your-workflow-repo && apm compile && apm install
+apm run codex-sec-review --param pr_id=456  
 ```
 
 The benefits compound quickly: distribute tested workflows as versioned packages with dependencies, automatically resolve and install required MCP servers, track workflow evolution and maintain compatibility across updates, build on shared primitive libraries from the community, and ensure consistent execution across different team members' setups.
@@ -109,19 +119,14 @@ version: 1.2.0
 description: Comprehensive security review process with GitHub integration
 
 scripts:
-  start: "codex security-review.prompt.md"
-  claude: "claude security-review.prompt.md"
-  debug: "RUST_LOG=debug codex security-review.prompt.md"
+  codex-sec-review: "codex security-review.prompt.md"
+  llm-sec-review: "llm security-review.prompt.md"
+  codex-debug: "RUST_LOG=debug codex security-review.prompt.md"
   
 dependencies:
   mcp:
     - ghcr.io/github/github-mcp-server
     - registry.npmjs.org/security-scanner-mcp
-    
-input:
-  - pr_number
-  - severity_level
-  - review_depth
 ```
 
 **✅ Checkpoint:** Your Agent Primitives are now packaged as distributable software with managed dependencies
@@ -144,7 +149,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        script: [start, claude, debug]  # Maps to apm.yml scripts
+        script: [codex-sec-review, llm-sec-review, codex-debug]  # Maps to apm.yml scripts
     permissions:
       models: read
       pull-requests: write
@@ -159,15 +164,13 @@ jobs:
         script: ${{ matrix.script }}
         parameters: |
           {
-            "pr_number": "${{ github.event.number }}",
-            "severity_level": "high",
-            "review_depth": "comprehensive"
+            "pr_id": "${{ github.event.number }}"
           }
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-**Key Connection**: The `matrix.script` values (`start`, `claude`, `debug`) correspond exactly to the scripts defined in the `apm.yml` configuration above. [APM CLI](https://github.com/danielmeppiel/apm-cli) automatically installs the MCP dependencies (`ghcr.io/github/github-mcp-server`, `security-scanner-mcp`) and passes the input parameters (`pr_number`, `severity_level`, `review_depth`) to your security-review.prompt.md workflow.
+**Key Connection**: The `matrix.script` values (`codex-sec-review`, `llm-sec-review`, `codex-debug`) correspond exactly to the scripts defined in the `apm.yml` configuration above. [APM CLI](https://github.com/danielmeppiel/apm-cli) automatically installs the MCP dependencies (`ghcr.io/github/github-mcp-server`, `security-scanner-mcp`) and passes the input parameters (`pr_id`) to your security-review.prompt.md workflow.
 
 This creates production-ready AI workflows with runtime flexibility, parallel execution capabilities, consistent deployment across environments, and automated quality processes integrated into standard CI/CD pipelines.
 

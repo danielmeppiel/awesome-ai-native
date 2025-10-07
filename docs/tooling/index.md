@@ -70,9 +70,9 @@ apm install
 apm compile
 
 # Run workflows against your chosen runtime
-# This will trigger 'codex security-review.prompt.md' command 
+# This will trigger 'copilot --log-level all --log-dir copilot-logs --allow-all-tools -p  security-review.prompt.md' command 
 # Check the example apm.yml file a bit below in this guide
-apm run codex-sec-review --param pr_id=123 
+apm run copilot-sec-review --param pr_id=123 
 ```
 
 The key benefits become immediately apparent: your daily development stays exactly the same in VS Code, APM installs and configures runtimes automatically, your workflows run regardless of which runtime is installed, and the same `apm run` command works consistently across all runtimes.
@@ -147,7 +147,7 @@ apm init security-review-workflow
 # Develop and test your agentic workflow locally
 cd security-review-workflow 
 apm compile && apm install
-apm run codex-sec-review --param pr_id=123
+apm run copilot-sec-review --param pr_id=123
 
 # Publish the APM package to GitHub: 
 git tag v1.0.0 && git push --tags
@@ -162,8 +162,8 @@ name: security-review-workflow
 version: 1.2.0
 description: Comprehensive security review process with GitHub integration
 scripts:
+  copilot-sec-review: "copilot --log-level all --log-dir copilot-logs --allow-all-tools -p  security-review.prompt.md"
   codex-sec-review: "codex security-review.prompt.md"
-  llm-sec-review: "llm security-review.prompt.md"
   codex-debug: "RUST_LOG=debug codex security-review.prompt.md"
   
 dependencies:
@@ -200,7 +200,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        script: [codex-sec-review, llm-sec-review, codex-debug]  # Maps to apm.yml scripts
+        script: [codex-sec-review, copilot-sec-review, codex-debug]  # Maps to apm.yml scripts
     permissions:
       models: read
       pull-requests: write
@@ -222,7 +222,7 @@ jobs:
       
 ```
 
-**Key Connection**: The `matrix.script` values (`codex-sec-review`, `llm-sec-review`, `codex-debug`) correspond exactly to the scripts defined in the `apm.yml` configuration above. [APM](https://github.com/danielmeppiel/apm) automatically installs the MCP dependencies (`ghcr.io/github/github-mcp-server`, `security-scanner-mcp`) and passes the input parameters (`pr_id`) to your security-review.prompt.md workflow.
+**Key Connection**: The `matrix.script` values (`codex-sec-review`, `copilot-sec-review`, `codex-debug`) correspond exactly to the scripts defined in the `apm.yml` configuration above. [APM](https://github.com/danielmeppiel/apm) automatically installs the MCP dependencies (`ghcr.io/github/github-mcp-server`, `security-scanner-mcp`) and passes the input parameters (`pr_id`) to your security-review.prompt.md workflow.
 
 This creates production-ready AI workflows with runtime flexibility, parallel execution capabilities, consistent deployment across environments, and automated quality processes integrated into standard CI/CD pipelines.
 

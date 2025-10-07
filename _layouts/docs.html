@@ -48,6 +48,30 @@ layout: default
         </ul>
       </div>
 
+      <!-- Getting Started -->
+      <div class="nav-section">
+        <div class="nav-section-title">
+          <button class="nav-toggle {% if page.url contains '/getting-started/' %}expanded{% endif %}" 
+                  data-target="getting-started-section" 
+                  aria-expanded="{% if page.url contains '/getting-started/' %}true{% else %}false{% endif %}">
+            <svg class="chevron-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+              <path d="M4.5 3L7.5 6L4.5 9"></path>
+            </svg>
+          </button>
+          <a href="{{ '/docs/getting-started/' | relative_url }}" class="nav-main-link {% if page.url contains '/getting-started/' %}current{% endif %}">
+            <span class="nav-text">Getting Started</span>
+          </a>
+        </div>
+        <ul class="nav-subsection {% if page.url contains '/getting-started/' %}expanded{% endif %}" id="getting-started-section">
+          <li><a href="{{ '/docs/getting-started/' | relative_url }}#a-instructions-architecture" class="nav-sub-link">A. Instructions Architecture</a></li>
+          <li><a href="{{ '/docs/getting-started/' | relative_url }}#b-chat-modes-configuration" class="nav-sub-link">B. Chat Modes Configuration</a></li>
+          <li><a href="{{ '/docs/getting-started/' | relative_url }}#c-agentic-workflows" class="nav-sub-link">C. Agentic Workflows</a></li>
+          <li><a href="{{ '/docs/getting-started/' | relative_url }}#d-specification-templates" class="nav-sub-link">D. Specification Templates</a></li>
+          <li><a href="{{ '/docs/getting-started/' | relative_url }}#e-context-organization--discovery" class="nav-sub-link">E. Context Organization</a></li>
+          <li><a href="{{ '/docs/getting-started/' | relative_url }}#quick-start-checklist" class="nav-sub-link">Quick Start Checklist</a></li>
+        </ul>
+      </div>
+
       <!-- Tooling -->
       <div class="nav-section">
         <div class="nav-section-title">
@@ -70,30 +94,6 @@ layout: default
           <li><a href="{{ '/docs/tooling/' | relative_url }}#production-deployment" class="nav-sub-link">Production Deployment</a></li>
           <li><a href="{{ '/docs/tooling/' | relative_url }}#ecosystem-evolution" class="nav-sub-link">Ecosystem Evolution</a></li>
           <li><a href="{{ '/docs/tooling/' | relative_url }}#key-takeaways" class="nav-sub-link">Key Takeaways</a></li>
-        </ul>
-      </div>
-
-      <!-- Getting Started -->
-      <div class="nav-section">
-        <div class="nav-section-title">
-          <button class="nav-toggle {% if page.url contains '/getting-started/' %}expanded{% endif %}" 
-                  data-target="getting-started-section" 
-                  aria-expanded="{% if page.url contains '/getting-started/' %}true{% else %}false{% endif %}">
-            <svg class="chevron-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
-              <path d="M4.5 3L7.5 6L4.5 9"></path>
-            </svg>
-          </button>
-          <a href="{{ '/docs/getting-started/' | relative_url }}" class="nav-main-link {% if page.url contains '/getting-started/' %}current{% endif %}">
-            <span class="nav-text">Getting Started</span>
-          </a>
-        </div>
-        <ul class="nav-subsection {% if page.url contains '/getting-started/' %}expanded{% endif %}" id="getting-started-section">
-          <li><a href="{{ '/docs/getting-started/' | relative_url }}#a-instructions-architecture" class="nav-sub-link">Instructions Architecture</a></li>
-          <li><a href="{{ '/docs/getting-started/' | relative_url }}#b-chat-modes-configuration" class="nav-sub-link">Chat Modes Configuration</a></li>
-          <li><a href="{{ '/docs/getting-started/' | relative_url }}#c-agentic-workflows" class="nav-sub-link">Agentic Workflows</a></li>
-          <li><a href="{{ '/docs/getting-started/' | relative_url }}#d-specification-templates" class="nav-sub-link">Specification Templates</a></li>
-          <li><a href="{{ '/docs/getting-started/' | relative_url }}#quick-start-checklist" class="nav-sub-link">Quick Start Checklist</a></li>
-          <li><a href="{{ '/docs/getting-started/' | relative_url }}#whats-next" class="nav-sub-link">What's Next</a></li>
         </ul>
       </div>
 
@@ -141,8 +141,8 @@ layout: default
           <li><a href="{{ '/docs/team-adoption/' | relative_url }}#a-human-validation-gates--review-processes" class="nav-sub-link">Human Validation Gates</a></li>
           <li><a href="{{ '/docs/team-adoption/' | relative_url }}#b-team-scale-multi-agent-coordination" class="nav-sub-link">Team-Scale Coordination</a></li>
           <li><a href="{{ '/docs/team-adoption/' | relative_url }}#c-knowledge-sharing--team-intelligence-patterns" class="nav-sub-link">Knowledge Sharing</a></li>
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#d-tooling-enabled-team-practices" class="nav-sub-link">Tooling-Enabled Team Practices</a></li>
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#e-governance--compliance-framework" class="nav-sub-link">Governance & Compliance</a></li>
+          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#d-governance--compliance-framework" class="nav-sub-link">Governance & Compliance</a></li>
+          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#e-context-governance-at-scale" class="nav-sub-link">Context Governance at Scale</a></li>
           <li><a href="{{ '/docs/team-adoption/' | relative_url }}#implementation-roadmap" class="nav-sub-link">Implementation Roadmap</a></li>
           <li><a href="{{ '/docs/team-adoption/' | relative_url }}#success-metrics" class="nav-sub-link">Success Metrics</a></li>
           <li><a href="{{ '/docs/team-adoption/' | relative_url }}#key-takeaways" class="nav-sub-link">Key Takeaways</a></li>

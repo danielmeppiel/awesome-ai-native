@@ -30,17 +30,17 @@ permalink: /
     <div class="path-link">Learn more</div>
   </a>
 
-  <a href="docs/tooling/" class="path-card">
-    <div class="path-title">Tooling</div>
-    <div class="path-description">Scale Agent Primitives with runtime, packaging, and production tooling</div>
-    <div class="path-meta">12-15 minutes • Infrastructure & Scaling</div>
-    <div class="path-link">Learn more</div>
-  </a>
-
   <a href="docs/getting-started/" class="path-card">
     <div class="path-title">Getting Started</div>
     <div class="path-description">Build your first Agent Primitives and see immediate results</div>
-    <div class="path-meta">10-15 minutes • Hands-on Implementation</div>
+    <div class="path-meta">15-20 minutes • Hands-on Implementation</div>
+    <div class="path-link">Learn more</div>
+  </a>
+
+  <a href="docs/tooling/" class="path-card">
+    <div class="path-title">Tooling</div>
+    <div class="path-description">Scale Agent Primitives with runtime, context compilation, and package management</div>
+    <div class="path-meta">12-15 minutes • Infrastructure & Scaling</div>
     <div class="path-link">Learn more</div>
   </a>
 

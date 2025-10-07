@@ -3,7 +3,7 @@ layout: docs
 title: "Getting Started"
 display_title: "Getting Started"
 permalink: /docs/getting-started/
-nav_order: 4
+nav_order: 3
 ---
 Now that you understand the [three-layer framework](../concepts/), it's time to build your first Agent Primitives. This hands-on implementation will give you immediate productivity improvements while establishing the foundation for more advanced workflows.
 
@@ -19,6 +19,7 @@ The key insight is modularity: instead of one massive instruction file that appl
 - Create the general [`copilot-instructions.md`](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilot-instructionsmd-file) file in the `.github` folder for the repository with common rules
 - Create modular [`.instructions.md` files](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-instructionsmd-files) in the `.github/instructions/` folder by domain (frontend, backend, testing, docs, specs...)
 - Use [`applyTo: "**/*.{js,ts...}"`](https://code.visualstudio.com/docs/copilot/copilot-customization#_instructions-file-structure) patterns for selective application
+- Compile to [AGENTS.md standard](https://agents.md) so your context works across all coding agents. See [Tooling](../tooling/) to learn about **context compilation**
 
 > 💡 **Context Engineering in Action**: Modular instructions preserve context space by loading only relevant guidelines when working on specific file types, leaving maximum buffer for code understanding.
 
@@ -30,6 +31,9 @@ The key insight is modularity: instead of one massive instruction file that appl
     ├── frontend.instructions.md     # applyTo: "**/*.{jsx,tsx,css}"
     ├── backend.instructions.md      # applyTo: "**/*.{py,go,java}"
     └── testing.instructions.md      # applyTo: "**/test/**"
+
+# After context compilation:
+# Nested AGENTS.md files auto-generated in optimal locations
 ```
 
 ### Example: Markdown Prompt Engineering in Instructions
@@ -58,7 +62,7 @@ Generate code with:
 - [ ] Type exports in appropriate index files
 ```
 
-**⚠️ Checkpoint:** Instructions are context-efficient and non-conflicting
+**⚠️ Checkpoint:** Instructions are modular, targeted, and ready to compile
 
 ## B. Chat Modes Configuration
 
@@ -242,10 +246,11 @@ With all primitives in place, you now have a complete foundation for systematic 
 ### Implementation Steps  
 4. **[ ]** Create [`.github/copilot-instructions.md`](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilot-instructionsmd-file) with basic project guidelines (Context Engineering: global rules)
 5. **[ ]** Set up domain-specific [`.instructions.md` files](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-instructionsmd-files) with `applyTo` patterns (Context Engineering: selective loading)
-6. **[ ]** Configure [chat modes](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-chat-modes) for your tech stack domains (Context Engineering: domain boundaries)
-7. **[ ]** Create your first [`.prompt.md` Agentic Workflow](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental)
-8. **[ ]** Build your first `.spec.md` template for feature specifications (Agent Primitive: deterministic planning-to-implementation bridge)
-9. **[ ]** Practice a spec-first approach with two Agentic Workflowws (session splitting): plan first, implement second
+6. **[ ]** Compile instructions to `AGENTS.md` standard for universal portability—see [Tooling](../tooling/)
+7. **[ ]** Configure [chat modes](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-chat-modes) for your tech stack domains (Context Engineering: domain boundaries)
+8. **[ ]** Create your first [`.prompt.md` Agentic Workflow](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental)
+9. **[ ]** Build your first `.spec.md` template for feature specifications (Agent Primitive: deterministic planning-to-implementation bridge)
+10. **[ ]** Practice a spec-first approach with two Agentic Workflows (session splitting): plan first, implement second
 
 ## What's Next?
 

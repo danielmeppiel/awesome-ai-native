@@ -80,21 +80,41 @@ With your prompts structured and your primitives set up, you'll encounter a new 
 
 LLMs have finite attention spans, limited memory (context windows) and are forgetful. Strategic context management not only helps agents focus on relevant information, but enables them to get started quicker by reducing the need to search for and ingest irrelevant or confusing information—thus preserving valuable context window space and improving reliability and effectiveness.
 
+### The Universal Discovery Challenge
+
+The industry developed fragmented context formats—`.instructions.md` (VSCode), `.cursorrules` (Cursor), `.clinerules` (Cline), `CLAUDE.md` (Claude Desktop)—locking teams into single tools. The **[AGENTS.md standard](https://agents.md)** emerged as the universal solution, adopted by 20,000+ open-source projects.
+
+**Example structure:**
+```
+project/
+├── AGENTS.md                    # Root: project-wide principles
+├── frontend/
+│   ├── AGENTS.md               # Frontend-specific context
+│   └── Button.tsx              # Inherits: root + frontend
+└── backend/
+    ├── AGENTS.md               # Backend-specific context
+    └── auth.ts                 # Inherits: root + backend
+```
+
+Agents walk up the directory tree and load the closest AGENTS.md file—domain-specific context without global pollution. This hierarchical approach is the foundation of scalable context engineering. 
+
 ### Key Techniques
 
 - **Session Splitting**: Use distinct Agent sessions for different development phases (planning → implementation → testing). Fresh context = better focus
-- **Modular Rule Loading**: Apply only relevant instructions through targeted `.instructions.md` files using `applyTo` yaml frontmatter syntax, preserving context space for actual work
-- **Memory-Driven Development**: Leverage Agent Memory through `.memory.md` files to maintain project knowledge and decisions across sessions and time
-- **Context Optimization**: Use `.context.md` Context Helper Files strategically to accelerate information retrieval and reduce cognitive load
-- **Cognitive Focus Optimization**: Use chat modes in `.chatmode.md` files to constrain AI attention to relevant domains, preventing cross-domain interference
+- **Modular Rule Loading**: Author `.instructions.md` files with `applyTo` patterns—the precision tool for context loading. Compile to hierarchical `AGENTS.md` for universal portability
+- **Hierarchical Discovery**: Agents walk directory tree to load closest AGENTS.md—domain-specific context without global pollution. Automatic context optimization reduces context waste.
+- **Memory-Driven Development**: Leverage Agent Memory through `.memory.md` files to maintain project knowledge and decisions across sessions
+- **Context Optimization**: Use `.context.md` Context Helper Files to accelerate information retrieval and reduce cognitive load
+- **Cognitive Focus Optimization**: Use chat modes in `.chatmode.md` files to constrain AI attention to relevant domains
 
 ### Practical Benefits
 
 - **Session Splitting**: Fresh context window for complex tasks
-- **Modular Rules**: Reduced irrelevant suggestions through targeted instructions
+- **Modular Instructions + Compilation**: Single source of truth (`.instructions.md`) is used to generate portable, optimized context (`AGENTS.md`) automatically.
+- **Hierarchical Discovery**: Reduction in context pollution—agents load only relevant instructions for current file
 - **Memory-Driven Development**: Preserved project knowledge and decision history across time
-- **Context Optimization**: Faster startup time and reduced cognitive overhead through pre-curated information
-- **Reliability Boost**: Less context pollution leads to more consistent and accurate outputs
+- **Context Optimization**: Faster startup time and reduced cognitive overhead
+- **Universal Portability**: Same context works across GitHub Copilot, Cursor, Codex, Aider, and all major coding agents
 
 **Implementation Through Primitives:** Each context engineering technique uses Agent Primitives strategically, creating compound benefits for cognitive performance.
 
@@ -171,7 +191,9 @@ flowchart TD
 3. **Agentic Workflows** in Markdown apply prompt and context engineering leveraging Agent Primitives to implement complete, reliable agentic processes
 5. **The Framework** creates compound intelligence that improves through iterative refinement
 
-**Want to understand the tooling ecosystem?** Continue to [Tooling](../tooling/) to learn about Agent CLI Runtimes, dependency and package management.
+**Ready for hands-on implementation?** Continue to [Getting Started](../getting-started/) to build your first Agent Primitives with hierarchical organization.
+
+**Want to understand the tooling ecosystem?** Jump to [Tooling](../tooling/) to learn about Agent CLI Runtimes, context compilation, and agent package management.
 
 **Ready for hands-on implementation?** Jump to [Getting Started](../getting-started/) to build your first Agent Primitives and culminate with your first Agentic Workflow.
 

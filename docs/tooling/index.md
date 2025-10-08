@@ -3,7 +3,7 @@ layout: docs
 title: "Tooling"
 display_title: "Tooling: Scaling Agent Primitives"
 permalink: /docs/tooling/
-nav_order: 4
+nav_order: 3
 ---
 
 You've mastered the [three-layer framework](../concepts/) and understand that your Agent Primitives are **executable software written in natural language**. Now comes the natural next question: how do these markdown files scale beyond your individual development workflow into production-grade infrastructure?
@@ -83,7 +83,7 @@ The key benefits become immediately apparent: your daily development stays exact
 
 Your modular `.instructions.md` files work great in VSCode, but they're locked to that one environment. To work across all coding agents (Cursor, Claude Desktop, etc.), you need the universal `AGENTS.md` standard. And when pulling in primitives from multiple packages, they need to merge intelligently without context pollution.
 
-**Compilation solves both:** transforms VSCode-native instructions into portable `AGENTS.md` files while optimizing how contexts from dependencies and local primitives combine.
+**Compilation solves both:** transforms VSCode-native instructions into portable `AGENTS.md` files while optimizing how contexts from dependencies and local primitives combine. This is what enables **spec-driven team coordination** from [Team & Enterprise Scale](../team-adoption/).
 
 [APM's compiler](https://github.com/danielmeppiel/apm) analyzes your `applyTo` patterns, maps your directory structure, and generates the optimal `AGENTS.md` hierarchy that guarantees complete coverage with minimal redundancy:
 
@@ -110,6 +110,7 @@ apm compile
 - **Efficiency**: Reduction in context per file vs manual approaches
 - **Coverage**: Mathematical guarantee every file gets needed instructions
 - **Maintenance**: Modify primitives, recompile — `AGENTS.md` updates automatically
+- **Team Coordination**: Changes to team standards instantly propagate through compilation
 
 ```bash
 $ apm compile --verbose
@@ -134,7 +135,7 @@ Once your Agent Primitives prove valuable, you'll naturally want to **share them
 
 The challenge emerges quickly: you've built powerful Agent Primitives, your team wants to use them, but distributing markdown files and ensuring consistent MCP dependencies across different environments becomes unwieldy. You need the equivalent of npm for natural language programs.
 
-[APM](https://github.com/danielmeppiel/apm) provides npm-style package management for natural language programs—create distributable packages with dependencies, versioning, and composition.
+[APM](https://github.com/danielmeppiel/apm) provides npm-style package management for natural language programs—create distributable packages with dependencies, versioning, and composition. This is the foundation for **agent onboarding** and **enterprise governance** from [Team & Enterprise Scale](../team-adoption/).
 
 ### Package Management in Practice
 
@@ -178,7 +179,9 @@ Upon context compilation, multiple APM packages can contribute to the same `appl
 
 **Real example:** [corporate-website](https://github.com/danielmeppiel/corporate-website) uses `compliance-rules` + `design-guidelines` as dependencies. After `apm install && apm compile`, compliance patterns automatically apply to data handling code, design standards to frontend components, both compose with local context—zero conflicts, complete coverage.
 
-The benefits compound quickly: distribute tested workflows and instructions as versioned packages with dependencies, automatically resolve and install required MCP servers, track workflow evolution and maintain compatibility across updates, build on shared primitive libraries from the community, and ensure consistent execution across different team members' setups.
+**Enterprise governance pattern:** When your compliance team updates `company/compliance-rules` with new data retention policies, every team across the organization runs `apm install && apm compile`. Every agent, every project, instantly compliant. This is **deterministic agent onboarding at scale**—policies become enforceable primitives, not training materials.
+
+The benefits compound quickly: distribute tested workflows and instructions as versioned packages with dependencies, automatically resolve and install required MCP servers, track workflow evolution and maintain compatibility across updates, build on shared primitive libraries from the community, ensure consistent execution across different team members' setups, and enable instant enterprise-wide policy updates for governance.
 
 **✅ Checkpoint:** Your Agent Primitives are now packaged as distributable software with managed dependencies
 
@@ -243,15 +246,13 @@ Just as npm enabled JavaScript's explosive growth by solving the package distrib
 
 ## Key Takeaways
 
-1. **Agent Primitives are Software**: Your `.prompt.md` and `.instructions.md` files represent executable natural language programs that deserve professional tooling infrastructure
-2. **Runtime Diversity Enables Scale**: Agent CLI Runtimes (Codex CLI, Claude Code, Gemini CLI) provide the execution environments that bridge development to production
-3. **Package Management is Critical**: [APM](https://github.com/danielmeppiel/apm) provides the npm-equivalent layer that makes Agent Primitives truly portable and shareable
-4. **Production Ready Today**: This tooling stack enables automated AI workflows in CI/CD pipelines with enterprise-grade reliability
-5. **Ecosystem Growth Pattern**: Package management infrastructure creates the foundation for thriving ecosystems of shared workflows, tools, and community libraries
+1. **Natural Language as Code** - Your Agent Primitives are genuine software that deserves proper tooling infrastructure
+2. **Agent CLI Runtimes** enable execution beyond VS Code, particularly for CI/CD and production scenarios  
+3. **Runtime Management** through APM simplifies portability in multi-vendor Agentic Coding environments while preserving VS Code workflow
+4. **Context Compilation** transforms modular `.instructions.md` into portable, optimized `AGENTS.md` hierarchies
+5. **Package Management** enables npm-style distribution with dependencies, versioning, and composition
+6. **Production Deployment** makes Agent Primitives first-class citizens in modern software delivery
 
-The transformation is profound: what started as individual markdown files in your editor becomes a systematic software development practice with proper tooling, distribution, and production deployment capabilities.
-
-
-**Ready to build your first Agent Primitives?** Continue to [Getting Started](../getting-started/) to implement the foundational workflows that this tooling infrastructure supports.
+**Ready to execute workflows?** With production-grade infrastructure in place, continue to [Agent Delegation](../agent-delegation/) to master execution strategies—from local IDE control to sophisticated async orchestration that leverages everything you just learned.
 
 **Want to see advanced execution patterns?** Jump to [Agent Delegation](../agent-delegation/) for comprehensive orchestration strategies that leverage this tooling foundation for both local and async agent coordination.

@@ -1,7 +1,7 @@
 ---
 description: 'AI Native Development Researcher Mode'
 tools: ['changes', 'codebase', 'editFiles', 'extensions', 'fetch', 'findTestFiles', 'githubRepo', 'new', 'openSimpleBrowser', 'problems', 'runCommands', 'runNotebooks', 'runTaskGetOutput', 'runTasks', 'search', 'searchResults', 'terminalLastCommand', 'terminalSelection', 'testFailure', 'usages', 'vscodeAPI']
-model: Claude Sonnet 4
+model: Claude Sonnet 4.5 (Preview)
 ---
 
 

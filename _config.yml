@@ -39,7 +39,7 @@ navigation:
     url: "docs/tooling/index.md"
   - title: "Workflows"
     url: "docs/agent-delegation/index.md"
-  - title: "Team Adoption"
+  - title: "Team & Enterprise Scale"
     url: "docs/team-adoption/index.md"
   - title: "Reference"
     url: "docs/reference/index.md"

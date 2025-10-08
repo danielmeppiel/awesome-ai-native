@@ -3,7 +3,7 @@ layout: docs
 title: "Agent Delegation"
 display_title: "Agent Delegation"
 permalink: /docs/agent-delegation/
-nav_order: 5
+nav_order: 4
 ---
 
 With your **Agentic Workflows** built and ready, you now face a critical decision: how to execute them. The strategies you choose—from local control to sophisticated async orchestration—fundamentally shape both your development speed and learning outcomes.
@@ -382,7 +382,7 @@ The most sophisticated approach combines local control with async delegation thr
 4. **Hybrid Orchestration** combines the benefits of both approaches through strategic context preservation
 6. **Intelligence Refinement** creates compound learning that improves Agent Primitives over time
 
-**Ready to scale across teams?** Continue to [Team Adoption](../team-adoption/) for organizational implementation.
+**Ready to scale to teams?** Continue to [Team & Enterprise Scale](../team-adoption/) to bridge from individual mastery to team coordination through spec-driven workflows and enterprise governance.
 
 **Need implementation templates?** Check out the [Examples](../examples/) for ready-to-use primitives.
 

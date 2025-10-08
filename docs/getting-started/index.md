@@ -9,7 +9,7 @@ Now that you understand the [three-layer framework](../concepts/), it's time to 
 
 The setup follows a logical progression: start with instructions that guide AI behavior, add chat modes that create safe boundaries, build reusable prompts for common tasks, and create specification templates that bridge planning to implementation.
 
-## A. Instructions Architecture
+## Instructions Architecture
 
 Instructions form the bedrock of reliable AI behavior: they're the persistent rules that guide the Agent without cluttering your immediate context. Rather than repeating the same guidance in every conversation, instructions embed your team's knowledge directly into the AI's reasoning process.
 
@@ -64,7 +64,7 @@ Generate code with:
 
 **⚠️ Checkpoint:** Instructions are modular, targeted, and ready to compile
 
-## B. Chat Modes Configuration
+## Chat Modes Configuration
 
 With your instruction architecture in place, you need a way to enforce domain boundaries and prevent AI agents from overstepping their expertise. Chat modes solve this by creating professional boundaries similar to real-world licensing—architects plan but don't build, engineers execute but don't set strategy.
 
@@ -122,7 +122,7 @@ You master the backend of this project thanks to you having read all [the backen
 
 **⚠️ Checkpoint:** Each mode has clear boundaries and tool restrictions
 
-## C. Agentic Workflows
+## Agentic Workflows
 
 Chat modes create the safety boundaries, but you still need efficient ways to execute complete development processes. **Agentic Workflows** are implemented as reusable `.prompt.md` files that orchestrate all your primitives into systematic, end-to-end processes.
 
@@ -176,9 +176,11 @@ Confirm: Architecture alignment, test strategy, and breaking change impact.
 
 **⚠️ Checkpoint:** Prompts include explicit validation gates
 
-## D. Specification Templates
+## Specification Templates
 
 The final piece of your foundation addresses the gap between planning and implementation. Specification templates transform high-level ideas into implementation-ready blueprints that work consistently whether executed by humans or AI agents.
+
+These `.spec.md` templates are the foundation of **spec-driven team workflows**. When you scale to team contexts (see [Team & Enterprise Scale](../team-adoption/)), product owners use these templates during sprint planning to create explicit, agent-executable specifications. [Spec-Kit](https://github.com/github/spec-kit) provides `/speckit.specify` commands that generate these files following the constitution → specify → plan → tasks → implement pattern, but understanding the underlying template structure gives you flexibility to customize for your team's needs.
 
 **✅ Quick Actions:**
 - Create standardized [`.spec.md` templates](https://docs.github.com/en/copilot/copilot-chat/copilot-chat-cookbook) for feature specifications
@@ -254,10 +256,10 @@ With all primitives in place, you now have a complete foundation for systematic 
 
 ## What's Next?
 
-**Foundation Complete?** Advance to [Agent Delegation](../agent-delegation/) to master execution strategies for your Agentic Workflows - from local control to sophisticated async orchestration.
+**Foundation Complete?** You've built your first Agent Primitives and understand how they work. Before diving into execution strategies, continue to [Tooling](../tooling/) to understand the infrastructure that makes these primitives scale—context compilation, package management, and Agent CLI runtimes that enable everything that follows.
 
 **Want to understand the theory better?** Return to [Core Concepts](../concepts/) for deeper theoretical understanding.
 
-**Ready for team implementation?** Jump to [Team Adoption](../team-adoption/) for scaling strategies.
+**Ready to jump ahead?** After Tooling, [Agent Delegation](../agent-delegation/) shows execution strategies, and [Team & Enterprise Scale](../team-adoption/) covers organizational implementation.
 
-*You now have complete Agent Primitives and your first Agentic Workflow. The next step is mastering the execution strategies that let you run these workflows locally or delegate them to async agents.*
+*You now have complete Agent Primitives and your first Agentic Workflow. The next step is understanding the infrastructure that makes these primitives executable, shareable, and production-ready.*

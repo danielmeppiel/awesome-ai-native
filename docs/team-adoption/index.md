@@ -739,6 +739,6 @@ You don't need radical restructuring. You need systematic application of the Age
 
 **Want quick reference materials?** Jump to [Reference](../reference/) for checklists and implementation templates.
 
-**Looking for concrete examples?** Check out the [Examples](../../_examples/) for ready-to-use team primitives and spec-driven workflow templates.
+**Looking for concrete examples?** Check out the [Examples](../../examples/) for ready-to-use team primitives and spec-driven workflow templates.
 
 *You now have the frameworks to scale AI Native Development from individual mastery to team coordination to enterprise governance—preserving productivity gains while maintaining quality, compliance, and systematic knowledge accumulation.*

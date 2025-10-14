@@ -384,6 +384,6 @@ The most sophisticated approach combines local control with async delegation thr
 
 **Ready to scale to teams?** Continue to [Team & Enterprise Scale](../team-adoption/) to bridge from individual mastery to team coordination through spec-driven workflows and enterprise governance.
 
-**Need implementation templates?** Check out the [Examples](../examples/) for ready-to-use primitives.
+**Need implementation templates?** Check out the [Examples](../../examples/) for ready-to-use primitives.
 
 *You now have complete agentic workflow patterns and delegation strategies. The next step is scaling these techniques across your entire organization.*

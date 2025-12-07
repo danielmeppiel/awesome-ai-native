@@ -67,8 +67,6 @@ Agent Primitives are the core configurable elements that AI Native Developers it
 
 This transformation might seem complex, but notice the pattern: what started as an ad-hoc request became a systematic workflow with clear handoff points, automatic context loading, and built-in validation. Each primitive file becomes a knowledge asset that improves with use, creating compound intelligence that serves your entire team.
 
-This transformation might seem complex, but notice the pattern: what started as an ad-hoc request became a systematic workflow with clear handoff points, automatic context loading, and built-in validation. Each primitive file becomes a knowledge asset that improves with use, creating compound intelligence that serves your entire team.
-
 > 💡 **Native VSCode Support**: While VSCode natively supports `.instructions.md`, `.prompt.md`, and `.chatmode.md` files, this framework extends the paradigm with `.spec.md`, `.memory.md`, and `.context.md` patterns that represent frontier concepts in AI Native Development.
 
 With your prompts structured and your primitives set up, you'll encounter a new challenge: even the best prompts and primitives can fail when they're drowning in irrelevant context or competing for limited AI attention. The third layer addresses this through strategic context management.
@@ -191,10 +189,8 @@ flowchart TD
 3. **Agentic Workflows** in Markdown apply prompt and context engineering leveraging Agent Primitives to implement complete, reliable agentic processes
 5. **The Framework** creates compound intelligence that improves through iterative refinement
 
-**Ready for hands-on implementation?** Continue to [Getting Started](../getting-started/) to build your first Agent Primitives with hierarchical organization.
+**Ready for hands-on implementation?** Jump to [Getting Started](../getting-started/) to build your first Agent Primitives and culminate with your first Agentic Workflow.
 
 **Want to understand the tooling ecosystem?** Jump to [Tooling](../tooling/) to learn about Agent CLI Runtimes, context compilation, and agent package management.
-
-**Ready for hands-on implementation?** Jump to [Getting Started](../getting-started/) to build your first Agent Primitives and culminate with your first Agentic Workflow.
 
 **Want to see complete workflow execution strategies?** Jump to [Agent Delegation](../agent-delegation/) for local and async orchestration patterns.

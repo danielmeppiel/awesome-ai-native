@@ -23,18 +23,19 @@ Let's explore each component in depth.
 ---
 
 ## P — Prompts: Markdown Prompt Engineering
+
 **The Foundation:** Transform natural language into structured, repeatable instructions using Markdown's semantic power.
 
 **Why This Works:** Markdown's structure (headers, lists, links) naturally guides AI reasoning, making outputs more predictable and consistent.
 
 ### Key Techniques
 
-- **Context Loading**: `[Review existing patterns](./src/patterns/)` - Links become context injection points that pull in relevant information, either from files or websites
+- **Context Loading**: `[Review existing patterns](./src/patterns/)` — Links become context injection points that pull in relevant information from files or websites
 - **Structured Thinking**: Headers and bullets create clear reasoning pathways for the AI to follow
-- **Role Activation**: "You are an expert [role]" - Triggers specialized knowledge domains and focuses responses
-- **Tool Integration**: *Use MCP tool `tool-name`* - Connects to deterministic code execution from MCP servers
+- **Role Activation**: "You are an expert [role]" — Triggers specialized knowledge domains and focuses responses
+- **Tool Integration**: *Use MCP tool `tool-name`* — Connects to deterministic code execution from MCP servers
 - **Precision Language**: Eliminate ambiguity through specific, unambiguous instructions
-- **Validation Gates**: "Stop and get user approval" - Human oversight at critical decision points
+- **Validation Gates**: "Stop and get user approval" — Human oversight at critical decision points
 
 ### Quick Win Example
 
@@ -56,96 +57,150 @@ Follow these steps:
 4. Present your root cause analysis and suggested solutions with trade-offs to the user and seek validation before proceeding with fixes - do not change any files.
 ```
 
-Once you've mastered structured prompting, you'll quickly realize that manually crafting perfect prompts for every task is unsustainable. This is where the second layer comes in: turning your prompt engineering insights into reusable, configurable systems.
+Once you've mastered structured prompting, you'll quickly realize that manually crafting perfect prompts doesn't guarantee consistent results. This is where Reliability comes in.
 
-## S — Skills: Agent Primitives & Skill Packages
-**The Implementation:** The configurable building blocks that systematically deploy your prompt engineering techniques—plus **R — Reliability** through built-in validation gates.
+---
 
-### Core Primitives
+## R — Reliability: The Goal Everything Serves
 
-Primitives are the fundamental files that encode your prompt engineering knowledge into reusable, configurable assets:
+**The Outcome:** Reliability isn't a technique you apply—it's the result of applying all other PROSE components systematically.
 
-- **Instructions Files**: Deploy structured guidance through modular `.instructions.md` files with targeted scope
-- **Agents**: Deploy role-based expertise through `.agent.md` files with MCP tool boundaries that prevent security breaches and cross-domain interference—like professional licenses that keep architects from building and engineers from planning
-- **Agentic Workflows**: Deploy reusable prompts through `.prompt.md` files with built-in validation
-- **Specification Files**: Create implementation-ready blueprints through `.spec.md` files that ensure deterministic outcomes across human and AI executors
-- **Agent Memory Files**: Preserve decisions and learnings across sessions through `.memory.md` files
-- **Context Helper Files**: Provide reference knowledge for current tasks through `.context.md` files
+Why do AI interactions fail? Three root causes:
 
-These primitives can live **locally in your project** for project-specific guidance, or be packaged into **Skills** for sharing and distribution.
+1. **Ambiguous prompts** → AI interprets differently each time
+2. **Context overload** → AI loses focus in noise
+3. **No validation** → Errors compound silently
 
-### Agent Skills: Packaging for Distribution
+The PROSE Framework addresses each through specific mechanisms:
 
-Once you've built useful primitives, you'll want to share them across projects or with your team. **[Agent Skills](https://agentskills.io)** are the standardized way to package and distribute capabilities.
+### How Each Component Delivers Reliability
 
-Think of it like npm packages and JavaScript modules: **Skills are the packages you distribute; primitives are common components but Skills can contain anything.**
+| Problem | PROSE Solution | Mechanism |
+|---------|----------------|-----------|
+| Ambiguous prompts | **P**rompts | Markdown Prompt Engineering with precision language |
+| Context overload | **E**ngineering | Strategic context management, progressive disclosure |
+| AI Complexity | **S**kills | OSS and Private packaged agent capabilities benefiting from added validation and maintenance |
+| Inconsistent execution | **O**rchestration | Splitting tasks into smaller chunks, coordinating agent flows and subagents |
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│  SKILL (Distribution Layer)                                     │
-│  ├── SKILL.md              → Discovery & auto-summoning trigger │
-│  ├── Primitives (common):                                       │
-│  │   ├── .instructions.md  → Guidance and guardrails            │
-│  │   ├── .prompt.md        → Reusable workflows                 │
-│  │   └── .agent.md         → Role-based personas                │
-│  └── Any Resources:                                             │
-│      ├── scripts/          → Python, shell, Node.js scripts     │
-│      ├── templates/        → Code templates, boilerplate        │
-│      ├── data/             → JSON schemas, config files         │
-│      ├── images/           → Diagrams, reference visuals        │
-│      └── examples/         → Working code samples               │
-└─────────────────────────────────────────────────────────────────┘
-```
+**The key insight:** You don't "do reliability" as a separate step. You achieve reliability by mastering Prompts, Orchestration, Skills, and Engineering together.
 
-**Skills are packaged agent capabilities.** While primitives like `.instructions.md` and `.prompt.md` are common, Skills can include anything an agent might need: Python scripts for automation, images for visual reference, data files for schemas, or executable tools. The only requirement is a `SKILL.md` that tells agents when and how to use the Skill.
+---
 
-**Key properties of Skills:**
+## O — Orchestration: Multi-Agent Coordination
 
-- **SKILL.md**: The discovery file that enables **progressive context disclosure**—agents scan available Skills and auto-summon only what's relevant to the current task
-- **Auto-Discovery**: No explicit `/command` needed—agents load Skills based on task relevance
-- **Composable**: Skills can depend on other Skills, creating layered capability stacks
-- **Portable**: Same SKILL.md works across Claude, Copilot, Cursor, and all major coding agents
+**The Coordination Layer:** Orchestration is how you coordinate multiple agents, decompose complex tasks, and delegate work—whether to local IDE agents or async GitHub Coding Agents.
 
-### The Transformation Effect
+### Agentic Workflows
 
-Agent Primitives are the core configurable elements that AI Native Developers iteratively refine to ensure reliable outcomes through systematic prompt engineering.
+**Agentic Workflows** are implemented as `.prompt.md` and `.agent.md` files that coordinate multiple primitives into unified processes:
 
-**Example Transformation:**
-- **Technique**: "Implement secure user authentication system" (Markdown Prompt Engineering)
-- **Primitives**: Developer selects `backend-dev` chat mode → Auto-triggers `security.instructions.md` via `applyTo: "auth/**"` → Loads context from `[Previous auth patterns](.memory.md#security)` and `[API Security Standards](api-security.context.md#rest)` → Generates `user-auth.spec.md` using structured templates → Executes `implement-from-spec.prompt.md` workflow with validation gates (Agent Primitives)
-- **Outcome**: Developer-driven knowledge accumulation where you capture implementation failures in `.memory.md`, document successful patterns in `.instructions.md`, and refine workflows in `.prompt.md` files—creating compound intelligence that improves through your iterative refinement (Context Engineering)
+```markdown
+# Feature Implementation Workflow
 
-This transformation might seem complex, but notice the pattern: what started as an ad-hoc request became a systematic workflow with clear handoff points, automatic context loading, and built-in validation. Each primitive file becomes a knowledge asset that improves with use, creating compound intelligence that serves your entire team.
+## Phase 1: Planning
+1. Review the [requirements spec](./specs/feature.spec.md)
+2. Analyze existing [architecture patterns](./docs/architecture.md)
+3. Present implementation plan and **seek user approval before proceeding**
 
-> 💡 **Native VSCode Support**: While VSCode natively supports `.instructions.md`, `.prompt.md`, and `.agent.md` files, this framework extends the paradigm with `.spec.md`, `.memory.md`, and `.context.md` patterns that represent frontier concepts in AI Native Development.
+## Phase 2: Implementation  
+4. Generate code following [coding standards](./.github/instructions/code.instructions.md) and using one `runSubagent` per task
+5. Create unit tests with minimum 80% coverage
+6. **Checkpoint: Run tests and report results**
 
-With your prompts structured and your primitives set up, you'll encounter a new challenge: even the best prompts and primitives can fail when they're drowning in irrelevant context or competing for limited AI attention. The third layer addresses this through strategic context management.
-
-## E — Engineering: Context Management
-**The Strategic Framework:** Systematic management of LLM context windows to maximize agent performance within memory constraints.
-
-### Why Context Matters
-
-LLMs have finite attention spans, limited memory (context windows) and are forgetful. Strategic context management helps agents focus on relevant information and get started quicker—preserving valuable context window space and improving reliability.
-
-### Collaborative Context Loading
-
-Context loading is a **collaborative effort** between you and the agent:
-
-```
-Developer provides:           Agent contributes:
-├── Local primitives          ├── Auto-summoned Skills
-├── Project AGENTS.md         ├── Task-relevant tool selection
-└── User prompt               └── System prompt
+## Phase 3: Integration
+7. Update [memory file](./.memory.md) with decisions made
+8. Create pull request with summary
 ```
 
-When Skills are installed, their SKILL.md descriptions are visible to the agent. During any interaction—including `.prompt.md` workflow execution—the agent evaluates whether available Skills are relevant to the current task. When a match is found, the agent automatically summons that Skill's capabilities. This means your workflows can gain capabilities dynamically, even ones you didn't explicitly invoke.
+### Key Characteristics
 
-### The Universal Discovery Challenge
+- **Task Decomposition**: Break complex work into phases with clear handoffs
+- **Execution Flexibility**: Same workflow works locally or delegated to async agents
+- **Self-Improving**: Include learning mechanisms that update primitives based on outcomes
+- **Validation Checkpoints**: Human approval gates at critical decision points
 
-The industry developed fragmented context formats—`.instructions.md` (VSCode), `.cursorrules` (Cursor), `.clinerules` (Cline), `CLAUDE.md` (Claude Desktop)—locking teams into single tools. The **[AGENTS.md standard](https://agents.md)** emerged as the universal solution, adopted by 20,000+ open-source projects.
+### Delegation Patterns
 
-**Example structure:**
+| Pattern | Use Case | How It Works |
+|---------|----------|--------------|
+| **Local Orchestration** | Interactive development | Run `.prompt.md` in IDE, human approves at gates |
+| **Async Delegation** | Background tasks | Assign to GitHub Coding Agent, review PR when complete |
+| **Multi-Agent Split** | Complex features | Different agents handle planning, implementation, testing |
+
+Orchestration coordinates the work. But where do the reusable components come from? That's Skills.
+
+---
+
+## S — Skills: Agent Primitives & Packages
+
+**The Building Blocks:** Skills are auto-discoverable, executable capability packages that *onboard* agents into projects—just like you onboard developers.
+
+When a new developer joins your team, you don't explain everything from scratch. You point them to documentation, coding standards, and established patterns. **Skills do the same for AI agents**: they package the knowledge, guardrails, and workflows that make an agent productive in your specific context.
+
+### What Skills Contain
+
+**[Agent Skills](https://agentskills.io)** package primitives and any other resource into distributable units:
+
+| Primitive | Purpose | File Pattern |
+|-----------|---------|-------------|
+| **Instructions** | Coding standards, guardrails | `.instructions.md` |
+| **Agents** | Role-based personas with tool boundaries | `.agent.md` |
+| **Workflows** | Reusable multi-step processes | `.prompt.md` |
+| **Specifications** | Implementation blueprints | `.spec.md` |
+| **Context** | Reference knowledge for tasks | `.context.md` |
+
+Skills can also include scripts, templates, data files, examples—anything an agent might need.
+
+### How Skills Work
+
+1. **Discovery**: Each Skill has a `SKILL.md` that describes when it's relevant
+2. **Auto-Summoning**: Agents scan available Skills and load only what matches the current task
+3. **Execution**: The Skill's primitives guide the agent's behavior automatically
+
+**No explicit `/command` needed.** When you ask an agent to "build a form," it automatically discovers and loads your `form-builder` Skill if installed.
+
+### Key Properties
+
+- **Auto-Discovery**: Agents find and load Skills based on task relevance
+- **Composable**: Skills can depend on other Skills, creating capability stacks
+- **Portable**: Same Skill works across Copilot, Claude, Cursor, and all major coding agents
+
+> **VSCode Native**: VSCode supports Skills plus `.instructions.md`, `.prompt.md`, and `.agent.md` natively.
+
+Skills give you the building blocks. But how do you manage the finite attention of the AI? That's Engineering.
+
+---
+
+## E — Engineering: Context Engineering
+
+**The Discipline:** Context Engineering is the art of managing LLM attention—a finite, precious resource that determines whether your agent succeeds or fails.
+
+> *"Context is the new RAM. Manage it or waste it."*
+
+### The Attention Problem
+
+LLMs have **finite memory** (context windows) and **limited attention**. When you overload them with irrelevant information:
+
+- They lose focus on what matters
+- They forget instructions given earlier
+- They hallucinate to fill gaps
+- They make inconsistent decisions
+
+**Context Engineering** is the systematic practice of controlling what agents see, when they see it, and ensuring they focus only on what's relevant to the current task.
+
+### Core Principles
+
+| Principle | What It Means | Technique |
+|-----------|---------------|-----------|  
+| **Load only what's needed** | Don't dump everything into context | Progressive disclosure via markdown links |
+| **Flush when stale** | Start fresh sessions for new phases | Session splitting (plan → implement → test) |
+| **Scope to the task** | Different files need different rules | `applyTo` patterns in `.instructions.md` |
+| **Hierarchical inheritance** | Local context overrides global | Nested `AGENTS.md` files |
+
+### The AGENTS.md Standard
+
+The **[AGENTS.md standard](https://agents.md)** emerged as the universal solution for modular agent instructions, adopted by 20,000+ open-source projects:
+
 ```
 project/
 ├── AGENTS.md                    # Root: project-wide principles
@@ -157,104 +212,31 @@ project/
     └── auth.ts                 # Inherits: root + backend
 ```
 
-Agents walk up the directory tree and load the closest AGENTS.md file—domain-specific context without global pollution. This hierarchical approach is the foundation of scalable context engineering. 
+Agents walk up the directory tree and load the closest AGENTS.md file—domain-specific context without global pollution. 
 
 ### Key Techniques
 
-- **Progressive Context Disclosure**: Structure prompts to reveal information incrementally rather than all at once—use markdown hyperlinks like `[detailed requirements](./specs/auth.md)` so agents fetch context only when needed. Skills extend this pattern by enabling auto-discovery of relevant capabilities based on task context, since only the Skill descriptions are initially loaded into the context window.
-- **Session Splitting**: Use distinct Agent sessions for different development phases (planning → implementation → testing). Fresh context = better focus
-- **Modular Rule Loading**: Author `.instructions.md` files with `applyTo` patterns—the precision tool for context loading. Compile to hierarchical `AGENTS.md` for universal portability
-- **Hierarchical Discovery**: Agents walk directory tree to load closest AGENTS.md—domain-specific context without global pollution. Automatic context optimization reduces context waste
-- **Skills Composition**: Install Skills that depend on other Skills—transitive dependency resolution ensures complete capability stacks without manual orchestration
-- **Memory-Driven Development**: Leverage Agent Memory through `.memory.md` files to maintain project knowledge and decisions across sessions
-- **Context Optimization**: Use `.context.md` Context Helper Files to accelerate information retrieval and reduce cognitive load
-- **Cognitive Focus Optimization**: Use custom agents in `.agent.md` files to constrain AI attention to relevant domains
+- **Progressive Context Disclosure**: Use markdown links like `[detailed requirements](./specs/auth.md)` so agents fetch context only when needed
+- **Session Splitting**: Fresh context for each development phase. Planning session → implementation session → testing session
+- **Modular Instructions**: Author `.instructions.md` files with `applyTo` patterns for precision loading
+- **Memory Files**: Use `.memory.md` to persist decisions across sessions without bloating active context
+- **Context Helpers**: Use `.context.md` files as reference documents agents can consult on-demand
 
-### Practical Benefits
+### The Payoff
 
-- **Progressive Context Disclosure**: Agents summon Skills automatically based on task relevance—zero manual configuration per interaction
-- **Session Splitting**: Fresh context window for complex tasks
-- **Modular Instructions + Compilation**: Single source of truth (`.instructions.md`) generates portable, optimized context (`AGENTS.md`) automatically
-- **Hierarchical Discovery**: Reduction in context pollution—agents load only relevant instructions for current file
-- **Skills Composition**: Install once, benefit everywhere—transitive dependencies bring in complete capability stacks
-- **Memory-Driven Development**: Preserved project knowledge and decision history across time
-- **Context Optimization**: Faster startup time and reduced cognitive overhead
-- **Universal Portability**: Same context works across GitHub Copilot, Cursor, Codex, Aider, Claude, and all major coding agents
+- **Universal Portability**: Same context works across Copilot, Cursor, Claude, Codex
+- **Automatic Optimization**: Agents load only what's relevant to the current file
+- **Compound Intelligence**: Each primitive becomes a knowledge asset that improves with use
 
-**Implementation Through Primitives:** Each context engineering technique uses Agent Primitives strategically, creating compound benefits for cognitive performance.
-
-## O — Orchestration: Agentic Workflows
-
-Now that you understand **P**rompts, **S**kills, and **E**ngineering, you can see how they combine into **Agentic Workflows** - complete, systematic processes that orchestrate all your primitives into end-to-end solutions. These workflows represent the practical application of the entire PROSE Framework working together.
-
-**Agentic Workflows** are implemented as `.prompt.md` files that coordinate multiple primitives into unified processes, designed to work whether executed locally in your IDE or delegated to async agents.
-
-### Key Characteristics:
-- **Full Orchestration**: Combine all PROSE components (Prompts + Skills + Engineering + Reliability) into unified processes
-- **Complete Automation**: Handle entire development tasks from context loading through implementation to learning integration
-- **Execution Flexibility**: Designed to work whether executed locally or delegated to async GitHub Coding Agents
-- **Self-Improving Intelligence**: Include learning mechanisms that update primitives based on execution outcomes
-
-**The Power of Integration:** What started as individual techniques and separate primitive files becomes a systematic process that handles complete development tasks while continuously improving through use. Each Agentic Workflow is a `.prompt.md` file that coordinates your entire PROSE toolkit into repeatable, reliable processes.
-
-## The PROSE Framework
-
-<div class="diagram-container" markdown="1">
-
-```mermaid
-flowchart TD
-    A["🔧 Markdown Prompt<br/>Engineering"] 
-    
-    subgraph B ["⚙️ Agent Primitives"]
-        subgraph B_ROW1 [" "]
-            B1["📝 Instructions"]
-            B2["💬 Agents"] 
-            B3["⚡ Workflows"]
-        end
-        subgraph B_ROW2 [" "]
-            B4["📋 Specifications"]
-            B5["🧠 Memory"]
-            B6["📚 Context"]
-        end
-    end
-    
-    C["🎯 Context Engineering"]
-    D["🚀 Reliable AI Results"]
-    
-    A -->|"creates effective"| B
-    B -->|"enables strategic"| C
-    C -->|"produces"| D
-    
-    %% Elegant, accessible color palette with proper contrast
-    classDef foundation fill:#3b82f6,stroke:#2563eb,stroke-width:2px,color:#ffffff,font-size:14px
-    classDef primitives fill:#1f2937,stroke:#374151,stroke-width:1.5px,color:#ffffff,font-size:12px
-    classDef optimization fill:#8b5cf6,stroke:#7c3aed,stroke-width:2px,color:#ffffff,font-size:14px
-    classDef outcome fill:#065f46,stroke:#047857,stroke-width:2.5px,color:#ffffff,font-size:14px
-    
-    class A foundation
-    class B1,B2,B3,B4,B5,B6 primitives
-    class C optimization
-    class D outcome
-    
-    %% Hide the row subgraph borders
-    style B_ROW1 fill:transparent,stroke:none
-    style B_ROW2 fill:transparent,stroke:none
-    
-    %% High contrast container styling for Agent Primitives with spacing
-    style B fill:#f3f4f6,stroke:#6b7280,stroke-width:2px,color:#1f2937,font-size:13px,font-weight:bold,margin-top:10px,padding-top:15px
-```
-
-</div>
-
-**P**rompts + **S**kills + **E**ngineering → **O**rchestration → **R**eliability
+---
 
 ## Key Takeaways
 
 1. **P — Prompts**: Markdown Prompt Engineering provides the structural foundation for predictable AI interactions
-2. **S — Skills**: Agent Primitives encode prompt engineering into reusable files; Skills package them for distribution with auto-discovery
-3. **E — Engineering**: Context management is collaborative—you provide primitives and Skills, agents contribute dynamic capability discovery
-4. **O — Orchestration**: Agentic Workflows coordinate all components into complete, self-improving processes
-5. **R — Reliability**: Validation gates, deterministic specifications, and systematic approaches deliver consistent outcomes
+2. **R — Reliability**: The outcome all other components serve—achieved through systematic application of PROSE
+3. **O — Orchestration**: Coordinate agents, decompose tasks, and delegate work through Agentic Workflows
+4. **S — Skills**: Auto-discoverable packages that onboard agents into projects—like onboarding developers
+5. **E — Engineering**: Context Engineering manages LLM attention—load only what's needed, flush when stale
 
 **Ready for hands-on implementation?** Continue to [Getting Started](../getting-started/) to build your first Agent Primitives and culminate with your first Agentic Workflow.
 

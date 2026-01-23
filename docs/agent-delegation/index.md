@@ -6,6 +6,8 @@ permalink: /docs/agent-delegation/
 nav_order: 5
 ---
 
+> **PROSE Focus:** Master **O**rchestration—coordinating agents and delegating work.
+
 With your **Agentic Workflows** built and ready, you now face a critical decision: how to execute them. Whether your workflows come from installed Skills or local `.prompt.md` files, the execution strategies you choose—from local control to sophisticated async orchestration—fundamentally shape both your development speed and learning outcomes.
 
 This guide covers the complete spectrum of execution approaches, from maintaining tight control in your local IDE to delegating complex workflows to multiple async agents working in parallel. Each strategy has optimal use cases, and mastering the decision framework ensures you choose the right approach for each situation.

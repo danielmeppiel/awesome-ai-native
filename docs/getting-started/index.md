@@ -5,6 +5,9 @@ display_title: "Getting Started"
 permalink: /docs/getting-started/
 nav_order: 3
 ---
+
+> **PROSE Focus:** This section is hands-on **P**rompts and **S**kills—building your first primitives.
+
 Now that you understand the [PROSE Framework](../concepts/), it's time to build your AI Native Development environment. This hands-on implementation will give you immediate productivity improvements while establishing the foundation for more advanced workflows.
 
 The setup follows a logical progression: start by installing Skills that provide instant capabilities, then add local instructions for project-specific guidance, configure custom agents for safe boundaries, build reusable prompts for common tasks, and create specification templates that bridge planning to implementation.

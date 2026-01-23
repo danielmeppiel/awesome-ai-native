@@ -6,6 +6,8 @@ permalink: /docs/team-adoption/
 nav_order: 6
 ---
 
+> **PROSE Focus:** Scale the full framework—achieving **R**eliability across your organization.
+
 Preserve AI productivity gains while coordinating teams and maintaining enterprise governance.
 
 You've mastered AI Native Development as an individual developer—your `.prompt.md` workflows handle complete features, your async agents work overnight, your productivity has genuinely 10x'd. But when you bring this to your five-person Scrum team, something breaks. Standups become status reports on agent progress. Sprint planning fragments into "who's delegating what to which agent." The coordination overhead threatens to consume all your productivity gains.

@@ -5,9 +5,26 @@ display_title: "Getting Started"
 permalink: /docs/getting-started/
 nav_order: 3
 ---
-Now that you understand the [three-layer framework](../concepts/), it's time to build your first Agent Primitives. This hands-on implementation will give you immediate productivity improvements while establishing the foundation for more advanced workflows.
+Now that you understand the [PROSE Framework](../concepts/), it's time to build your AI Native Development environment. This hands-on implementation will give you immediate productivity improvements while establishing the foundation for more advanced workflows.
 
-The setup follows a logical progression: start with instructions that guide AI behavior, add chat modes that create safe boundaries, build reusable prompts for common tasks, and create specification templates that bridge planning to implementation.
+The setup follows a logical progression: start by installing Skills that provide instant capabilities, then add local instructions for project-specific guidance, configure custom agents for safe boundaries, build reusable prompts for common tasks, and create specification templates that bridge planning to implementation.
+
+## Start with Skills
+
+Before creating custom primitives, leverage the **[Agent Skills](https://agentskills.io)** ecosystem. Skills are pre-packaged capabilities that agents auto-discover and summon based on task relevance—giving you instant productivity without configuration.
+
+**✅ Quick Actions:**
+- Install [APM (Agent Package Manager)](https://github.com/danielmeppiel/apm) if you haven't already. Read more at [Tooling](../tooling/).
+- Browse [community Skills](https://github.com/github/awesome-copilot/tree/main/skills) for your tech stack
+- Install relevant Skills: `apm install awesome-copilot/skill/<skill-name>`
+
+> 💡 **Progressive Context Disclosure**: Once installed, you don't need to explicitly invoke Skills. Agents automatically scan available Skills and load only what's relevant to your current task—reducing context pollution and improving response quality.
+
+**⚠️ Checkpoint:** Skills installed and compiled—agents now have access to packaged capabilities
+
+---
+
+With Skills providing your baseline capabilities, you'll want to add project-specific guidance that doesn't belong in a distributed Skill. This is where local primitives come in.
 
 ## Instructions Architecture
 
@@ -237,29 +254,82 @@ Implement middleware-based authentication with token validation and refresh capa
 
 **⚠️ Checkpoint:** Specifications are implementation-ready before delegation
 
+---
+
+## Create Your First Skill
+
+Once you've developed useful patterns—instructions, prompts, or workflows that could benefit other projects—it's time to package them as a **Skill** for distribution and reuse.
+
+Skills have one key file:
+- **SKILL.md** (required): Tells agents *what* this Skill does and *when* to use it
+
+**✅ Quick Actions:**
+- Identify a reusable agent capability from your project
+- Create a Skill package by creating a folder with the skill name under `.github/skills`
+- Write the SKILL.md discovery file inside it
+- Test locally, then push to GitHub for sharing
+
+### Example: SKILL.md for Agent Discovery
+
+```markdown
+---
+name: form-builder
+description: Build accessible forms with React Hook Form + Zod. Activate when user asks to create any form with thesse frameworks.
+---
+# Form Builder
+
+Build accessible, type-safe forms in React.
+
+## Stack
+
+- **React Hook Form** — form state, minimal re-renders
+- **Zod** — schema validation
+- **@hookform/resolvers** — connects them
+
+## Examples
+
+- [Contact form](examples/contact-form.tsx) — full implementation
+- [Newsletter signup](examples/newsletter-signup.tsx) — minimal implementation
+
+## Install
+
+npm install react-hook-form @hookform/resolvers zod
+```
+
+**⚠️ Checkpoint:** Your patterns are now packaged and shareable with the community
+
+---
+
 ## Quick Start Checklist
 
-With all primitives in place, you now have a complete foundation for systematic AI development. The checklist below walks through the implementation sequence, building toward creating complete Agentic Workflows.
+With Skills and primitives in place, you now have a complete foundation for systematic AI development. The checklist below walks through the implementation sequence.
 
 ### Conceptual Foundation
 1. **[ ]** Understand **Markdown Prompt Engineering** principles (semantic structure + precision + tools)
 2. **[ ]** Grasp **Context Engineering** fundamentals (context window optimization + session strategy)
+3. **[ ]** Understand **Skills vs Primitives** (Skills distribute; primitives are internal or local)
 
-### Implementation Steps  
-4. **[ ]** Create [`.github/copilot-instructions.md`](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilot-instructionsmd-file) with basic project guidelines (Context Engineering: global rules)
-5. **[ ]** Set up domain-specific [`.instructions.md` files](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-instructionsmd-files) with `applyTo` patterns (Context Engineering: selective loading)
-6. **[ ]** Compile instructions to `AGENTS.md` standard for universal portability—see [Tooling](../tooling/)
-7. **[ ]** Configure [chat modes](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-chat-modes) for your tech stack domains (Context Engineering: domain boundaries)
-8. **[ ]** Create your first [`.prompt.md` Agentic Workflow](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental)
-9. **[ ]** Build your first `.spec.md` template for feature specifications (Agent Primitive: deterministic planning-to-implementation bridge)
-10. **[ ]** Practice a spec-first approach with two Agentic Workflows (session splitting): plan first, implement second
+### Skills Setup
+4. **[ ]** Install [APM](https://github.com/danielmeppiel/apm) for Skills management
+5. **[ ]** Install relevant Skills for your tech stack: `apm install owner/skill-name`
+
+### Local Primitives
+6. **[ ]** Create [`.github/copilot-instructions.md`](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilot-instructionsmd-file) with project-specific guidelines
+7. **[ ]** Set up domain-specific [`.instructions.md` files](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-instructionsmd-files) with `applyTo` patterns
+8. **[ ]** Configure [custom agents](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-chat-modes) for your tech stack domains
+9. **[ ]** Create your first [`.prompt.md` Agentic Workflow](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental)
+10. **[ ]** Build your first `.spec.md` template for feature specifications
+
+### Scale & Share
+11. **[ ]** Package reusable patterns as Skills: `apm init skill`
+12. **[ ]** Practice spec-first workflow with session splitting
 
 ## What's Next?
 
-**Foundation Complete?** You've built your first Agent Primitives and understand how they work. Before diving into execution strategies, continue to [Tooling](../tooling/) to understand the infrastructure that makes these primitives scale—context compilation, package management, and Agent CLI runtimes that enable everything that follows.
+**Foundation Complete?** You've installed Skills and built local primitives. Continue to [Tooling](../tooling/) to understand the infrastructure that makes these scale—context compilation, Skills composition, and the package management that enables everything that follows.
 
-**Want to understand the theory better?** Return to [Core Concepts](../concepts/) for deeper theoretical understanding.
+**Want to understand the theory better?** Return to [Core Concepts](../concepts/) for deeper understanding of the PROSE Framework.
 
-**Ready to jump ahead?** After Tooling, [Agent Delegation](../agent-delegation/) shows execution strategies, and [Team & Enterprise Scale](../team-adoption/) covers organizational implementation.
+**Ready to jump ahead?** After Tooling, [Agent Delegation](../agent-delegation/) covers execution strategies, and [Team & Enterprise Scale](../team-adoption/) shows organizational implementation.
 
-*You now have complete Agent Primitives and your first Agentic Workflow. The next step is understanding the infrastructure that makes these primitives executable, shareable, and production-ready.*
+*You now have Skills installed, local primitives configured, and understand how to package agent capabilities for reuse. The next step is understanding the infrastructure that makes these primitives executable, shareable, and production-ready.*

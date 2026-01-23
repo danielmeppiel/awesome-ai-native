@@ -1,23 +1,20 @@
 ---
 layout: home
-title: "GitHub Copilot Mastery with AI Native Development"
+title: "The PROSE Framework for AI Native Development"
 permalink: /
 ---
 
-<div style="margin: 32px 0;" markdown="1">
-
-**Learn How to Build Reliable AI Systems That Code Autonomously**
-
-*What's in this guide for Developers* (2-minute read):
-
-- **Maximum Reliability**: Learn systematic approaches that eliminate AI inconsistency and deliver professional-quality results every time
-- **Multi-Agent Delegation**: Progress from single prompts to delegating complete coding tasks to GitHub Coding Agents with confidence
-- **Proven Engineering**: Apply structured methodologies (Markdown Prompt Engineering, Agent Primitives, Context Engineering) for predictable outcomes
-- **Compound Productivity**: Build reusable AI configurations that improve over time and multiply your development capacity
-- **Team Transformation**: Scale these battle-tested patterns across your organization for exponential productivity gains
-
-> **Community Resources:** Explore the [Awesome GitHub Copilot](https://github.com/github/awesome-copilot) repository for hundreds of community-contributed instructions, prompts, and chat modes across all major languages and frameworks.
-
+<div class="hero-section">
+  <h1>Master AI Coding Agents</h1>
+  <p class="hero-tagline">The <strong>PROSE Framework</strong> for reliable AI that scales to brownfield projects.</p>
+  
+  <div class="prose-acronym">
+    <div class="prose-letter"><span>P</span>rompts</div>
+    <div class="prose-letter"><span>R</span>eliability</div>
+    <div class="prose-letter"><span>O</span>rchestration</div>
+    <div class="prose-letter"><span>S</span>kills</div>
+    <div class="prose-letter"><span>E</span>ngineering</div>
+  </div>
 </div>
 
 ## Choose Your Learning Path
@@ -25,21 +22,21 @@ permalink: /
 <div class="learning-paths">
   <a href="docs/concepts/" class="path-card">
     <div class="path-title">Core Concepts</div>
-    <div class="path-description">Understand the engineering principles behind Agent Primitives</div>
+    <div class="path-description">Understand the PROSE Framework: Prompts, Reliability, Orchestration, Skills, Engineering</div>
     <div class="path-meta">15-20 minutes • Theory & Foundation</div>
     <div class="path-link">Learn more</div>
   </a>
 
   <a href="docs/getting-started/" class="path-card">
     <div class="path-title">Getting Started</div>
-    <div class="path-description">Build your first Agent Primitives and see immediate results</div>
+    <div class="path-description">Build your first Agent Primitives and Skills and see immediate results</div>
     <div class="path-meta">15-20 minutes • Hands-on Implementation</div>
     <div class="path-link">Learn more</div>
   </a>
 
   <a href="docs/tooling/" class="path-card">
     <div class="path-title">Tooling</div>
-    <div class="path-description">Scale Agent Primitives with runtime, context compilation, and package management</div>
+    <div class="path-description">Install and compose Agent Skills, compile context, and manage packages</div>
     <div class="path-meta">12-15 minutes • Infrastructure & Scaling</div>
     <div class="path-link">Learn more</div>
   </a>
@@ -53,7 +50,7 @@ permalink: /
 
   <a href="docs/team-adoption/" class="path-card">
     <div class="path-title">Team Implementation</div>
-    <div class="path-description">Scale AI Native Development across your organization</div>
+    <div class="path-description">Scale the PROSE Framework across your organization</div>
     <div class="path-meta">15-20 minutes • Team & Leadership</div>
     <div class="path-link">Learn more</div>
   </a>
@@ -68,19 +65,23 @@ permalink: /
 
 ## Core Mental Model
 
-Think of AI Native Development like **professional software development practices**:
+The PROSE Framework maps to **professional software development practices**:
 
-- **Markdown Prompt Engineering** = Coding standards for AI interactions
-- **Agent Primitives** = Reusable libraries and configurations  
-- **Context Engineering** = Memory and performance optimization
+| PROSE | What It Means | Software Analogy |
+|-------|---------------|------------------|
+| **P**rompts | Structured natural language that guides AI behavior | Coding patterns |
+| **R**eliability | Deterministic outcomes through context engineering | Testing & CI/CD |
+| **O**rchestration | Multi-agent delegation and task decomposition | Build pipelines |
+| **S**kills | Capability packages that onboard agents into projects | npm libraries |
+| **E**ngineering | A new discipline—systematic AI-native development | Software engineering |
 
-*Ready to transform your AI development workflow? Choose your learning path above and start building more reliable, consistent AI interactions today.*
+*Ready to transform your use of AI Coding Agents? Choose your learning path above.*
 
-## AI Native Development Maturity
+## PROSE Maturity Journey
 
 Most developers start by manually supervising every AI interaction—writing one-off prompts and starting from scratch each time. This creates a bottleneck where you're always needed for AI tasks to succeed.
 
-**The transformation happens when you shift from supervision to architecture.** Instead of managing individual AI conversations, you engineer reusable systems that delegate entire workflows to AI agents.
+**The transformation happens when you shift from supervision to architecture.** Instead of managing individual AI conversations, you engineer reusable systems through the PROSE Framework that delegate entire workflows to AI agents.
 
 This maturity journey represents the core mindset shift from reactive AI usage to proactive AI engineering:
 
@@ -117,9 +118,9 @@ This maturity journey represents the core mindset shift from reactive AI usage t
       <h3>Engineered Agent Delegation</h3>
       <p class="stage-subtitle">You architect systems, AI executes</p>
       <ul class="stage-points">
-        <li>Build reusable <strong>Agent Primitives</strong></li>
+        <li>Build reusable <strong>Skills</strong> and primitives</li>
         <li>Engineer context once, reuse everywhere</li>
-        <li>Delegate complete workflows to AI</li>
+        <li>Delegate complete <strong>Orchestrations</strong> to AI</li>
       </ul>
       <div class="stage-outcome">
         <strong>You're the architect</strong> - AI handles execution autonomously
@@ -130,11 +131,11 @@ This maturity journey represents the core mindset shift from reactive AI usage t
 
 ## Contributing
 
-> *"The future belongs to developers who can architect AI systems, not just prompt them."*
+> *"The future of programming isn't code. It's PROSE."*
 
-**This is frontier work.** AI Native Development is evolving rapidly, and the patterns that work today will be refined tomorrow. That's why this guide thrives on community innovation.
+**This is frontier work.** The PROSE Framework for AI Native Development is evolving rapidly, and the patterns that work today will be refined tomorrow. That's why this guide thrives on community innovation.
 
-**Your contribution shapes the field.** Whether you discover a new Agent Primitive pattern, refine an existing workflow, or share a breakthrough insight—every contribution advances our collective understanding and gets you listed as a co-author of this evolving knowledge base.
+**Your contribution shapes the field.** Whether you discover a new PROSE pattern, refine an existing workflow, or share a breakthrough insight—every contribution advances our collective understanding and gets you listed as a co-author of this evolving knowledge base.
 
 **Ready to lead the transformation?** 
 

@@ -1,6 +1,6 @@
 # Site settings
-title: "AI Native Development Guide"
-description: "Master GitHub Copilot and Coding Agents through systematic Agent Primitives and Markdown Prompt Engineering"
+title: "The PROSE Framework for AI Native Development"
+description: "Master GitHub Copilot through PROSE: Prompts, Reliability, Orchestration, Skills, and Engineering for AI Native Development"
 baseurl: "/awesome-ai-native"
 url: "https://danielmeppiel.github.io"
 

@@ -3,10 +3,10 @@ layout: docs
 title: "Tooling"
 display_title: "Tooling: Scaling Agent Primitives"
 permalink: /docs/tooling/
-nav_order: 3
+nav_order: 4
 ---
 
-You've mastered the [three-layer framework](../concepts/) and understand that your Agent Primitives are **executable software written in natural language**. Now comes the natural next question: how do these markdown files scale beyond your individual development workflow into production-grade infrastructure?
+You've mastered the [PROSE Framework](../concepts/) and understand that your Agent Primitives are **executable software written in natural language**. Now comes the natural next question: how do these markdown files scale beyond your individual development workflow into production-grade infrastructure?
 
 The answer mirrors every programming ecosystem's evolution. Just as JavaScript grew from browser scripts to need Node.js runtimes, package managers, and deployment tooling, your Agent Primitives need similar infrastructure to reach their full potential.
 
@@ -28,7 +28,7 @@ This recognition transforms how we think about AI development tooling. Your natu
 
 Most developers create and run Agent Primitives directly in VS Code with GitHub Copilot - and that's perfect for interactive development, debugging, and daily workflow refinement. But just as JavaScript eventually needed Node.js to break free from browser constraints, your natural language programs need **Agent CLI Runtimes** for automated and production scenarios.
 
-The emerging ecosystem includes different vendor implementations of the same core functionality: **OpenAI Codex CLI**, **Anthropic Claude Code**, **Google Gemini CLI**, and future vendor runtimes as the ecosystem matures. Each provides command-line execution of your Agent Primitives with access to their respective model capabilities.
+The emerging ecosystem includes different vendor implementations of the same core functionality: **OpenAI Codex CLI**, **Anthropic Claude Code**, **GitHub Copilot CLI**, and future vendor runtimes as the ecosystem matures. Each provides command-line execution of your Agent Primitives with access to their respective model capabilities.
 
 ### Inner Loop vs Outer Loop
 

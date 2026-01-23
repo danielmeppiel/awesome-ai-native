@@ -1,6 +1,20 @@
-# 🎯 GitHub Copilot Mastery: AI Native Development Guide
+# 🎯 The PROSE Framework for AI Native Development
 
 *This repository has been restructured as a comprehensive GitHub Pages site for better navigation and content extraction. The complete guide is now available at: **[https://danielmeppiel.github.io/awesome-ai-native](https://danielmeppiel.github.io/awesome-ai-native)***
+
+---
+
+## The PROSE Framework
+
+**Programming has evolved.** From Assembly to Python, each abstraction brought us closer to human thought. Now we've reached the final layer: *prose itself becomes executable.*
+
+| | Component | What It Means |
+|---|-----------|---------------|
+| **P** | **Prompts** | Structured natural language that guides AI behavior |
+| **R** | **Reliability** | Deterministic outcomes through context engineering |
+| **O** | **Orchestration** | Multi-agent delegation and task decomposition |
+| **S** | **Skills** | Capability packages that onboard agents into projects |
+| **E** | **Engineering** | A new discipline—systematic AI-native development |
 
 ---
 
@@ -49,17 +63,22 @@ Your AI interactions are **inconsistent and unreliable**:
 
 ### 🧠 Core Mental Model
 
-Think of AI Native Development like **professional software development practices**:
-- **Markdown Prompt Engineering** = Coding standards for AI interactions
-- **Agent Primitives** = Reusable libraries and configurations  
-- **Context Engineering** = Memory and performance optimization
+The PROSE Framework maps to **professional software development practices**:
+
+| PROSE | Concept | Software Analogy |
+|-------|---------|------------------|
+| **P**rompts | Markdown Prompt Engineering | Coding patterns |
+| **R**eliability | Validation gates & determinism | Testing & CI/CD |
+| **O**rchestration | Agentic Workflows | Build pipelines |
+| **S**kills | Auto-discoverable packages | npm libraries |
+| **E**ngineering | Context optimization | Performance tuning |
 
 ---
 
 ## 🎯 The Paradigm Shift
 
 *Traditional approach: "Tell the AI what to do"*  
-**AI Native approach: "Engineer the context and structure for optimal cognitive performance"**
+**PROSE approach: "Engineer the context and structure for optimal cognitive performance"**
 
 **Ready to transform your AI development workflow?** Visit the [complete guide](https://danielmeppiel.github.io/awesome-ai-native) to choose your learning path and start building more reliable, consistent AI interactions today.
 

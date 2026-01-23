@@ -13,16 +13,19 @@ Essential checklists, progression frameworks, and documentation links for ongoin
 ### Conceptual Foundation
 1. **[ ]** Understand **Markdown Prompt Engineering** principles (semantic structure + precision + tools)
 2. **[ ]** Grasp **Context Engineering** fundamentals (buffer optimization + session strategy)
+3. **[ ]** Learn **Skills as Distribution** (capabilities packaged for auto-discovery)
 
 ### Implementation Steps
-3. **[ ]** Create [`.github/copilot-instructions.md`](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilot-instructionsmd-file) with basic project guidelines (Context Engineering: global rules)
-4. **[ ]** Set up domain-specific [`.instructions.md` files](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-instructionsmd-files) with `applyTo` patterns (Context Engineering: selective loading)
-5. **[ ]** Configure [chat modes](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-chat-modes) for your tech stack domains (Context Engineering: domain boundaries)
-6. **[ ]** Create first [`.prompt.md` file](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental) with validation checkpoints (Markdown Prompt Engineering: deterministic templates)
-7. **[ ]** Build your first `.spec.md` template for feature specifications (Agent Primitive: deterministic planning-to-implementation bridge)
-8. **[ ]** Practice spec-first workflow: plan first, implement second (Context Engineering: session splitting)
-9. **[ ]** Test async delegation with [GitHub Coding Agent](https://docs.github.com/en/copilot/about-github-copilot/about-copilot-coding-agent) (Advanced orchestration)
-10. **[ ]** Establish team governance and validation gates (Human-AI collaboration patterns)
+4. **[ ]** Install useful Skills for your stack: `apm install owner/skill-name` (Skills: instant capabilities)
+5. **[ ]** Create [`.github/copilot-instructions.md`](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilot-instructionsmd-file) with basic project guidelines (Context Engineering: global rules)
+6. **[ ]** Set up domain-specific [`.instructions.md` files](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-instructionsmd-files) with `applyTo` patterns (Context Engineering: selective loading)
+7. **[ ]** Configure [custom agents](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-chat-modes) for your tech stack domains (Context Engineering: domain boundaries)
+8. **[ ]** Create first [`.prompt.md` file](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental) with validation checkpoints (Markdown Prompt Engineering: deterministic templates)
+9. **[ ]** Build your first `.spec.md` template for feature specifications (Agent Primitive: deterministic planning-to-implementation bridge)
+10. **[ ]** Package reusable patterns as a Skill: `apm init skill` (Skills: share knowledge)
+11. **[ ]** Practice spec-first workflow: plan first, implement second (Context Engineering: session splitting)
+12. **[ ]** Test async delegation with [GitHub Coding Agent](https://docs.github.com/en/copilot/about-github-copilot/about-copilot-coding-agent) (Advanced orchestration)
+13. **[ ]** Establish team governance and validation gates (Human-AI collaboration patterns)
 
 ## Mastery Progression
 
@@ -101,6 +104,11 @@ Essential checklists, progression frameworks, and documentation links for ongoin
 **Remember:** Start simple, iterate fast, scale systematically through systematic application of these frontier concepts.
 
 ## Documentation References
+
+### Agent Skills & Distribution
+- **[Agent Skills Standard](https://agentskills.io)** - Industry specification for capability packaging and auto-discovery
+- **[APM - Agent Package Manager](https://github.com/danielmeppiel/apm)** - npm for Skills: install, compose, compile
+- **[AGENTS.md Standard](https://agents.md)** - Universal context format adopted by major coding agents
 
 ### Community Resources
 - **[Awesome GitHub Copilot](https://github.com/github/awesome-copilot)** - Comprehensive catalog of community-contributed instructions, prompts, and chat modes across all major languages and frameworks

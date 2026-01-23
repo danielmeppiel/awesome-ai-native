@@ -3,7 +3,7 @@ layout: docs
 title: "Team & Enterprise Scale"
 display_title: "Team & Enterprise Scale"
 permalink: /docs/team-adoption/
-nav_order: 5
+nav_order: 6
 ---
 
 Preserve AI productivity gains while coordinating teams and maintaining enterprise governance.
@@ -220,14 +220,19 @@ dependencies:
     - acme-corp/accessibility-rules
 ```
 
+When developers run `apm install`, these governance Skills and primitives are installed with their full primitive structure—`.instructions.md` files, validation workflows, and compliance templates. But here's the key difference from traditional configuration: **agents auto-discover Skills through progressive context disclosure.**
+
+The `SKILL.md` file in each package tells agents *when* to summon that Skill. When a developer asks their agent to "implement user authentication," the `security-standards` Skill activates automatically—no explicit `/command` needed. Governance becomes invisible yet omnipresent.
+
 Developers run `apm install` when starting a project. The enterprise standards are injected as `.instructions.md` files. Context compilation (covered in Tooling) places them optimally in the directory tree. Every agent working on that project automatically respects enterprise policies.
 
-When GDPR regulations change, the compliance team updates the `acme-corp/gdpr-compliance` package:
+When GDPR regulations change, the compliance team updates the `acme-corp/gdpr-compliance` Skill:
 
 ```bash
 # In the enterprise compliance repository
 cd gdpr-compliance
-# Update .apm/instructions/data-handling.instructions.md
+# Update SKILL.md with new when-to-use triggers
+# Update .instructions/data-handling.instructions.md
 git commit -m "Update: GDPR data retention from 5 to 7 years"
 git push
 ```
@@ -235,12 +240,12 @@ git push
 Developers across all projects run:
 
 ```bash
-apm update
+apm install
 ```
 
-Every project, every agent, instantly compliant with new regulations. No re-training. No compliance meetings. No manual policy distribution. Centralized governance with distributed enforcement.
+Every project, every agent, instantly compliant with new regulations. The Skills auto-discovery means agents will summon the updated guidance whenever relevant—no re-training, no compliance meetings, no manual policy distribution.
 
-This is **agent onboarding at enterprise scale**: policies are packaged, distributed via APM, and automatically enforced through Agent Primitives.
+This is **agent onboarding at enterprise scale**: governance becomes Skills, Skills get distributed via APM, and agents automatically enforce policies through progressive context disclosure.
 
 ### Validation Gates as Quality Assurance
 
@@ -719,15 +724,15 @@ Measure the effectiveness of team-scale AI Native Development across three dimen
 
 2. **Agent onboarding enables enterprise governance** that's more robust than traditional approaches. Policies become enforceable primitives distributed via APM, ensuring instant, deterministic compliance.
 
-3. **Validation gates preserve quality while enabling AI speed**. Human validation at phase boundaries (architecture approval, code review) maintains standards without micromanaging implementation.
+3. **Agent onboarding is instant and deterministic**. Where human onboarding takes weeks, agents inherit all standards immediately through installed Skills.
 
-4. **Team roles clarify rather than blur** in AI Native Development. Product owners create specs, architects create patterns, developers execute and refine—each contribution becomes a reusable primitive.
+4. **Validation gates preserve quality while enabling AI speed**. Human validation at phase boundaries (architecture approval, code review) maintains standards without micromanaging implementation.
 
-5. **Knowledge compounds through systematic primitive refinement**. Sprint retrospectives translate learnings into improved primitives. Team intelligence accumulates rather than evaporating when developers leave.
+5. **Team roles clarify rather than blur** in AI Native Development. Product owners create specs, architects create patterns, developers execute and refine—each contribution becomes a reusable primitive.
 
 6. **Multi-developer orchestration** succeeds through explicit task isolation (spec-driven tasks phase), dependency visualization (GitHub Projects), and agent work transparency (PR labels, commit conventions).
 
-7. **Enterprise governance improves with AI Native Development**. Centralized policy distribution via APM, automatic enforcement through primitives, and systematic audit trails create governance that's more effective than training-based approaches.
+7. **Skills become organizational intelligence**. Successful patterns from one team, packaged as Skills, benefit all teams. Knowledge compounds across the entire organization.
 
 The enterprise user's challenge—"How can AI productivity scale to traditional team structures?"—has a clear answer: **Preserve traditional roles and ceremonies. Transform implicit coordination into explicit primitives. Let spec-driven workflows and validation gates maintain quality while agents accelerate execution.**
 

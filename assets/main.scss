@@ -430,6 +430,16 @@ ul ul, ol ol, ul ol, ol ul {
   text-decoration-color: var(--primary-dark);
 }
 
+.prose-attribution {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.prose-attribution strong {
+  color: var(--text-secondary);
+}
+
 /* Mermaid Diagram Styling */
 .mermaid {
   text-align: center;
@@ -2555,5 +2565,102 @@ a.github-btn:hover {
   .stage-outcome {
     font-size: 0.75rem;
     padding: 10px;
+  }
+}
+
+/* ============================================
+   PROSE Framework Hero Section
+   ============================================ */
+.hero-section {
+  text-align: center;
+  padding: 48px 24px 40px 24px;
+  margin: 0 -20px 0 -20px;
+  background: #ffffff;
+}
+
+.hero-section h1 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 12px 0;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  border-bottom: none;
+}
+
+.hero-tagline {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0 auto 24px auto;
+  line-height: 1.5;
+}
+
+.hero-tagline strong {
+  color: var(--primary-color);
+}
+
+/* PROSE Acronym Display - Compact */
+.prose-acronym {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.prose-letter {
+  display: flex;
+  align-items: center;
+  padding: 8px 14px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.15s ease;
+}
+
+.prose-letter:hover {
+  border-color: var(--primary-color);
+  background: #fff;
+}
+
+.prose-letter span {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-right: 1px;
+}
+
+/* Mobile responsive hero */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 32px 16px 28px 16px;
+    margin: 0 -16px 0 -16px;
+  }
+  
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .prose-acronym {
+    gap: 4px;
+  }
+  
+  .prose-letter {
+    padding: 6px 10px;
+    font-size: 0.8125rem;
+  }
+  
+  .prose-letter span {
+    font-size: 0.875rem;
   }
 }

@@ -1,56 +1,78 @@
 ---
 layout: home
-title: "The PROSE Framework for AI Native Development"
+title: PROSE - AI-Native Development
 permalink: /
 ---
 
 <div class="hero-section">
-  <h1>Master AI Coding Agents</h1>
-  <p class="hero-tagline">The <strong>PROSE Framework</strong> for reliable AI that scales to brownfield projects.</p>
+  <h1>PROSE</h1>
+  <p class="tagline">An architectural style for AI-native development</p>
   
   <div class="prose-acronym">
-    <div class="prose-letter"><span>P</span>rompts</div>
-    <div class="prose-letter"><span>R</span>eliability</div>
-    <div class="prose-letter"><span>O</span>rchestration</div>
-    <div class="prose-letter"><span>S</span>kills</div>
-    <div class="prose-letter"><span>E</span>ngineering</div>
+    <div class="prose-letter">
+      <span class="letter">P</span>
+      <span class="meaning">rogressive Disclosure</span>
+    </div>
+    <div class="prose-letter">
+      <span class="letter">R</span>
+      <span class="meaning">educed Scope</span>
+    </div>
+    <div class="prose-letter">
+      <span class="letter">O</span>
+      <span class="meaning">rchestrated Composition</span>
+    </div>
+    <div class="prose-letter">
+      <span class="letter">S</span>
+      <span class="meaning">coped Boundaries</span>
+    </div>
+    <div class="prose-letter">
+      <span class="letter">E</span>
+      <span class="meaning">xplicit Hierarchy</span>
+    </div>
   </div>
 </div>
 
-## Choose Your Learning Path
+## Learning Path
 
 <div class="learning-paths">
+  <a href="docs/prose/" class="path-card">
+    <div class="path-title">PROSE Specification</div>
+    <div class="path-description">The architectural style for AI-native development—constraints that induce reliability</div>
+    <div class="path-meta">10-15 minutes • Theory & Foundation</div>
+    <div class="path-link">Learn more</div>
+  </a>
+
   <a href="docs/concepts/" class="path-card">
     <div class="path-title">Core Concepts</div>
-    <div class="path-description">Understand the PROSE Framework: Prompts, Reliability, Orchestration, Skills, Engineering</div>
-    <div class="path-meta">15-20 minutes • Theory & Foundation</div>
+    <div class="path-description">The three-layer framework: Prompt Engineering, Agent Primitives, and Context Engineering</div>
+    <div class="path-meta">15-20 minutes • Practitioner's Guide</div>
     <div class="path-link">Learn more</div>
   </a>
 
   <a href="docs/getting-started/" class="path-card">
     <div class="path-title">Getting Started</div>
-    <div class="path-description">Build your first Agent Primitives and Skills and see immediate results</div>
+    <div class="path-description">Set up your first PROSE-compliant project in under 10 minutes</div>
     <div class="path-meta">15-20 minutes • Hands-on Implementation</div>
     <div class="path-link">Learn more</div>
   </a>
 
   <a href="docs/tooling/" class="path-card">
     <div class="path-title">Tooling</div>
-    <div class="path-description">Install and compose Agent Skills, compile context, and manage packages</div>
+    <div class="path-description">Discover tools, IDE extensions, and CLI utilities for PROSE compliant agents</div>
     <div class="path-meta">12-15 minutes • Infrastructure & Scaling</div>
     <div class="path-link">Learn more</div>
   </a>
 
   <a href="docs/agent-delegation/" class="path-card">
     <div class="path-title">Agent Delegation</div>
-    <div class="path-description">Master async delegation and multi-agent coordination</div>
+    <div class="path-description">Learn patterns for effective human-AI collaboration and task delegation</div>
     <div class="path-meta">20-25 minutes • Advanced Patterns</div>
     <div class="path-link">Learn more</div>
   </a>
 
   <a href="docs/team-adoption/" class="path-card">
     <div class="path-title">Team Implementation</div>
-    <div class="path-description">Scale the PROSE Framework across your organization</div>
+    <div class="path-description">Scale PROSE practices across teams and organizations</div>
     <div class="path-meta">15-20 minutes • Team & Leadership</div>
     <div class="path-link">Learn more</div>
   </a>
@@ -63,86 +85,77 @@ permalink: /
   </a>
 </div>
 
-## Core Mental Model
+## The Five Constraints
 
-The PROSE Framework maps to **professional software development practices**:
+PROSE defines five architectural constraints that guide AI-native development:
 
-| PROSE | What It Means | Software Analogy |
-|-------|---------------|------------------|
-| **P**rompts | Structured natural language that guides AI behavior | Coding patterns |
-| **R**eliability | Deterministic outcomes through context engineering | Testing & CI/CD |
-| **O**rchestration | Multi-agent delegation and task decomposition | Build pipelines |
-| **S**kills | Capability packages that onboard agents into projects | npm libraries |
-| **E**ngineering | A new discipline—systematic AI-native development | Software engineering |
+| Constraint | Core Idea |
+|------------|-----------|
+| **Progressive Disclosure** | Load context just-in-time, not just-in-case |
+| **Reduced Scope** | Right-size tasks to context capacity |
+| **Orchestrated Composition** | Compose simple primitives; complex things collapse |
+| **Scoped Boundaries** | Autonomy within guardrails |
+| **Explicit Hierarchy** | Layer guidance from global to local |
 
-*Ready to transform your use of AI Coding Agents? Choose your learning path above.*
+These constraints emerge from three grounding principles:
 
-## PROSE Maturity Journey
+1. **Context is finite and fragile** — AI models have limited context windows that degrade with noise
+2. **Context must be explicit** — Implicit knowledge doesn't exist for AI; make everything discoverable
+3. **Output is probabilistic** — AI produces likely outputs, not guaranteed ones; design for verification
 
-Most developers start by manually supervising every AI interaction—writing one-off prompts and starting from scratch each time. This creates a bottleneck where you're always needed for AI tasks to succeed.
+<a href="/docs/prose/" class="cta-button">Read the full PROSE specification →</a>
 
-**The transformation happens when you shift from supervision to architecture.** Instead of managing individual AI conversations, you engineer reusable systems through the PROSE Framework that delegate entire workflows to AI agents.
+## Maturity Model
 
-This maturity journey represents the core mindset shift from reactive AI usage to proactive AI engineering:
+Assess and evolve your AI-native development practices:
 
-<div class="maturity-timeline">
-  <div class="maturity-stage maturity-from">
-    <div class="stage-content">
-      <div class="stage-header">
-        <div class="stage-number">1</div>
-        <div class="stage-label">Beginner</div>
-      </div>
-      <h3>Manual Agent Supervision</h3>
-      <p class="stage-subtitle">You supervise every AI interaction</p>
-      <ul class="stage-points">
-        <li>Write one-off prompts for each task</li>
-        <li>Manually guide every conversation</li>
-        <li>Start from scratch each time</li>
-      </ul>
-      <div class="stage-outcome">
-        <strong>You're the bottleneck</strong> - Every AI task needs your attention
-      </div>
+<div class="maturity-model">
+  <div class="maturity-level level-0">
+    <span class="level-number">0</span>
+    <div class="level-content">
+      <h4>Ad-hoc</h4>
+      <p>No structured approach. AI assistance is reactive and inconsistent.</p>
     </div>
   </div>
-
-  <div class="timeline-connector">
-    <div class="connector-arrow">→</div>
+  
+  <div class="maturity-level level-1">
+    <span class="level-number">1</span>
+    <div class="level-content">
+      <h4>Structured</h4>
+      <p>Basic primitives in place. Instructions and prompts are documented.</p>
+    </div>
   </div>
-
-  <div class="maturity-stage maturity-to">
-    <div class="stage-content">
-      <div class="stage-header">
-        <div class="stage-number">2</div>
-        <div class="stage-label">Expert</div>
-      </div>
-      <h3>Engineered Agent Delegation</h3>
-      <p class="stage-subtitle">You architect systems, AI executes</p>
-      <ul class="stage-points">
-        <li>Build reusable <strong>Skills</strong> and primitives</li>
-        <li>Engineer context once, reuse everywhere</li>
-        <li>Delegate complete <strong>Orchestrations</strong> to AI</li>
-      </ul>
-      <div class="stage-outcome">
-        <strong>You're the architect</strong> - AI handles execution autonomously
-      </div>
+  
+  <div class="maturity-level level-2">
+    <span class="level-number">2</span>
+    <div class="level-content">
+      <h4>Composed</h4>
+      <p>Primitives are modular and reusable. Context is managed intentionally.</p>
+    </div>
+  </div>
+  
+  <div class="maturity-level level-3">
+    <span class="level-number">3</span>
+    <div class="level-content">
+      <h4>Orchestrated</h4>
+      <p>Workflows chain primitives. AI agents operate within defined boundaries.</p>
+    </div>
+  </div>
+  
+  <div class="maturity-level level-4">
+    <span class="level-number">4</span>
+    <div class="level-content">
+      <h4>Distributed</h4>
+      <p>Cross-repo sharing. Organization-wide standards with local adaptation.</p>
     </div>
   </div>
 </div>
 
 ## Contributing
 
-> *"The future of programming isn't code. It's PROSE."*
-
-**This is frontier work.** The PROSE Framework for AI Native Development is evolving rapidly, and the patterns that work today will be refined tomorrow. That's why this guide thrives on community innovation.
-
-**Your contribution shapes the field.** Whether you discover a new PROSE pattern, refine an existing workflow, or share a breakthrough insight—every contribution advances our collective understanding and gets you listed as a co-author of this evolving knowledge base.
-
-**Ready to lead the transformation?** 
+PROSE is an open specification shaped by the community. Whether you're refining constraints, sharing patterns, or building tooling—your contributions matter.
 
 <div class="cta-buttons">
   <a href="docs/concepts/" class="btn-primary">Read the Guide →</a>
-  <a href="https://github.com/danielmeppiel/awesome-ai-native/blob/main/CONTRIBUTING.md" class="github-btn"><span class="github-text">Contribute Your Insights →</span></a>
+  <a href="https://github.com/danielmeppiel/awesome-ai-native/blob/main/CONTRIBUTING.md" class="github-btn"><span class="github-text">Contribute →</span></a>
 </div>
-
-*The most reliable AI systems are built by communities, not individuals.*
-

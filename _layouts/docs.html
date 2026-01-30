@@ -24,6 +24,29 @@ layout: default
         </div>
       </div>
 
+      <!-- PROSE Specification -->
+      <div class="nav-section">
+        <div class="nav-section-title">
+          <button class="nav-toggle {% if page.url contains '/prose/' %}expanded{% endif %}" 
+                  data-target="prose-section" 
+                  aria-expanded="{% if page.url contains '/prose/' %}true{% else %}false{% endif %}">
+            <svg class="chevron-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+              <path d="M4.5 3L7.5 6L4.5 9"></path>
+            </svg>
+          </button>
+          <a href="{{ '/docs/prose/' | relative_url }}" class="nav-main-link {% if page.url contains '/prose/' %}current{% endif %}">
+            <span class="nav-text">PROSE Specification</span>
+          </a>
+        </div>
+        <ul class="nav-subsection {% if page.url contains '/prose/' %}expanded{% endif %}" id="prose-section">
+          <li><a href="{{ '/docs/prose/' | relative_url }}#the-five-constraints" class="nav-sub-link">The Five Constraints</a></li>
+          <li><a href="{{ '/docs/prose/' | relative_url }}#grounding-principles" class="nav-sub-link">Grounding Principles</a></li>
+          <li><a href="{{ '/docs/prose/' | relative_url }}#prose-compliance-checklist" class="nav-sub-link">Compliance Checklist</a></li>
+          <li><a href="{{ '/docs/prose/' | relative_url }}#prose-maturity-model" class="nav-sub-link">Maturity Model</a></li>
+          <li><a href="{{ '/docs/prose/' | relative_url }}#anti-patterns" class="nav-sub-link">Anti-Patterns</a></li>
+        </ul>
+      </div>
+
       <!-- Core Concepts -->
       <div class="nav-section">
         <div class="nav-section-title">
@@ -39,11 +62,10 @@ layout: default
           </a>
         </div>
         <ul class="nav-subsection {% if page.url contains '/concepts/' %}expanded{% endif %}" id="concepts-section">
-          <li><a href="{{ '/docs/concepts/' | relative_url }}#p--prompts-markdown-prompt-engineering" class="nav-sub-link">P — Prompts</a></li>
-          <li><a href="{{ '/docs/concepts/' | relative_url }}#r--reliability-the-goal-everything-serves" class="nav-sub-link">R — Reliability</a></li>
-          <li><a href="{{ '/docs/concepts/' | relative_url }}#o--orchestration-multi-agent-coordination" class="nav-sub-link">O — Orchestration</a></li>
-          <li><a href="{{ '/docs/concepts/' | relative_url }}#s--skills-agent-primitives--packages" class="nav-sub-link">S — Skills</a></li>
-          <li><a href="{{ '/docs/concepts/' | relative_url }}#e--engineering-context-engineering" class="nav-sub-link">E — Engineering</a></li>
+          <li><a href="{{ '/docs/concepts/' | relative_url }}#layer-1-markdown-prompt-engineering" class="nav-sub-link">Layer 1: Prompt Engineering</a></li>
+          <li><a href="{{ '/docs/concepts/' | relative_url }}#layer-2-agent-primitives" class="nav-sub-link">Layer 2: Agent Primitives</a></li>
+          <li><a href="{{ '/docs/concepts/' | relative_url }}#layer-3-context-engineering" class="nav-sub-link">Layer 3: Context Engineering</a></li>
+          <li><a href="{{ '/docs/concepts/' | relative_url }}#agentic-workflows-the-complete-system-in-action" class="nav-sub-link">Agentic Workflows</a></li>
           <li><a href="{{ '/docs/concepts/' | relative_url }}#key-takeaways" class="nav-sub-link">Key Takeaways</a></li>
         </ul>
       </div>

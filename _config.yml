@@ -1,6 +1,6 @@
 # Site settings
-title: "The PROSE Framework for AI Native Development"
-description: "Master GitHub Copilot through PROSE: Prompts, Reliability, Orchestration, Skills, and Engineering for AI Native Development"
+title: "PROSE for AI Native Development"
+description: "Master AI Native Development with PROSE, an architecture and specification for AI-native applications."
 baseurl: "/awesome-ai-native"
 url: "https://danielmeppiel.github.io"
 
@@ -31,6 +31,8 @@ plugins:
 
 # Navigation structure - simplified titles
 navigation:
+  - title: "PROSE Specification"
+    url: "docs/prose/index.md"
   - title: "Concepts"
     url: "docs/concepts/index.md"
   - title: "Getting Started"
@@ -45,6 +47,7 @@ navigation:
     url: "docs/reference/index.md"
 
 header_pages:
+  - docs/prose/index.md
   - docs/concepts/index.md
   - docs/getting-started/index.md
   - docs/tooling/index.md

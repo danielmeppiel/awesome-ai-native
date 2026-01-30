@@ -256,29 +256,29 @@ code[class*="markdown"] {
 }
 
 /* Links containing code elements - clean styling */
-.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link) code {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button) code {
   color: var(--primary-color);
   text-decoration: none;
 }
 
-.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):hover code {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button):hover code {
   color: var(--primary-dark);
   text-decoration: none;
 }
 
 /* General link styling - only for content links, not navigation or buttons */
-.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link) {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button) {
   color: var(--primary-color);
   text-decoration: underline;
   text-decoration-color: var(--primary-color);
 }
 
-.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):hover {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button):hover {
   color: var(--primary-dark);
   text-decoration-color: var(--primary-dark);
 }
 
-.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):visited {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button):visited {
   color: var(--primary-color);
 }
 
@@ -1375,6 +1375,13 @@ h2 {
   margin-bottom: 16px !important;
 }
 
+/* Remove border only on h2 right after hero section */
+.hero-section + h2 {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  margin-top: 24px !important;
+}
+
 h3 {
   font-size: 1.25rem !important;
   color: var(--text-primary) !important;
@@ -1615,29 +1622,29 @@ code[class*="markdown"] {
 }
 
 /* Links containing code elements - clean styling with proper color inheritance */
-.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link) code {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button) code {
   color: var(--primary-color) !important;
   text-decoration: none !important;
 }
 
-.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):hover code {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button):hover code {
   color: var(--primary-dark) !important;
   text-decoration: none !important;
 }
 
 /* General link styling that works with GitHub Primer design - only for content, excluding navigation and buttons */
-.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link) {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button) {
   color: var(--primary-color) !important;
   text-decoration: underline !important;
   text-decoration-color: var(--primary-color) !important;
 }
 
-.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):hover {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button):hover {
   color: var(--primary-dark) !important;
   text-decoration-color: var(--primary-dark) !important;
 }
 
-.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):visited {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button):visited {
   color: var(--primary-color) !important;
 }
 
@@ -2369,6 +2376,41 @@ pre code {
   flex-wrap: wrap;
 }
 
+/* Single CTA Button - Standalone usage */
+.cta-button,
+a.cta-button,
+.page-content a.cta-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 10px 20px !important;
+  background: var(--primary-color) !important;
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+  line-height: 1.4 !important;
+  transition: all 0.15s ease !important;
+  border: none !important;
+  cursor: pointer !important;
+  margin: 20px 0 !important;
+}
+
+.cta-button:hover,
+a.cta-button:hover,
+.page-content a.cta-button:hover {
+  background: var(--primary-dark) !important;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.cta-button:visited,
+a.cta-button:visited,
+.page-content a.cta-button:visited {
+  color: white !important;
+  text-decoration: none !important;
+}
+
 /* Ensure buttons inherit clean styling from parent container */
 .cta-buttons .btn-primary,
 .cta-buttons .github-btn {
@@ -2569,30 +2611,39 @@ a.github-btn:hover {
 }
 
 /* ============================================
-   PROSE Framework Hero Section
+   PROSE specification Hero Section
    ============================================ */
 .hero-section {
   text-align: center;
   padding: 48px 24px 40px 24px;
-  margin: 0 -20px 0 -20px;
-  background: #ffffff;
+  margin: -32px -20px 0 -20px;
+  background: linear-gradient(180deg, #f6f8fa 0%, #ffffff 100%);
+  border-bottom: none;
 }
 
 .hero-section h1 {
-  font-size: 2.75rem;
+  font-size: 3rem;
   font-weight: 800;
   color: var(--text-primary);
   margin: 0 0 12px 0;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   line-height: 1.1;
   border-bottom: none;
+}
+
+.hero-section .tagline {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 400px;
+  margin: 0 auto 32px auto;
+  line-height: 1.5;
 }
 
 .hero-tagline {
   font-size: 1.125rem;
   color: var(--text-secondary);
-  max-width: 500px;
-  margin: 0 auto 24px auto;
+  max-width: 400px;
+  margin: 0 auto 32px auto;
   line-height: 1.5;
 }
 
@@ -2600,67 +2651,180 @@ a.github-btn:hover {
   color: var(--primary-color);
 }
 
-/* PROSE Acronym Display - Compact */
+/* PROSE Acronym Display - Single Row, Compact */
 .prose-acronym {
   display: flex;
   justify-content: center;
-  gap: 6px;
-  flex-wrap: wrap;
+  gap: 8px;
+  flex-wrap: nowrap;
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 4px 0;
 }
 
 .prose-letter {
   display: flex;
   align-items: center;
-  padding: 8px 14px;
-  background: var(--bg-secondary);
+  padding: 8px 12px;
+  background: #ffffff;
   border: 1px solid var(--border-light);
   border-radius: 6px;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   transition: all 0.15s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .prose-letter:hover {
   border-color: var(--primary-color);
-  background: #fff;
+  background: #f6f8fa;
 }
 
-.prose-letter span {
-  font-size: 1rem;
+.prose-letter .letter {
+  font-size: 0.9375rem;
   font-weight: 700;
   color: var(--primary-color);
-  margin-right: 1px;
+  margin-right: 0;
+}
+
+.prose-letter .meaning {
+  color: var(--text-secondary);
+  font-weight: 400;
 }
 
 /* Mobile responsive hero */
 @media (max-width: 768px) {
   .hero-section {
-    padding: 32px 16px 28px 16px;
-    margin: 0 -16px 0 -16px;
+    padding: 32px 16px 32px 16px;
+    margin: -30px -16px 0 -16px;
   }
   
   .hero-section h1 {
     font-size: 2rem;
   }
   
+  .hero-section .tagline,
   .hero-tagline {
     font-size: 1rem;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
   
   .prose-acronym {
-    gap: 4px;
+    flex-wrap: wrap;
+    gap: 6px;
   }
   
   .prose-letter {
     padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+  
+  .prose-letter .letter {
+    font-size: 0.8125rem;
+  }
+}
+
+/* ============================================
+   PROSE Maturity Model - Primer Style Horizontal
+   ============================================ */
+.maturity-model {
+  display: flex;
+  gap: 0;
+  margin: 24px 0;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--bg-card);
+}
+
+.maturity-level {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-right: 1px solid var(--border-light);
+  background: var(--bg-card);
+  transition: background 0.15s ease;
+}
+
+.maturity-level:last-child {
+  border-right: none;
+}
+
+.maturity-level:hover {
+  background: var(--bg-secondary);
+}
+
+.maturity-level .level-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-bottom: 12px;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-muted);
+}
+
+.maturity-level .level-content {
+  flex: 1;
+}
+
+.maturity-level .level-content h4 {
+  margin: 0 0 6px 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.maturity-level .level-content p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Mobile responsive maturity model */
+@media (max-width: 900px) {
+  .maturity-model {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .maturity-level {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+    padding: 14px 16px;
+  }
+  
+  .maturity-level:last-child {
+    border-bottom: none;
+  }
+  
+  .maturity-level .level-number {
+    margin-bottom: 0;
+    width: 24px;
+    height: 24px;
+    font-size: 0.6875rem;
+  }
+  
+  .maturity-level .level-content h4 {
     font-size: 0.8125rem;
   }
   
-  .prose-letter span {
-    font-size: 0.875rem;
+  .maturity-level .level-content p {
+    font-size: 0.75rem;
   }
 }

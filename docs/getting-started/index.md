@@ -8,7 +8,7 @@ nav_order: 3
 
 > **PROSE Focus:** This section is hands-on **P**rompts and **S**kills—building your first primitives.
 
-Now that you understand the [PROSE Framework](../concepts/), it's time to build your AI Native Development environment. This hands-on implementation will give you immediate productivity improvements while establishing the foundation for more advanced workflows.
+Now that you understand the [PROSE Specification](../prose/), it's time to build your AI Native Development environment. This hands-on implementation will give you immediate productivity improvements while establishing the foundation for more advanced workflows.
 
 The setup follows a logical progression: start by installing Skills that provide instant capabilities, then add local instructions for project-specific guidance, configure custom agents for safe boundaries, build reusable prompts for common tasks, and create specification templates that bridge planning to implementation.
 
@@ -84,15 +84,15 @@ Generate code with:
 
 **⚠️ Checkpoint:** Instructions are modular, targeted, and ready to compile
 
-## Chat Modes Configuration
+## Custom Agents Configuration
 
-With your instruction architecture in place, you need a way to enforce domain boundaries and prevent AI agents from overstepping their expertise. Chat modes solve this by creating professional boundaries similar to real-world licensing—architects plan but don't build, engineers execute but don't set strategy.
+With your instruction architecture in place, you need a way to enforce domain boundaries and prevent AI agents from overstepping their expertise. Custom Agents solve this by creating professional boundaries similar to real-world licensing—architects plan but don't build, engineers execute but don't set strategy.
 
 **✅ Quick Actions:**
-- Define domain-specific [custom chat modes](https://code.visualstudio.com/docs/copilot/chat/chat-modes) with MCP tool boundaries
+- Define domain-specific [custom agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents) with MCP tool boundaries
 - Encapsulate tech stack knowledge and guidelines per mode
-- Define the most appropriate [LLM model](https://code.visualstudio.com/docs/copilot/chat/chat-modes#_chat-mode-file-example) for your chat mode like `Claude Sonnet 4`
-- Configure secure [MCP tool access](https://code.visualstudio.com/docs/copilot/chat/chat-modes#_chat-mode-file-example) to prevent cross-domain security breaches
+- Define the most appropriate [LLM model](https://code.visualstudio.com/docs/copilot/customization/custom-agents#_custom-agent-example) for your chat mode like `Claude Sonnet 4`
+- Configure secure [MCP tool access](https://code.visualstudio.com/docs/copilot/customization/custom-agents#_custom-agent-example) to prevent cross-domain security breaches
 
 > 💡 **Security Through MCP Tool Boundaries**: Each chat mode receives only the specific MCP tools needed for their domain - preventing dangerous access escalation and cross-contamination. Like professional licensing, a planning mode can't execute destructive commands, and a frontend mode can't access backend databases.
 
@@ -144,10 +144,10 @@ You master the backend of this project thanks to you having read all [the backen
 
 ## Agentic Workflows
 
-Chat modes create the safety boundaries, but you still need efficient ways to execute complete development processes. **Agentic Workflows** are implemented as reusable `.prompt.md` files that orchestrate all your primitives into systematic, end-to-end processes.
+Custom Agents create the safety boundaries, but you still need efficient ways to execute complete development processes. **Agentic Workflows** are implemented as reusable `.prompt.md` files that orchestrate all your primitives into systematic, end-to-end processes.
 
 **✅ Quick Actions:**
-- Create [`.prompt.md` files](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental) for complete development processes
+- Create [`.prompt.md` files](https://code.visualstudio.com/docs/copilot/customization/prompt-files) for complete development processes
 - Build in mandatory human validation points
 - Design workflows for both local execution and async delegation
 
@@ -319,7 +319,7 @@ With Skills and primitives in place, you now have a complete foundation for syst
 ### Local Primitives
 6. **[ ]** Create [`.github/copilot-instructions.md`](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilot-instructionsmd-file) with project-specific guidelines
 7. **[ ]** Set up domain-specific [`.instructions.md` files](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-instructionsmd-files) with `applyTo` patterns
-8. **[ ]** Configure [custom agents](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-chat-modes) for your tech stack domains
+8. **[ ]** Configure [custom agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents) for your tech stack domains
 9. **[ ]** Create your first [`.prompt.md` Agentic Workflow](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental)
 10. **[ ]** Build your first `.spec.md` template for feature specifications
 
@@ -331,7 +331,7 @@ With Skills and primitives in place, you now have a complete foundation for syst
 
 **Foundation Complete?** You've installed Skills and built local primitives. Continue to [Tooling](../tooling/) to understand the infrastructure that makes these scale—context compilation, Skills composition, and the package management that enables everything that follows.
 
-**Want to understand the theory better?** Return to [Core Concepts](../concepts/) for deeper understanding of the PROSE Framework.
+**Want to understand the theory better?** Return to [Core Concepts](../concepts/) for deeper understanding of the PROSE specification.
 
 **Ready to jump ahead?** After Tooling, [Agent Delegation](../agent-delegation/) covers execution strategies, and [Team & Enterprise Scale](../team-adoption/) shows organizational implementation.
 

@@ -1,10 +1,10 @@
-# 🎯 The PROSE Framework for AI Native Development
+# 🎯 PROSE for AI Native Development
 
 *This repository has been restructured as a comprehensive GitHub Pages site for better navigation and content extraction. The complete guide is now available at: **[https://danielmeppiel.github.io/awesome-ai-native](https://danielmeppiel.github.io/awesome-ai-native)***
 
 ---
 
-## The PROSE Framework
+## PROSE for AI Native Development
 
 **Programming has evolved.** From Assembly to Python, each abstraction brought us closer to human thought. Now we've reached the final layer: *prose itself becomes executable.*
 
@@ -63,7 +63,7 @@ Your AI interactions are **inconsistent and unreliable**:
 
 ### 🧠 Core Mental Model
 
-The PROSE Framework maps to **professional software development practices**:
+The PROSE specification maps to **professional software development practices**:
 
 | PROSE | Concept | Software Analogy |
 |-------|---------|------------------|

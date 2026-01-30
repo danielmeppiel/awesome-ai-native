@@ -25,6 +25,38 @@
   box-sizing: border-box;
 }
 
+/* Skip Link for Accessibility */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--primary-color);
+  color: #ffffff;
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 0 0 6px 0;
+  transition: top 0.2s ease;
+  
+  &:focus {
+    top: 0;
+    outline: 2px solid var(--primary-dark);
+    outline-offset: 2px;
+  }
+}
+
+/* Global Focus Indicators */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
 /* Fix for sticky header covering anchor links */
 html {
   scroll-padding-top: 0px; /* Header height + some buffer */
@@ -40,7 +72,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   color: var(--text-primary);
   line-height: 1.6;
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-primary);
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -168,7 +200,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   color: var(--text-primary);
 }
 
@@ -267,18 +299,18 @@ code[class*="markdown"] {
 }
 
 /* General link styling - only for content links, not navigation or buttons */
-.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button) {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button):not(.hero-cta) {
   color: var(--primary-color);
   text-decoration: underline;
   text-decoration-color: var(--primary-color);
 }
 
-.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button):hover {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button):not(.hero-cta):hover {
   color: var(--primary-dark);
   text-decoration-color: var(--primary-dark);
 }
 
-.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button):visited {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button):not(.hero-cta):visited {
   color: var(--primary-color);
 }
 
@@ -360,38 +392,36 @@ ul ul, ol ol, ul ol, ol ul {
   background: var(--bg-secondary);
   color: var(--text-secondary);
   border-top: 1px solid var(--border-color);
-  padding: 24px 0;
+  padding: 32px 0 24px 0;
 }
 
-.site-footer .footer-heading {
+.site-footer .footer-content {
+  text-align: center;
+}
+
+.site-footer .footer-contribute {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  margin: 0 0 12px 0;
+}
+
+.site-footer .footer-contribute a {
   color: var(--text-primary);
-  margin-bottom: 24px;
 }
 
-.site-footer .footer-col-wrapper {
-  margin-bottom: 0;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.site-footer .footer-col-1 {
-  flex: 1 1 300px;
-  margin-right: 40px;
-  margin-bottom: 20px;
-}
-
-.site-footer .footer-col-2 {
-  flex: 2 1 400px;
-  margin-bottom: 20px;
+.site-footer .footer-text {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin: 0;
 }
 
 .site-footer a {
-  color: var(--text-secondary);
   text-decoration: none;
+  transition: color 0.15s ease;
 }
 
 .site-footer a:hover {
-  color: var(--text-primary);
+  color: var(--primary-color);
 }
 
 /* License Information Styling */
@@ -846,7 +876,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif !important;
   color: var(--text-primary) !important;
   line-height: 1.6 !important;
-  background-color: var(--bg-secondary) !important;
+  background-color: var(--bg-primary) !important;
 }
 
 /* Layout Overrides */
@@ -1383,7 +1413,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.25rem !important;
+  font-size: 1.375rem !important;
   color: var(--text-primary) !important;
   margin-top: 20px !important;
   margin-bottom: 10px !important;
@@ -1633,18 +1663,18 @@ code[class*="markdown"] {
 }
 
 /* General link styling that works with GitHub Primer design - only for content, excluding navigation and buttons */
-.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button) {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button):not(.hero-cta) {
   color: var(--primary-color) !important;
   text-decoration: underline !important;
   text-decoration-color: var(--primary-color) !important;
 }
 
-.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button):hover {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button):not(.hero-cta):hover {
   color: var(--primary-dark) !important;
   text-decoration-color: var(--primary-dark) !important;
 }
 
-.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button):visited {
+.page-content a:not(.path-card):not(.path-link):not(.nav-main-link):not(.nav-sub-link):not(.edit-link):not(.btn-primary):not(.github-btn):not(.heading-link):not(.cta-button):not(.hero-cta):visited {
   color: var(--primary-color) !important;
 }
 
@@ -2615,115 +2645,113 @@ a.github-btn:hover {
    ============================================ */
 .hero-section {
   text-align: center;
-  padding: 48px 24px 40px 24px;
-  margin: -32px -20px 0 -20px;
-  background: linear-gradient(180deg, #f6f8fa 0%, #ffffff 100%);
-  border-bottom: none;
+  padding: 80px 24px 64px 24px;
+  margin: 0;
+  background: transparent;
 }
 
 .hero-section h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  margin: 0 0 12px 0;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  border-bottom: none;
+  font-size: 4rem !important;
+  font-weight: 700 !important;
+  color: var(--text-primary) !important;
+  margin: 0 0 16px 0 !important;
+  letter-spacing: -0.04em;
+  line-height: 1 !important;
+  border-bottom: none !important;
 }
 
 .hero-section .tagline {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   color: var(--text-secondary);
-  max-width: 400px;
+  max-width: 420px;
   margin: 0 auto 32px auto;
   line-height: 1.5;
 }
 
-.hero-tagline {
-  font-size: 1.125rem;
-  color: var(--text-secondary);
-  max-width: 400px;
-  margin: 0 auto 32px auto;
-  line-height: 1.5;
-}
-
-.hero-tagline strong {
-  color: var(--primary-color);
-}
-
-/* PROSE Acronym Display - Single Row, Compact */
-.prose-acronym {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: nowrap;
-  margin: 0 auto;
-  max-width: 100%;
-  overflow-x: auto;
-  padding: 4px 0;
-}
-
-.prose-letter {
-  display: flex;
-  align-items: center;
-  padding: 8px 12px;
-  background: #ffffff;
-  border: 1px solid var(--border-light);
+/* Hero CTA Button */
+.hero-cta {
+  display: inline-block;
+  background: var(--primary-color);
+  color: #ffffff !important;
+  padding: 12px 24px;
   border-radius: 6px;
-  font-size: 0.8125rem;
+  font-size: 1rem;
   font-weight: 500;
-  color: var(--text-primary);
-  transition: all 0.15s ease;
-  white-space: nowrap;
-  flex-shrink: 0;
+  text-decoration: none;
+  transition: background 0.15s ease;
 }
 
-.prose-letter:hover {
-  border-color: var(--primary-color);
-  background: #f6f8fa;
+.hero-cta:hover {
+  background: var(--primary-dark);
+  color: #ffffff !important;
 }
 
-.prose-letter .letter {
-  font-size: 0.9375rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  margin-right: 0;
+.hero-cta:visited {
+  color: #ffffff !important;
 }
 
-.prose-letter .meaning {
+/* Hero Meta */
+.hero-meta {
+  margin: 20px 0 0 0;
+  font-size: 0.875rem;
   color: var(--text-secondary);
-  font-weight: 400;
+}
+
+/* Beyond Section */
+.beyond-section {
+  text-align: center;
+  padding: 40px 24px 48px 24px;
+}
+
+.beyond-title {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0 0 12px 0;
+}
+
+.beyond-links {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.beyond-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.beyond-links a:hover {
+  color: var(--primary-color);
+}
+
+.beyond-links .sep {
+  color: var(--border-color);
+  margin: 0 12px;
 }
 
 /* Mobile responsive hero */
 @media (max-width: 768px) {
   .hero-section {
-    padding: 32px 16px 32px 16px;
-    margin: -30px -16px 0 -16px;
+    padding: 56px 20px 48px 20px;
   }
   
   .hero-section h1 {
-    font-size: 2rem;
+    font-size: 2.75rem !important;
   }
   
-  .hero-section .tagline,
-  .hero-tagline {
-    font-size: 1rem;
-    margin-bottom: 24px;
+  .hero-section .tagline {
+    font-size: 1.125rem;
+    margin-bottom: 28px;
   }
   
-  .prose-acronym {
-    flex-wrap: wrap;
-    gap: 6px;
+  .beyond-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
   
-  .prose-letter {
-    padding: 6px 10px;
-    font-size: 0.75rem;
-  }
-  
-  .prose-letter .letter {
-    font-size: 0.8125rem;
+  .beyond-links .sep {
+    display: none;
   }
 }
 
@@ -2826,5 +2854,261 @@ a.github-btn:hover {
   
   .maturity-level .level-content p {
     font-size: 0.75rem;
+  }
+}
+
+/* ============================================
+   About Page - Minimal Design
+   ============================================ */
+.about-page {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Profile Section */
+.about-profile {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.profile-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.about-profile h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+  border-bottom: none;
+}
+
+.profile-tagline {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+}
+
+.profile-role {
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  margin: 0 0 4px 0;
+}
+
+.profile-history {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0 0 16px 0;
+}
+
+.profile-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.profile-links a {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.profile-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Divider */
+.about-divider {
+  border: none;
+  border-top: 1px solid var(--border-light);
+  margin: 32px 0;
+}
+
+/* Content Section */
+.about-content h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 24px 0 12px 0;
+  border-bottom: none;
+}
+
+.about-content h2:first-child {
+  margin-top: 0;
+}
+
+.about-content p {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0 0 12px 0;
+}
+
+.about-content a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.about-content a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .about-page {
+    padding: 0 16px;
+  }
+  
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .about-profile h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ============================================
+   Learning Journey - Minimal 3-Step Path
+   ============================================ */
+.learning-journey {
+  text-align: center;
+  padding: 0 24px 48px 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.journey-intro {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 24px 0;
+}
+
+.journey-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.journey-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 24px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  min-width: 160px;
+}
+
+.journey-step:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--bg-secondary);
+  border-radius: 50%;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.journey-step:hover .step-number {
+  background: var(--primary-color);
+  color: #ffffff;
+}
+
+.step-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.step-desc {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.step-arrow {
+  color: var(--border-color);
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.journey-more {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.journey-more a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.journey-more a:hover {
+  color: var(--primary-color);
+}
+
+/* Landing Footer - Minimal */
+.landing-footer {
+  text-align: center;
+  padding: 32px 24px;
+  border-top: 1px solid var(--border-light);
+  margin-top: 16px;
+}
+
+.landing-footer p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.landing-footer a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.landing-footer a:hover {
+  color: var(--primary-color);
+}
+
+/* Mobile responsive journey */
+@media (max-width: 768px) {
+  .journey-steps {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .step-arrow {
+    transform: rotate(90deg);
+  }
+  
+  .journey-step {
+    width: 100%;
+    max-width: 280px;
   }
 }

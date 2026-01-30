@@ -1,0 +1,9 @@
+name: awesome-ai-native
+version: 1.0.0
+description: APM project for awesome-ai-native
+author: danielmeppiel
+dependencies:
+  apm: 
+    - anthropics/skills/skills/skill-creator
+  mcp: []
+scripts: {}

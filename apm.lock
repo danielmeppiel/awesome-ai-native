@@ -1,0 +1,9 @@
+lockfile_version: '1'
+generated_at: '2026-01-30T19:50:56.683195+00:00'
+apm_version: 0.7.2
+dependencies:
+- repo_url: anthropics/skills
+  host: github.com
+  resolved_commit: unknown
+  virtual_path: skills/skill-creator
+  is_virtual: true

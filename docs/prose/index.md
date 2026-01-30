@@ -12,19 +12,15 @@ Just as code became the medium for directing CPUs, natural language is becoming 
 
 **PROSE** addresses this gap. It defines an architectural style for reliable, scalable collaboration between humans and AI coding agents. Like REST defined constraints for distributed systems independent of HTTP, PROSE defines constraints for AI-native development independent of any specific model or platform.
 
----
-
 ## Quick Reference
 
 | Constraint | Principle | Induced Property |
 |------------|-----------|------------------|
-| **P**rogressive Disclosure | Context arrives just-in-time, not just-in-case | Efficient context utilization |
+| **P**rogressive Disclosure | Structure information to reveal complexity progressively | Efficient context utilization |
 | **R**educed Scope | Match task size to context capacity | Manageable complexity |
 | **O**rchestrated Composition | Simple things compose; complex things collapse | Flexibility, reusability |
 | **S**coped Boundaries | Autonomy within guardrails | Reliability, security |
 | **E**xplicit Hierarchy | Specificity increases as scope narrows | Modularity, inheritance |
-
----
 
 ## What PROSE Is Not
 
@@ -32,8 +28,6 @@ Just as code became the medium for directing CPUs, natural language is becoming 
 - **Not a file format.** The primitives (`.instructions.md`, etc.) are implementations of the style, not the style itself.
 - **Not model-specific.** PROSE works with GPT, Claude, Gemini, open-source models, and whatever comes next.
 - **Not prescriptive about tooling.** Use VS Code, Cursor, CLI agents, or any interface. The constraints apply universally.
-
----
 
 ## The Problem PROSE Solves
 
@@ -49,8 +43,6 @@ The industry has prompt engineering techniques for single interactions. But ther
 
 **PROSE** addresses this through architectural constraints that manage context as a scarce resource, provide structured guidance that scales, bound non-determinism through explicit boundaries, and enable reliable composition of AI capabilities.
 
----
-
 ## The Five Constraints
 
 PROSE defines five architectural constraints. Each addresses a fundamental property of language models and induces desirable system properties.
@@ -59,15 +51,13 @@ PROSE defines five architectural constraints. Each addresses a fundamental prope
 
 > *"Context arrives just-in-time, not just-in-case."*
 
-**Constraint:** Agents receive indexed summaries of available knowledge and capabilities. Full detail is loaded only when the agent determines it is relevant to the current task.
+**Constraint:** Structure information to reveal complexity progressively, allowing agents to access deeper detail only when contextually relevant to the current task.
 
 **Rationale:** Context windows are finite. Loading everything upfront wastes capacity and dilutes attention. Progressive disclosure preserves context for what matters.
 
-**Mechanism:** Markdown links as lazy-loading pointers. `SKILL.md` manifests as capability indexes. Hierarchical `AGENTS.md` files as layered context.
+**Mechanism:** Markdown links as lazy-loading pointers. Skills metadata as capability indexes. Hierarchical file references. Descriptive labels that enable relevance assessment.
 
 **Induced Property:** Efficient context utilization.
-
----
 
 ### R — Reduced Scope
 
@@ -81,8 +71,6 @@ PROSE defines five architectural constraints. Each addresses a fundamental prope
 
 **Induced Property:** Manageable complexity, consistent quality.
 
----
-
 ### O — Orchestrated Composition
 
 > *"Simple things compose; complex things collapse."*
@@ -94,8 +82,6 @@ PROSE defines five architectural constraints. Each addresses a fundamental prope
 **Mechanism:** `.instructions.md`, `.prompt.md`, `.agent.md` as atomic primitives. Skills as composable capability packages. Workflows as compositions, not mega-prompts.
 
 **Induced Property:** Flexibility, reusability, maintainability.
-
----
 
 ### S — Scoped Boundaries
 
@@ -111,8 +97,6 @@ PROSE defines five architectural constraints. Each addresses a fundamental prope
 
 *This constraint is foundational to agentic security—agents that operate within explicit boundaries are auditable, controllable, and safer.*
 
----
-
 ### E — Explicit Hierarchy
 
 > *"Specificity increases as scope narrows."*
@@ -125,8 +109,6 @@ PROSE defines five architectural constraints. Each addresses a fundamental prope
 
 **Induced Property:** Modularity, domain adaptation, inheritance.
 
----
-
 ## How Constraints Relate
 
 The five constraints form an integrated system:
@@ -136,8 +118,6 @@ The five constraints form an integrated system:
 - **Orchestrated Composition** determines *how primitives combine*
 - **Scoped Boundaries** determine *what the agent can do*
 - **Explicit Hierarchy** determines *which rules apply*
-
----
 
 ## Grounding Principles
 
@@ -163,8 +143,6 @@ The same input can produce different outputs. Language models interpret rather t
 
 These properties persist regardless of model size, architecture, or provider.
 
----
-
 ## PROSE Compliance Checklist
 
 Assess whether your AI-native development approach is PROSE-compliant:
@@ -181,8 +159,6 @@ Assess whether your AI-native development approach is PROSE-compliant:
 - **5/5:** Fully PROSE-compliant
 - **3-4/5:** Partially compliant—identify gaps and address
 - **0-2/5:** Ad-hoc approach—significant restructuring needed
-
----
 
 ## PROSE Maturity Model
 
@@ -205,8 +181,6 @@ The journey from ad-hoc prompting to PROSE-compliant systems:
 
 **Level 4 insight:** PROSE constraints don't just improve your project—they make your primitives *distributable*. Quality structure enables ecosystem reuse. This is when AI-native development scales beyond individual teams to community-level compound intelligence.
 
----
-
 ## Anti-Patterns
 
 Clear examples of what violates PROSE:
@@ -223,8 +197,6 @@ Clear examples of what violates PROSE:
 
 **The meta-pattern:** Most anti-patterns violate the principle that *context is finite and fragile*.
 
----
-
 ## The Outcomes
 
 When PROSE constraints are followed, systems exhibit:
@@ -238,9 +210,7 @@ When PROSE constraints are followed, systems exhibit:
 | **Transparency** | Agent behavior is inspectable and explainable |
 | **Security** | Explicit boundaries and inspectable behavior reduce attack surface and enable audit |
 
----
-
-## Summary
+## Key Takeaways
 
 **PROSE** is an architectural style for AI-native development defined by five constraints:
 
@@ -253,7 +223,5 @@ When PROSE constraints are followed, systems exhibit:
 | **E**xplicit Hierarchy | Layer guidance from global to local |
 
 When followed, these constraints induce reliability, scalability, and portability in AI-assisted development—independent of any specific model, platform, or technology.
-
----
 
 **Ready to implement PROSE?** Continue to [Core Concepts](../concepts/) for practical patterns, or jump to [Getting Started](../getting-started/) for hands-on implementation.

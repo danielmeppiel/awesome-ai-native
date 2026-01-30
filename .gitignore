@@ -26,3 +26,7 @@ awesome-cop-*.md
 # PROSE draft working documents
 PROSE-v0.1-draft.md
 PROSE-evolution-guide.md
+
+
+# APM dependencies
+apm_modules/

@@ -229,13 +229,14 @@ Clear examples of what violates PROSE:
 
 | Anti-Pattern | Violated Constraint | Why It Fails |
 |--------------|---------------------|--------------|
-| **Mega-prompt** | Orchestrated Composition | Monolithic instructions become unpredictable; too much competes for attention |
+| **Monolithic prompt** | Orchestrated Composition | All instructions in one block; small changes produce unpredictable results; impossible to debug |
+| **Unbounded task** | Reduced Scope | Task exceeds context capacity from the start; no decomposition; "refactor this entire codebase" fails silently |
 | **Context dumping** | Progressive Disclosure | Wastes context capacity; dilutes attention on what matters |
 | **Undocumented rules** | Grounding Principle #2 | Agents can only use explicit context; invisible rules produce invisible failures |
 | **Unbounded agent** | Scoped Boundaries | Unbounded autonomy + non-determinism = unpredictable and unsafe behavior |
 | **Flat instructions** | Explicit Hierarchy | No specialization possible; either over-general or polluted with irrelevant detail |
 | **Stale context** | Grounding Principle #2 | Context must be explicit *and current*; stale guidance produces stale results |
-| **Scope creep** | Reduced Scope | Attention degrades; quality suffers; agent loses track of earlier instructions |
+| **Scope creep** | Reduced Scope | Task grows incrementally mid-session; attention degrades; agent loses track of earlier instructions |
 
 **The meta-pattern:** Most anti-patterns violate the principle that *context is finite and fragile*.
 

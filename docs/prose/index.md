@@ -19,7 +19,7 @@ Just as code became the medium for directing CPUs, natural language is becoming 
 | **P**rogressive Disclosure | Structure information to reveal complexity progressively | Efficient context utilization |
 | **R**educed Scope | Match task size to context capacity | Manageable complexity |
 | **O**rchestrated Composition | Simple things compose; complex things collapse | Flexibility, reusability |
-| **S**coped Boundaries | Autonomy within guardrails | Reliability, security |
+| **S**coped Boundaries | Autonomy within guardrails | Reliability, security, verifiability |
 | **E**xplicit Hierarchy | Specificity increases as scope narrows | Modularity, inheritance |
 
 ## What PROSE Is Not
@@ -121,7 +121,7 @@ PROSE defines five architectural constraints. Each addresses a fundamental prope
 
 **Rationale:** LLMs reason better with clear, focused instructions. Composition preserves clarity while enabling sophistication. Monolithic prompts become unpredictable.
 
-**Mechanism:** `.instructions.md`, `.prompt.md`, `.agent.md` as atomic primitives. Skills as composable capability packages. Workflows as compositions, not mega-prompts.
+**Mechanism:** `.instructions.md`, `.prompt.md`, `.agent.md` as atomic primitives. Skills as composable capability packages. Workflows as compositions, not mega-prompts. Explicit contracts between agents working in parallel.
 
 **Induced Property:** Flexibility, reusability, maintainability.
 
@@ -131,13 +131,13 @@ PROSE defines five architectural constraints. Each addresses a fundamental prope
 
 **Constraint:** Every agent operates within explicit boundaries: what tools are available (capability), what context is loaded (knowledge), and what requires human approval (authority).
 
-**Rationale:** LLMs are non-deterministic. Unbounded autonomy produces unpredictable results. Boundaries constrain variance while preserving usefulness.
+**Rationale:** LLMs are non-deterministic and can hallucinate confidently. Unbounded autonomy produces unpredictable results. Boundaries constrain variance while preserving usefulness. Grounding outputs in deterministic tool execution transforms probabilistic generation into verifiable action.
 
-**Mechanism:** Tool whitelists. `applyTo` patterns for context scoping. Validation gates requiring human approval. Deterministic tools (MCP) as anchors.
+**Mechanism:** Tool whitelists. `applyTo` patterns for context scoping. Validation gates requiring human approval. Deterministic tools (MCP) as truth anchors—code execution, API calls, and file operations ground agent claims in verifiable reality.
 
-**Induced Property:** Reliability, trust, safety.
+**Induced Property:** Reliability, trust, safety, verifiability.
 
-*This constraint is foundational to agentic security—agents that operate within explicit boundaries are auditable, controllable, and safer.*
+*This constraint is foundational to agentic security—agents that operate within explicit boundaries are auditable, controllable, and safer. Grounded execution through deterministic tools addresses the hallucination problem at an architectural level.*
 
 ### E — Explicit Hierarchy
 

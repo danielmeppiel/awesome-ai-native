@@ -43,6 +43,48 @@ The industry has prompt engineering techniques for single interactions. But ther
 
 **PROSE** addresses this through architectural constraints that manage context as a scarce resource, provide structured guidance that scales, bound non-determinism through explicit boundaries, and enable reliable composition of AI capabilities.
 
+## Deriving the Constraints
+
+PROSE constraints aren't arbitrary. Each addresses a specific failure mode observed in AI-assisted development at scale.
+
+### Starting Point: Unconstrained Interaction
+
+Imagine AI-assisted development with zero structure: paste code into chat, ask questions, hope for the best. This works for trivial tasks. For anything complex, five failure modes emerge:
+
+**1. Context Overload**
+
+You load everything upfront—architecture docs, coding standards, all relevant source files. The model loses focus, forgets instructions, hallucinates to fill gaps. As one developer put it: *"Sometimes Copilot generates brilliant code, other times it's completely off-target."* The difference? What else was competing for attention.
+
+*Solution:* **Progressive Disclosure**—context arrives just-in-time, not just-in-case.
+
+**2. Scope Creep**
+
+A task starts focused: "Find and fix the bug." Mid-session you add: "also update the tests" and "while you're there, refactor that utility." Attention degrades with context length. Quality suffers. The agent loses track of earlier instructions.
+
+*Solution:* **Reduced Scope**—decompose into right-sized tasks with fresh context per phase. Compare *"Find and fix the bug"* with a [structured multi-step workflow](../concepts/#quick-win-example) that separates diagnosis, solution design, and implementation.
+
+**3. Monolithic Collapse**
+
+A single mega-prompt captures everything: role, rules, examples, constraints, output format. It works... sometimes. Small changes produce wildly different results. Debugging is impossible—which part failed? Teams report: *"Different requests for similar tasks produce wildly different quality results."*
+
+*Solution:* **Orchestrated Composition**—build from small, chainable primitives that compose predictably.
+
+**4. Unbounded Autonomy**
+
+The agent can execute any command, modify any file, access any service. Non-determinism plus unlimited authority equals unpredictable and unsafe behavior. Like professional licensing—architects shouldn't execute builds, engineers shouldn't set strategy—[agents need explicit capability boundaries](../getting-started/#custom-agents-configuration).
+
+*Solution:* **Scoped Boundaries**—define what tools, what knowledge, what requires approval.
+
+**5. Flat Guidance**
+
+Global instructions apply everywhere. Backend security rules load when editing frontend CSS. Frontend patterns load when writing database migrations. The industry fragmented into tool-specific formats—`.cursorrules`, `.clinerules`, `CLAUDE.md`—each locking teams into single tools, none providing hierarchy.
+
+*Solution:* **Explicit Hierarchy**—specificity increases as scope narrows, with [universal discovery](../concepts/#the-universal-discovery-challenge) through standards like AGENTS.md.
+
+### The Minimal Sufficient Set
+
+These five solutions become the five PROSE constraints. Each is necessary to address its failure mode. Together, they form a minimal sufficient set for reliable AI-native development at scale.
+
 ## The Five Constraints
 
 PROSE defines five architectural constraints. Each addresses a fundamental property of language models and induces desirable system properties.
@@ -224,4 +266,4 @@ When PROSE constraints are followed, systems exhibit:
 
 When followed, these constraints induce reliability, scalability, and portability in AI-assisted development—independent of any specific model, platform, or technology.
 
-**Ready to implement PROSE?** Continue to [Core Concepts](../concepts/) for practical patterns, or jump to [Getting Started](../getting-started/) for hands-on implementation.
+**Ready to implement PROSE?** Continue to [The Practice](../concepts/) for the three disciplines, or jump to [Getting Started](../getting-started/) for hands-on implementation.

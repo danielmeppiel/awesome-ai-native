@@ -8,7 +8,7 @@ nav_order: 4
 
 > **PROSE Focus:** Tooling supports **S**kills distribution and **E**ngineering practices.
 
-You've mastered the [Core concepts](../concepts/) and understand that your Agent Primitives are **executable software written in natural language**. Now comes the natural next question: how do these markdown files scale beyond your individual development workflow into production-grade infrastructure?
+You've mastered [The Practice](../concepts/) and understand that your Agent Primitives are **executable software written in natural language**. Now comes the natural next question: how do these markdown files scale beyond your individual development workflow into production-grade infrastructure?
 
 The answer mirrors every programming ecosystem's evolution. Just as JavaScript grew from browser scripts to need Node.js runtimes, package managers, and deployment tooling, your Agent Primitives need similar infrastructure to reach their full potential.
 

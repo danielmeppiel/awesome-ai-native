@@ -8,13 +8,13 @@
 
 **Programming has evolved.** From Assembly to Python, each abstraction brought us closer to human thought. Now we've reached the final layer: *prose itself becomes executable.*
 
-| | Component | What It Means |
-|---|-----------|---------------|
-| **P** | **Prompts** | Structured natural language that guides AI behavior |
-| **R** | **Reliability** | Deterministic outcomes through context engineering |
-| **O** | **Orchestration** | Multi-agent delegation and task decomposition |
-| **S** | **Skills** | Capability packages that onboard agents into projects |
-| **E** | **Engineering** | A new discipline—systematic AI-native development |
+| | Constraint | Principle | Induced Property |
+|---|------------|-----------|------------------|
+| **P** | **Progressive Disclosure** | Context arrives just-in-time, not just-in-case | Efficient context utilization |
+| **R** | **Reduced Scope** | Match task size to context capacity | Manageable complexity |
+| **O** | **Orchestrated Composition** | Simple things compose; complex things collapse | Flexibility, reusability |
+| **S** | **Scoped Boundaries** | Autonomy within guardrails | Reliability, security |
+| **E** | **Explicit Hierarchy** | Specificity increases as scope narrows | Modularity, inheritance |
 
 ---
 
@@ -23,10 +23,13 @@
 ### 📚 **[Complete Guide →](https://danielmeppiel.github.io/awesome-ai-native)**
 Access the full AI Native Development guide with improved navigation and structure
 
-### 🧠 **[Core Concepts →](https://danielmeppiel.github.io/awesome-ai-native/docs/concepts/)**  
-Understand the engineering principles behind reliable AI interactions
+### 🧠 **[The Practice →](https://danielmeppiel.github.io/awesome-ai-native/docs/concepts/)**  
+Three disciplines that implement PROSE: Prompt Engineering, Agent Primitives, Context Engineering
 
-### �️ **[Getting Started →](https://danielmeppiel.github.io/awesome-ai-native/docs/getting-started/)**
+### 🎯 **[PROSE Specification →](https://danielmeppiel.github.io/awesome-ai-native/docs/prose/)**  
+The architectural style definition—constraints, grounding principles, and derivation
+
+### 🛠️ **[Getting Started →](https://danielmeppiel.github.io/awesome-ai-native/docs/getting-started/)**
 Build your first Agent Primitives and see immediate results
 
 ### ⚙️ **[Agent Delegation →](https://danielmeppiel.github.io/awesome-ai-native/docs/agent-delegation/)**
@@ -63,15 +66,15 @@ Your AI interactions are **inconsistent and unreliable**:
 
 ### 🧠 Core Mental Model
 
-The PROSE specification maps to **professional software development practices**:
+Each PROSE constraint addresses a specific failure mode:
 
-| PROSE | Concept | Software Analogy |
-|-------|---------|------------------|
-| **P**rompts | Markdown Prompt Engineering | Coding patterns |
-| **R**eliability | Validation gates & determinism | Testing & CI/CD |
-| **O**rchestration | Agentic Workflows | Build pipelines |
-| **S**kills | Auto-discoverable packages | npm libraries |
-| **E**ngineering | Context optimization | Performance tuning |
+| Constraint | Failure Mode | Solution |
+|------------|--------------|----------|
+| **P**rogressive Disclosure | Context overload dilutes attention | Load context just-in-time |
+| **R**educed Scope | Scope creep degrades quality | Right-size tasks to context capacity |
+| **O**rchestrated Composition | Monolithic prompts collapse | Compose from small primitives |
+| **S**coped Boundaries | Unbounded autonomy is unsafe | Define tools, knowledge, approval |
+| **E**xplicit Hierarchy | Flat guidance pollutes context | Layer guidance global to local |
 
 ---
 

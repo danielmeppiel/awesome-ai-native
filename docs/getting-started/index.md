@@ -331,7 +331,7 @@ With Skills and primitives in place, you now have a complete foundation for syst
 
 **Foundation Complete?** You've installed Skills and built local primitives. Continue to [Tooling](../tooling/) to understand the infrastructure that makes these scale—context compilation, Skills composition, and the package management that enables everything that follows.
 
-**Want to understand the theory better?** Return to [Core Concepts](../concepts/) for deeper understanding of the PROSE specification.
+**Want to understand the disciplines?** Return to [The Practice](../concepts/) for deeper understanding of how techniques implement PROSE constraints.
 
 **Ready to jump ahead?** After Tooling, [Agent Delegation](../agent-delegation/) covers execution strategies, and [Team & Enterprise Scale](../team-adoption/) shows organizational implementation.
 

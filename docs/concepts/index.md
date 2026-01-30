@@ -1,28 +1,42 @@
 ---
 layout: docs
-title: "Concepts"
-display_title: "Core Concepts"
+title: "The Practice"
+display_title: "The Practice"
 permalink: /docs/concepts/
 nav_order: 2
 ---
 
-Most developers start with AI by throwing simple prompts at GitHub Copilot and hoping for the best. This approach works for simple tasks but breaks down when you need reliable, repeatable results for complex development work. The three-layer framework below transforms this ad-hoc experimentation into systematic engineering practices.
+The [PROSE Specification](../prose/) defines five architectural constraints for reliable AI-native development. This guide shows you how to implement them through three interlocking disciplines: structured prompting, reusable primitives, and strategic context management.
 
-> **📖 Want the theory?** See the [PROSE Specification](../prose/) for the architectural constraints that underpin these techniques.
+Whether you're coming from the spec or discovering these practices for the first time, mastering these disciplines gives you the skills to make AI collaboration reliable at scale.
 
-## Layer 1: Markdown Prompt Engineering
+## How The Practice Implements PROSE
+
+Each discipline implements specific [PROSE constraints](../prose/#the-five-constraints):
+
+| Discipline | What You Learn | PROSE Constraints |
+|------------|----------------|-------------------|
+| **Prompt Engineering** | Structured natural language syntax | Enables all constraints |
+| **Agent Primitives** | Reusable, composable configuration | Orchestrated Composition, Scoped Boundaries |
+| **Context Engineering** | Strategic context window management | Progressive Disclosure, Reduced Scope, Explicit Hierarchy |
+
+The disciplines build on each other: prompt engineering provides the syntax, primitives make it reusable, and context engineering makes it scale.
+
+## Discipline 1: Prompt Engineering
+*Enables all PROSE constraints*
+
 **The Foundation:** Transform natural language into structured, repeatable instructions using Markdown's semantic power.
 
 **Why This Works:** Markdown's structure (headers, lists, links) naturally guides AI reasoning, making outputs more predictable and consistent.
 
 ### Key Techniques
 
-- **Context Loading**: `[Review existing patterns](./src/patterns/)` - Links become context injection points that pull in relevant information, either from files or websites
+- **Context Loading** *(Progressive Disclosure)*: `[Review existing patterns](./src/patterns/)` - Links become context injection points that pull in relevant information, either from files or websites
 - **Structured Thinking**: Headers and bullets create clear reasoning pathways for the AI to follow
 - **Role Activation**: "You are an expert [role]" - Triggers specialized knowledge domains and focuses responses
-- **Tool Integration**: *Use MCP tool `tool-name`* - Connects to deterministic code execution from MCP servers
+- **Tool Integration** *(Scoped Boundaries)*: *Use MCP tool `tool-name`* - Connects to deterministic code execution from MCP servers
 - **Precision Language**: Eliminate ambiguity through specific, unambiguous instructions
-- **Validation Gates**: "Stop and get user approval" - Human oversight at critical decision points
+- **Validation Gates** *(Scoped Boundaries)*: "Stop and get user approval" - Human oversight at critical decision points
 
 ### Quick Win Example
 
@@ -44,19 +58,21 @@ Follow these steps:
 4. Present your root cause analysis and suggested solutions with trade-offs to the user and seek validation before proceeding with fixes - do not change any files.
 ```
 
-Once you've mastered structured prompting, you'll quickly realize that manually crafting perfect prompts for every task is unsustainable. This is where the second layer comes in: turning your prompt engineering insights into reusable, configurable systems.
+Once you've mastered structured prompting, you'll quickly realize that manually crafting perfect prompts for every task is unsustainable. This is where the second discipline comes in: turning your prompt engineering insights into reusable, configurable systems.
 
-## Layer 2: Agent Primitives  
-**The Implementation:** The configurable tools that systematically deploy your prompt engineering techniques.
+## Discipline 2: Agent Primitives  
+*Implements: Orchestrated Composition · Scoped Boundaries*
+
+**The Implementation:** Composable, bounded configuration files that systematically deploy your prompt engineering techniques.
 
 ### Core Primitives
 
-- **Instructions Files**: Deploy structured guidance through modular `.instructions.md` files with targeted scope
-- **Chat Modes**: Deploy role-based expertise through `.chatmode.md` files with MCP tool boundaries that prevent security breaches and cross-domain interference - like professional licenses that keep architects from building and engineers from planning
-- **Agentic Workflows**: Deploy reusable prompts through `.prompt.md` files with built-in validation
+- **Instructions Files** *(Orchestrated Composition)*: Deploy structured guidance through modular `.instructions.md` files with targeted scope
+- **Chat Modes** *(Scoped Boundaries)*: Deploy role-based expertise through `.chatmode.md` files with MCP tool boundaries that prevent security breaches and cross-domain interference - like professional licenses that keep architects from building and engineers from planning
+- **Agentic Workflows** *(Orchestrated Composition)*: Deploy reusable prompts through `.prompt.md` files with built-in validation
 - **Specification Files**: Create implementation-ready blueprints through `.spec.md` files that ensure deterministic outcomes across human and AI executors
 - **Agent Memory Files**: Preserve knowledge across sessions through `.memory.md` files
-- **Context Helper Files**: Optimize information retrieval through `.context.md` files
+- **Context Helper Files** *(Progressive Disclosure)*: Optimize information retrieval through `.context.md` files
 
 ### The Transformation Effect
 
@@ -69,13 +85,13 @@ Agent Primitives are the core configurable elements that AI Native Developers it
 
 This transformation might seem complex, but notice the pattern: what started as an ad-hoc request became a systematic workflow with clear handoff points, automatic context loading, and built-in validation. Each primitive file becomes a knowledge asset that improves with use, creating compound intelligence that serves your entire team.
 
-This transformation might seem complex, but notice the pattern: what started as an ad-hoc request became a systematic workflow with clear handoff points, automatic context loading, and built-in validation. Each primitive file becomes a knowledge asset that improves with use, creating compound intelligence that serves your entire team.
-
 > 💡 **Native VSCode Support**: While VSCode natively supports `.instructions.md`, `.prompt.md`, and `.chatmode.md` files, this framework extends the paradigm with `.spec.md`, `.memory.md`, and `.context.md` patterns that represent frontier concepts in AI Native Development.
 
-With your prompts structured and your primitives set up, you'll encounter a new challenge: even the best prompts and primitives can fail when they're drowning in irrelevant context or competing for limited AI attention. The third layer addresses this through strategic context management.
+With your prompts structured and your primitives set up, you'll encounter a new challenge: even the best prompts and primitives can fail when they're drowning in irrelevant context or competing for limited AI attention. The third discipline addresses this through strategic context management.
 
-## Layer 3: Context Engineering
+## Discipline 3: Context Engineering
+*Implements: Progressive Disclosure · Reduced Scope · Explicit Hierarchy*
+
 **The Strategic Framework:** Systematic management of LLM context windows to maximize agent performance within memory constraints.
 
 ### Why Context Matters
@@ -102,12 +118,12 @@ Agents walk up the directory tree and load the closest AGENTS.md file—domain-s
 
 ### Key Techniques
 
-- **Session Splitting**: Use distinct Agent sessions for different development phases (planning → implementation → testing). Fresh context = better focus
-- **Modular Rule Loading**: Author `.instructions.md` files with `applyTo` patterns—the precision tool for context loading. Compile to hierarchical `AGENTS.md` for universal portability
-- **Hierarchical Discovery**: Agents walk directory tree to load closest AGENTS.md—domain-specific context without global pollution. Automatic context optimization reduces context waste.
+- **Session Splitting** *(Reduced Scope)*: Use distinct Agent sessions for different development phases (planning → implementation → testing). Fresh context = better focus
+- **Modular Rule Loading** *(Progressive Disclosure)*: Author `.instructions.md` files with `applyTo` patterns—the precision tool for context loading. Compile to hierarchical `AGENTS.md` for universal portability
+- **Hierarchical Discovery** *(Explicit Hierarchy)*: Agents walk directory tree to load closest AGENTS.md—domain-specific context without global pollution. Automatic context optimization reduces context waste.
 - **Memory-Driven Development**: Leverage Agent Memory through `.memory.md` files to maintain project knowledge and decisions across sessions
-- **Context Optimization**: Use `.context.md` Context Helper Files to accelerate information retrieval and reduce cognitive load
-- **Cognitive Focus Optimization**: Use chat modes in `.chatmode.md` files to constrain AI attention to relevant domains
+- **Context Optimization** *(Progressive Disclosure)*: Use `.context.md` Context Helper Files to accelerate information retrieval and reduce cognitive load
+- **Cognitive Focus Optimization** *(Scoped Boundaries)*: Use chat modes in `.chatmode.md` files to constrain AI attention to relevant domains
 
 ### Practical Benefits
 
@@ -120,14 +136,14 @@ Agents walk up the directory tree and load the closest AGENTS.md file—domain-s
 
 **Implementation Through Primitives:** Each context engineering technique uses Agent Primitives strategically, creating compound benefits for cognitive performance.
 
-## Agentic Workflows: The Complete System in Action
+## Agentic Workflows: All Disciplines in Action
 
-Now that you understand all three layers, you can see how they combine into **Agentic Workflows** - complete, systematic processes that orchestrate all your primitives into end-to-end solutions. These workflows represent the practical application of the entire framework working together.
+Now that you understand all three disciplines, you can see how they combine into **Agentic Workflows** - complete, systematic processes that orchestrate all your primitives into end-to-end solutions. These workflows represent the practical application of the entire framework working together.
 
 **Agentic Workflows** are implemented as `.prompt.md` files that coordinate multiple primitives into unified processes, designed to work whether executed locally in your IDE or delegated to async agents.
 
 ### Key Characteristics:
-- **Full Orchestration**: Combine all three layers (Markdown Prompt Engineering + Agent Primitives + Context Engineering) into unified processes
+- **Full Orchestration**: Combine all three disciplines (Prompt Engineering + Agent Primitives + Context Engineering) into unified processes
 - **Complete Automation**: Handle entire development tasks from context loading through implementation to learning integration
 - **Execution Flexibility**: Designed to work whether executed locally or delegated to async GitHub Coding Agents
 - **Self-Improving Intelligence**: Include learning mechanisms that update primitives based on execution outcomes
@@ -140,7 +156,7 @@ Now that you understand all three layers, you can see how they combine into **Ag
 
 ```mermaid
 flowchart TD
-    A["🔧 Markdown Prompt<br/>Engineering"] 
+    A["🔧 Prompt<br/>Engineering"] 
     
     subgraph B ["⚙️ Agent Primitives"]
         subgraph B_ROW1 [" "]
@@ -183,20 +199,21 @@ flowchart TD
 
 </div>
 
-**Markdown Prompt Engineering + Agent Primitives + Context Engineering = Reliability**
+**Prompt Engineering + Agent Primitives + Context Engineering = Reliability**
 
 ## Key Takeaways
 
-1. **Markdown Prompt Engineering** provides the structural foundation for predictable AI interactions
-2. **Agent Primitives** are your configurable tools that scale and systematize these techniques  
-4. **Context Engineering** optimizes AI cognitive performance within memory constraints
-3. **Agentic Workflows** in Markdown apply prompt and context engineering leveraging Agent Primitives to implement complete, reliable agentic processes
-5. **The Framework** creates compound intelligence that improves through iterative refinement
+The three disciplines implement PROSE constraints:
 
-**Ready for hands-on implementation?** Continue to [Getting Started](../getting-started/) to build your first Agent Primitives with hierarchical organization.
+1. **Prompt Engineering** provides the structural syntax that enables all constraints
+2. **Agent Primitives** implement Orchestrated Composition and Scoped Boundaries through reusable, bounded files  
+3. **Context Engineering** implements Progressive Disclosure, Reduced Scope, and Explicit Hierarchy through strategic context management
+4. **Agentic Workflows** combine all disciplines into complete, reliable processes
 
-**Want to understand the tooling ecosystem?** Jump to [Tooling](../tooling/) to learn about Agent CLI Runtimes, context compilation, and agent package management.
+Together, these disciplines create compound intelligence that improves through iterative refinement.
 
-**Ready for hands-on implementation?** Jump to [Getting Started](../getting-started/) to build your first Agent Primitives and culminate with your first Agentic Workflow.
+**Ready for hands-on implementation?** Continue to [Getting Started](../getting-started/) to build your first Agent Primitives.
 
-**Want to see complete workflow execution strategies?** Jump to [Agent Delegation](../agent-delegation/) for local and async orchestration patterns.
+**Want to understand the tooling ecosystem?** Jump to [Tooling](../tooling/) for context compilation, package management, and production deployment.
+
+**Ready for advanced orchestration?** Jump to [Agent Delegation](../agent-delegation/) for execution strategies from local control to async delegation.

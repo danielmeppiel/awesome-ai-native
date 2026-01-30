@@ -14,7 +14,7 @@ permalink: /
 <div class="beyond-section">
   <p class="beyond-title">Beyond the specification</p>
   <p class="beyond-links">
-    <a href="docs/concepts/">Concepts</a>
+    <a href="docs/concepts/">The Practice</a>
     <span class="sep">·</span>
     <a href="docs/getting-started/">Getting Started</a>
     <span class="sep">·</span>

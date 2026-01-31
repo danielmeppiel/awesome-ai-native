@@ -18,6 +18,25 @@
 
 ---
 
+## 🔌 Install the PROSE Skill
+
+Use PROSE directly in Claude Code or GitHub Copilot CLI:
+
+```bash
+# Add the marketplace
+/plugin marketplace add danielmeppiel/awesome-ai-native
+
+# Install the skill
+/plugin install prose-architect@prose
+```
+
+Once installed, the skill auto-activates when you:
+- Ask to build an AI-native app from requirements
+- Want to make a legacy project AI-native
+- Need to design agent workflows or primitives
+
+---
+
 ## 🚀 Quick Access
 
 ### 📚 **[Complete Guide →](https://danielmeppiel.github.io/awesome-ai-native)**

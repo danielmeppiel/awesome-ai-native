@@ -1,11 +1,6 @@
 ---
 name: prose-architect
-description: |
-  Architect PROSE-compliant agent primitives for AI-native development.
-  Use when: (1) Building AI-native apps from requirements ("I want an app that...")
-  (2) Making legacy projects AI-native (3) Designing agent workflows
-  (4) Auditing existing primitives for reliability issues.
-  PROSE = Progressive Disclosure, Reduced Scope, Orchestrated Composition, Scoped Boundaries, Explicit Hierarchy
+description: Architect PROSE-compliant agent primitives for AI-native development. Use when (1) Building AI-native apps from requirements ("I want an app that...") (2) Making legacy projects AI-native (3) Designing agent workflows (4) Auditing existing primitives for reliability issues. PROSE = Progressive Disclosure, Reduced Scope, Orchestrated Composition, Scoped Boundaries, Explicit Hierarchy
 ---
 
 # PROSE Architect

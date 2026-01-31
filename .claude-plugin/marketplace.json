@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "prose",
+  "owner": {
+    "name": "Daniel Meppiel",
+    "url": "https://github.com/danielmeppiel"
+  },
+  "plugins": [
+    {
+      "name": "prose-architect",
+      "description": "Architect PROSE-compliant agent primitives for AI-native development. Build AI-native apps from requirements, make legacy projects AI-native, or design agent workflows.",
+      "source": "./skills/prose-architect",
+      "strict": false,
+      "version": "1.0.0",
+      "homepage": "https://danielmeppiel.github.io/awesome-ai-native/docs/prose/",
+      "keywords": ["prose", "ai-native", "agent-primitives", "architecture"]
+    }
+  ]
+}

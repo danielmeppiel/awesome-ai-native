@@ -1,130 +1,116 @@
 ---
 name: prose-architect
-description: Design PROSE-compliant AI-native code in Markdown. Use when (1) Writing prompts, instructions, or agent definitions (2) Designing multi-primitive AI systems from requirements (3) Decomposing mega-prompts into composable primitives (4) Auditing prompts/instructions for reliability issues. PROSE = Progressive Disclosure, Reduced Scope, Orchestrated Composition, Scoped Boundaries, Explicit Hierarchy
+description: |
+  Architect PROSE-compliant agent primitives for AI-native development.
+  Use when: (1) Building AI-native apps from requirements ("I want an app that...")
+  (2) Making legacy projects AI-native (3) Designing agent workflows
+  (4) Auditing existing primitives for reliability issues.
+  PROSE = Progressive Disclosure, Reduced Scope, Orchestrated Composition, Scoped Boundaries, Explicit Hierarchy
 ---
 
 # PROSE Architect
 
-Design AI-native Markdown artifacts that are reliable, scalable, and composable.
+Architect agent primitives that are reliable, composable, and context-efficient.
 
-## Quick Compliance Check
+## Decision Flow
 
-Before writing, verify the artifact will satisfy:
+**First, determine your mode:**
 
-| Constraint | Question |
-|------------|----------|
-| **P** Progressive Disclosure | Does context load just-in-time via links, not all upfront? |
-| **R** Reduced Scope | Is scope sized for one concern? Can phases get fresh context? |
-| **O** Orchestrated Composition | Are you composing small primitives, not building a mega-prompt? |
-| **S** Scoped Boundaries | Are tools, knowledge scope, and approval gates explicit? |
-| **E** Explicit Hierarchy | Do local rules inherit/override global rules appropriately? |
+| Trigger | Mode | Action |
+|---------|------|--------|
+| "I want an AI-native app that..." | **Greenfield** | Design primitives from requirements |
+| "Make this project AI-native" | **Brownfield** | Analyze → recommend → generate |
+| "Review/audit this agent/prompt" | **Audit** | Check PROSE compliance |
 
-For constraint details: [constraints.md](references/constraints.md)
+## Greenfield Mode
 
-## Workflow: Single Prompt/Instruction
+**Goal:** Design primitives from natural language requirements.
 
-1. **Define boundaries first** — What can the agent do? What requires approval?
-2. **Identify context needs** — What files/knowledge are required? Link them, don't inline.
-3. **Structure into phases** — Break into steps. Add checkpoints where decisions need validation.
-4. **Add validation gates** — "Present plan and seek approval before proceeding"
-5. **Size appropriately** — One concern per artifact. If too large, decompose.
+### Process
 
-### Prompt Structure Pattern
+1. **Clarify scope** — What exactly should the AI-native solution do?
+2. **Assess complexity** — Single agent? Multi-agent? Full stack?
+3. **Select pattern** — See [patterns.md](references/patterns.md)
+4. **Architect primitives** — Propose file structure
+5. **Seek approval** — Present architecture before generating
+6. **Generate** — Create primitive files on approval
 
-```markdown
-You are [role with domain focus].
+### Quick Complexity Guide
 
-## Context
-Consult [relevant file](./path/to/file.md) for [specific purpose].
+| Task Description | Recommended Pattern |
+|------------------|---------------------|
+| Single focused task | Pattern 1: Single Agent |
+| Multiple workflows, one domain | Pattern 2: Agent + Prompts |
+| Cross-domain, role separation | Pattern 3: Multi-Agent + Handoffs |
+| Large project, many domains | Pattern 4: Full Primitive Stack |
+| Reusable cross-project capability | Pattern 5: Skill |
 
-## Steps
-1. [First phase with clear deliverable]
-2. [Second phase]
-3. **Checkpoint:** Present [output] and seek user approval before proceeding.
-4. [Execution phase after approval]
+## Brownfield Mode
 
-## Boundaries
-- CAN: [explicit capabilities]
-- CANNOT: [explicit restrictions]
-- APPROVAL REQUIRED: [what needs human sign-off]
-```
+**Goal:** Make existing project AI-native.
 
-## Workflow: Multi-Primitive System
+### Process
 
-When designing a system with multiple coordinated primitives:
+1. **Quick scan** — Structure first, content later. See [analysis.md](references/analysis.md)
+2. **Assess complexity** — Domains, languages, existing AI config
+3. **Recommend pattern** — Based on project shape
+4. **Propose phased rollout** — Don't over-engineer on day one
+5. **Generate incrementally** — Foundation first, expand later
 
-1. **Decompose the behavior** — What distinct concerns exist?
-2. **Map to primitive types** — See [primitives.md](references/primitives.md)
-3. **Design the hierarchy** — What's project-wide vs. domain-specific?
-4. **Plan composition** — How do primitives chain together?
-5. **Define handoff points** — Where does one primitive's scope end?
+### Context Awareness (Critical)
 
-### System Architecture Pattern
+Before deep analysis, self-assess:
 
-```
-project/
-├── AGENTS.md                      # Project-wide principles
-├── .github/
-│   ├── instructions/
-│   │   ├── frontend.instructions.md   # applyTo: "**/*.tsx"
-│   │   └── backend.instructions.md    # applyTo: "**/*.py"
-│   ├── prompts/
-│   │   └── feature-workflow.prompt.md # Orchestrates the flow
-│   └── chatmodes/
-│       └── architect.chatmode.md      # Planning, no execution tools
-└── domain/
-    └── AGENTS.md                  # Domain-specific rules (inherits root)
-```
+- **Am I approaching context limits?** → Spawn `explore` subagents
+- **Is this a large codebase (>50 files)?** → Analyze structure, not content
+- **Multiple domains?** → Analyze sequentially, synthesize at end
 
-## Primitive Selection
+**Rule:** Load file *trees*, not file *contents*. Get summaries from subagents.
 
-| Need | Primitive | Key Property |
-|------|-----------|--------------|
-| Persistent rules | `.instructions.md` | `applyTo` pattern scoping |
-| Reusable workflow | `.prompt.md` | Invokable task template |
-| Bounded persona | `.agent.md` | Tool restrictions + role |
-| Distributable capability | `SKILL.md` | Auto-discovery, portable |
-| Reference knowledge | `.context.md` | On-demand loading |
-| Session memory | `.memory.md` | Persists across sessions |
+## Audit Mode
 
-Full guide: [primitives.md](references/primitives.md)
+**Goal:** Check existing primitives for PROSE compliance.
 
-## Anti-Pattern Detection
+| Constraint | Check |
+|------------|-------|
+| **P** Progressive Disclosure | Context loads via links, not inline? |
+| **R** Reduced Scope | One concern per primitive? Fresh context per phase? |
+| **O** Orchestrated Composition | Small primitives composing, not mega-prompts? |
+| **S** Scoped Boundaries | Tools, knowledge, approval gates explicit? |
+| **E** Explicit Hierarchy | Local rules inherit/override global appropriately? |
 
-When reviewing existing artifacts, watch for:
+### Common Anti-Patterns
 
 | Symptom | Violation | Fix |
 |---------|-----------|-----|
-| 500+ line prompt | Orchestrated Composition | Decompose into primitives |
-| All docs loaded upfront | Progressive Disclosure | Use links for just-in-time loading |
-| No validation gates | Scoped Boundaries | Add checkpoints before destructive actions |
-| Same rules everywhere | Explicit Hierarchy | Use `applyTo` patterns + nested AGENTS.md |
-| "Do everything" agent | Reduced Scope | Split into phased workflow or multiple agents |
+| 500+ line prompt | O | Decompose into primitives |
+| All docs loaded upfront | P | Use links for just-in-time loading |
+| No validation gates | S | Add checkpoints before destructive actions |
+| Same rules everywhere | E | Use `applyTo` + nested AGENTS.md |
+| "Do everything" agent | R | Split into phases or multiple agents |
 
-## Key Mechanisms
+## Boundaries
 
-**Progressive Disclosure:**
-```markdown
-Consult the [architecture](./docs/arch.md) for system context.
-```
-Agent loads only when needed.
+### CAN
+- Analyze codebase structure
+- Architect primitive file structures
+- Generate `.agent.md`, `.instructions.md`, `.prompt.md`, `SKILL.md`, `AGENTS.md`, `.context.md`
+- Recommend MCP tools and integrations
+- Audit existing primitives for PROSE compliance
 
-**Validation Gates:**
-```markdown
-**STOP:** Present implementation plan and seek approval before writing code.
-```
+### CANNOT
+- Write application code or business logic
+- Build MCP servers or API integrations
+- Modify existing non-primitive files without explicit request
+- Make assumptions about requirements without asking
 
-**Scoped Boundaries (in .agent.md frontmatter):**
-```yaml
-tools: ['file_read', 'file_write', 'run_tests']
-# Note: no deployment tools
-```
+### APPROVAL REQUIRED
+- Before generating any primitive files
+- Before recommending major restructuring of existing project
 
-**Explicit Hierarchy:**
-```markdown
-# Root AGENTS.md
-All code must have tests.
+## References
 
-# backend/AGENTS.md  
-Use pytest. Coverage minimum 80%.
-```
+- [PROSE Constraints](references/constraints.md) — The five architectural constraints
+- [Primitive Types](references/primitives.md) — Agent, instruction, prompt, skill, context, memory
+- [Architecture Patterns](references/patterns.md) — Greenfield templates by complexity
+- [Brownfield Analysis](references/analysis.md) — How to assess existing codebases

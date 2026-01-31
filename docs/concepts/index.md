@@ -17,7 +17,7 @@ Each discipline implements specific [PROSE constraints](../prose/#the-five-const
 | Discipline | What You Learn | PROSE Constraints |
 |------------|----------------|-------------------|
 | **Prompt Engineering** | Structured natural language syntax | Enables all constraints |
-| **Agent Primitives** | Reusable, composable configuration | Orchestrated Composition, Scoped Boundaries |
+| **Agent Primitives** | Reusable, composable configuration | Orchestrated Composition, Safety Boundaries |
 | **Context Engineering** | Strategic context window management | Progressive Disclosure, Reduced Scope, Explicit Hierarchy |
 
 The disciplines build on each other: prompt engineering provides the syntax, primitives make it reusable, and context engineering makes it scale.
@@ -34,9 +34,9 @@ The disciplines build on each other: prompt engineering provides the syntax, pri
 - **Context Loading** *(Progressive Disclosure)*: `[Review existing patterns](./src/patterns/)` - Links become context injection points that pull in relevant information, either from files or websites
 - **Structured Thinking**: Headers and bullets create clear reasoning pathways for the AI to follow
 - **Role Activation**: "You are an expert [role]" - Triggers specialized knowledge domains and focuses responses
-- **Tool Integration** *(Scoped Boundaries)*: *Use MCP tool `tool-name`* - Connects to deterministic code execution from MCP servers
+- **Tool Integration** *(Safety Boundaries)*: *Use MCP tool `tool-name`* - Connects to deterministic code execution from MCP servers
 - **Precision Language**: Eliminate ambiguity through specific, unambiguous instructions
-- **Validation Gates** *(Scoped Boundaries)*: "Stop and get user approval" - Human oversight at critical decision points
+- **Validation Gates** *(Safety Boundaries)*: "Stop and get user approval" - Human oversight at critical decision points
 
 ### Quick Win Example
 
@@ -61,14 +61,14 @@ Follow these steps:
 Once you've mastered structured prompting, you'll quickly realize that manually crafting perfect prompts for every task is unsustainable. This is where the second discipline comes in: turning your prompt engineering insights into reusable, configurable systems.
 
 ## Discipline 2: Agent Primitives  
-*Implements: Orchestrated Composition · Scoped Boundaries*
+*Implements: Orchestrated Composition · Safety Boundaries*
 
 **The Implementation:** Composable, bounded configuration files that systematically deploy your prompt engineering techniques.
 
 ### Core Primitives
 
 - **Instructions Files** *(Orchestrated Composition)*: Deploy structured guidance through modular `.instructions.md` files with targeted scope
-- **Chat Modes** *(Scoped Boundaries)*: Deploy role-based expertise through `.chatmode.md` files with MCP tool boundaries that prevent security breaches and cross-domain interference - like professional licenses that keep architects from building and engineers from planning
+- **Chat Modes** *(Safety Boundaries)*: Deploy role-based expertise through `.chatmode.md` files with MCP tool boundaries that prevent security breaches and cross-domain interference - like professional licenses that keep architects from building and engineers from planning
 - **Agentic Workflows** *(Orchestrated Composition)*: Deploy reusable prompts through `.prompt.md` files with built-in validation
 - **Specification Files**: Create implementation-ready blueprints through `.spec.md` files that ensure deterministic outcomes across human and AI executors
 - **Agent Memory Files**: Preserve knowledge across sessions through `.memory.md` files
@@ -123,7 +123,7 @@ Agents walk up the directory tree and load the closest AGENTS.md file—domain-s
 - **Hierarchical Discovery** *(Explicit Hierarchy)*: Agents walk directory tree to load closest AGENTS.md—domain-specific context without global pollution. Automatic context optimization reduces context waste.
 - **Memory-Driven Development**: Leverage Agent Memory through `.memory.md` files to maintain project knowledge and decisions across sessions
 - **Context Optimization** *(Progressive Disclosure)*: Use `.context.md` Context Helper Files to accelerate information retrieval and reduce cognitive load
-- **Cognitive Focus Optimization** *(Scoped Boundaries)*: Use chat modes in `.chatmode.md` files to constrain AI attention to relevant domains
+- **Cognitive Focus Optimization** *(Safety Boundaries)*: Use chat modes in `.chatmode.md` files to constrain AI attention to relevant domains
 
 ### Practical Benefits
 
@@ -206,7 +206,7 @@ flowchart TD
 The three disciplines implement PROSE constraints:
 
 1. **Prompt Engineering** provides the structural syntax that enables all constraints
-2. **Agent Primitives** implement Orchestrated Composition and Scoped Boundaries through reusable, bounded files  
+2. **Agent Primitives** implement Orchestrated Composition and Safety Boundaries through reusable, bounded files  
 3. **Context Engineering** implements Progressive Disclosure, Reduced Scope, and Explicit Hierarchy through strategic context management
 4. **Agentic Workflows** combine all disciplines into complete, reliable processes
 

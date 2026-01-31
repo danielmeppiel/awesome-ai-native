@@ -19,7 +19,7 @@ Just as code became the medium for directing CPUs, natural language is becoming 
 | **P**rogressive Disclosure | Structure information to reveal complexity progressively | Efficient context utilization |
 | **R**educed Scope | Match task size to context capacity | Manageable complexity |
 | **O**rchestrated Composition | Simple things compose; complex things collapse | Flexibility, reusability |
-| **S**coped Boundaries | Autonomy within guardrails | Reliability, security, verifiability |
+| **S**afety Boundaries | Autonomy within guardrails | Reliability, security, verifiability |
 | **E**xplicit Hierarchy | Specificity increases as scope narrows | Modularity, inheritance |
 
 ## What PROSE Is Not
@@ -73,7 +73,7 @@ A single mega-prompt captures everything: role, rules, examples, constraints, ou
 
 The agent can execute any command, modify any file, access any service. Non-determinism plus unlimited authority equals unpredictable and unsafe behavior. Like professional licensing—architects shouldn't execute builds, engineers shouldn't set strategy—[agents need explicit capability boundaries](../getting-started/#custom-agents-configuration).
 
-*Solution:* **Scoped Boundaries**—define what tools, what knowledge, what requires approval.
+*Solution:* **Safety Boundaries**—define what tools, what knowledge, what requires approval.
 
 **5. Flat Guidance**
 
@@ -125,7 +125,7 @@ PROSE defines five architectural constraints. Each addresses a fundamental prope
 
 **Induced Property:** Flexibility, reusability, maintainability.
 
-### S — Scoped Boundaries
+### S — Safety Boundaries
 
 > *"Autonomy within guardrails."*
 
@@ -158,7 +158,7 @@ The five constraints form an integrated system:
 - **Progressive Disclosure** determines *what* enters context
 - **Reduced Scope** determines *how much* the agent handles at once
 - **Orchestrated Composition** determines *how primitives combine*
-- **Scoped Boundaries** determine *what the agent can do*
+- **Safety Boundaries** determine *what the agent can do*
 - **Explicit Hierarchy** determines *which rules apply*
 
 ## Grounding Principles
@@ -194,7 +194,7 @@ Assess whether your AI-native development approach is PROSE-compliant:
 | **Progressive Disclosure** | Is context loaded on-demand rather than all upfront? Do agents see indexes/summaries before full detail? | |
 | **Reduced Scope** | Are complex tasks decomposed into right-sized subtasks? Do agents get fresh context per phase? | |
 | **Orchestrated Composition** | Are capabilities built from small, chainable primitives? Or do you rely on monolithic mega-prompts? | |
-| **Scoped Boundaries** | Are agent capabilities, knowledge scope, and approval requirements explicitly defined? | |
+| **Safety Boundaries** | Are agent capabilities, knowledge scope, and approval requirements explicitly defined? | |
 | **Explicit Hierarchy** | Do instructions form a global-to-local hierarchy? Can local rules specialize or override global ones? | |
 
 **Scoring:**
@@ -232,7 +232,7 @@ Clear examples of what violates PROSE:
 | **Monolithic prompt** | Orchestrated Composition | All instructions in one block; small changes produce unpredictable results; impossible to debug |
 | **Context dumping** | Progressive Disclosure | Wastes context capacity; dilutes attention on what matters |
 | **Undocumented rules** | Grounding Principle #2 | Agents can only use explicit context; invisible rules produce invisible failures |
-| **Unbounded agent** | Scoped Boundaries | Unbounded autonomy + non-determinism = unpredictable and unsafe behavior |
+| **Unbounded agent** | Safety Boundaries | Unbounded autonomy + non-determinism = unpredictable and unsafe behavior |
 | **Flat instructions** | Explicit Hierarchy | No specialization possible; either over-general or polluted with irrelevant detail |
 | **Stale context** | Grounding Principle #2 | Context must be explicit *and current*; stale guidance produces stale results |
 | **Scope creep** | Reduced Scope | Task grows beyond context capacity; attention degrades; agent loses track of earlier instructions |
@@ -261,7 +261,7 @@ When PROSE constraints are followed, systems exhibit:
 | **P**rogressive Disclosure | Load context just-in-time |
 | **R**educed Scope | Right-size tasks to context capacity |
 | **O**rchestrated Composition | Compose simple primitives |
-| **S**coped Boundaries | Bound autonomy with explicit limits |
+| **S**afety Boundaries | Bound autonomy with explicit limits |
 | **E**xplicit Hierarchy | Layer guidance from global to local |
 
 When followed, these constraints induce reliability, scalability, and portability in AI-assisted development—independent of any specific model, platform, or technology.

@@ -13,7 +13,7 @@
 | **P** | **Progressive Disclosure** | Context arrives just-in-time, not just-in-case | Efficient context utilization |
 | **R** | **Reduced Scope** | Match task size to context capacity | Manageable complexity |
 | **O** | **Orchestrated Composition** | Simple things compose; complex things collapse | Flexibility, reusability |
-| **S** | **Scoped Boundaries** | Autonomy within guardrails | Reliability, security |
+| **S** | **Safety Boundaries** | Autonomy within guardrails | Reliability, security |
 | **E** | **Explicit Hierarchy** | Specificity increases as scope narrows | Modularity, inheritance |
 
 ---

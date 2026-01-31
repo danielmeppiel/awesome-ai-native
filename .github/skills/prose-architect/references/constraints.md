@@ -47,7 +47,7 @@ Five architectural constraints for reliable AI-native development.
 
 ---
 
-## S — Scoped Boundaries
+## S — Safety Boundaries
 
 > *"Autonomy within guardrails."*
 

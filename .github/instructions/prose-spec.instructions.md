@@ -13,7 +13,7 @@ All constraint definitions live in: [PROSE Spec](../../docs/prose/index.md)
 
 ## Rules
 
-1. **Constraint Consistency** - New content must align with existing PROSE constraints (Progressive Disclosure, Reduced Scope, Orchestrated Composition, Scoped Boundaries, Explicit Hierarchy)
+1. **Constraint Consistency** - New content must align with existing PROSE constraints (Progressive Disclosure, Reduced Scope, Orchestrated Composition, Safety Boundaries, Explicit Hierarchy)
 
 2. **Example Updates** - When adding or modifying concepts, provide concrete examples that demonstrate the principle
 

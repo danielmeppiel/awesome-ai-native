@@ -1,6 +1,6 @@
 ---
 name: prose-architect
-description: Architect PROSE-compliant agent primitives for AI-native development. Use when (1) Building AI-native apps from requirements ("I want an app that...") (2) Making legacy projects AI-native (3) Designing agent workflows (4) Auditing existing primitives for reliability issues. PROSE = Progressive Disclosure, Reduced Scope, Orchestrated Composition, Scoped Boundaries, Explicit Hierarchy
+description: Architect PROSE-compliant agent primitives for AI-native development. Use when (1) Building AI-native apps from requirements ("I want an app that...") (2) Making legacy projects AI-native (3) Designing agent workflows (4) Auditing existing primitives for reliability issues. PROSE = Progressive Disclosure, Reduced Scope, Orchestrated Composition, Safety Boundaries, Explicit Hierarchy
 ---
 
 # PROSE Architect
@@ -71,7 +71,7 @@ Before deep analysis, self-assess:
 | **P** Progressive Disclosure | Context loads via links, not inline? |
 | **R** Reduced Scope | One concern per primitive? Fresh context per phase? |
 | **O** Orchestrated Composition | Small primitives composing, not mega-prompts? |
-| **S** Scoped Boundaries | Tools, knowledge, approval gates explicit? |
+| **S** Safety Boundaries | Tools, knowledge, approval gates explicit? |
 | **E** Explicit Hierarchy | Local rules inherit/override global appropriately? |
 
 ### Common Anti-Patterns

@@ -20,7 +20,7 @@ description: "React component guidelines"
 - Test with React Testing Library
 ```
 
-**PROSE alignment:** Explicit Hierarchy (E), Scoped Boundaries (S)
+**PROSE alignment:** Explicit Hierarchy (E), Safety Boundaries (S)
 
 ---
 
@@ -78,7 +78,7 @@ You are a backend development specialist.
 - CANNOT: Modify frontend, deploy to production
 ```
 
-**PROSE alignment:** Scoped Boundaries (S)
+**PROSE alignment:** Safety Boundaries (S)
 
 ---
 

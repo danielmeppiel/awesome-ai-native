@@ -50,23 +50,26 @@ Once installed, the skill auto-activates when you:
 ### 📚 **[Complete Guide →](https://danielmeppiel.github.io/awesome-ai-native)**
 Access the full AI Native Development guide with improved navigation and structure
 
-### 🧠 **[The Practice →](https://danielmeppiel.github.io/awesome-ai-native/docs/concepts/)**  
-Three disciplines that implement PROSE: Prompt Engineering, Agent Primitives, Context Engineering
-
-### 🎯 **[PROSE Specification →](https://danielmeppiel.github.io/awesome-ai-native/docs/prose/)**  
-The architectural style definition—constraints, grounding principles, and derivation
-
 ### 🛠️ **[Getting Started →](https://danielmeppiel.github.io/awesome-ai-native/docs/getting-started/)**
-Build your first Agent Primitives and see immediate results
+Build your first Agent Primitives in Copilot and see immediate results
+
+### 🧠 **[The Practice →](https://danielmeppiel.github.io/awesome-ai-native/docs/concepts/)**
+The 10-minute operating model: three disciplines (Prompt Engineering, Agent Primitives, Context Engineering) and how they map to the seven primitives — the short, shareable mental map for your team
+
+### 🎯 **[The PROSE Specification (Handbook Ch12) →](https://danielmeppiel.github.io/agentic-sdlc-handbook/handbook/ch12-the-prose-specification.html)**
+The architectural style definition lives in the handbook—constraints, grounding principles, and derivation in their full form
 
 ### ⚙️ **[Agent Delegation →](https://danielmeppiel.github.io/awesome-ai-native/docs/agent-delegation/)**
-Master advanced patterns and async delegation workflows
+Hands-on patterns for delegating work to GitHub Copilot Coding Agent and orchestrating parallel work
 
-### 👥 **[Team Adoption →](https://danielmeppiel.github.io/awesome-ai-native/docs/team-adoption/)**
-Scale AI Native Development across your organization
+### 🛠️ **[Tooling →](https://danielmeppiel.github.io/awesome-ai-native/docs/tooling/)**
+APM, runtimes, packaging, and CI/CD for shipping your primitives
 
 ### 📚 **[Reference Guide →](https://danielmeppiel.github.io/awesome-ai-native/docs/reference/)**
-Checklists, progression guides, and documentation links
+Checklists, documentation links, and quick troubleshooting
+
+### 👥 **[Team & Enterprise Scale (Handbook Part II) →](https://danielmeppiel.github.io/agentic-sdlc-handbook/handbook/ch05-governance-for-ai-assisted-delivery.html)**
+Governance, team structures, and transition planning live in the handbook
 
 ---
 

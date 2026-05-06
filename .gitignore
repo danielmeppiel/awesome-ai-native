@@ -30,3 +30,6 @@ PROSE-evolution-guide.md
 
 # APM dependencies
 apm_modules/
+
+# Local working notes (not for publication)
+.local/

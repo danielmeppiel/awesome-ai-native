@@ -3,12 +3,17 @@ layout: docs
 title: "Getting Started"
 display_title: "Getting Started"
 permalink: /docs/getting-started/
-nav_order: 3
+nav_order: 2
 ---
+
+> 📖 **Deep dive in the handbook:** [Chapter 11 — The Instrumented Codebase →](https://danielmeppiel.github.io/agentic-sdlc-handbook/handbook/ch11-the-instrumented-codebase.html)
+> This page is the practical, Copilot-focused walkthrough. The handbook gives you the *why* behind the seven primitive types — load mechanics, composition, and the deterministic / probabilistic boundary.
+
+> 🧭 **New to this?** Start with [**The Practice →**](../concepts/) for the 10-minute operating model — three disciplines, one shareable mental map. Then come back here to ship your first primitive.
 
 > **PROSE Focus:** This section is hands-on **P**rompts and **S**kills—building your first primitives.
 
-Now that you understand the [PROSE Specification](../prose/), it's time to build your AI Native Development environment. This hands-on implementation will give you immediate productivity improvements while establishing the foundation for more advanced workflows.
+Now that you understand the [PROSE Specification](https://danielmeppiel.github.io/agentic-sdlc-handbook/handbook/ch12-the-prose-specification.html), it's time to build your AI Native Development environment. This hands-on implementation will give you immediate productivity improvements while establishing the foundation for more advanced workflows.
 
 The setup follows a logical progression: start by installing Skills that provide instant capabilities, then add local instructions for project-specific guidance, configure custom agents for safe boundaries, build reusable prompts for common tasks, and create specification templates that bridge planning to implementation.
 
@@ -86,28 +91,30 @@ Generate code with:
 
 ## Custom Agents Configuration
 
-With your instruction architecture in place, you need a way to enforce domain boundaries and prevent AI agents from overstepping their expertise. Custom Agents solve this by creating professional boundaries similar to real-world licensing—architects plan but don't build, engineers execute but don't set strategy.
+With your instruction architecture in place, you need a way to enforce domain boundaries and prevent AI agents from overstepping their expertise. Custom Agents (`.agent.md` files) solve this by creating professional boundaries similar to real-world licensing—architects plan but don't build, engineers execute but don't set strategy.
+
+> 📖 **Deep dive in the handbook:** [Chapter 11 §Agents →](https://danielmeppiel.github.io/agentic-sdlc-handbook/handbook/ch11-the-instrumented-codebase.html) explains the persona-lens model. Custom Agents replaced the legacy `.chatmode.md` files. For composition with Skills, see [Chapter 21 →](https://danielmeppiel.github.io/agentic-sdlc-handbook/handbook/ch21-the-reference-architecture-earned.html).
 
 **✅ Quick Actions:**
-- Define domain-specific [custom agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents) with MCP tool boundaries
-- Encapsulate tech stack knowledge and guidelines per mode
-- Define the most appropriate [LLM model](https://code.visualstudio.com/docs/copilot/customization/custom-agents#_custom-agent-example) for your chat mode like `Claude Sonnet 4`
+- Define domain-specific [Custom Agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents) with MCP tool boundaries
+- Encapsulate tech stack knowledge and guidelines per agent
+- Define the most appropriate [LLM model](https://code.visualstudio.com/docs/copilot/customization/custom-agents#_custom-agent-example) per agent like `Claude Sonnet 4`
 - Configure secure [MCP tool access](https://code.visualstudio.com/docs/copilot/customization/custom-agents#_custom-agent-example) to prevent cross-domain security breaches
 
-> 💡 **Security Through MCP Tool Boundaries**: Each chat mode receives only the specific MCP tools needed for their domain - preventing dangerous access escalation and cross-contamination. Like professional licensing, a planning mode can't execute destructive commands, and a frontend mode can't access backend databases.
+> 💡 **Security Through MCP Tool Boundaries**: Each Custom Agent receives only the specific MCP tools needed for their domain - preventing dangerous access escalation and cross-contamination. Like professional licensing, a planning agent can't execute destructive commands, and a frontend agent can't access backend databases.
 
 ### 🔧 Tools & Files:
 ```
 .github/
-└── chatmodes/
-    ├── architect.chatmode.md             # Planning specialist - designs, cannot execute
-    ├── frontend-engineer.chatmode.md     # UI specialist - builds interfaces, no backend access
-    ├── backend-engineer.chatmode.md      # API specialist - builds services, no UI modification
-    └── technical-writer.chatmode.md      # Documentation specialist - writes docs, cannot run code
+└── agents/
+    ├── architect.agent.md             # Planning specialist - designs, cannot execute
+    ├── frontend-engineer.agent.md     # UI specialist - builds interfaces, no backend access
+    ├── backend-engineer.agent.md      # API specialist - builds services, no UI modification
+    └── technical-writer.agent.md      # Documentation specialist - writes docs, cannot run code
 ```
 
 ### Example: MCP Tool Boundary Implementation
-Create your `.github/chatmodes/backend-engineer.chatmode.md` file:
+Create your `.github/agents/backend-engineer.agent.md` file:
 
 ```yaml
 ---
@@ -133,14 +140,14 @@ You master the backend of this project thanks to you having read all [the backen
 ```
 
 ### Security & Professional Boundaries:
-- **Architect mode**: Research tools only - **cannot execute destructive commands or modify production code**
-- **Frontend Engineer mode**: UI development tools only - **cannot access databases or backend services** 
-- **Backend Engineer mode**: API and database tools only - **cannot modify user interfaces or frontend assets**
-- **Technical Writer mode**: Documentation tools only - **cannot run code, deploy, or access sensitive systems**
+- **Architect agent**: Research tools only - **cannot execute destructive commands or modify production code**
+- **Frontend Engineer agent**: UI development tools only - **cannot access databases or backend services**
+- **Backend Engineer agent**: API and database tools only - **cannot modify user interfaces or frontend assets**
+- **Technical Writer agent**: Documentation tools only - **cannot run code, deploy, or access sensitive systems**
 
-*Like real-world professional licenses, each mode operates within its area of competence and cannot overstep into dangerous territory.*
+*Like real-world professional licenses, each Custom Agent operates within its area of competence and cannot overstep into dangerous territory.*
 
-**⚠️ Checkpoint:** Each mode has clear boundaries and tool restrictions
+**⚠️ Checkpoint:** Each Custom Agent has clear boundaries and tool restrictions
 
 ## Agentic Workflows
 
@@ -331,8 +338,8 @@ With Skills and primitives in place, you now have a complete foundation for syst
 
 **Foundation Complete?** You've installed Skills and built local primitives. Continue to [Tooling](../tooling/) to understand the infrastructure that makes these scale—context compilation, Skills composition, and the package management that enables everything that follows.
 
-**Want to understand the disciplines?** Return to [The Practice](../concepts/) for deeper understanding of how techniques implement PROSE constraints.
+> 🎯 **Now share *why* this works with your team.** You've shipped your first primitive — that's the hardest part. The piece that turns one engineer's setup into a team standard is **[The Practice →](../concepts/)**: the short, repostable operating model your lead can socialise in Slack, architecture reviews, and onboarding docs. It's the page customers used to mandate this approach across their engineering orgs.
 
-**Ready to jump ahead?** After Tooling, [Agent Delegation](../agent-delegation/) covers execution strategies, and [Team & Enterprise Scale](../team-adoption/) shows organizational implementation.
+**Ready to jump ahead?** After Tooling, [Agent Delegation](../agent-delegation/) covers execution strategies, and [Team & Enterprise Scale (Handbook Part II)](https://danielmeppiel.github.io/agentic-sdlc-handbook/handbook/ch05-governance-for-ai-assisted-delivery.html) covers governance and organisational rollout.
 
 *You now have Skills installed, local primitives configured, and understand how to package agent capabilities for reuse. The next step is understanding the infrastructure that makes these primitives executable, shareable, and production-ready.*

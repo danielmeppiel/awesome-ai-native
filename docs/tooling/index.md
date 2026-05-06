@@ -3,8 +3,11 @@ layout: docs
 title: "Tooling"
 display_title: "Tooling: Scaling Agent Primitives"
 permalink: /docs/tooling/
-nav_order: 4
+nav_order: 2
 ---
+
+> 📖 **Deep dive in the handbook:** [Chapter 20 — Primitives as Code →](https://danielmeppiel.github.io/agentic-sdlc-handbook/handbook/ch20-primitives-as-code.html)
+> This page is the practical Copilot/APM tooling reference — runtimes, packaging, CI/CD. The handbook covers the *why* behind treating primitives as code: dependency management, distribution semantics, and the path to plugins and marketplaces.
 
 > **PROSE Focus:** Tooling supports **S**kills distribution and **E**ngineering practices.
 

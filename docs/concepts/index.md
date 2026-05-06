@@ -3,22 +3,26 @@ layout: docs
 title: "The Practice"
 display_title: "The Practice"
 permalink: /docs/concepts/
-nav_order: 2
+nav_order: 1
 ---
 
-The [PROSE Specification](../prose/) defines five architectural constraints for reliable AI-native development. This guide shows you how to implement them through three interlocking disciplines: structured prompting, reusable primitives, and strategic context management.
+**PROSE turns AI-assisted coding from clever prompts into a repeatable engineering practice: three disciplines, seven primitives, one operating model.**
 
-Whether you're coming from the spec or discovering these practices for the first time, mastering these disciplines gives you the skills to make AI collaboration reliable at scale.
+> 📖 **Deep dive in the handbook:** [Chapter 11 — The Instrumented Codebase →](https://danielmeppiel.github.io/agentic-sdlc-handbook/handbook/ch11-the-instrumented-codebase.html) catalogues the **seven primitive types** (Skills, Agents, Instructions, Prompts, Hooks, Memory, Plans) and the load mechanics behind them. This page is the **operating model** — the short, shareable mental map that every engineer on your team needs before they pick up the primitives.
+
+The [PROSE Specification](https://danielmeppiel.github.io/agentic-sdlc-handbook/handbook/ch12-the-prose-specification.html) defines five architectural constraints for reliable AI-native development. This page shows you how to implement them through three interlocking disciplines: structured prompting, reusable primitives, and strategic context management.
+
+The Three Disciplines are the **operating model**; the seven primitives are the **implementation vocabulary**. Once you internalise the disciplines, the primitives become natural moves — not a taxonomy to memorise.
 
 ## How The Practice Implements PROSE
 
-Each discipline implements specific [PROSE constraints](../prose/#the-five-constraints):
+Each discipline implements specific [PROSE constraints](https://danielmeppiel.github.io/agentic-sdlc-handbook/handbook/ch12-the-prose-specification.html#the-five-constraints):
 
-| Discipline | What You Learn | PROSE Constraints |
-|------------|----------------|-------------------|
-| **Prompt Engineering** | Structured natural language syntax | Enables all constraints |
-| **Agent Primitives** | Reusable, composable configuration | Orchestrated Composition, Safety Boundaries |
-| **Context Engineering** | Strategic context window management | Progressive Disclosure, Reduced Scope, Explicit Hierarchy |
+| Discipline | What You Learn | PROSE Constraints | Implemented by primitives |
+|------------|----------------|-------------------|---------------------------|
+| **Prompt Engineering** | Structured natural language syntax | Enables all constraints | Prompts, Skills |
+| **Agent Primitives** | Reusable, composable configuration | Orchestrated Composition, Safety Boundaries | Custom Agents, Skills, Hooks |
+| **Context Engineering** | Strategic context window management | Progressive Disclosure, Reduced Scope, Explicit Hierarchy | Instructions, Memory, Plans |
 
 The disciplines build on each other: prompt engineering provides the syntax, primitives make it reusable, and context engineering makes it scale.
 
@@ -68,7 +72,8 @@ Once you've mastered structured prompting, you'll quickly realize that manually 
 ### Core Primitives
 
 - **Instructions Files** *(Orchestrated Composition)*: Deploy structured guidance through modular `.instructions.md` files with targeted scope
-- **Chat Modes** *(Safety Boundaries)*: Deploy role-based expertise through `.chatmode.md` files with MCP tool boundaries that prevent security breaches and cross-domain interference - like professional licenses that keep architects from building and engineers from planning
+- **Custom Agents** *(Safety Boundaries)*: Deploy role-based expertise through `.agent.md` files with MCP tool boundaries that prevent security breaches and cross-domain interference — like professional licenses that keep architects from building and engineers from planning. (Custom Agents replaced the legacy `.chatmode.md` files; see [handbook Ch11 §Agents](https://danielmeppiel.github.io/agentic-sdlc-handbook/handbook/ch11-the-instrumented-codebase.html).)
+- **Skills** *(Orchestrated Composition)*: Deploy capability-shaped, auto-activating decision frameworks through `SKILL.md` files. Skills are the new entrypoint primitive — they activate from code patterns and can compose with Custom Agents (see [handbook Ch21](https://danielmeppiel.github.io/agentic-sdlc-handbook/handbook/ch21-the-reference-architecture-earned.html))
 - **Agentic Workflows** *(Orchestrated Composition)*: Deploy reusable prompts through `.prompt.md` files with built-in validation
 - **Specification Files**: Create implementation-ready blueprints through `.spec.md` files that ensure deterministic outcomes across human and AI executors
 - **Agent Memory Files**: Preserve knowledge across sessions through `.memory.md` files
@@ -78,14 +83,14 @@ Once you've mastered structured prompting, you'll quickly realize that manually 
 
 Agent Primitives are the core configurable elements that AI Native Developers iteratively refine to ensure reliable outcomes through systematic prompt engineering.
 
-**Example Transformation:**
+- **Example Transformation:**
 - **Technique**: "Implement secure user authentication system" (Markdown Prompt Engineering)
-- **Primitives**: Developer selects `backend-dev` chat mode → Auto-triggers `security.instructions.md` via `applyTo: "auth/**"` → Loads context from `[Previous auth patterns](.memory.md#security)` and `[API Security Standards](api-security.context.md#rest)` → Generates `user-auth.spec.md` using structured templates → Executes `implement-from-spec.prompt.md` workflow with validation gates (Agent Primitives)
+- **Primitives**: Developer selects `backend-dev` Custom Agent → Auto-triggers `security.instructions.md` via `applyTo: "auth/**"` → Loads context from `[Previous auth patterns](.memory.md#security)` and `[API Security Standards](api-security.context.md#rest)` → Generates `user-auth.spec.md` using structured templates → Executes `implement-from-spec.prompt.md` workflow with validation gates (Agent Primitives)
 - **Outcome**: Developer-driven knowledge accumulation where you capture implementation failures in `.memory.md`, document successful patterns in `.instructions.md`, and refine workflows in `.prompt.md` files—creating compound intelligence that improves through your iterative refinement (Context Engineering)
 
 This transformation might seem complex, but notice the pattern: what started as an ad-hoc request became a systematic workflow with clear handoff points, automatic context loading, and built-in validation. Each primitive file becomes a knowledge asset that improves with use, creating compound intelligence that serves your entire team.
 
-> 💡 **Native VSCode Support**: While VSCode natively supports `.instructions.md`, `.prompt.md`, and `.chatmode.md` files, this framework extends the paradigm with `.spec.md`, `.memory.md`, and `.context.md` patterns that represent frontier concepts in AI Native Development.
+> 💡 **Native VSCode Support**: VSCode natively supports `.instructions.md`, `.prompt.md`, and `.agent.md` (Custom Agents) files. This framework extends the paradigm with `.spec.md`, `.memory.md`, and `.context.md` patterns — frontier concepts in AI Native Development now formalised in the handbook.
 
 With your prompts structured and your primitives set up, you'll encounter a new challenge: even the best prompts and primitives can fail when they're drowning in irrelevant context or competing for limited AI attention. The third discipline addresses this through strategic context management.
 
@@ -123,7 +128,7 @@ Agents walk up the directory tree and load the closest AGENTS.md file—domain-s
 - **Hierarchical Discovery** *(Explicit Hierarchy)*: Agents walk directory tree to load closest AGENTS.md—domain-specific context without global pollution. Automatic context optimization reduces context waste.
 - **Memory-Driven Development**: Leverage Agent Memory through `.memory.md` files to maintain project knowledge and decisions across sessions
 - **Context Optimization** *(Progressive Disclosure)*: Use `.context.md` Context Helper Files to accelerate information retrieval and reduce cognitive load
-- **Cognitive Focus Optimization** *(Safety Boundaries)*: Use chat modes in `.chatmode.md` files to constrain AI attention to relevant domains
+- **Cognitive Focus Optimization** *(Safety Boundaries)*: Use Custom Agents (`.agent.md` files) to constrain AI attention to relevant domains
 
 ### Practical Benefits
 
@@ -212,8 +217,12 @@ The three disciplines implement PROSE constraints:
 
 Together, these disciplines create compound intelligence that improves through iterative refinement.
 
-**Ready for hands-on implementation?** Continue to [Getting Started](../getting-started/) to build your first Agent Primitives.
+**Ready for hands-on implementation?** Continue to [Getting Started](../getting-started/) to build your first Agent Primitives in Copilot.
 
 **Want to understand the tooling ecosystem?** Jump to [Tooling](../tooling/) for context compilation, package management, and production deployment.
 
 **Ready for advanced orchestration?** Jump to [Agent Delegation](../agent-delegation/) for execution strategies from local control to async delegation.
+
+---
+
+> 📖 **Want the formal specification?** Read [**Chapter 12 — The PROSE Specification →**](https://danielmeppiel.github.io/agentic-sdlc-handbook/handbook/ch12-the-prose-specification.html) in *The Agentic SDLC Handbook* for the rigorous treatment of the five constraints, derivation, anti-patterns, and the maturity model.

@@ -3112,3 +3112,239 @@ a.github-btn:hover {
     max-width: 280px;
   }
 }
+
+/* ============================================
+   Phase 1 — Handbook funnel: announcement bar,
+   hero subtitle + dual CTA, positioning callout,
+   primitive grid, footer companion line.
+   ============================================ */
+
+.announcement-bar {
+  background: var(--primary-color, #0969da);
+  color: #ffffff;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.announcement-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+}
+
+.announcement-text {
+  margin: 0;
+  text-align: center;
+  color: #ffffff;
+}
+
+.announcement-text em {
+  font-style: italic;
+}
+
+.announcement-text a {
+  color: #ffffff !important;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  margin-left: 6px;
+  font-weight: 600;
+}
+
+.announcement-text a:hover {
+  text-decoration: none;
+}
+
+.announcement-close {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.85;
+}
+
+.announcement-close:hover {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .announcement-inner {
+    padding: 10px 36px 10px 16px;
+  }
+  .announcement-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* Hero subtitle (between H1 and tagline) */
+.hero-section .hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  max-width: 640px;
+  margin: 0 auto 12px auto;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 768px) {
+  .hero-section .hero-subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+.hero-section .tagline {
+  max-width: 640px;
+}
+
+/* Dual CTA row */
+.hero-ctas {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.hero-cta--secondary {
+  background: transparent !important;
+  color: var(--primary-color) !important;
+  border: 1px solid var(--border-color, #d0d7de);
+}
+
+.hero-cta--secondary:hover {
+  background: var(--bg-subtle, #f6f8fa) !important;
+  color: var(--primary-color) !important;
+}
+
+.hero-cta--secondary:visited {
+  color: var(--primary-color) !important;
+}
+
+/* Positioning callout (book vs site) */
+.positioning-callout {
+  max-width: 760px;
+  margin: 24px auto 48px auto;
+  padding: 24px 28px;
+  background: var(--bg-subtle, #f6f8fa);
+  border: 1px solid var(--border-color, #d0d7de);
+  border-radius: 8px;
+}
+
+.positioning-lead {
+  margin: 0 0 10px 0;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+}
+
+.positioning-body {
+  margin: 0;
+  font-size: 0.975rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Primitive grid */
+.primitive-grid {
+  max-width: 1040px;
+  margin: 0 auto 56px auto;
+  padding: 0 20px;
+}
+
+.primitive-grid-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 24px 0;
+  color: var(--text-primary);
+  border-bottom: none !important;
+}
+
+.primitive-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .primitive-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .primitive-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.primitive-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color, #d0d7de);
+  border-radius: 8px;
+  padding: 18px 20px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.primitive-card:hover {
+  border-color: var(--primary-color, #0969da);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.primitive-card h3 {
+  margin: 0 0 8px 0 !important;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  border-bottom: none !important;
+}
+
+.primitive-card p {
+  margin: 0;
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.primitive-card a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.primitive-card a:hover {
+  text-decoration: underline;
+}
+
+/* Footer companion line */
+.site-footer .footer-companion {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+}
+
+.site-footer .footer-companion a {
+  font-weight: 600;
+}
+
+/* About page profile pointer */
+.about-profile .profile-pointer {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 8px 0 16px 0;
+}
+
+.about-profile .profile-pointer a {
+  color: var(--primary-color);
+}

@@ -1,0 +1,19 @@
+<div class="announcement-bar" id="announcement-bar" role="region" aria-label="Site announcement">
+  <div class="announcement-inner">
+    <p class="announcement-text">
+      New: <em>The Agentic SDLC Handbook</em> — the in-depth reference for PROSE. Free, online.
+      <a href="https://danielmeppiel.github.io/agentic-sdlc-handbook/" target="_blank" rel="noopener noreferrer">Read it →</a>
+    </p>
+    <button type="button" class="announcement-close" aria-label="Dismiss announcement" onclick="(function(){document.getElementById('announcement-bar').style.display='none';try{localStorage.setItem('apm-announce-dismissed','1')}catch(e){}})();return false;">×</button>
+  </div>
+</div>
+<script>
+  (function() {
+    try {
+      if (localStorage.getItem('apm-announce-dismissed') === '1') {
+        var el = document.getElementById('announcement-bar');
+        if (el) el.style.display = 'none';
+      }
+    } catch (e) {}
+  })();
+</script>

@@ -1,12 +1,20 @@
-# 🎯 PROSE for AI Native Development
+# PROSE
 
-*This repository has been restructured as a comprehensive GitHub Pages site for better navigation and content extraction. The complete guide is now available at: **[https://danielmeppiel.github.io/awesome-ai-native](https://danielmeppiel.github.io/awesome-ai-native)***
+### Build agentic primitives for GitHub Copilot.
+
+Skills, Custom Agents, Instructions, and Hooks — designed with proven architectural patterns, bundled into plugins, and shipped on marketplaces. Hands-on. Copilot-native. Practitioner-tested.
+
+**[Start building →](https://danielmeppiel.github.io/awesome-ai-native/docs/getting-started/)** &nbsp;·&nbsp; **[Read the Specification →](https://danielmeppiel.github.io/agentic-sdlc-handbook/handbook/ch12-the-prose-specification.html)**
 
 ---
 
-## PROSE for AI Native Development
+> **The book teaches the discipline. This site shows you how to ship it in Copilot.**
+>
+> [*The Agentic SDLC Handbook*](https://danielmeppiel.github.io/agentic-sdlc-handbook/) is the in-depth reference for PROSE — the seven primitive types, the load lifecycle, the architectural patterns, the methodology. This site is the practitioner's playbook: how to author Skills, Custom Agents, Instructions, and Hooks for Copilot, bundle them as plugins, and distribute them. Theory there. Practice here.
 
-**Programming has evolved.** From Assembly to Python, each abstraction brought us closer to human thought. Now we've reached the final layer: *prose itself becomes executable.*
+---
+
+## PROSE — the five constraints
 
 | | Constraint | Principle | Induced Property |
 |---|------------|-----------|------------------|

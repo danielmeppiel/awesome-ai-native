@@ -24,34 +24,11 @@ layout: default
         </div>
       </div>
 
-      <!-- PROSE Specification -->
-      <div class="nav-section">
-        <div class="nav-section-title">
-          <button class="nav-toggle {% if page.url contains '/prose/' %}expanded{% endif %}" 
-                  data-target="prose-section" 
-                  aria-expanded="{% if page.url contains '/prose/' %}true{% else %}false{% endif %}">
-            <svg class="chevron-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
-              <path d="M4.5 3L7.5 6L4.5 9"></path>
-            </svg>
-          </button>
-          <a href="{{ '/docs/prose/' | relative_url }}" class="nav-main-link {% if page.url contains '/prose/' %}current{% endif %}">
-            <span class="nav-text">PROSE Specification</span>
-          </a>
-        </div>
-        <ul class="nav-subsection {% if page.url contains '/prose/' %}expanded{% endif %}" id="prose-section">
-          <li><a href="{{ '/docs/prose/' | relative_url }}#the-five-constraints" class="nav-sub-link">The Five Constraints</a></li>
-          <li><a href="{{ '/docs/prose/' | relative_url }}#grounding-principles" class="nav-sub-link">Grounding Principles</a></li>
-          <li><a href="{{ '/docs/prose/' | relative_url }}#prose-compliance-checklist" class="nav-sub-link">Compliance Checklist</a></li>
-          <li><a href="{{ '/docs/prose/' | relative_url }}#prose-maturity-model" class="nav-sub-link">Maturity Model</a></li>
-          <li><a href="{{ '/docs/prose/' | relative_url }}#anti-patterns" class="nav-sub-link">Anti-Patterns</a></li>
-        </ul>
-      </div>
-
       <!-- The Practice -->
       <div class="nav-section">
         <div class="nav-section-title">
-          <button class="nav-toggle {% if page.url contains '/concepts/' %}expanded{% endif %}" 
-                  data-target="concepts-section" 
+          <button class="nav-toggle {% if page.url contains '/concepts/' %}expanded{% endif %}"
+                  data-target="practice-section"
                   aria-expanded="{% if page.url contains '/concepts/' %}true{% else %}false{% endif %}">
             <svg class="chevron-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
               <path d="M4.5 3L7.5 6L4.5 9"></path>
@@ -61,11 +38,11 @@ layout: default
             <span class="nav-text">The Practice</span>
           </a>
         </div>
-        <ul class="nav-subsection {% if page.url contains '/concepts/' %}expanded{% endif %}" id="concepts-section">
-          <li><a href="{{ '/docs/concepts/' | relative_url }}#discipline-1-prompt-engineering" class="nav-sub-link">Prompt Engineering</a></li>
-          <li><a href="{{ '/docs/concepts/' | relative_url }}#discipline-2-agent-primitives" class="nav-sub-link">Agent Primitives</a></li>
-          <li><a href="{{ '/docs/concepts/' | relative_url }}#discipline-3-context-engineering" class="nav-sub-link">Context Engineering</a></li>
-          <li><a href="{{ '/docs/concepts/' | relative_url }}#agentic-workflows-all-disciplines-in-action" class="nav-sub-link">Agentic Workflows</a></li>
+        <ul class="nav-subsection {% if page.url contains '/concepts/' %}expanded{% endif %}" id="practice-section">
+          <li><a href="{{ '/docs/concepts/' | relative_url }}#how-the-practice-implements-prose" class="nav-sub-link">How It Implements PROSE</a></li>
+          <li><a href="{{ '/docs/concepts/' | relative_url }}#discipline-1-prompt-engineering" class="nav-sub-link">1. Prompt Engineering</a></li>
+          <li><a href="{{ '/docs/concepts/' | relative_url }}#discipline-2-agent-primitives" class="nav-sub-link">2. Agent Primitives</a></li>
+          <li><a href="{{ '/docs/concepts/' | relative_url }}#discipline-3-context-engineering" class="nav-sub-link">3. Context Engineering</a></li>
           <li><a href="{{ '/docs/concepts/' | relative_url }}#key-takeaways" class="nav-sub-link">Key Takeaways</a></li>
         </ul>
       </div>
@@ -86,7 +63,7 @@ layout: default
         </div>
         <ul class="nav-subsection {% if page.url contains '/getting-started/' %}expanded{% endif %}" id="getting-started-section">
           <li><a href="{{ '/docs/getting-started/' | relative_url }}#a-instructions-architecture" class="nav-sub-link">A. Instructions Architecture</a></li>
-          <li><a href="{{ '/docs/getting-started/' | relative_url }}#b-chat-modes-configuration" class="nav-sub-link">B. Chat Modes Configuration</a></li>
+          <li><a href="{{ '/docs/getting-started/' | relative_url }}#custom-agents-configuration" class="nav-sub-link">B. Custom Agents Configuration</a></li>
           <li><a href="{{ '/docs/getting-started/' | relative_url }}#c-agentic-workflows" class="nav-sub-link">C. Agentic Workflows</a></li>
           <li><a href="{{ '/docs/getting-started/' | relative_url }}#d-specification-templates" class="nav-sub-link">D. Specification Templates</a></li>
           <li><a href="{{ '/docs/getting-started/' | relative_url }}#e-context-organization--discovery" class="nav-sub-link">E. Context Organization</a></li>
@@ -142,32 +119,6 @@ layout: default
           <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#e-hybrid-orchestration-strategies" class="nav-sub-link">Hybrid Orchestration Strategies</a></li>
           <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#f-tooling-enhanced-execution" class="nav-sub-link">Tooling-Enhanced Execution</a></li>
           <li><a href="{{ '/docs/agent-delegation/' | relative_url }}#key-takeaways" class="nav-sub-link">Key Takeaways</a></li>
-        </ul>
-      </div>
-
-      <!-- Team Adoption -->
-      <div class="nav-section">
-        <div class="nav-section-title">
-          <button class="nav-toggle {% if page.url contains '/team-adoption/' %}expanded{% endif %}" 
-                  data-target="team-adoption-section" 
-                  aria-expanded="{% if page.url contains '/team-adoption/' %}true{% else %}false{% endif %}">
-            <svg class="chevron-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
-              <path d="M4.5 3L7.5 6L4.5 9"></path>
-            </svg>
-          </button>
-          <a href="{{ '/docs/team-adoption/' | relative_url }}" class="nav-main-link {% if page.url contains '/team-adoption/' %}current{% endif %}">
-            <span class="nav-text">Team Adoption</span>
-          </a>
-        </div>
-        <ul class="nav-subsection {% if page.url contains '/team-adoption/' %}expanded{% endif %}" id="team-adoption-section">
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#a-human-validation-gates--review-processes" class="nav-sub-link">Human Validation Gates</a></li>
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#b-team-scale-multi-agent-coordination" class="nav-sub-link">Team-Scale Coordination</a></li>
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#c-knowledge-sharing--team-intelligence-patterns" class="nav-sub-link">Knowledge Sharing</a></li>
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#d-governance--compliance-framework" class="nav-sub-link">Governance & Compliance</a></li>
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#e-context-governance-at-scale" class="nav-sub-link">Context Governance at Scale</a></li>
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#implementation-roadmap" class="nav-sub-link">Implementation Roadmap</a></li>
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#success-metrics" class="nav-sub-link">Success Metrics</a></li>
-          <li><a href="{{ '/docs/team-adoption/' | relative_url }}#key-takeaways" class="nav-sub-link">Key Takeaways</a></li>
         </ul>
       </div>
 

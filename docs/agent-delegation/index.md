@@ -3,8 +3,11 @@ layout: docs
 title: "Agent Delegation"
 display_title: "Agent Delegation"
 permalink: /docs/agent-delegation/
-nav_order: 5
+nav_order: 3
 ---
+
+> 📖 **Deep dive in the handbook:** [Chapter 16 — Multi-Agent Orchestration →](https://danielmeppiel.github.io/agentic-sdlc-handbook/handbook/ch16-multi-agent-orchestration.html) and [Chapter 17 — The Execution Meta-Process →](https://danielmeppiel.github.io/agentic-sdlc-handbook/handbook/ch17-the-execution-meta-process.html)
+> This page is the practical playbook for delegating to GitHub Copilot Coding Agent and orchestrating parallel work. The handbook covers the underlying coordination model and execution discipline.
 
 > **PROSE Focus:** Master **O**rchestration—coordinating agents and delegating work.
 
@@ -29,7 +32,7 @@ To demonstrate the execution strategies, let's use a complete **Agentic Workflow
 **Example Workflow:** `implement-oauth-feature.prompt.md`
 
 ### Workflow Components in Action:
-1. **Mode Activation** → Triggers `backend-dev.chatmode.md` with security-focused MCP tool boundaries  
+1. **Custom Agent Activation** → Triggers `backend-dev.agent.md` with security-focused MCP tool boundaries  
 2. **Context Loading** → Loads `[auth patterns](./auth.memory.md)` and `[security standards](./security.context.md)`
 3. **Specification Generation** → Uses `oauth-feature.spec.md` template with validation criteria
 4. **Implementation Execution** → Guided by `security.instructions.md` applied via `applyTo: "auth/**"` pattern

@@ -3,8 +3,11 @@ layout: docs
 title: "Reference"
 display_title: "Reference"
 permalink: /docs/reference/
-nav_order: 7
+nav_order: 4
 ---
+
+> 📖 **Deep dive in the handbook:** [The Agentic SDLC Handbook →](https://danielmeppiel.github.io/agentic-sdlc-handbook/)
+> This page is the quick reference: checklists, links, and troubleshooting. For methodology, governance, and the full theoretical grounding, the handbook is the source.
 
 Essential checklists, progression frameworks, and documentation links for ongoing AI Native Development implementation and mastery.
 
@@ -19,7 +22,7 @@ Essential checklists, progression frameworks, and documentation links for ongoin
 4. **[ ]** Install useful Skills for your stack: `apm install owner/skill-name` (Skills: instant capabilities)
 5. **[ ]** Create [`.github/copilot-instructions.md`](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilot-instructionsmd-file) with basic project guidelines (Context Engineering: global rules)
 6. **[ ]** Set up domain-specific [`.instructions.md` files](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-instructionsmd-files) with `applyTo` patterns (Context Engineering: selective loading)
-7. **[ ]** Configure [custom agents](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-chat-modes) for your tech stack domains (Context Engineering: domain boundaries)
+7. **[ ]** Configure [Custom Agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents) (`.agent.md`) for your tech stack domains (Context Engineering: domain boundaries)
 8. **[ ]** Create first [`.prompt.md` file](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental) with validation checkpoints (Markdown Prompt Engineering: deterministic templates)
 9. **[ ]** Build your first `.spec.md` template for feature specifications (Agent Primitive: deterministic planning-to-implementation bridge)
 10. **[ ]** Package reusable patterns as a Skill: `apm init skill` (Skills: share knowledge)
@@ -34,7 +37,7 @@ Essential checklists, progression frameworks, and documentation links for ongoin
 **Time Investment:** 2-3 hours  
 **Key Outcomes:**
 - [ ] Created basic `.instructions.md` files
-- [ ] Configured first chat mode
+- [ ] Configured first Custom Agent
 - [ ] Built first `.prompt.md` template
 - [ ] Understand theoretical framework
 
@@ -45,7 +48,7 @@ Essential checklists, progression frameworks, and documentation links for ongoin
 **Time Investment:** 4-6 hours  
 **Key Outcomes:**
 - [ ] Working domain-specific instructions
-- [ ] Multiple chat modes configured
+- [ ] Multiple Custom Agents configured
 - [ ] Prompt library with 3-5 templates
 - [ ] Consistent AI interactions in daily work
 
@@ -111,14 +114,14 @@ Essential checklists, progression frameworks, and documentation links for ongoin
 - **[AGENTS.md Standard](https://agents.md)** - Universal context format adopted by major coding agents
 
 ### Community Resources
-- **[Awesome GitHub Copilot](https://github.com/github/awesome-copilot)** - Comprehensive catalog of community-contributed instructions, prompts, and chat modes across all major languages and frameworks
+- **[Awesome GitHub Copilot](https://github.com/github/awesome-copilot)** - Comprehensive catalog of community-contributed instructions, prompts, and Custom Agents across all major languages and frameworks
 
 ### VSCode Copilot Customization
 - **[Main Customization Guide](https://code.visualstudio.com/docs/copilot/copilot-customization)** - Complete overview of VSCode Copilot primitives
 - **[Custom Instructions (.github/copilot-instructions.md)](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilot-instructionsmd-file)** - Global workspace instructions
 - **[Modular Instructions (.instructions.md)](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-instructionsmd-files)** - Domain-specific instructions with applyTo patterns
 - **[Prompt Files (.prompt.md)](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental)** - Reusable task-specific prompts
-- **[Custom Chat Modes](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-chat-modes)** - Configure domain-specific chat behavior
+- **[Custom Agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents)** - Configure domain-specific agents with `.agent.md` files (replaces the legacy `.chatmode.md` pattern)
 
 ### GitHub Copilot Documentation
 - **[GitHub Copilot Overview](https://docs.github.com/en/copilot)** - Complete GitHub Copilot documentation
